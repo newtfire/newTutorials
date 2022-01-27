@@ -1,0 +1,53 @@
+Dragonvale: Sweet Dreams Dragons
+
+(Also serving as a placeholder for 496)
+
+NOTE: Timers not included.
+
+Specific Combos: 
+
+Love: Flower + any Lightning (obtained)
+Rose: Flower + any Air
+Ambrosia: Flower + Delight
+Cuddlewing: Love + Tree
+Moonstruck: Love + Rose
+Stoneheart: Love + Melancholy
+Murano: Amaryllis + Glass
+Rosegold: Rose + Gold
+Sweetheart: Stoneheart + Love
+Honeyglow: Nectar + Ambrosia
+Grace: Cuddlewing + Water + Light
+Entwined: Love + Sweetheart
+Canvas: Sumi + Iron Blossom
+Masque: Moonstruck + Spritely
+
+Element Combos:
+
+Thorn: Plant + Metal
+Ire: Plant + Fire + Earth
+Iron Blossom: Plant+ Metal
+Serenity: Fire + Earth + Cold
+Melancholy: Plant + Earth + Cold
+Delight: Plant + Fire + Cold
+Scorn: Plant + Earth + Fire
+Canna: Water + Plant + Light
+Scuttle: Water + Earth + Dark
+Giddle: Earth + Plant + Light
+Sumi: Plant + Earth + Fire + Air
+Surprise: Any four elements
+Smitten: Plant + Fire + Cold
+Spritely: Aura + Olympus
+Satin: Fire + Plant + Earth + Lightning
+Daffadowndilly: Fire + Earth + Water
+Petunia: Fire + Earth + Cold
+Begonia: Water + Fire + Metal
+Cyclamen: Fire + Earth + Dark
+Amaryllis: Plant + Air + Light
+
+
+New Dragons:
+Lumineux: TBD
+Lightmare: TBD
+Lullaby: TBD
+Buttercup: TBD
+
