@@ -67,63 +67,92 @@ color: black;
   src: url(https://fonts.gstatic.com/s/courgette/v8/wEO_EBrAnc9BLjLQAUk1VvoK.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
-div.flex {
-/*  display:flex; justify-content:flex-start; align-items: flex-start;; flex-direction:row; flex-wrap: wrap;*/
-display: inline-grid;
-grid-template-columns: auto auto;
+/* 2022-01-29 ebb: CSS GRID DISPLAY: 
+ * OUTERMOST CONTAINER in the HTML document IS div.grid
+ * div.grid contains the div.sidebar and div.main
+ * We set a column display with relative size using fr units.
+ * fr units are meant to add up to 1 (as full width of the container)
+ * Here we set the first element (sidebar) with the smaller fr width
+ * and the second element (main) with the larger fr width. . */
+div.grid {
+display:grid;
+grid-auto-flow:column;
+grid-template-columns:.3fr .7fr;
+grid-column-gap: 2vw;
+/* grid-column-gap and grid-row-gap provide a little space in between
+ * cells of the grid. */
 }
 
-div.sidebar {position:sticky;
-   top:0;
-   display: grid;
-   grid-column-gap: 50px;
-text-align: left;
+/* SIDEBAR STYLING: This can be its own grid container, set now in rows to control the relative proportion of the <figure> at the top to the <ul> beneath it.*/
+div.sidebar {
+display:grid;
+grid-auto-flow:row;
+grid-template-rows:.1fr .9fr;
 border-radius: 12px;
     background-color: #FFFFFF;
     font-size: 20px;
   line-height:2.0em;
-}
 
+}
+/* ebb: To make images scale, set a <figure> element as a container (like 
+ * a picture frame) around them. Control the width of the figure within its container element using a proportion. (I typically use a percentage here.)  */
+figure.pfp {
+ width:90%;
+ margin:auto;
+}
+/*  The <img> element is now nested inside a <figure>. We make it scale
+ * with the first two properties in the CSS below: object-fit:contain; and width:100%. You can make the width anything you like. Typically we fill the picture frame <figure>, and make the <figure> a certain width in proportion to *its* container, the sidebar.    */
 img#pfp {
-  margin-top: 20px;
-    display: block;
-        margin-left: 25px;
-        border:none;
-        border-radius: 15px;
-        background-color: transparent;
-        margin-bottom: 0;
+object-fit:contain;
+ width:100%;
+border:none;
+border-radius: 15px;
+background-color: transparent;
 }
 
-ul#sidelist {
-    background-color: transparent;
-    font-size: 20px;
-    border: none;
-  line-height:2.0em;
-  font-family: 'Acme';
-  padding-right: 100px;
-}
 
-  div.main{
-    /*  flex:4;*/
+div.main{
     padding:1vw;
-    /*margin-left:auto;
-    margin-right: auto;*/
-    display: grid;
-    
+   margin:auto;
+}
+/* Again, we set a <figure> element around the <img> that you wish to scale. Set a relative width for the container figure, and then use object-fit:contain, which works in the CSS grid system to keep the image within its grid framework.  */
+figure.mainImage {
+    width:80%;
+}
+figure.mainImage > img{
+    object-fit:contain;
+    width:100%;
+    border-radius: 15px;
+    flex-direction: row;
+    border: 12px solid white;
+    margin-bottom: 20px;
+   
 }
 
-img{
-display: grid;
-    border-radius: 15px;
-    /*  flex-direction: row;*/
-    border: 12px solid white;
-    background-color: white;
-    margin-bottom: 20px;
+  img.iconbox{
+object-fit:contain;
+ width:100%;
+/*      border: 12px solid white;
+    background-color: white; */
+    }
+
+
+a:hover {
+  color: #d997ff;
+  text-decoration: underline;
+  }
+
+.welcome{
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2.welcome {
+    font-family: 'Sriracha', cursive;
 }
 
 h1 {
-display: grid;
     color: black;
     font-size: 48px;
 font-family: 'Averia Libre', cursive;
@@ -131,11 +160,62 @@ font-family: 'Averia Libre', cursive;
     background-color: white;
     border-radius: 12px;
     width: fit-content;
-    margin-bottom: 20px;
+}
+
+h2 {
+    color: black;
+    font-size: 36px;
+            border: 12px solid white;
+    background-color: white;
+    border-radius: 12px;
+    width: fit-content;
+    font-family: Itim, cursive;
+}
+
+h3 {
+    color: black;
+    font-size: 24px;
+    font-family: 'Sriracha', cursive;
+        border: 12px solid white;
+    background-color: white;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+button {
+    margin-top: 45px;
+    margin-bottom:45px;
+        margin-left: auto;
+    margin-right: auto;
+    background-color: #D997FF;
+    color: white;
+    outline:none;
+    padding: 15px 32px;
+    font-size: 24px;
+    display: inline-block;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 9px #999;
+    font-family: 'Acme', sans-serif;
+    }
+
+button:active {
+  background-color: white;
+  color: #D997FF;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+button:hover {
+background-color: white;
+color: #D997FF;
+}
+
+#welcome {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 p {
-display: grid;
     border: 12px solid white;
     background-color: white;
     border-radius: 12px;
@@ -144,3 +224,102 @@ display: grid;
     font-size: 18px;
 font-family: 'Open Sans', sans-serif;
 }
+
+ul#sidelist {
+    background-color: transparent;
+    font-size: 20px;
+    border: none;
+  line-height:2.0em;
+  font-family: 'Acme';
+}
+
+ul {
+        border: 12px solid white;
+    background-color: white;
+    border-radius: 12px;
+    width: fit-content;
+    font-size: 18px;
+  line-height: 2.0em;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+}
+
+ol {
+        border: 12px solid white;
+    background-color: white;
+    border-radius: 12px;
+    width: fit-content;
+    font-size: 18px;
+  line-height: 2.0em;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+}
+
+p#signature {
+    color: black;
+    font-size: 36px;
+    font-family: 'Homemade Apple', cursive;
+}
+
+h1.welcome {
+    font-family: 'Courgette', cursive;
+}
+
+#cc {
+    border: none;
+    border-radius: 0px;
+    background-color: transparent;
+    border-radius: 0px;
+    margin-left: 35px;
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 22px;
+  left: 22px;
+  right: 0px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 90px;
+  transition: .5s ease;
+  opacity:0;
+  border-radius: 2px;
+  color: white;
+  font-size: x-small;
+  padding: 20px;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+}
+
+figure:hover .overlay {
+  opacity: 1;
+}
+
+div > figure{
+position: relative;
+display:block;
+margin-left: auto;
+margin-right: auto;
+margin:initial;
+flex-wrap: wrap;
+ }
+ 
+ footer{
+     display: block;
+     margin-top: 10px;
+     bottom: 10px;
+     position: sticky;
+ }
+ 
+#cc1 {
+text-align: center;
+     margin-left: auto;
+     margin-right: auto;
+     display: block;
+     position: relative;
+          border: none;
+          background-color: transparent;
+          border-radius: 0px;
+ }
+ 
