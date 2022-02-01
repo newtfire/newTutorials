@@ -67,53 +67,75 @@ color: black;
   src: url(https://fonts.gstatic.com/s/courgette/v8/wEO_EBrAnc9BLjLQAUk1VvoK.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
-div.flex {
-display:flex; justify-content:flex-start; align-items: flex-start;; flex-direction:row; flex-wrap: wrap;
+/* 2022-01-29 ebb: CSS GRID DISPLAY: 
+ * OUTERMOST CONTAINER in the HTML document IS div.grid
+ * div.grid contains the div.sidebar and div.main
+ * We set a column display with relative size using fr units.
+ * fr units are meant to add up to 1 (as full width of the container)
+ * Here we set the first element (sidebar) with the smaller fr width
+ * and the second element (main) with the larger fr width. . */
+div.grid {
+display:grid;
+grid-auto-flow:column;
+grid-template-columns:.3fr .7fr;
+grid-column-gap: 2vw;
+/* grid-column-gap and grid-row-gap provide a little space in between
+ * cells of the grid. */
 }
 
-div.sidebar {position:sticky;
-   top:0;
-text-align: left;
+/* SIDEBAR STYLING: This can be its own grid container, set now in rows to control the relative proportion of the <figure> at the top to the <ul> beneath it.*/
+div.sidebar {
+display:grid;
+grid-auto-flow:row;
+grid-template-rows:.1fr .9fr;
 border-radius: 12px;
     background-color: #FFFFFF;
     font-size: 20px;
   line-height:2.0em;
-    flex:1; 
+
 }
+/* ebb: To make images scale, set a <figure> element as a container (like 
+ * a picture frame) around them. Control the width of the figure within its container element using a proportion. (I typically use a percentage here.)  */
+figure.pfp {
+ width:90%;
+ margin:auto;
+}
+/*  The <img> element is now nested inside a <figure>. We make it scale
+ * with the first two properties in the CSS below: object-fit:contain; and width:100%. You can make the width anything you like. Typically we fill the picture frame <figure>, and make the <figure> a certain width in proportion to *its* container, the sidebar.    */
+img#pfp {
+object-fit:contain;
+ width:100%;
+border:none;
+border-radius: 15px;
+background-color: transparent;
+}
+
 
 div.main{
-    flex:4;
     padding:1vw;
-    margin-left:auto;
-    margin-right: auto;
+   margin:auto;
 }
-
-img{
-display:block;
+/* Again, we set a <figure> element around the <img> that you wish to scale. Set a relative width for the container figure, and then use object-fit:contain, which works in the CSS grid system to keep the image within its grid framework.  */
+figure.mainImage {
+    width:80%;
+}
+figure.mainImage > img{
+    object-fit:contain;
+    width:100%;
     border-radius: 15px;
     flex-direction: row;
     border: 12px solid white;
-    background-color: white;
     margin-bottom: 20px;
-    
+   
 }
 
   img.iconbox{
-width:36vw;
+object-fit:contain;
+ width:100%;
 /*      border: 12px solid white;
     background-color: white; */
     }
 
-img#pfp {
-  margin-top: 20px;
-    display: block;
-        margin-left: 25px;
-        border:none;
-        border-radius: 15px;
-        background-color: transparent;
-        margin-bottom: 0;
-}
 
 a:hover {
   color: #d997ff;
@@ -186,20 +208,6 @@ button:active {
 button:hover {
 background-color: white;
 color: #D997FF;
-}
-.flex-container {
-    display: flex;
-    flex:4;
-    margin-left: auto;
-    margin-right: auto;
-}
-div.flex-container {
-    flex-wrap: wrap;
-}
-img.thumbnail {
-    margin: 10px;
-    height: 130px;
-    width: 130px;
 }
 
 #welcome {
