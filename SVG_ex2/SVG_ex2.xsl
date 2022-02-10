@@ -33,19 +33,28 @@
                    stroke="black"
                    stroke-width="1"/>
                 
+                <xsl:for-each select="0 to $maxSp + 10">
+                    <xsl:if test="current() mod 10 = 0">
+                        <xsl:choose>
+                            <xsl:when test="current()=0"><text x="7" y="0">0</text></xsl:when>
+                            <xsl:otherwise>
+                                <text x="0" y="{current()*$Yinterval}">
+                                    <xsl:value-of select="current()"/>
+                                </text>
+                                <line x1="20" y1="{current()*$Yinterval}" 
+                                    x2="{$Xaxis}" y2="{current()*$Yinterval}"               
+                                    stroke="lightgreen" stroke-width="2" 
+                                    stroke-dasharray="10 10"></line>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        
+                    </xsl:if>
+                </xsl:for-each>
                 
-               <text x="5" y="0" text-anchor="middle">0</text>
-               <text x="5" y="-70" text-anchor="middle">10</text>
-               <text x="5" y="-140" text-anchor="middle">20</text>
-               <text x="5" y="-210" text-anchor="middle">30</text>
-               <text x="5" y="-280" text-anchor="middle">40</text>
-               <text x="5" y="-350" text-anchor="middle">50</text>
-               <text x="5" y="-420" text-anchor="middle">60</text>
-               <text x="5" y="-490" text-anchor="middle">70</text>
-               <text x="5" y="-560" text-anchor="middle">80</text>
-                
+                <!-- 
                <path stroke="lightgreen" stroke-width="2" stroke-dasharray="10,10" d="M20 -70 H{(//chapter=>count()+1)*$Xinterval}"/>
                <path stroke="lightgreen" stroke-width="2" stroke-dasharray="10,10" d="M20 -140 H{(//chapter=>count()+1)*$Xinterval}"/>
+                 -->
                 
                 <!-- labels -->
                 <g transform="translate(1000,-300)" style="text-anchor:left;"> 
@@ -70,6 +79,12 @@
                    <xsl:variable name="nextOtherSp" select="current()//following-sibling::chapter[1]//q[@sp!='alice']=>count()"/>
                    <xsl:variable name="nextOtherYpos" select="$nextOtherSp * $Yinterval"/>
                    
+                   <!-- green dashed lines -->
+                   <line x1="{$Xpos}" y1="0" 
+                       x2="{$Xpos}" y2="{$Yaxis}"               
+                       stroke="lightgreen" stroke-width="2" 
+                       stroke-dasharray="10 10"></line>
+                   
                    <!-- lines -->
                    <xsl:if test="@which &lt; $chapterCount">
                        <!-- This line is for Alice. -->
@@ -82,10 +97,13 @@
                              x2="{$Xpos + $Xinterval}" y2="{$nextOtherYpos}"
                              stroke="blue"
                              stroke-width="2"/>
+                       
                    </xsl:if>
                    <circle cx="{$Xpos}" cy="{$Ypos}" r="5" fill="red"/>
                    <circle cx="{$Xpos}" cy="{$otherYpos}" r="5" fill="blue"/>
                    <text x="{$Xpos}" y="30"  style="text-anchor:middle;">Ch. <xsl:value-of select="@which"/></text>
+                   
+                   
                </xsl:for-each>
                
            </g>
