@@ -21,6 +21,17 @@ This is Esri’s desktop application for ArcGIS. Please keep in mind the ArcGIS 
     2. Choose the desired destination where you would like to keep your ArcGIS desktop program. Then press the Next button.
 7. After the extraction process is completed make sure the *Launch the setup program* box is checked. :heavy_check_mark: 
 8. Then press the Close button.
+## How to Create a New Map Project: ##
+
+This section of the tutorial is to familiarize yourself with the different sections and panes within ArcGIS Pro. First load up your ArcGIS Pro desktop application. Create a new Map project and save it within your desired file directory. Please take note that ArcGIS Pro has a user interface that looks very similar to Microsoft Word. 
+
+Once the project is opened you will notice that a base map of the United States is displayed.
+
+Tools and Commands are located within the Top panel of the window. There are various tools and commands used for different tasks. Most of the tools we will be using are located on the Map tab due to the fact we create a new map project. 
+
+There is a Contents pane located on the left side of the window. The Contents pane shows you the active content currently being seen in the active View Pane. This displays the drawing order of the different map layers within a hierarchical format. 
+
+There is a Catalog pane located on the right side of the window. This pane allows the user to access items of your project disk or through your portal. Using the Portal tab can be very useful to find various datasets from ArcGIS Online and Living Atlas geodatabases. 
 ## Formatting Data for ArcGIS: ##
 ## How to Look up Data within Living Atlas: ##
 ## Adding Data to your Map: ##
