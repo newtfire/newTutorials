@@ -76,7 +76,22 @@
     
     <xsl:template match="/">
         <svg>
-            <g transform="translate(250, 250)">
+            <g transform="translate(500, 500)">
+                <xsl:variable name="circumf" select="2 * math:pi() * $radius"/>
+                <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$circumf * ($techPercent  + $colorPercent  +  $naturePercent  + $shapePercent), $circumf}" stroke="orange"/>
+                <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$circumf *  ($techPercent + $colorPercent + $naturePercent), $circumf}" stroke="yellow"/>
+                
+            <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$circumf * ($techPercent + $colorPercent), $circumf}" stroke="pink"/>
+                <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$circumf * $techPercent, $circumf}" stroke="blue"/>
+                
+            
+              
+                -->
+                
+            </g>
+            
+            
+         <!--   <g transform="translate(250, 250)">
                 
                <path d="M0,0 L{$radius},0 A{$radius},{$radius} 0 {$colorFlag},1
                         {$colorX},{$colorY} Z"
@@ -107,7 +122,7 @@
                     <xsl:value-of select='format-number($techPercent*100,"#.00")'/>%
                 </text></g>
                 
-            </g>
+            </g>-->
         </svg>
     </xsl:template> 
 </xsl:stylesheet>
