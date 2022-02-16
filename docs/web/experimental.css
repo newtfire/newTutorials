@@ -275,37 +275,18 @@ h1.welcome {
     margin-left: 35px;
 }
 
-.overlay {
-  position: absolute; 
-  bottom: 22px;
-  left: 22px;
-  right: 0px;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5); /* Black see-through */
-  color: #f1f1f1; 
-  width: 90px;
-  transition: .5s ease;
-  opacity:0;
-  border-radius: 2px;
-  color: white;
-  font-size: x-small;
-  padding: 20px;
-  text-align: left;
-  font-family: 'Open Sans', sans-serif;
-}
-
 figure:hover .overlay {
   opacity: 1;
 }
 
-div > figure{
+/*  div > figure{
 position: relative;
 display:block;
 margin-left: auto;
 margin-right: auto;
 margin:initial;
 flex-wrap: wrap;
- }
+ }*/
  
  footer{
      display: block;
@@ -325,3 +306,31 @@ text-align: center;
           border-radius: 0px;
  }
  
+img.thumbnail {
+    border: 1vh solid white;
+    background-color: white;
+    border-radius: 7%;
+    vertical-align: bottom;
+    margin: 1vmin;
+}
+
+figure > .overlay {
+  position: absolute; 
+  vertical-align: 5em;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: fit-content;
+  transition: .5s ease;
+  opacity:0;
+  border-radius: 7%;
+  color: white;
+  font-size: x-small;
+  padding: 1vmin;
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+}
+
+figure:hover .overlay {
+  opacity: 1;
+}
