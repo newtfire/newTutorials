@@ -8,6 +8,25 @@
     </head>
     <body>
         <div class="grid">
+            <div class="sidebar">
+                <figure class="pfp">
+                    <a href="https://arrowarchive.github.io/The-Arrowarchive/index.html"><img src="images/assets/Aqua.png" alt="profile picture"
+                        id="pfp"
+                        oncontextmenu="return false;"/></a>
+                </figure>
+                <ul id="sidelist">
+                    <li><a href="rachelList.html" >To-do list</a></li>
+                    <li><a href="https://newtfire.github.io/newTutorials/web/scaling.html">Image scaling</a></li>
+                    <li>Browser optimization</li>
+                    <li>Phone optimization</li>
+                    <li>Dropdown lists</li>
+                    <li>Ruby/Jekyll</li>
+                    <li><a href="https://newtfire.github.io/newTutorials/web/galleryTest.html" title="Why click again? You're already here!">Gallery Test</a></li>
+                    <li>Potential test</li>
+                </ul>
+                
+            </div>
+            <div class="main">
             <h1>Image Testing</h1>
             <p>This page is meant to test image display. I rendered all the thumbnails, but on the main archive, they aren't displaying right. The width is always 200 px with landscapes, while the height is 200 px for portraits.</p>
             <p>I have a feeling that when using the thumbnail property, it tried to keep the aspect ratio of the thumbnails. If that is true, I will need help recoding the gallery. They aren't aligned evenly, and the images hover over the overlays or have them protrude from the sides. Let's see if my hypothesis is right.</p>
@@ -223,6 +242,7 @@
             <img
                 src="images/thumbnails/seahorses.png" class="thumbnail"
                 oncontextmenu="return false;" />
+        </div>
         </div>
     </body>
 </html>
