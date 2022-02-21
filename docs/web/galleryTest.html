@@ -31,8 +31,10 @@
             <p>This page is meant to test image display. I rendered all the thumbnails, but on the main archive, they aren't displaying right. The width is always 200 px with landscapes, while the height is 200 px for portraits.</p>
             <p>I have a feeling that when using the thumbnail property, it tried to keep the aspect ratio of the thumbnails. If that is true, I will need help recoding the gallery. They aren't aligned evenly, and the images hover over the overlays or have them protrude from the sides. Let's see if my hypothesis is right.</p>
             <p>-Rachel</p>
-            <p><b>NOTE:</b> The thumbnails have no CSS tied to them. No white border, no corner rounding, nothing. Let's see how they look.</p>
-            <figure><img
+       <!-- 2022-02-20  ebb: Commenting this out because it doesn't appear to be the case now that you're experimenting with the CSS again. 
+           <p><b>NOTE:</b> The thumbnails have no CSS tied to them. No white border, no corner rounding, nothing. Let's see how they look.</p>-->
+           <section class="gridgallery"> 
+               <figure><img
                 src="images/thumbnails/2022Vaitu.PNG" class="thumbnail"
                 oncontextmenu="return false;" /><figcaption class="overlay"
                     ><time datetime="2022-02-04"><b>February 4, 2022</b></time></figcaption></figure>
@@ -80,6 +82,9 @@
                 src="images/thumbnails/fireflies.PNG" class="thumbnail"
                 oncontextmenu="return false;" /><figcaption class="overlay"
                     ><time datetime="2021-07-31"><b>July 31, 2021</b></time></figcaption></figure>
+           </section>
+
+               <section> <h3>Non-gridded section</h3>
             <img
                 src="images/thumbnails/remember.PNG" class="thumbnail"
                 oncontextmenu="return false;" />
@@ -253,7 +258,7 @@
                 oncontextmenu="return false;" />
             <img
                 src="images/thumbnails/seahorses.png" class="thumbnail"
-                oncontextmenu="return false;" />
+                oncontextmenu="return false;" /></section>
         </div>
         </div>
     </body>

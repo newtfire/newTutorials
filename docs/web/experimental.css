@@ -67,7 +67,7 @@ color: black;
   src: url(https://fonts.gstatic.com/s/courgette/v8/wEO_EBrAnc9BLjLQAUk1VvoK.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* 2022-01-29 ebb: CSS GRID DISPLAY: 
+/* 2022-01-29 ebb: CSS GRID DISPLAY for SIDEBAR and MAIN:
  * OUTERMOST CONTAINER in the HTML document IS div.grid
  * div.grid contains the div.sidebar and div.main
  * We set a column display with relative size using fr units.
@@ -121,6 +121,7 @@ div.main{
 figure.mainImage {
     width:60%;
 }
+
 figure.mainImage > img{
     object-fit:contain;
     width:100%;
@@ -129,7 +130,7 @@ figure.mainImage > img{
     border: 12px solid white;
     margin-bottom: 20px;
    
-}
+} 
 
   img.iconbox{
 object-fit:contain;
@@ -306,21 +307,58 @@ text-align: center;
           border-radius: 0px;
  }
  
+ /* 2022-02-20 ebb: This is a new grid for setting up the gallery to have equally sized columns and rows */
+section.gridgallery { 
+   display:grid;
+grid-auto-flow:row;
+/* 3 rows */
+grid-template-rows:repeat(3, .33fr);
+/* 4 columns */
+grid-template-columns:repeat(4, .25fr);
+align-items:stretch;
+
+}
+
+section.gridgallery > figure {
+   display:grid;
+   grid-template-rows: .5fr .5fr;;
+align-items:stretch;
+position:relative;
+}
+
+section.gridgallery > figure > img.thumbnail {
+    border: 1vh solid white;
+    background-color: white;
+    border-radius: 7%;
+    vertical-align: bottom;
+     margin: 1vmin;
+     object-fit:contain;
+   width:100%
+
+}
+
+ 
 img.thumbnail {
     border: 1vh solid white;
     background-color: white;
     border-radius: 7%;
     vertical-align: bottom;
     margin: 1vmin;
+
 }
 
 figure > .overlay {
-  position: absolute; 
-  vertical-align: 5em;
+  position: absolute; /* ebb: I'm tinkering with the your position: absolute 
+   * together with top: and  left: properties. I'm anchoring this with a position:relative
+   * on the parent figure element. 
+   * See https://webdesign.tutsplus.com/tutorials/the-quirks-of-css-grid-and-absolute-positioning--cms-31437  */
+  top:-5%;
+  left:50%;
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.5); /* Black see-through */
   color: #f1f1f1; 
   width: fit-content;
+  height:fit-content;
   transition: .5s ease;
   opacity:0;
   border-radius: 7%;
