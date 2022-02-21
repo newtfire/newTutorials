@@ -18,7 +18,7 @@
 ```
 Output:
 
-  ![stroke-dasharray="8"](images/dasharray_8.png)
+  ![stroke-dasharray="8"](images/dasharray_8.PNG)
 
 If stroke-dasharray has only one value, the sizes of both dashes and gaps are the same, which are 8 here.
   
@@ -31,7 +31,7 @@ Since the size of the line is 100, and 100 is not divisible by 8, we can see tha
 ```
 Output:
 
-![stroke-dasharray="15 8"](images/dasharray_15_8.png)
+![stroke-dasharray="15 8"](images/dasharray_15_8.PNG)
     
 If stroke-dasharray have two values, then the first one(15) is for size of dashes, while the second one(8) is for that of gaps. 
 
@@ -44,7 +44,7 @@ Still, the part beyond the size of the line will be hidden.
 ```
 Output:
 
-![](images/dasharray_circle.png)
+![](images/dasharray_circle.PNG)
 
 Stroke-dasharray in circle is similar with that in line. The size of dashes is 15, while that of gaps is 8. The length of the stroke is circumference of circle. The part of dashes or gaps beyond circumference also will be hidden. We can see that two dashes look like connected together. 
 
@@ -58,7 +58,7 @@ Before solving this problem, we can try to imagine that if a stroke-dasharray at
 ```
 Output:
 
-![](images/infinite_gap.png)
+![](images/infinite_gap.PNG)
 
 We can only get one dash, because the size of gaps is so large that other dashes are hidden.
 In fact, we do not need an infinite size of gaps. 
@@ -66,7 +66,7 @@ When the size of gaps is greater or equals to the circumference of the circle, a
 
 Then, try to increase the width of the stroke. When the width of the stroke is large enough, like twice the radius, we can get a slice.
 
-![A slice](images/pie.png)
+![A slice](images/pie.PNG)
 
 ### How to control the percentage of a slice?
 We need two formulas:
@@ -95,7 +95,7 @@ stroke-dasharray="2$\pi$r * *percent* , 2$\pi$ r"
 ```
 Output:
 
-![A 25% slice](images/slice_25.png)
+![A 25% slice](images/slice_25.PNG)
 
 ### How to draw the whole pie chart?
 This is the data for our pie chart.
@@ -121,7 +121,7 @@ Firstly, we need to draw a complete circle.
 ```
 Output:
 
-![](images/ObjC.png)
+![](images/ObjC.PNG)
 
 Next, we draw a slice with percentage of sum of A% and B%.
 ```
@@ -138,7 +138,7 @@ Next, we draw a slice with percentage of sum of A% and B%.
 ```
 Output:
 
-![](images/ObjB.png)
+![](images/ObjB.PNG)
 
 Since the code is executed line by line, the later slices can cover previous slices. In the image above, the blue slice covers the green one, and now the green one shows the percentage of object C, which is 60%.
 
@@ -157,7 +157,7 @@ Finally, we draw a slice with percantage of A%.
 ```
 Output:
 
-![](images/ObjA.png)
+![](images/ObjA.PNG)
 
 In the final step, the red slice covers the blue one. Blue slice is 10% now, while red slice is 30%. Thus, we get a whole pie chart.
 
