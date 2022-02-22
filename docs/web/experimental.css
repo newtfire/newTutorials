@@ -85,6 +85,7 @@ grid-column-gap: 2vw;
 
 /* SIDEBAR STYLING: This can be its own grid container, set now in rows to control the relative proportion of the <figure> at the top to the <ul> beneath it.*/
 div.sidebar {
+position: sticky;
 display:grid;
 grid-auto-flow:row;
 grid-template-rows:.1fr .9fr;
@@ -92,7 +93,7 @@ border-radius: 12px;
     background-color: #FFFFFF;
     font-size: 20px;
   line-height:2.0em;
-  position: sticky;
+  width: fit-content;
 
 }
 /* ebb: To make images scale, set a <figure> element as a container (like 
@@ -109,7 +110,7 @@ object-fit:contain;
 border:none;
 border-radius: 15px;
 background-color: transparent;
-margin-top: 10%;
+margin-top: 5%;
 }
 
 
@@ -234,6 +235,7 @@ ul#sidelist {
     border: none;
   line-height:2.0em;
   font-family: 'Acme';
+  width: fit-content;
 }
 
 ul {
@@ -288,24 +290,7 @@ margin-right: auto;
 margin:initial;
 flex-wrap: wrap;
  }*/
- 
- footer{
-     display: block;
-     margin-top: 10px;
-     bottom: 10px;
-     position: sticky;
- }
- 
-#cc1 {
-text-align: center;
-     margin-left: auto;
-     margin-right: auto;
-     display: block;
-     position: relative;
-          border: none;
-          background-color: transparent;
-          border-radius: 0px;
- }
+
  
  /* 2022-02-20 ebb: This is a new grid for setting up the gallery to have equally sized columns and rows */
 section.gridgallery { 
@@ -372,3 +357,21 @@ figure > .overlay {
 figure:hover .overlay {
   opacity: 1;
 }
+
+footer{
+     display: block;
+     margin-top: 5%;
+     bottom: 1%;
+     position: sticky;
+ }
+ 
+#cc1 {
+text-align: center;
+     margin-left: auto;
+     margin-right: auto;
+     display: block;
+     position: relative;
+          border: none;
+          background-color: transparent;
+          border-radius: 0%;
+ }
