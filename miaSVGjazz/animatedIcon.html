@@ -13,6 +13,7 @@
                 <li>GIS</li>
                 <li>XSLT / Transformations</li>
                 <li><a href="web/">HTML and Website Work</a></li>
+                <li><a href="animatedIcon.html">SVG Tricks</a></li>
             </ul>
         </nav>
         <h1>Bring your SVG to Life - SVG/CSS Transitions Tutorial</h1>
@@ -261,16 +262,55 @@
            
             <code>
             &lt;svg width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
-                &lt;circle id="smolcirc" cx="22.5" cy="22.5" r="22.5"/>
-                &lt;circle id="exlCirc" cx="89.5" cy="89.5" r="25.5"/>   
+                 &lt;circle id="yellowCircle" cx="57.5" cy="57.5" r="50" fill="yellow"/>  
+                 &lt;circle id="demoCyanCirc" cx="22.5" cy="22.5" r="22.5" fill="aqua"/>
+                 &lt;circle id="demoBlueCirc" cx="89.5" cy="89.5" r="25.5" fill="navyblue"/>  
+                 &lt;circle id="pinkCircle" cx="25.5" cy="89.5" r="20" fill="pink"/>
+                &lt;circle id="purpleCircle" cx="91.5" cy="23.5" r="20" fill="purple"/>
            &lt;/svg>
             </code>
            
        </pre>
        <p>Which should render in your browser looking something like this:</p>
        <svg width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle id="smolcirc" cx="22.5" cy="22.5" r="22.5"/>
-                <circle id="exlCirc" cx="89.5" cy="89.5" r="25.5"/>   
+        <circle id="yellowCircle" cx="57.5" cy="57.5" r="50" fill="yellow"/>        
+        <circle id="demoCyanCirc" cx="22.5" cy="22.5" r="22.5" fill="aqua"/>
+                <circle id="demoBlueCirc" cx="89.5" cy="89.5" r="25.5" fill="blue"/>  
+                <circle id="pinkCircle" cx="25.5" cy="89.5" r="20" fill="pink"/>
+            <circle id="purpleCircle" cx="91.5" cy="23.5" r="20" fill="purple"/>
+                
        </svg>
+
+       <h1>Step 2: CSS Manipulations and Variables</h1>
+       <p>In your CSS, create a style rule for the <code>:root</code> pseudo-class of your HTML document. The <code>:root</code> applies to the root of your HTML document, and since all style expressions written here will apply to the entire document, it is a good place to store your CSS Variables.</p>
+       <p>We will want to create variables for all of the SVG object properties you will use in your SVG elements to make it easier to remember and reference them as you animate.</p>
+       <p>Let's create variables for the colors of our shapes:</p>
+       <pre>
+           <code>
+               :root{
+                   --yellow: #FF0;
+                   --aqua: #0FF;
+                   --blue: #00F;
+                   --pink: #ffc0cb;
+                   --purple: #800080;
+               }
+           </code>
+       </pre>
+       <p>
+           Now, you'll want to create a CSS rule that applies a smooth transition over every element within your SVG that you want to animate. You don't have to animate every singe shape in your SVG (in fact, we encourage you not to! Simplicity and subtleness are key!) For this example though, we will be animating all five of our circles.
+       </p>
+       <p>To do this, we need to utilize the <code>transition</code> CSS property:</p>
+       <pre>
+           <code>
+               #yellowCircle,
+               #demoCyanCirc,
+               #demoBlueCirc,
+               #pinkCircle,
+               #purpleCircle{
+                   transition: all 1s ease;
+               }
+           </code>
+       </pre>
+       <p>We encourage you to mess with the values of the <code>transition</code> property to tweak how your SVG transitions between animation points to your liking! But we won't see any of the animation until we apply <code>:hover</code> style rules in our CSS.</p>
 </body>
 </html>
