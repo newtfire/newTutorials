@@ -76,6 +76,7 @@ color: black;
  * and the second element (main) with the larger fr width. . */
 div.grid {
 display:grid;
+justify-content:start; align-items: start;;
 grid-auto-flow:column;
 grid-template-columns:.3fr .7fr;
 grid-column-gap: 2vw;
@@ -86,14 +87,15 @@ grid-column-gap: 2vw;
 /* SIDEBAR STYLING: This can be its own grid container, set now in rows to control the relative proportion of the <figure> at the top to the <ul> beneath it.*/
 div.sidebar {
 position: sticky;
-display:grid;
+  display:grid;
+  top: 0;
 grid-auto-flow:row;
 grid-template-rows:.1fr .9fr;
 border-radius: 12px;
     background-color: #FFFFFF;
     font-size: 20px;
   line-height:2.0em;
-  width: fit-content;
+    width: fit-content;
 
 }
 /* ebb: To make images scale, set a <figure> element as a container (like 
@@ -106,7 +108,7 @@ figure.pfp {
  * with the first two properties in the CSS below: object-fit:contain; and width:100%. You can make the width anything you like. Typically we fill the picture frame <figure>, and make the <figure> a certain width in proportion to *its* container, the sidebar.    */
 img#pfp {
 object-fit:contain;
- width:100%;
+ width:70%;
 border:none;
 border-radius: 15px;
 background-color: transparent;
@@ -231,18 +233,17 @@ font-family: 'Open Sans', sans-serif;
 
 ul#sidelist {
     background-color: transparent;
-    font-size: 20px;
+    font-size: 18px;
     border: none;
   line-height:2.0em;
   font-family: 'Acme';
-  width: fit-content;
 }
 
 ul {
         border: 12px solid white;
     background-color: white;
     border-radius: 12px;
-    width: fit-content;
+    /*  width: fit-content;*/
     font-size: 18px;
   line-height: 2.0em;
   text-align: left;
@@ -312,7 +313,7 @@ position:relative;
 }
 
 section.gridgallery > figure > img.thumbnail {
-    border: 1vh solid white;
+    border: 1vmin solid white;
     background-color: white;
     border-radius: 7%;
     vertical-align: bottom;
@@ -324,11 +325,9 @@ section.gridgallery > figure > img.thumbnail {
 
  
 img.thumbnail {
-    border: 1vh solid white;
-    background-color: white;
-    border-radius: 7%;
-    vertical-align: bottom;
     margin: 1vmin;
+    max-height: 200px;
+    max-width: 200px;
 
 }
 
@@ -337,8 +336,9 @@ figure > .overlay {
    * together with top: and  left: properties. I'm anchoring this with a position:relative
    * on the parent figure element. 
    * See https://webdesign.tutsplus.com/tutorials/the-quirks-of-css-grid-and-absolute-positioning--cms-31437  */
-  top:-5%;
-  left:50%;
+  top:60%;
+  left:0%;
+  height: 30%;
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.5); /* Black see-through */
   color: #f1f1f1; 
@@ -359,7 +359,7 @@ figure:hover .overlay {
 }
 
 footer{
-     display: block;
+     display: grid;
      margin-top: 5%;
      bottom: 1%;
      position: sticky;
@@ -369,9 +369,16 @@ footer{
 text-align: center;
      margin-left: auto;
      margin-right: auto;
-     display: block;
+     display: grid;
      position: relative;
           border: none;
           background-color: transparent;
           border-radius: 0%;
  }
+ 
+ img{
+display:block;
+border: 1vmin solid white;
+    background-color: white;
+    border-radius: 7%;
+}
