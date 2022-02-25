@@ -32,6 +32,7 @@ Since the size of the line is 100, and 100 is not divisible by 8, we can see tha
 Output:
 
 ![stroke-dasharray="15 8"](images/dasharray_15_8.svg) 
+
 If stroke-dasharray have two values, then the first one(15) is for size of dashes, while the second one(8) is for that of gaps. 
 
 Still, the part beyond the size of the line will be hidden.
