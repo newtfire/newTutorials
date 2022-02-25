@@ -69,9 +69,9 @@ Then, try to increase the width of the stroke. When the width of the stroke is l
 
 ![A slice](images/slice.svg)
 
-The dark grey part in the image above is the stroke with stroke-width 3, while the black part is with stroke-width 40. We can see that stroke-width expands both inside and outside of the stroke.
+The dark grey part in the image above is the stroke with stroke-width 3, while the black part is with stroke-width 40. 
 
-This is why we need the stroke-width with twice the radius to get a slice.
+We can see that stroke-width expands both inside and outside of the stroke. This is why we need the stroke-width with twice the radius to get a slice.
 
 ### How to control the percentage of a slice?
 We need two formulas:
@@ -207,5 +207,5 @@ Add this code to xslt element, so that we can work with math:pi().
         stroke-dasharray="{$circumf * $techPercent, $circumf}" stroke="pink"/>
 ```
 
-[Link to the sample xslt file](pieChart.xsl)
+[Link to the sample xslt file](KewG_pieChart.xsl)
 
