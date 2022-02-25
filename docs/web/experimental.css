@@ -78,8 +78,8 @@ div.grid {
 display:grid;
 justify-content:start; align-items: start;;
 grid-auto-flow:column;
-grid-template-columns:.3fr .7fr;
-grid-column-gap: 2vw;
+grid-template-columns:.21fr .7fr;
+grid-column-gap: 1vw;
 /* grid-column-gap and grid-row-gap provide a little space in between
  * cells of the grid. */
 }
@@ -90,7 +90,7 @@ position: sticky;
   display:grid;
   top: 0;
 grid-auto-flow:row;
-grid-template-rows:.1fr .9fr;
+grid-template-rows:.2fr .2fr;
 border-radius: 12px;
     background-color: #FFFFFF;
     font-size: 20px;
@@ -101,8 +101,10 @@ border-radius: 12px;
 /* ebb: To make images scale, set a <figure> element as a container (like 
  * a picture frame) around them. Control the width of the figure within its container element using a proportion. (I typically use a percentage here.)  */
 figure.pfp {
- width:90%;
+padding-left: 10%;
+ width: fit-content;
  margin:auto;
+ object-fit: contain;
 }
 /*  The <img> element is now nested inside a <figure>. We make it scale
  * with the first two properties in the CSS below: object-fit:contain; and width:100%. You can make the width anything you like. Typically we fill the picture frame <figure>, and make the <figure> a certain width in proportion to *its* container, the sidebar.    */
@@ -233,7 +235,7 @@ font-family: 'Open Sans', sans-serif;
 
 ul#sidelist {
     background-color: transparent;
-    font-size: 18px;
+    font-size: 20px;
     border: none;
   line-height:2.0em;
   font-family: 'Acme';
@@ -359,9 +361,9 @@ figure:hover .overlay {
 }
 
 footer{
-     display: grid;
-     margin-top: 5%;
-     bottom: 1%;
+     display: block;
+     margin-top: 2%;
+     bottom: 2%;
      position: sticky;
  }
  
@@ -369,7 +371,7 @@ footer{
 text-align: center;
      margin-left: auto;
      margin-right: auto;
-     display: grid;
+     display: block;
      position: relative;
           border: none;
           background-color: transparent;
