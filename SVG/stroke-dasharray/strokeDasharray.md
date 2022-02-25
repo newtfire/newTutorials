@@ -172,7 +172,7 @@ In the final step, the red slice covers the blue one. Blue slice is 10% now, whi
 
 ### In XSLT
 
-In XSLT, we can use math functions, so we are allow to throw away our calculator.
+In XSLT, we can use math functions, so we are allowed to throw away our calculator.
 ```xml
 xmlns:math="http://www.w3.org/2005/xpath-functions/math"
     exclude-result-prefixes="xs math"
