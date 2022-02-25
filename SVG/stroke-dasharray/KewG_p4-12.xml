@@ -1,48 +1,6 @@
 
-<?xml-model href="../KewG_relax_ng.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="KewG_relax_ng.rnc" type="application/relax-ng-compact-syntax"?>
 <xml>
-    <metadata>
-        <source>
-            <title>Kew Gardens</title>
-            <author>Virginia Woolf</author>
-            <illustrator>Vanessa Bell</illustrator>
-            <publisher>Hogarth Press</publisher>
-            <pubDate>1927</pubDate>
-            <format>Book</format>
-            <archive>British Library</archive>
-            <sourceLink/>
-        </source>
-        <edition>
-            <editor>avr</editor>
-            <consultant>ebb</consultant>
-            <review>edm</review>
-            <place>Penn State Behrend</place>
-            <date>2021</date>
-            <license>Public Domain</license>
-        </edition>
-    </metadata>
-
-
-    <page n="1" facs="../docs/img/page1.jpg">
-        <description resp="#edm"> Burnt maroon cover with a tan key-shape center with yellow
-            squiggles with burnt maroon, and light bluish-grey speckling. The title font and
-            information is the same thick typefaced font, almost like "Impact". </description>
-        <line n="1"/>KEW GARDENS<line n="2"/>BY<line n="3"/>VIRGINIA WOOLF<line n="4"
-            />DECORATIONS<line n="5"/>BY<line n="6"/>VANESSA BELL<line n="7"/>THE<line n="8"
-        />HOGARTH PRESS</page>
-
-    <page n="2" facs="../docs/img/page2.jpg">
-        <description resp="#edm"> Off-white page with maroon dotting down the left-hand side. The
-            writing on the page was the same burnt maroon as the cover. The font is in a more
-            handwritten, storybook font. </description>
-        <line n="1"/>Kew Gardens <line n="2"/>by <line n="3"/>Virginia <line n="4"/>Woolf <line
-            n="5"/>decorated by Vanessa Bell <line n="6"/>published by the Hogarth Press </page>
-
-    <page n="3" facs="../docs/img/page3.jpg">
-        <description resp="#edm"> Plain off-white page with text centered and justified. </description>
-        <line n="1"/>This edition, published in 1927, <line n="2"/>is limited to 500 numbered
-        copies, <line n="3"/>of which this is number 150 </page>
-
     <page n="4" facs="../docs/img/page4.jpg">
         <description resp="#edm"> Kew Gardens is written at the top in a handwritten, storybook font.
             it is the top part of the border decoration that takes up the margins as well as the

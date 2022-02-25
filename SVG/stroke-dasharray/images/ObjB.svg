@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 0 200 100" style="background-color:lightgrey">
+    <g transform="translate(0,0)" fill="none">
+        <!-- 
+            radius = 20        
+            Slice:
+               A% + B% + C% = 100%
+               2*pi*20*100% = 125.664 
+            Whole:
+               2*pi*20 = 125.664
+        -->
+        <circle cx="50" cy="50" r="20" stroke="green" stroke-width="40" 
+            fill="none" stroke-dasharray="125.664, 125.664"/>
+        
+        <!-- 
+            radius = 20
+            Slice:
+               A% + B% = 40%
+               2*pi*20*40% = 50.265 
+            Whole:
+               2*pi*20 = 125.664
+        -->
+        <circle cx="50" cy="50" r="20" stroke="darkblue" stroke-width="40" 
+            fill="none" stroke-dasharray="50.265, 125.664"/>
+    </g>
+</svg>

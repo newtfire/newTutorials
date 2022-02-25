@@ -7,15 +7,14 @@
     
     <xsl:output method="xml" indent="yes"/> 
     
-    <xsl:variable name="KG" select="collection('xml/?select=*.xml')"/>
-    <xsl:variable name="total" select="$KG//page/*[not(self::line)][not(self::description)]! name() => count()"/>
+    <xsl:variable name="total" select="//page/*[not(self::line)][not(self::description)]! name() => count()"/>
     
     <xsl:variable name="radius" select="200"/>
     
-    <xsl:variable name="color" select="$KG//page/color => count()"/>
-    <xsl:variable name="nature" select="$KG//page/nature => count()"/>
-    <xsl:variable name="shape" select="$KG//page/shape => count()"/>
-    <xsl:variable name="tech" select="$KG//page/tech => count()"/>
+    <xsl:variable name="color" select="//color => count()"/>
+    <xsl:variable name="nature" select="//nature => count()"/>
+    <xsl:variable name="shape" select="//shape => count()"/>
+    <xsl:variable name="tech" select="//tech => count()"/>
     
     <xsl:variable name="colorPercent" select="$color div $total"/>
     <xsl:variable name="naturePercent" select="$nature div $total"/>
@@ -24,7 +23,7 @@
     
 
     <xsl:template match="/">
-        <svg viewBox="-20 -10 1000 1000">
+        <svg viewBox="-10 -10 1000 1000">
             <g transform="translate(500, 500)">
                 <xsl:variable name="circumf" select="2 * math:pi() * $radius"/>
                 <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$circumf * ($techPercent  + $colorPercent  +  $naturePercent  + $shapePercent), $circumf}" stroke="palegreen"/>
@@ -39,16 +38,20 @@
             
             
             <g transform="translate(500, 500)" fill="black" font-weight="bold" font-size="30">
-                <text x="{25}" y="{240}">
+                <text x="{-20}" y="{240}">
+                 color: 
                 <xsl:value-of select='format-number($colorPercent*100,"#.00")'/>%
                 </text>
-                <text x="{-150}" y="{-160}">
+                <text x="{-180}" y="{-140}">
+                    nature: 
                     <xsl:value-of select='format-number($naturePercent*100,"#.00")'/>%
                 </text>
-                <text x="{210}" y="{-20}">
+                <text x="{180}" y="{-40}">
+                    shape: 
                     <xsl:value-of select='format-number($shapePercent*100,"#.00")'/>%
                 </text>
-                <text x="{200}" y="{80}">
+                <text x="{190}" y="{60}">
+                    tech: 
                     <xsl:value-of select='format-number($techPercent*100,"#.00")'/>%
                 </text>
             </g>
