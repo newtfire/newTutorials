@@ -61,9 +61,7 @@ Output:
 
 ![](images/large_gap.svg) 
 
-We can only get one dash, because the size of gaps is so large that other dashes are hidden.
-In fact, we do not need an extremely large sized gap. 
-When the size of gaps is greater or equals to the circumference of the circle, any other dash can be hidden.
+We can only get one dash, because the size of gaps is so large that other dashes are hidden. In fact, we do not need an extremely large sized gap. When the size of gaps is greater or equals to the circumference of the circle, any other dash can be hidden.
 
 Then, try to increase the width of the stroke. When the width of the stroke is large enough, like twice the radius, we can get a slice. 
 
@@ -208,4 +206,8 @@ Add this code to xslt element, so that we can work with math:pi().
 ```
 
 [Link to the sample xslt file](KewG_pieChart.xsl)
+
+
+
+
 
