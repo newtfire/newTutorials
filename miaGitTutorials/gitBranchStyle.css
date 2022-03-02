@@ -1,7 +1,20 @@
-body {
+
+
+html, body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
     font-size: 1em;
     line-height: 1.6;
+}
+
+div, p{
+    font-size: 1.05em;
+}
+
+code{
+    background-color: rgb(199, 199, 199);
+    border-radius: 5px;
+    padding-left:3px;
+    padding-right:3px;
 }
 
 .task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
@@ -99,6 +112,14 @@ ul#gitChecklist li{
     padding-top:1vw;
     padding-bottom: 1vw;
     
+}
+
+div#demoSCwrap{
+    display:flex;
+    justify-content: center;
+}
+img#demoScreenshot{
+    width: 32vw;
 }
 
 

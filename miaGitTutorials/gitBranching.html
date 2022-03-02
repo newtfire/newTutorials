@@ -152,12 +152,28 @@
                     <li><h4><b>Step 2:</b></h4> OPEN your git bash or command line terminal and use <code>git branch</code> to see which branch you are currently on. If you're not on your own development branch, use <code>git checkout YourBranchName</code> to switch to your development branch.</li>
                     <li><h4><b>Step 3:</b></h4> <p>
                         Use <code>git status</code> to see if you have any changes or updates you've made to your project code that has not been pushed to the remote repo before you begin working.
-                        It's always a good idea to keep your individual commits GRANULAR - in other words, every time you complete a small chunk/complete unit of development, you should push it to your remote repo as it's own commit.
+                        It's always a good idea to keep your individual commits <b>GRANULAR</b> - in other words, every time you complete a small chunk/complete unit of development, you should push it to your remote repo as it's own commit.
                     </p><p>
-                        For example, if you've made changes to your HTML/CSS, COMMIT THOSE CHANGES to your branch BEFORE going and working on some other aspect of your code. DO NOT make huge changes to a whole bunch of your project files and push them up to the repo in one gigantic, messy commit.
+                        For example, if you've made changes to your HTML/CSS, COMMIT THOSE CHANGES to your branch BEFORE going and working on some other aspect of your code, like data processing or data visualization. DO NOT make huge changes to a whole bunch of your project files and push them up to the repo in one gigantic, messy commit.
                         This method of working will ensure that your development work on the repo is trackable, and it makes it much easier for your teammates to see which commit needs to be fixed when you create a Pull Request later on.
                     </p></li>
-                    <li><h4><b>Step 4:</b></h4></li>
+                    <li><h4><b>Step 4 - When you're ready to commit your code updates to your branch:</b></h4>
+                    <p>When you've got a good bit of code complete, and you're ready to create a new commit to your development branch - follow the normal process of adding, commiting, and pushing.</p>
+                    <p><b>WARNING:</b> ALWAYS use <code>git branch</code> to check and make sure you're on the correct branch BEFORE pushing a new commit!!</p>
+                    <p>Once you've ensured that you're on your correct development branch, enter these commands in your Git Bash (Windows) or your Terminal (Mac) in the following sequence:</p>
+                    <ul>
+                        <li><code>git add .</code></li>
+                        <li><code>git commit -m "Your descriptive commit message here, briefly summarizing the changes you made in this commit."</code></li>
+                        <li><code>git push</code></li>
+                        <li>NOTE: if this is the first commit you've made to your branch, git will give you a message that looks like this:</li>
+                        <div id="demoSCwrap"><img id="demoScreenshot" src="images/screenshots/gitPush-setUpstreamOriginDemo.jpg" alt="set origin upstream git message screenshot"/></div>
+                        <li>Here, git is simply telling you that you must set the upstream origin for this branch. It gives you the exact command you must enter, which is highlighted in the demo screenshot.
+                            Use your cursor to highlight that message in your git terminal, Right-click it, and select Copy. (You cannot use hotkeys  like Ctrl+C or Ctrl+P to copy and paste in the git terminal.)
+                        </li>
+                        <li>Paste the copied command by right-clicking and selecting "Paste." Be sure you copied the entire command exactly as it is displayed in the error message.</li>
+                        <li>That's it! Congrats on your branch commit!</li>
+                    </ul>
+                    </li>
                 </ul>
         </div>
         </div>
