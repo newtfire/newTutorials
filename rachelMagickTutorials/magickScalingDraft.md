@@ -5,11 +5,11 @@ Thumbnails are essential when browsing online; without them, every image would b
 
 A way to generate thumbnails without complicating a website's code is through a program called *Image Magick.* By installing the program, it connects with the *Git Bash Shell* to generate thumbnails for websites that do not interfere with the properties of the original files.
 
-A computer's build and operating system will determine which version of the program is best. *Image Magick's* download links can be found [here.](https://imagemagick.org/script/download.php)
+A computer's build and operating system will determine which version of the program is best. The creators [dedicated a page](https://imagemagick.org/script/download.php) to download links for *Windows*, *Macintosh*, *Linux* and other operating systems with support for 32-bit and 64-bit processors.
 
 ## Intro to *Image Magick*
 
-*Image Magick* is an independent program, but is compatible with the Git Bash shell. Both inside and outside of a repository, it can generate thumbnails, rename images, change DPI, and convert file types among others. *Smashing Magazine* wrote an article discussing several of *Image Magick's* abilities, and the program's website lists all its abilities in addition to links for their tutorials. The link for it can be found [here.](https://imagemagick.org/script/command-line-options.php)
+*Image Magick* is an independent program, but is compatible with the Git Bash shell. Both inside and outside of a repository, it can generate thumbnails, rename images, change DPI, and convert file types among others. [*Smashing Magazine's*](https://imagemagick.org/script/command-line-options.php) article discusses several capabilities of the program while providing sample code, side-by-side comparisons, and demonstrations for other techniques that are not discussed here. 
 
 ## Magick convert vs. Magick mogrify
 
@@ -32,7 +32,7 @@ magick mogrify -thumbnail 200x200 -quality 72
 
 By this logic, the images will have the same properties as the example for magick convert, but they will not have an output source or will be output in the same folder as their source. If either of the following occurs, refer to the section below.
 
-##Magick Output
+## Magick Output
 
 Output for magick convert and mogrify is essential. A folder should be dedicated to thumbnails if one doesn't exist already. if the output folder is in the same directory as the images, the code can be formatted like this:
 
@@ -64,5 +64,10 @@ If a file has an output of ```.png```, only files with the lowercase filetype wi
 
 Most of the sample code for this tutorial uses the ```-thumbnail``` property, but it is not the only property for *Image Magick*; in fact, there are several. Thumbnail properties will attempt to match the width and height of the sequence while keeping the image's aspect ratio. This means that images will experience less squashing and stretching during processing. 
 
-By contrast, the ```resize``` property will have the thumbnail generating the exact proportions at the cost of squashing and stretching the image dimensions. It's better for exact results, but less intuitive.
+The ```-resize``` property is similar to the ```-thumbnail``` property by keeping the image's aspect ratio. What separates them, however, is that images generated with the ```-thumbnail``` property experience less distortion than pictures generated with the ```-resize``` property. 
 
+![original image](https://newtfire.github.io/newTutorials/web/images/unravelPlaceholder.png)
+
+![Generated with -thumbnail](https://newtfire.github.io/newTutorials/web/images/thumbnail.png)
+
+![Generated with -resize](https://newtfire.github.io/newTutorials/web/images/resize.png)
