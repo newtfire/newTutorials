@@ -197,10 +197,25 @@
                 <p>You should always keep your branch up to date with all of the development code committed to main so that you do
                     not run into nasty merge conflicts and development lags/bugs when you eventually merge your branch into main
                     later on.</p>
-                <p>To do this, you must use <code>git checkout myBranchName</code> to ensure you are on your working branch.
-                    Then, use <code>git merge main</code> to incorporate the new commits from the main branch into your branch's
-                    commit history. <strong>Note: this is not the same thing as merging your branch into the main branch.</strong>
-                </p>
+                <p>To do this, you must complete the following sequence of Git Bash or Terminal commands:</p>
+                <ul>
+                    <li>enter <code>git checkout main</code> to switch to the main branch.</li>
+                    <li>Then enter <code>git pull</code> to pull in any remote changes to main to your local main branch.</li>
+                    <li>Use <code>git checkout myBranchName</code> to switch back to your development branch.</li>
+                    <li>Now, enter <code>git merge main</code> to incorporate the new commits from the main branch into your branch's
+                        commit history. <strong>Note: this is not the same thing as merging your branch into the main branch.</strong></li>
+                    <li><strong>NOTICE:</strong> you are now probably in the VIM editor. Don't panic. Follow the following sequence to get out of the VIM editor and complete your merge:
+                    <ul>
+                        <li>Enter <code>i</code> (i for insert)</li>
+                        <li>Write your merge message. (you could also write nothing - VIM sometimes writes your merge message for you. In that case, just hit Enter.)</li>
+                        <li>Press “esc” (escape)</li>
+                        <li>Write <code>:wq</code> (write & quit)</li>
+                        <li>Then press enter.</li>
+                    </ul>
+                    </li>
+                    <li>Now that you've synced your local dev branch with the new commits from main, you must now update your local branch. So, just do a simple <code>git pull</code>.</li>
+                </ul>
+                <p>Following this exact sequence in your command line prompt should allow you to update your development branch with the up-to-date main branch commits. Check your repo on Github.com to see that your development branch no longer has the "[x] commits behind main" message.</p>
                 <p>Illustration from <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">Atlassian</a>:</p>
                 <div class="imgWrap"><img id="merging"
                         src="images\gitMergingMainIntoBranch.jpg"
