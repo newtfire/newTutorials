@@ -70,10 +70,10 @@
         <h1 id="why-we-use-git-branches-explained-with-twinkies">Why We Use Git Branches, Explained with Twinkies</h1>
         <div class="slideWrap">
             <img class="twinkie"
-                src="images\miaTutorialImages\twinkieSlides\twinkie1.png"
+                src="images/miaTutorialImages/twinkieSlides/twinkie1.png"
                 alt="twinkie pg 1">
             <img class="twinkie"
-                src="images\miaTutorialImages\twinkieSlides\twinkie2.png"
+                src="images/miaTutorialImages/twinkieSlides/twinkie2.png"
                 alt="twinkie pg 2">
         </div>
         <div id="commandListWrap">
@@ -152,83 +152,121 @@
                     <li><h4><b>Step 2:</b></h4> OPEN your git bash or command line terminal and use <code>git branch</code> to see which branch you are currently on. If you're not on your own development branch, use <code>git checkout YourBranchName</code> to switch to your development branch.</li>
                     <li><h4><b>Step 3:</b></h4> <p>
                         Use <code>git status</code> to see if you have any changes or updates you've made to your project code that has not been pushed to the remote repo before you begin working.
-                        It's always a good idea to keep your individual commits GRANULAR - in other words, every time you complete a small chunk/complete unit of development, you should push it to your remote repo as it's own commit.
+                        It's always a good idea to keep your individual commits <b>GRANULAR</b> - in other words, every time you complete a small chunk/complete unit of development, you should push it to your remote repo as it's own commit.
                     </p><p>
-                        For example, if you've made changes to your HTML/CSS, COMMIT THOSE CHANGES to your branch BEFORE going and working on some other aspect of your code. DO NOT make huge changes to a whole bunch of your project files and push them up to the repo in one gigantic, messy commit.
+                        For example, if you've made changes to your HTML/CSS, COMMIT THOSE CHANGES to your branch BEFORE going and working on some other aspect of your code, like data processing or data visualization. DO NOT make huge changes to a whole bunch of your project files and push them up to the repo in one gigantic, messy commit.
                         This method of working will ensure that your development work on the repo is trackable, and it makes it much easier for your teammates to see which commit needs to be fixed when you create a Pull Request later on.
                     </p></li>
-                    <li><h4><b>Step 4:</b></h4></li>
+                    <li><h4><b>Step 4 - When you're ready to commit your code updates to your branch:</b></h4>
+                    <p>When you've got a good bit of code complete, and you're ready to create a new commit to your development branch - follow the normal process of adding, commiting, and pushing.</p>
+                    <p><b>WARNING:</b> ALWAYS use <code>git branch</code> to check and make sure you're on the correct branch BEFORE pushing a new commit!!</p>
+                    <p>Once you've ensured that you're on your correct development branch, enter these commands in your Git Bash (Windows) or your Terminal (Mac) in the following sequence:</p>
+                    <ul>
+                        <li><code>git add .</code></li>
+                        <li><code>git commit -m "Your descriptive commit message here, briefly summarizing the changes you made in this commit."</code></li>
+                        <li><code>git push</code></li>
+                        <li>NOTE: if this is the first commit you've made to your branch, git will give you a message that looks like this:</li>
+                        <div id="demoSCwrap"><img id="demoScreenshot" src="images/miaTutorialImages/screenshots/gitPush-setUpstreamOriginDemo.jpg" alt="set origin upstream git message screenshot"/></div>
+                        <li>Here, git is simply telling you that you must set the upstream origin for this branch. It gives you the exact command you must enter, which is highlighted in the demo screenshot.
+                            Use your cursor to highlight that message in your git terminal, Right-click it, and select Copy. (You cannot use hotkeys  like Ctrl+C or Ctrl+P to copy and paste in the git terminal.)
+                        </li>
+                        <li>Paste the copied command by right-clicking and selecting "Paste." Be sure you copied the entire command exactly as it is displayed in the error message.</li>
+                        <li>That's it! Congrats on your branch commit!</li>
+                    </ul>
+                    </li>
                 </ul>
         </div>
         </div>
-
-        <div>
-            <h2 id="keeping-your-branch-up-to-date-with-main-branch">Keeping your branch Up-To-Date with main branch</h2>
-            <p>Your git terminal will tell you when your working branch is a couple commits behind main.</p>
-            <p>You should always keep your branch up to date with all of the development code committed to main so that you do
-                not run into nasty merge conflicts and development lags/bugs when you eventually merge your branch into main
-                later on.</p>
-            <p>To do this, you must use <code>git checkout myBranchName</code> to ensure you are on your working branch.
-                Then, use <code>git merge main</code> to incorporate the new commits from the main branch into your branch's
-                commit history. <strong>Note: this is not the same thing as merging your branch into the main branch.</strong>
-            </p>
-            <p>Illustration from <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">Atlassian</a>:</p>
-            <div class="imgWrap"><img id="merging"
-                    src="images/miaTutorialImages/gitMergingMainIntoBranch.jpg"
-                    alt="Git Merge Main Into Branch"></div>
-        </div>
-        <div>
-            <h2 id="pull-requests">Pull Requests</h2>
-            <p><em>coming soon</em></p>
-        </div>
+<section class="demoSections">
+    
+            <div>
+                <h1 id="keeping-your-branch-up-to-date-with-main-branch">Keeping your branch Up-To-Date with main branch</h1>
+                <p>Your git terminal will tell you when your working branch is a couple commits behind main.</p>
+                <p>You should always keep your branch up to date with all of the development code committed to main so that you do
+                    not run into nasty merge conflicts and development lags/bugs when you eventually merge your branch into main
+                    later on.</p>
+                <p>To do this, you must use <code>git checkout myBranchName</code> to ensure you are on your working branch.
+                    Then, use <code>git merge main</code> to incorporate the new commits from the main branch into your branch's
+                    commit history. <strong>Note: this is not the same thing as merging your branch into the main branch.</strong>
+                </p>
+                <p>Illustration from <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">Atlassian</a></p>
+                <div class="imgWrap"><img id="merging"
+                        src="images/miaTutorialImages/gitMergingMainIntoBranch.jpg"
+                        alt="Git Merge Main Into Branch">
+                       
+                    </div>
+            </div>
+            <div>
+                <h1 id="pull-requests">Pull Requests</h1>
+                
+                <p>When you've completed all of the development work for your branch with your last commit, and you're ready to pull the code from your branch into the main project production branch,
+                     you must create a Pull Request.</p>
+                     <p>A Pull Request is exactly what it sounds like: a request to your team to check that you can pull your development branch into the main branch. </p>
+                     <p>Here's what happens in a typical Pull Request:</p>
+<ul>
+    <li>The developer creates a pull request via Github.</li>
+    
+    <li>The rest of the team reviews the code, discusses it, and alters it.</li>
+    
+    <li>
+        Once the Pull Request is fully reviewed and approved by all team members, the developer merges their development branch into the main branch through GitHub. Be sure to check the option to "Delete branch upon merge" to destroy the development branch once it's merged.
+        
+    </li>
+</ul>
+<div id="PRimgWrap"><img id="PRflow" src="images/miaTutorialImages/pull-requests.png" alt="pull request flow"/></div>
+</div>
+</section>
         <section class="QA">
             <h1 id="common-questions-and-answers">Common Questions and Answers</h1>
             <div>
                 <h2 id="what-is-an-upstream">What is an upstream?</h2>
                 <p>(from <a href="https://stackoverflow.com/a/37770744">Slack Overflow</a>)</p>
-                <p>An upstream is simply another branch name, usually a remote-tracking branch, associated with a (regular, local)
-                    branch.</p>
-                <p>Every branch has the option of having one (1) upstream set. That is, every branch either has an upstream, or does
-                    not have an upstream. No branch can have more than one upstream.</p>
-                <p>The upstream should, but does not have to be, a valid branch (whether remote-tracking like <code>origin/B</code>
-                    or local like <code>main</code>). That is, if the current branch B has upstream U, git rev-parse U should work.
-                    If it does not work—if it complains that U does not exist—then most of Git acts as though the upstream is not
-                    set at all. A few commands, like git branch -vv, will show the upstream setting but mark it as &quot;gone&quot;.
-                </p>
-                <h3 id="what-good-is-an-upstream">What good is an upstream?</h3>
-                <p>If your push.default is set to simple or upstream, the upstream setting will make git push, used with no
-                    additional arguments, just work.</p>
-                <p>That's it—that's all it does for git push. But that's fairly significant, since git push is one of the places
-                    where a simple typo causes major headaches.</p>
-                <p>If your push.default is set to nothing, matching, or current, setting an upstream does nothing at all for git
-                    push.</p>
-                <p>(All of this assumes your Git version is at least 2.0.)
-                    The upstream affects git fetch</p>
-                <p>If you run git fetch with no additional arguments, Git figures out which remote to fetch from by consulting the
-                    current branch's upstream. If the upstream is a remote-tracking branch, Git fetches from that remote. (If the
-                    upstream is not set or is a local branch, Git tries fetching origin.)</p>
-                <h3 id="the-upstream-affects-git-merge-and-git-rebase-too">The upstream affects git merge and git rebase too</h3>
-                <p>If you run git merge or git rebase with no additional arguments, Git uses the current branch's upstream. So it
-                    shortens the use of these two commands.</p>
-                <h3 id="the-upstream-affects-git-pull">The upstream affects git pull</h3>
-                <p>You should never use git pull anyway, but if you do, git pull uses the upstream setting to figure out which
-                    remote to fetch from, and then which branch to merge or rebase with. That is, git pull does the same thing as
-                    git fetch—because it actually runs git fetch—and then does the same thing as git merge or git rebase, because it
-                    actually runs git merge or git rebase.</p>
-                <p>(You should usually just do these two steps manually, at least until you know Git well enough that when either
-                    step fails, which they will eventually, you recognize what went wrong and know what to do about it.)</p>
-                <h3 id="the-upstream-affects-git-status">The upstream affects git status</h3>
-                <p>This may actually be the most important. Once you have an upstream set, git status can report the difference
-                    between your current branch and its upstream, in terms of commits.</p>
-                <p>If, as is the normal case, you are on branch B with its upstream set to origin/B, and you run git status, you
-                    will immediately see whether you have commits you can push, and/or commits you can merge or rebase onto.</p>
-                <p>This is because git status runs:</p>
-                <p><code>git rev-list --count @{u}..HEAD</code>: how many commits do you have on <code>B</code> that are not on
-                    <code>origin/B</code>?
-                    <code>git rev-list --count HEAD..@{u}</code>: how many commits do you have on <code>origin/B</code> that are not
-                    on <code>B</code>?
-                </p>
-                <p>Setting an upstream gives you all of these things.</p>
+                <div class="answer">
+                    
+                    <p>An upstream is simply another branch name, usually a remote-tracking branch, associated with a (regular, local)
+                        branch.</p>
+                    <p>Every branch has the option of having one (1) upstream set. That is, every branch either has an upstream, or does
+                        not have an upstream. No branch can have more than one upstream.</p>
+                    <p>The upstream should, but does not have to be, a valid branch (whether remote-tracking like <code>origin/B</code>
+                        or local like <code>main</code>). That is, if the current branch B has upstream U, git rev-parse U should work.
+                        If it does not work—if it complains that U does not exist—then most of Git acts as though the upstream is not
+                        set at all. A few commands, like git branch -vv, will show the upstream setting but mark it as &quot;gone&quot;.
+                    </p>
+                    <h3 id="what-good-is-an-upstream">What good is an upstream?</h3>
+                    <p>If your push.default is set to simple or upstream, the upstream setting will make git push, used with no
+                        additional arguments, just work.</p>
+                    <p>That's it—that's all it does for git push. But that's fairly significant, since git push is one of the places
+                        where a simple typo causes major headaches.</p>
+                    <p>If your push.default is set to nothing, matching, or current, setting an upstream does nothing at all for git
+                        push.</p>
+                    <p>(All of this assumes your Git version is at least 2.0.)
+                        The upstream affects git fetch</p>
+                    <p>If you run git fetch with no additional arguments, Git figures out which remote to fetch from by consulting the
+                        current branch's upstream. If the upstream is a remote-tracking branch, Git fetches from that remote. (If the
+                        upstream is not set or is a local branch, Git tries fetching origin.)</p>
+                    <h3 id="the-upstream-affects-git-merge-and-git-rebase-too">The upstream affects git merge and git rebase too</h3>
+                    <p>If you run git merge or git rebase with no additional arguments, Git uses the current branch's upstream. So it
+                        shortens the use of these two commands.</p>
+                    <h3 id="the-upstream-affects-git-pull">The upstream affects git pull</h3>
+                    <p>You should never use git pull anyway, but if you do, git pull uses the upstream setting to figure out which
+                        remote to fetch from, and then which branch to merge or rebase with. That is, git pull does the same thing as
+                        git fetch—because it actually runs git fetch—and then does the same thing as git merge or git rebase, because it
+                        actually runs git merge or git rebase.</p>
+                    <p>(You should usually just do these two steps manually, at least until you know Git well enough that when either
+                        step fails, which they will eventually, you recognize what went wrong and know what to do about it.)</p>
+                    <h3 id="the-upstream-affects-git-status">The upstream affects git status</h3>
+                    <p>This may actually be the most important. Once you have an upstream set, git status can report the difference
+                        between your current branch and its upstream, in terms of commits.</p>
+                    <p>If, as is the normal case, you are on branch B with its upstream set to origin/B, and you run git status, you
+                        will immediately see whether you have commits you can push, and/or commits you can merge or rebase onto.</p>
+                    <p>This is because git status runs:</p>
+                    <p><code>git rev-list --count @{u}..HEAD</code>: how many commits do you have on <code>B</code> that are not on
+                        <code>origin/B</code>?
+                        <code>git rev-list --count HEAD..@{u}</code>: how many commits do you have on <code>origin/B</code> that are not
+                        on <code>B</code>?
+                    </p>
+                    <p>Setting an upstream gives you all of these things.</p>
+                </div>
             </div>
         </section>
         <p><strong>Table of Contents</strong></p>
