@@ -23,6 +23,12 @@ section.content{
     margin:3vw;
 }
 
+section.TOCresource{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 h1{
     font-size:2em;
 }

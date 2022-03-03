@@ -27,6 +27,12 @@ h1{
     font-size:2em;
 }
 
+section.TOCresource{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 div.headimg{
     display:flex;
     justify-content: center;
