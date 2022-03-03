@@ -32,8 +32,31 @@ Tools and Commands are located within the Top panel of the window. There are var
 There is a Contents pane located on the left side of the window. The Contents pane shows you the active content currently being seen in the active View Pane. This displays the drawing order of the different map layers within a hierarchical format. 
 
 There is a Catalog pane located on the right side of the window. This pane allows the user to access items of your project disk or through your portal. Using the Portal tab can be very useful to find various datasets from ArcGIS Online and Living Atlas geodatabases. 
-## Formatting Data for ArcGIS: ##
+
 ## How to Look up Data within Living Atlas: ##
+First let's use the Basemap tool in the top panel to change the base style of our Map. Select the *Light Gray Canvas setting*
+
+Now we are going to add a layer that represents the physical Native American Reservation boundaries within the United States. Navigate to the Catalog Pane and Click the Portal tab, hover over the cloud-like symbols and select the symbol that says Living Atlas. 
+
+![Living Atlas in the Catalog](ArcGIS-Imgs/catalong-portal-livingAtlas.PNG)
+
+Type this statement within the search bar **Federally Recognized Tribal Reservations vs Oil/Petroleum/Coal Locations and Pipelines**. You will notice after your search that you got one result, please right click on the result and click the Add and Open option.This might take a few minutes to load. 
+
+You will notice that you have another map added to your project. Please click on the tab next to your personal map.
+
+![The Map from Living Atlas](ArcGIS-Imgs/Click-the-Other-Map.PNG)
+
+Navigate to the Contents pane and find the layer labeled **American Indian Reservations / Federally Recognized Tribal Entities**. Right the layer and copy paste it into your personal map sheet in the Contents Pane.  
+
+Make sure that the layer you copied is at the top of the Drawing Order. Use these photos as reference.
+
+![Drawing Order](ArcGIS-Imgs/drawing-order.PNG)
+
+This is what your map should look like so far.
+
+![Map of Native American Reservations](ArcGIS-Imgs/Map-Native-Res.PNG)
+
+## Formatting Data for ArcGIS: ##
 ## Adding Data to your Map: ##
 ## Display Data and Tables on your Map: ##
 
