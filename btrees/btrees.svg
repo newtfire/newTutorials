@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1300" height="4640" style="background-color:lightgrey">
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1300"
+     height="4085"
+     style="background-color:lightgrey">
     <g transform="translate(50, 50)">
         <g class="tree" id="position-1" transform="translate(200,0)">
             <line id="Douglas Fir"
                   x1="0"
                   x2="1000"
-                  y1="40"
-                  y2="40"
-                  stroke-width="36"
+                  y1="35"
+                  y2="35"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="40" fill="black" style="text-anchor:end">Douglas Fir</text>
+            <text x="0" y="35" fill="black" style="text-anchor:end">Douglas Fir</text>
             <text x="1000"
-                  y="40"
+                  y="35"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">250</text>
@@ -21,14 +24,14 @@
             <line id="White Pine"
                   x1="0"
                   x2="720"
-                  y1="80"
-                  y2="80"
-                  stroke-width="36"
+                  y1="70"
+                  y2="70"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="80" fill="black" style="text-anchor:end">White Pine</text>
+            <text x="0" y="70" fill="black" style="text-anchor:end">White Pine</text>
             <text x="720"
-                  y="80"
+                  y="70"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">180</text>
@@ -37,14 +40,14 @@
             <line id="Common Bald Cypress"
                   x1="0"
                   x2="600"
-                  y1="120"
-                  y2="120"
-                  stroke-width="36"
+                  y1="105"
+                  y2="105"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="120" fill="black" style="text-anchor:end">Common Bald Cypress</text>
+            <text x="0" y="105" fill="black" style="text-anchor:end">Common Bald Cypress</text>
             <text x="600"
-                  y="120"
+                  y="105"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">150</text>
@@ -53,14 +56,14 @@
             <line id="Western Tamarack (Larch)"
                   x1="0"
                   x2="600"
-                  y1="160"
-                  y2="160"
-                  stroke-width="36"
+                  y1="140"
+                  y2="140"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="160" fill="black" style="text-anchor:end">Western Tamarack (Larch)</text>
+            <text x="0" y="140" fill="black" style="text-anchor:end">Western Tamarack (Larch)</text>
             <text x="600"
-                  y="160"
+                  y="140"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">150</text>
@@ -69,14 +72,14 @@
             <line id="Black Walnut"
                   x1="0"
                   x2="592"
-                  y1="200"
-                  y2="200"
-                  stroke-width="36"
+                  y1="175"
+                  y2="175"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="200" fill="black" style="text-anchor:end">Black Walnut</text>
+            <text x="0" y="175" fill="black" style="text-anchor:end">Black Walnut</text>
             <text x="592"
-                  y="200"
+                  y="175"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">148</text>
@@ -85,14 +88,14 @@
             <line id="River's Purple Beech"
                   x1="0"
                   x2="560"
-                  y1="240"
-                  y2="240"
-                  stroke-width="36"
+                  y1="210"
+                  y2="210"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="240" fill="black" style="text-anchor:end">River's Purple Beech</text>
+            <text x="0" y="210" fill="black" style="text-anchor:end">River's Purple Beech</text>
             <text x="560"
-                  y="240"
+                  y="210"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">140</text>
@@ -101,14 +104,14 @@
             <line id="Plains Cottonwood"
                   x1="0"
                   x2="520"
-                  y1="280"
-                  y2="280"
-                  stroke-width="36"
+                  y1="245"
+                  y2="245"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="280" fill="black" style="text-anchor:end">Plains Cottonwood</text>
+            <text x="0" y="245" fill="black" style="text-anchor:end">Plains Cottonwood</text>
             <text x="520"
-                  y="280"
+                  y="245"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">130</text>
@@ -117,14 +120,14 @@
             <line id="Bald Cypress"
                   x1="0"
                   x2="500"
-                  y1="320"
-                  y2="320"
-                  stroke-width="36"
+                  y1="280"
+                  y2="280"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="320" fill="black" style="text-anchor:end">Bald Cypress</text>
+            <text x="0" y="280" fill="black" style="text-anchor:end">Bald Cypress</text>
             <text x="500"
-                  y="320"
+                  y="280"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">125</text>
@@ -133,14 +136,14 @@
             <line id="Bur Oak"
                   x1="0"
                   x2="500"
-                  y1="360"
-                  y2="360"
-                  stroke-width="36"
+                  y1="315"
+                  y2="315"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="360" fill="black" style="text-anchor:end">Bur Oak</text>
+            <text x="0" y="315" fill="black" style="text-anchor:end">Bur Oak</text>
             <text x="500"
-                  y="360"
+                  y="315"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">125</text>
@@ -149,14 +152,14 @@
             <line id="Korean Pine"
                   x1="0"
                   x2="500"
-                  y1="400"
-                  y2="400"
-                  stroke-width="36"
+                  y1="350"
+                  y2="350"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="400" fill="black" style="text-anchor:end">Korean Pine</text>
+            <text x="0" y="350" fill="black" style="text-anchor:end">Korean Pine</text>
             <text x="500"
-                  y="400"
+                  y="350"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">125</text>
@@ -165,14 +168,14 @@
             <line id="Loblolly Pine"
                   x1="0"
                   x2="480"
-                  y1="440"
-                  y2="440"
-                  stroke-width="36"
+                  y1="385"
+                  y2="385"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="440" fill="black" style="text-anchor:end">Loblolly Pine</text>
+            <text x="0" y="385" fill="black" style="text-anchor:end">Loblolly Pine</text>
             <text x="480"
-                  y="440"
+                  y="385"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">120</text>
@@ -181,14 +184,14 @@
             <line id="American Sweetgum"
                   x1="0"
                   x2="460"
-                  y1="480"
-                  y2="480"
-                  stroke-width="36"
+                  y1="420"
+                  y2="420"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="480" fill="black" style="text-anchor:end">American Sweetgum</text>
+            <text x="0" y="420" fill="black" style="text-anchor:end">American Sweetgum</text>
             <text x="460"
-                  y="480"
+                  y="420"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">115</text>
@@ -197,14 +200,14 @@
             <line id="Chinkapin Oak"
                   x1="0"
                   x2="460"
-                  y1="520"
-                  y2="520"
-                  stroke-width="36"
+                  y1="455"
+                  y2="455"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="520" fill="black" style="text-anchor:end">Chinkapin Oak</text>
+            <text x="0" y="455" fill="black" style="text-anchor:end">Chinkapin Oak</text>
             <text x="460"
-                  y="520"
+                  y="455"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">115</text>
@@ -213,14 +216,14 @@
             <line id="Yellow Buckeye"
                   x1="0"
                   x2="420"
-                  y1="560"
-                  y2="560"
-                  stroke-width="36"
+                  y1="490"
+                  y2="490"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="560" fill="black" style="text-anchor:end">Yellow Buckeye</text>
+            <text x="0" y="490" fill="black" style="text-anchor:end">Yellow Buckeye</text>
             <text x="420"
-                  y="560"
+                  y="490"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">105</text>
@@ -229,14 +232,14 @@
             <line id="Eastern Hemlock"
                   x1="0"
                   x2="400"
-                  y1="600"
-                  y2="600"
-                  stroke-width="36"
+                  y1="525"
+                  y2="525"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="600" fill="black" style="text-anchor:end">Eastern Hemlock</text>
+            <text x="0" y="525" fill="black" style="text-anchor:end">Eastern Hemlock</text>
             <text x="400"
-                  y="600"
+                  y="525"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">100</text>
@@ -245,14 +248,14 @@
             <line id="American Chestnut"
                   x1="0"
                   x2="400"
-                  y1="640"
-                  y2="640"
-                  stroke-width="36"
+                  y1="560"
+                  y2="560"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="640" fill="black" style="text-anchor:end">American Chestnut</text>
+            <text x="0" y="560" fill="black" style="text-anchor:end">American Chestnut</text>
             <text x="400"
-                  y="640"
+                  y="560"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">100</text>
@@ -261,14 +264,14 @@
             <line id=" Black Gum"
                   x1="0"
                   x2="400"
-                  y1="680"
-                  y2="680"
-                  stroke-width="36"
+                  y1="595"
+                  y2="595"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="680" fill="black" style="text-anchor:end"> Black Gum</text>
+            <text x="0" y="595" fill="black" style="text-anchor:end"> Black Gum</text>
             <text x="400"
-                  y="680"
+                  y="595"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">100</text>
@@ -277,14 +280,14 @@
             <line id="Wildfire Black Gum "
                   x1="0"
                   x2="400"
-                  y1="720"
-                  y2="720"
-                  stroke-width="36"
+                  y1="630"
+                  y2="630"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="720" fill="black" style="text-anchor:end">Wildfire Black Gum </text>
+            <text x="0" y="630" fill="black" style="text-anchor:end">Wildfire Black Gum </text>
             <text x="400"
-                  y="720"
+                  y="630"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">100</text>
@@ -293,14 +296,14 @@
             <line id="Sugar Maple"
                   x1="0"
                   x2="392"
-                  y1="760"
-                  y2="760"
-                  stroke-width="36"
+                  y1="665"
+                  y2="665"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="760" fill="black" style="text-anchor:end">Sugar Maple</text>
+            <text x="0" y="665" fill="black" style="text-anchor:end">Sugar Maple</text>
             <text x="392"
-                  y="760"
+                  y="665"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">98</text>
@@ -309,14 +312,14 @@
             <line id="Red Maple"
                   x1="0"
                   x2="360"
-                  y1="800"
-                  y2="800"
-                  stroke-width="36"
+                  y1="700"
+                  y2="700"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="800" fill="black" style="text-anchor:end">Red Maple</text>
+            <text x="0" y="700" fill="black" style="text-anchor:end">Red Maple</text>
             <text x="360"
-                  y="800"
+                  y="700"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">90</text>
@@ -325,14 +328,14 @@
             <line id="Spanish Oak"
                   x1="0"
                   x2="360"
-                  y1="840"
-                  y2="840"
-                  stroke-width="36"
+                  y1="735"
+                  y2="735"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="840" fill="black" style="text-anchor:end">Spanish Oak</text>
+            <text x="0" y="735" fill="black" style="text-anchor:end">Spanish Oak</text>
             <text x="360"
-                  y="840"
+                  y="735"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">90</text>
@@ -341,14 +344,14 @@
             <line id="Hardy Pecan"
                   x1="0"
                   x2="340"
-                  y1="880"
-                  y2="880"
-                  stroke-width="36"
+                  y1="770"
+                  y2="770"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="880" fill="black" style="text-anchor:end">Hardy Pecan</text>
+            <text x="0" y="770" fill="black" style="text-anchor:end">Hardy Pecan</text>
             <text x="340"
-                  y="880"
+                  y="770"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">85</text>
@@ -357,14 +360,14 @@
             <line id="Pin Oak "
                   x1="0"
                   x2="340"
-                  y1="920"
-                  y2="920"
-                  stroke-width="36"
+                  y1="805"
+                  y2="805"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="920" fill="black" style="text-anchor:end">Pin Oak </text>
+            <text x="0" y="805" fill="black" style="text-anchor:end">Pin Oak </text>
             <text x="340"
-                  y="920"
+                  y="805"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">85</text>
@@ -373,14 +376,14 @@
             <line id="Maidenhair Tree"
                   x1="0"
                   x2="332"
-                  y1="960"
-                  y2="960"
-                  stroke-width="36"
+                  y1="840"
+                  y2="840"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="960" fill="black" style="text-anchor:end">Maidenhair Tree</text>
+            <text x="0" y="840" fill="black" style="text-anchor:end">Maidenhair Tree</text>
             <text x="332"
-                  y="960"
+                  y="840"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">83</text>
@@ -389,14 +392,14 @@
             <line id="Skyline Honey Locust"
                   x1="0"
                   x2="332"
-                  y1="1000"
-                  y2="1000"
-                  stroke-width="36"
+                  y1="875"
+                  y2="875"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1000" fill="black" style="text-anchor:end">Skyline Honey Locust</text>
+            <text x="0" y="875" fill="black" style="text-anchor:end">Skyline Honey Locust</text>
             <text x="332"
-                  y="1000"
+                  y="875"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">83</text>
@@ -405,14 +408,14 @@
             <line id="Butternut"
                   x1="0"
                   x2="328"
-                  y1="1040"
-                  y2="1040"
-                  stroke-width="36"
+                  y1="910"
+                  y2="910"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1040" fill="black" style="text-anchor:end">Butternut</text>
+            <text x="0" y="910" fill="black" style="text-anchor:end">Butternut</text>
             <text x="328"
-                  y="1040"
+                  y="910"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">82</text>
@@ -421,14 +424,14 @@
             <line id="London Plane Tree"
                   x1="0"
                   x2="328"
-                  y1="1080"
-                  y2="1080"
-                  stroke-width="36"
+                  y1="945"
+                  y2="945"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1080" fill="black" style="text-anchor:end">London Plane Tree</text>
+            <text x="0" y="945" fill="black" style="text-anchor:end">London Plane Tree</text>
             <text x="328"
-                  y="1080"
+                  y="945"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">82</text>
@@ -437,14 +440,14 @@
             <line id="Atlantic White Cedar"
                   x1="0"
                   x2="320"
-                  y1="1120"
-                  y2="1120"
-                  stroke-width="36"
+                  y1="980"
+                  y2="980"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1120" fill="black" style="text-anchor:end">Atlantic White Cedar</text>
+            <text x="0" y="980" fill="black" style="text-anchor:end">Atlantic White Cedar</text>
             <text x="320"
-                  y="1120"
+                  y="980"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">80</text>
@@ -453,14 +456,14 @@
             <line id="Tulip Tree"
                   x1="0"
                   x2="300"
-                  y1="1160"
-                  y2="1160"
-                  stroke-width="36"
+                  y1="1015"
+                  y2="1015"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1160" fill="black" style="text-anchor:end">Tulip Tree</text>
+            <text x="0" y="1015" fill="black" style="text-anchor:end">Tulip Tree</text>
             <text x="300"
-                  y="1160"
+                  y="1015"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">75</text>
@@ -469,14 +472,14 @@
             <line id="Cucumbertree"
                   x1="0"
                   x2="300"
-                  y1="1200"
-                  y2="1200"
-                  stroke-width="36"
+                  y1="1050"
+                  y2="1050"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1200" fill="black" style="text-anchor:end">Cucumbertree</text>
+            <text x="0" y="1050" fill="black" style="text-anchor:end">Cucumbertree</text>
             <text x="300"
-                  y="1200"
+                  y="1050"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">75</text>
@@ -485,14 +488,14 @@
             <line id="Scarlet Oak"
                   x1="0"
                   x2="280"
-                  y1="1240"
-                  y2="1240"
-                  stroke-width="36"
+                  y1="1085"
+                  y2="1085"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1240" fill="black" style="text-anchor:end">Scarlet Oak</text>
+            <text x="0" y="1085" fill="black" style="text-anchor:end">Scarlet Oak</text>
             <text x="280"
-                  y="1240"
+                  y="1085"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">70</text>
@@ -501,14 +504,14 @@
             <line id="Kentucky Coffee Tree"
                   x1="0"
                   x2="280"
-                  y1="1280"
-                  y2="1280"
-                  stroke-width="36"
+                  y1="1120"
+                  y2="1120"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1280" fill="black" style="text-anchor:end">Kentucky Coffee Tree</text>
+            <text x="0" y="1120" fill="black" style="text-anchor:end">Kentucky Coffee Tree</text>
             <text x="280"
-                  y="1280"
+                  y="1120"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">70</text>
@@ -517,14 +520,14 @@
             <line id="Northern Red Oak"
                   x1="0"
                   x2="280"
-                  y1="1320"
-                  y2="1320"
-                  stroke-width="36"
+                  y1="1155"
+                  y2="1155"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1320" fill="black" style="text-anchor:end">Northern Red Oak</text>
+            <text x="0" y="1155" fill="black" style="text-anchor:end">Northern Red Oak</text>
             <text x="280"
-                  y="1320"
+                  y="1155"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">70</text>
@@ -533,14 +536,14 @@
             <line id="Copper Beech"
                   x1="0"
                   x2="280"
-                  y1="1360"
-                  y2="1360"
-                  stroke-width="36"
+                  y1="1190"
+                  y2="1190"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1360" fill="black" style="text-anchor:end">Copper Beech</text>
+            <text x="0" y="1190" fill="black" style="text-anchor:end">Copper Beech</text>
             <text x="280"
-                  y="1360"
+                  y="1190"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">70</text>
@@ -549,14 +552,14 @@
             <line id="Thornless Honeylocust"
                   x1="0"
                   x2="280"
-                  y1="1400"
-                  y2="1400"
-                  stroke-width="36"
+                  y1="1225"
+                  y2="1225"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1400" fill="black" style="text-anchor:end">Thornless Honeylocust</text>
+            <text x="0" y="1225" fill="black" style="text-anchor:end">Thornless Honeylocust</text>
             <text x="280"
-                  y="1400"
+                  y="1225"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">70</text>
@@ -565,14 +568,14 @@
             <line id="American Elm"
                   x1="0"
                   x2="280"
-                  y1="1440"
-                  y2="1440"
-                  stroke-width="36"
+                  y1="1260"
+                  y2="1260"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1440" fill="black" style="text-anchor:end">American Elm</text>
+            <text x="0" y="1260" fill="black" style="text-anchor:end">American Elm</text>
             <text x="280"
-                  y="1440"
+                  y="1260"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">70</text>
@@ -581,14 +584,14 @@
             <line id="Heritage River Birch"
                   x1="0"
                   x2="280"
-                  y1="1480"
-                  y2="1480"
-                  stroke-width="36"
+                  y1="1295"
+                  y2="1295"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1480" fill="black" style="text-anchor:end">Heritage River Birch</text>
+            <text x="0" y="1295" fill="black" style="text-anchor:end">Heritage River Birch</text>
             <text x="280"
-                  y="1480"
+                  y="1295"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">70</text>
@@ -597,14 +600,14 @@
             <line id="Chestnut Oak"
                   x1="0"
                   x2="260"
-                  y1="1520"
-                  y2="1520"
-                  stroke-width="36"
+                  y1="1330"
+                  y2="1330"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1520" fill="black" style="text-anchor:end">Chestnut Oak</text>
+            <text x="0" y="1330" fill="black" style="text-anchor:end">Chestnut Oak</text>
             <text x="260"
-                  y="1520"
+                  y="1330"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">65</text>
@@ -613,14 +616,14 @@
             <line id="Bitternut Hickory"
                   x1="0"
                   x2="260"
-                  y1="1560"
-                  y2="1560"
-                  stroke-width="36"
+                  y1="1365"
+                  y2="1365"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1560" fill="black" style="text-anchor:end">Bitternut Hickory</text>
+            <text x="0" y="1365" fill="black" style="text-anchor:end">Bitternut Hickory</text>
             <text x="260"
-                  y="1560"
+                  y="1365"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">65</text>
@@ -629,14 +632,14 @@
             <line id="Paper Birch"
                   x1="0"
                   x2="260"
-                  y1="1600"
-                  y2="1600"
-                  stroke-width="36"
+                  y1="1400"
+                  y2="1400"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1600" fill="black" style="text-anchor:end">Paper Birch</text>
+            <text x="0" y="1400" fill="black" style="text-anchor:end">Paper Birch</text>
             <text x="260"
-                  y="1600"
+                  y="1400"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">65</text>
@@ -645,14 +648,14 @@
             <line id="Accolade Elm"
                   x1="0"
                   x2="240"
-                  y1="1640"
-                  y2="1640"
-                  stroke-width="36"
+                  y1="1435"
+                  y2="1435"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1640" fill="black" style="text-anchor:end">Accolade Elm</text>
+            <text x="0" y="1435" fill="black" style="text-anchor:end">Accolade Elm</text>
             <text x="240"
-                  y="1640"
+                  y="1435"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">60</text>
@@ -661,14 +664,14 @@
             <line id="Fraser Fir"
                   x1="0"
                   x2="240"
-                  y1="1680"
-                  y2="1680"
-                  stroke-width="36"
+                  y1="1470"
+                  y2="1470"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1680" fill="black" style="text-anchor:end">Fraser Fir</text>
+            <text x="0" y="1470" fill="black" style="text-anchor:end">Fraser Fir</text>
             <text x="240"
-                  y="1680"
+                  y="1470"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">60</text>
@@ -677,14 +680,14 @@
             <line id="Littleleaf Linden"
                   x1="0"
                   x2="240"
-                  y1="1720"
-                  y2="1720"
-                  stroke-width="36"
+                  y1="1505"
+                  y2="1505"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1720" fill="black" style="text-anchor:end">Littleleaf Linden</text>
+            <text x="0" y="1505" fill="black" style="text-anchor:end">Littleleaf Linden</text>
             <text x="240"
-                  y="1720"
+                  y="1505"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">60</text>
@@ -693,14 +696,14 @@
             <line id="Blue Spruce"
                   x1="0"
                   x2="240"
-                  y1="1760"
-                  y2="1760"
-                  stroke-width="36"
+                  y1="1540"
+                  y2="1540"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1760" fill="black" style="text-anchor:end">Blue Spruce</text>
+            <text x="0" y="1540" fill="black" style="text-anchor:end">Blue Spruce</text>
             <text x="240"
-                  y="1760"
+                  y="1540"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">60</text>
@@ -709,14 +712,14 @@
             <line id="Blue Japanese White Pine"
                   x1="0"
                   x2="240"
-                  y1="1800"
-                  y2="1800"
-                  stroke-width="36"
+                  y1="1575"
+                  y2="1575"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1800" fill="black" style="text-anchor:end">Blue Japanese White Pine</text>
+            <text x="0" y="1575" fill="black" style="text-anchor:end">Blue Japanese White Pine</text>
             <text x="240"
-                  y="1800"
+                  y="1575"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">60</text>
@@ -725,14 +728,14 @@
             <line id="Red Pine"
                   x1="0"
                   x2="240"
-                  y1="1840"
-                  y2="1840"
-                  stroke-width="36"
+                  y1="1610"
+                  y2="1610"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1840" fill="black" style="text-anchor:end">Red Pine</text>
+            <text x="0" y="1610" fill="black" style="text-anchor:end">Red Pine</text>
             <text x="240"
-                  y="1840"
+                  y="1610"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">60</text>
@@ -741,14 +744,14 @@
             <line id="Japanese Stewartia"
                   x1="0"
                   x2="220"
-                  y1="1880"
-                  y2="1880"
-                  stroke-width="36"
+                  y1="1645"
+                  y2="1645"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1880" fill="black" style="text-anchor:end">Japanese Stewartia</text>
+            <text x="0" y="1645" fill="black" style="text-anchor:end">Japanese Stewartia</text>
             <text x="220"
-                  y="1880"
+                  y="1645"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">55</text>
@@ -757,14 +760,14 @@
             <line id="English Oak"
                   x1="0"
                   x2="220"
-                  y1="1920"
-                  y2="1920"
-                  stroke-width="36"
+                  y1="1680"
+                  y2="1680"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1920" fill="black" style="text-anchor:end">English Oak</text>
+            <text x="0" y="1680" fill="black" style="text-anchor:end">English Oak</text>
             <text x="220"
-                  y="1920"
+                  y="1680"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">55</text>
@@ -773,14 +776,14 @@
             <line id="Shingle Oak"
                   x1="0"
                   x2="220"
-                  y1="1960"
-                  y2="1960"
-                  stroke-width="36"
+                  y1="1715"
+                  y2="1715"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="1960" fill="black" style="text-anchor:end">Shingle Oak</text>
+            <text x="0" y="1715" fill="black" style="text-anchor:end">Shingle Oak</text>
             <text x="220"
-                  y="1960"
+                  y="1715"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">55</text>
@@ -789,14 +792,14 @@
             <line id="Norway Maple"
                   x1="0"
                   x2="200"
-                  y1="2000"
-                  y2="2000"
-                  stroke-width="36"
+                  y1="1750"
+                  y2="1750"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2000" fill="black" style="text-anchor:end">Norway Maple</text>
+            <text x="0" y="1750" fill="black" style="text-anchor:end">Norway Maple</text>
             <text x="200"
-                  y="2000"
+                  y="1750"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">50</text>
@@ -805,14 +808,14 @@
             <line id="Norway Spruce"
                   x1="0"
                   x2="200"
-                  y1="2040"
-                  y2="2040"
-                  stroke-width="36"
+                  y1="1785"
+                  y2="1785"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2040" fill="black" style="text-anchor:end">Norway Spruce</text>
+            <text x="0" y="1785" fill="black" style="text-anchor:end">Norway Spruce</text>
             <text x="200"
-                  y="2040"
+                  y="1785"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">50</text>
@@ -821,14 +824,14 @@
             <line id="Dawn Redwood"
                   x1="0"
                   x2="200"
-                  y1="2080"
-                  y2="2080"
-                  stroke-width="36"
+                  y1="1820"
+                  y2="1820"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2080" fill="black" style="text-anchor:end">Dawn Redwood</text>
+            <text x="0" y="1820" fill="black" style="text-anchor:end">Dawn Redwood</text>
             <text x="200"
-                  y="2080"
+                  y="1820"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">50</text>
@@ -837,14 +840,14 @@
             <line id="Sourwood"
                   x1="0"
                   x2="200"
-                  y1="2120"
-                  y2="2120"
-                  stroke-width="36"
+                  y1="1855"
+                  y2="1855"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2120" fill="black" style="text-anchor:end">Sourwood</text>
+            <text x="0" y="1855" fill="black" style="text-anchor:end">Sourwood</text>
             <text x="200"
-                  y="2120"
+                  y="1855"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">50</text>
@@ -853,14 +856,14 @@
             <line id="Ruby Horse Chestnut"
                   x1="0"
                   x2="200"
-                  y1="2160"
-                  y2="2160"
-                  stroke-width="36"
+                  y1="1890"
+                  y2="1890"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2160" fill="black" style="text-anchor:end">Ruby Horse Chestnut</text>
+            <text x="0" y="1890" fill="black" style="text-anchor:end">Ruby Horse Chestnut</text>
             <text x="200"
-                  y="2160"
+                  y="1890"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">50</text>
@@ -869,14 +872,14 @@
             <line id="American Holly"
                   x1="0"
                   x2="180"
-                  y1="2200"
-                  y2="2200"
-                  stroke-width="36"
+                  y1="1925"
+                  y2="1925"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2200" fill="black" style="text-anchor:end">American Holly</text>
+            <text x="0" y="1925" fill="black" style="text-anchor:end">American Holly</text>
             <text x="180"
-                  y="2200"
+                  y="1925"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">45</text>
@@ -885,14 +888,14 @@
             <line id="Blue Atlas Cedar"
                   x1="0"
                   x2="180"
-                  y1="2240"
-                  y2="2240"
-                  stroke-width="36"
+                  y1="1960"
+                  y2="1960"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2240" fill="black" style="text-anchor:end">Blue Atlas Cedar</text>
+            <text x="0" y="1960" fill="black" style="text-anchor:end">Blue Atlas Cedar</text>
             <text x="180"
-                  y="2240"
+                  y="1960"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">45</text>
@@ -901,14 +904,14 @@
             <line id="Eastern Hophornbeam"
                   x1="0"
                   x2="160"
-                  y1="2280"
-                  y2="2280"
-                  stroke-width="36"
+                  y1="1995"
+                  y2="1995"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2280" fill="black" style="text-anchor:end">Eastern Hophornbeam</text>
+            <text x="0" y="1995" fill="black" style="text-anchor:end">Eastern Hophornbeam</text>
             <text x="160"
-                  y="2280"
+                  y="1995"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">40</text>
@@ -917,14 +920,14 @@
             <line id="Yellowwood"
                   x1="0"
                   x2="160"
-                  y1="2320"
-                  y2="2320"
-                  stroke-width="36"
+                  y1="2030"
+                  y2="2030"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2320" fill="black" style="text-anchor:end">Yellowwood</text>
+            <text x="0" y="2030" fill="black" style="text-anchor:end">Yellowwood</text>
             <text x="160"
-                  y="2320"
+                  y="2030"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">40</text>
@@ -933,14 +936,14 @@
             <line id="Osage Orange"
                   x1="0"
                   x2="160"
-                  y1="2360"
-                  y2="2360"
-                  stroke-width="36"
+                  y1="2065"
+                  y2="2065"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2360" fill="black" style="text-anchor:end">Osage Orange</text>
+            <text x="0" y="2065" fill="black" style="text-anchor:end">Osage Orange</text>
             <text x="160"
-                  y="2360"
+                  y="2065"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">40</text>
@@ -949,14 +952,14 @@
             <line id="Persian Ironwood"
                   x1="0"
                   x2="140"
-                  y1="2400"
-                  y2="2400"
-                  stroke-width="36"
+                  y1="2100"
+                  y2="2100"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2400" fill="black" style="text-anchor:end">Persian Ironwood</text>
+            <text x="0" y="2100" fill="black" style="text-anchor:end">Persian Ironwood</text>
             <text x="140"
-                  y="2400"
+                  y="2100"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">35</text>
@@ -965,14 +968,14 @@
             <line id="Common Hackberry"
                   x1="0"
                   x2="140"
-                  y1="2440"
-                  y2="2440"
-                  stroke-width="36"
+                  y1="2135"
+                  y2="2135"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2440" fill="black" style="text-anchor:end">Common Hackberry</text>
+            <text x="0" y="2135" fill="black" style="text-anchor:end">Common Hackberry</text>
             <text x="140"
-                  y="2440"
+                  y="2135"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">35</text>
@@ -981,14 +984,14 @@
             <line id="Kwanzan Cherry"
                   x1="0"
                   x2="140"
-                  y1="2480"
-                  y2="2480"
-                  stroke-width="36"
+                  y1="2170"
+                  y2="2170"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2480" fill="black" style="text-anchor:end">Kwanzan Cherry</text>
+            <text x="0" y="2170" fill="black" style="text-anchor:end">Kwanzan Cherry</text>
             <text x="140"
-                  y="2480"
+                  y="2170"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">35</text>
@@ -997,14 +1000,14 @@
             <line id="Single Stem Asian White Birch"
                   x1="0"
                   x2="140"
-                  y1="2520"
-                  y2="2520"
-                  stroke-width="36"
+                  y1="2205"
+                  y2="2205"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2520" fill="black" style="text-anchor:end">Single Stem Asian White Birch</text>
+            <text x="0" y="2205" fill="black" style="text-anchor:end">Single Stem Asian White Birch</text>
             <text x="140"
-                  y="2520"
+                  y="2205"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">35</text>
@@ -1013,14 +1016,14 @@
             <line id="English Hawthorn"
                   x1="0"
                   x2="132"
-                  y1="2560"
-                  y2="2560"
-                  stroke-width="36"
+                  y1="2240"
+                  y2="2240"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2560" fill="black" style="text-anchor:end">English Hawthorn</text>
+            <text x="0" y="2240" fill="black" style="text-anchor:end">English Hawthorn</text>
             <text x="132"
-                  y="2560"
+                  y="2240"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">33</text>
@@ -1029,14 +1032,14 @@
             <line id="Red Sunset Maple"
                   x1="0"
                   x2="132"
-                  y1="2600"
-                  y2="2600"
-                  stroke-width="36"
+                  y1="2275"
+                  y2="2275"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2600" fill="black" style="text-anchor:end">Red Sunset Maple</text>
+            <text x="0" y="2275" fill="black" style="text-anchor:end">Red Sunset Maple</text>
             <text x="132"
-                  y="2600"
+                  y="2275"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">33</text>
@@ -1045,14 +1048,14 @@
             <line id="Flowering Dogwood"
                   x1="0"
                   x2="120"
-                  y1="2640"
-                  y2="2640"
-                  stroke-width="36"
+                  y1="2310"
+                  y2="2310"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2640" fill="black" style="text-anchor:end">Flowering Dogwood</text>
+            <text x="0" y="2310" fill="black" style="text-anchor:end">Flowering Dogwood</text>
             <text x="120"
-                  y="2640"
+                  y="2310"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">30</text>
@@ -1061,14 +1064,14 @@
             <line id="Kaki Persimmon"
                   x1="0"
                   x2="120"
-                  y1="2680"
-                  y2="2680"
-                  stroke-width="36"
+                  y1="2345"
+                  y2="2345"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2680" fill="black" style="text-anchor:end">Kaki Persimmon</text>
+            <text x="0" y="2345" fill="black" style="text-anchor:end">Kaki Persimmon</text>
             <text x="120"
-                  y="2680"
+                  y="2345"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">30</text>
@@ -1077,14 +1080,14 @@
             <line id="White Spire Birch"
                   x1="0"
                   x2="120"
-                  y1="2720"
-                  y2="2720"
-                  stroke-width="36"
+                  y1="2380"
+                  y2="2380"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2720" fill="black" style="text-anchor:end">White Spire Birch</text>
+            <text x="0" y="2380" fill="black" style="text-anchor:end">White Spire Birch</text>
             <text x="120"
-                  y="2720"
+                  y="2380"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">30</text>
@@ -1093,14 +1096,14 @@
             <line id="Winter King Hawthorn"
                   x1="0"
                   x2="120"
-                  y1="2760"
-                  y2="2760"
-                  stroke-width="36"
+                  y1="2415"
+                  y2="2415"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2760" fill="black" style="text-anchor:end">Winter King Hawthorn</text>
+            <text x="0" y="2415" fill="black" style="text-anchor:end">Winter King Hawthorn</text>
             <text x="120"
-                  y="2760"
+                  y="2415"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">30</text>
@@ -1109,14 +1112,14 @@
             <line id="Bristlecone Pine"
                   x1="0"
                   x2="120"
-                  y1="2800"
-                  y2="2800"
-                  stroke-width="36"
+                  y1="2450"
+                  y2="2450"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2800" fill="black" style="text-anchor:end">Bristlecone Pine</text>
+            <text x="0" y="2450" fill="black" style="text-anchor:end">Bristlecone Pine</text>
             <text x="120"
-                  y="2800"
+                  y="2450"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">30</text>
@@ -1125,14 +1128,14 @@
             <line id="Japanese Umbrella Pine"
                   x1="0"
                   x2="112"
-                  y1="2840"
-                  y2="2840"
-                  stroke-width="36"
+                  y1="2485"
+                  y2="2485"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2840" fill="black" style="text-anchor:end">Japanese Umbrella Pine</text>
+            <text x="0" y="2485" fill="black" style="text-anchor:end">Japanese Umbrella Pine</text>
             <text x="112"
-                  y="2840"
+                  y="2485"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">28</text>
@@ -1141,14 +1144,14 @@
             <line id="Purple Fountain Weeping Beech"
                   x1="0"
                   x2="100"
-                  y1="2880"
-                  y2="2880"
-                  stroke-width="36"
+                  y1="2520"
+                  y2="2520"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2880" fill="black" style="text-anchor:end">Purple Fountain Weeping Beech</text>
+            <text x="0" y="2520" fill="black" style="text-anchor:end">Purple Fountain Weeping Beech</text>
             <text x="100"
-                  y="2880"
+                  y="2520"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">25</text>
@@ -1157,14 +1160,14 @@
             <line id="White Fringe"
                   x1="0"
                   x2="100"
-                  y1="2920"
-                  y2="2920"
-                  stroke-width="36"
+                  y1="2555"
+                  y2="2555"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2920" fill="black" style="text-anchor:end">White Fringe</text>
+            <text x="0" y="2555" fill="black" style="text-anchor:end">White Fringe</text>
             <text x="100"
-                  y="2920"
+                  y="2555"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">25</text>
@@ -1173,14 +1176,14 @@
             <line id="Eastern Redbud"
                   x1="0"
                   x2="100"
-                  y1="2960"
-                  y2="2960"
-                  stroke-width="36"
+                  y1="2590"
+                  y2="2590"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="2960" fill="black" style="text-anchor:end">Eastern Redbud</text>
+            <text x="0" y="2590" fill="black" style="text-anchor:end">Eastern Redbud</text>
             <text x="100"
-                  y="2960"
+                  y="2590"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">25</text>
@@ -1189,14 +1192,14 @@
             <line id="Weeping Japanese Cherry"
                   x1="0"
                   x2="100"
-                  y1="3000"
-                  y2="3000"
-                  stroke-width="36"
+                  y1="2625"
+                  y2="2625"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="3000" fill="black" style="text-anchor:end">Weeping Japanese Cherry</text>
+            <text x="0" y="2625" fill="black" style="text-anchor:end">Weeping Japanese Cherry</text>
             <text x="100"
-                  y="3000"
+                  y="2625"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">25</text>
@@ -1205,14 +1208,14 @@
             <line id="Paperbark Maple"
                   x1="0"
                   x2="100"
-                  y1="3040"
-                  y2="3040"
-                  stroke-width="36"
+                  y1="2660"
+                  y2="2660"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="3040" fill="black" style="text-anchor:end">Paperbark Maple</text>
+            <text x="0" y="2660" fill="black" style="text-anchor:end">Paperbark Maple</text>
             <text x="100"
-                  y="3040"
+                  y="2660"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">25</text>
@@ -1221,14 +1224,14 @@
             <line id="Forest Pansy Redbud"
                   x1="0"
                   x2="100"
-                  y1="3080"
-                  y2="3080"
-                  stroke-width="36"
+                  y1="2695"
+                  y2="2695"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="3080" fill="black" style="text-anchor:end">Forest Pansy Redbud</text>
+            <text x="0" y="2695" fill="black" style="text-anchor:end">Forest Pansy Redbud</text>
             <text x="100"
-                  y="3080"
+                  y="2695"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">25</text>
@@ -1237,14 +1240,14 @@
             <line id="Northern Sweetbay Magnolia"
                   x1="0"
                   x2="100"
-                  y1="3120"
-                  y2="3120"
-                  stroke-width="36"
+                  y1="2730"
+                  y2="2730"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="3120" fill="black" style="text-anchor:end">Northern Sweetbay Magnolia</text>
+            <text x="0" y="2730" fill="black" style="text-anchor:end">Northern Sweetbay Magnolia</text>
             <text x="100"
-                  y="3120"
+                  y="2730"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">25</text>
@@ -1253,14 +1256,14 @@
             <line id="Common Witchhazel"
                   x1="0"
                   x2="100"
-                  y1="3160"
-                  y2="3160"
-                  stroke-width="36"
+                  y1="2765"
+                  y2="2765"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="3160" fill="black" style="text-anchor:end">Common Witchhazel</text>
+            <text x="0" y="2765" fill="black" style="text-anchor:end">Common Witchhazel</text>
             <text x="100"
-                  y="3160"
+                  y="2765"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">25</text>
@@ -1269,14 +1272,14 @@
             <line id="Kousa Dogwood"
                   x1="0"
                   x2="80"
-                  y1="3200"
-                  y2="3200"
-                  stroke-width="36"
+                  y1="2800"
+                  y2="2800"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="3200" fill="black" style="text-anchor:end">Kousa Dogwood</text>
+            <text x="0" y="2800" fill="black" style="text-anchor:end">Kousa Dogwood</text>
             <text x="80"
-                  y="3200"
+                  y="2800"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">20</text>
@@ -1285,14 +1288,14 @@
             <line id="Prairiefire Flowering Crabapple"
                   x1="0"
                   x2="80"
-                  y1="3240"
-                  y2="3240"
-                  stroke-width="36"
+                  y1="2835"
+                  y2="2835"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="3240" fill="black" style="text-anchor:end">Prairiefire Flowering Crabapple</text>
+            <text x="0" y="2835" fill="black" style="text-anchor:end">Prairiefire Flowering Crabapple</text>
             <text x="80"
-                  y="3240"
+                  y="2835"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">20</text>
@@ -1301,14 +1304,14 @@
             <line id="Snowdrift Crabapple"
                   x1="0"
                   x2="80"
-                  y1="3280"
-                  y2="3280"
-                  stroke-width="36"
+                  y1="2870"
+                  y2="2870"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="3280" fill="black" style="text-anchor:end">Snowdrift Crabapple</text>
+            <text x="0" y="2870" fill="black" style="text-anchor:end">Snowdrift Crabapple</text>
             <text x="80"
-                  y="3280"
+                  y="2870"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">20</text>
@@ -1317,14 +1320,14 @@
             <line id="Japanese Red Maple"
                   x1="0"
                   x2="80"
-                  y1="3320"
-                  y2="3320"
-                  stroke-width="36"
+                  y1="2905"
+                  y2="2905"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="3320" fill="black" style="text-anchor:end">Japanese Red Maple</text>
+            <text x="0" y="2905" fill="black" style="text-anchor:end">Japanese Red Maple</text>
             <text x="80"
-                  y="3320"
+                  y="2905"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">20</text>
@@ -1333,14 +1336,14 @@
             <line id="Sweetbay Magnolia 'Santa Rose'"
                   x1="0"
                   x2="64"
-                  y1="3360"
-                  y2="3360"
-                  stroke-width="36"
+                  y1="2940"
+                  y2="2940"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="3360" fill="black" style="text-anchor:end">Sweetbay Magnolia 'Santa Rose'</text>
+            <text x="0" y="2940" fill="black" style="text-anchor:end">Sweetbay Magnolia 'Santa Rose'</text>
             <text x="64"
-                  y="3360"
+                  y="2940"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">16</text>
@@ -1349,14 +1352,14 @@
             <line id="Lost Franklinia"
                   x1="0"
                   x2="60"
-                  y1="3400"
-                  y2="3400"
-                  stroke-width="36"
+                  y1="2975"
+                  y2="2975"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="3400" fill="black" style="text-anchor:end">Lost Franklinia</text>
+            <text x="0" y="2975" fill="black" style="text-anchor:end">Lost Franklinia</text>
             <text x="60"
-                  y="3400"
+                  y="2975"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">15</text>
@@ -1365,14 +1368,14 @@
             <line id="Weeping White Pine"
                   x1="0"
                   x2="48"
-                  y1="3440"
-                  y2="3440"
-                  stroke-width="36"
+                  y1="3010"
+                  y2="3010"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="3440" fill="black" style="text-anchor:end">Weeping White Pine</text>
+            <text x="0" y="3010" fill="black" style="text-anchor:end">Weeping White Pine</text>
             <text x="48"
-                  y="3440"
+                  y="3010"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">12</text>
@@ -1381,14 +1384,14 @@
             <line id="Flower of Kent"
                   x1="0"
                   x2="44"
-                  y1="3480"
-                  y2="3480"
-                  stroke-width="36"
+                  y1="3045"
+                  y2="3045"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="3480" fill="black" style="text-anchor:end">Flower of Kent</text>
+            <text x="0" y="3045" fill="black" style="text-anchor:end">Flower of Kent</text>
             <text x="44"
-                  y="3480"
+                  y="3045"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">11</text>
@@ -1397,14 +1400,14 @@
             <line id="Nanking Cherry"
                   x1="0"
                   x2="24"
-                  y1="3520"
-                  y2="3520"
-                  stroke-width="36"
+                  y1="3080"
+                  y2="3080"
+                  stroke-width="31.5"
                   stroke="green"
                   transform="translate(10,-6)"/>
-            <text x="0" y="3520" fill="black" style="text-anchor:end">Nanking Cherry</text>
+            <text x="0" y="3080" fill="black" style="text-anchor:end">Nanking Cherry</text>
             <text x="24"
-                  y="3520"
+                  y="3080"
                   fill="lightgreen"
                   style="text-anchor:end"
                   transform="translate(4,0)">6</text>
