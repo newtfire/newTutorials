@@ -67,7 +67,7 @@ color: black;
   src: url(https://fonts.gstatic.com/s/courgette/v8/wEO_EBrAnc9BLjLQAUk1VvoK.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* 2022-01-29 ebb: CSS GRID DISPLAY: 
+/* 2022-01-29 ebb: CSS GRID DISPLAY for SIDEBAR and MAIN:
  * OUTERMOST CONTAINER in the HTML document IS div.grid
  * div.grid contains the div.sidebar and div.main
  * We set a column display with relative size using fr units.
@@ -76,38 +76,45 @@ color: black;
  * and the second element (main) with the larger fr width. . */
 div.grid {
 display:grid;
+justify-content:start; align-items: start;;
 grid-auto-flow:column;
-grid-template-columns:.3fr .7fr;
-grid-column-gap: 2vw;
+grid-template-columns:.21fr .7fr;
+grid-column-gap: 1vw;
 /* grid-column-gap and grid-row-gap provide a little space in between
  * cells of the grid. */
 }
 
 /* SIDEBAR STYLING: This can be its own grid container, set now in rows to control the relative proportion of the <figure> at the top to the <ul> beneath it.*/
 div.sidebar {
-display:grid;
+position: sticky;
+  display:grid;
+  top: 0;
 grid-auto-flow:row;
-grid-template-rows:.1fr .9fr;
+grid-template-rows:.2fr .2fr;
 border-radius: 12px;
     background-color: #FFFFFF;
     font-size: 20px;
   line-height:2.0em;
+    width: fit-content;
 
 }
 /* ebb: To make images scale, set a <figure> element as a container (like 
  * a picture frame) around them. Control the width of the figure within its container element using a proportion. (I typically use a percentage here.)  */
 figure.pfp {
- width:90%;
+padding-left: 10%;
+ width: fit-content;
  margin:auto;
+ object-fit: contain;
 }
 /*  The <img> element is now nested inside a <figure>. We make it scale
  * with the first two properties in the CSS below: object-fit:contain; and width:100%. You can make the width anything you like. Typically we fill the picture frame <figure>, and make the <figure> a certain width in proportion to *its* container, the sidebar.    */
 img#pfp {
 object-fit:contain;
- width:100%;
+ width:70%;
 border:none;
 border-radius: 15px;
 background-color: transparent;
+margin-top: 5%;
 }
 
 
@@ -117,8 +124,9 @@ div.main{
 }
 /* Again, we set a <figure> element around the <img> that you wish to scale. Set a relative width for the container figure, and then use object-fit:contain, which works in the CSS grid system to keep the image within its grid framework.  */
 figure.mainImage {
-    width:80%;
+    width:60%;
 }
+
 figure.mainImage > img{
     object-fit:contain;
     width:100%;
@@ -127,7 +135,7 @@ figure.mainImage > img{
     border: 12px solid white;
     margin-bottom: 20px;
    
-}
+} 
 
   img.iconbox{
 object-fit:contain;
@@ -237,7 +245,7 @@ ul {
         border: 12px solid white;
     background-color: white;
     border-radius: 12px;
-    width: fit-content;
+    /*  width: fit-content;*/
     font-size: 18px;
   line-height: 2.0em;
   text-align: left;
@@ -273,21 +281,77 @@ h1.welcome {
     margin-left: 35px;
 }
 
-.overlay {
-  position: absolute; 
-  bottom: 22px;
-  left: 22px;
-  right: 0px;
+figure:hover .overlay {
+  opacity: 1;
+}
+
+/*  div > figure{
+position: relative;
+display:block;
+margin-left: auto;
+margin-right: auto;
+margin:initial;
+flex-wrap: wrap;
+ }*/
+
+ 
+ /* 2022-02-20 ebb: This is a new grid for setting up the gallery to have equally sized columns and rows */
+section.gridgallery { 
+   display:grid;
+grid-auto-flow:row;
+/* 3 rows */
+grid-template-rows:repeat(3, .33fr);
+/* 4 columns */
+grid-template-columns:repeat(4, .25fr);
+align-items:stretch;
+
+}
+
+section.gridgallery > figure {
+   display:grid;
+   grid-template-rows: .5fr .5fr;;
+align-items:stretch;
+position:relative;
+}
+
+section.gridgallery > figure > img.thumbnail {
+    border: 1vmin solid white;
+    background-color: white;
+    border-radius: 7%;
+    vertical-align: bottom;
+     margin: 1vmin;
+     object-fit:contain;
+   width:100%
+
+}
+
+ 
+img.thumbnail {
+    margin: 1vmin;
+    max-height: 200px;
+    max-width: 200px;
+
+}
+
+figure > .overlay {
+  position: absolute; /* ebb: I'm tinkering with the your position: absolute 
+   * together with top: and  left: properties. I'm anchoring this with a position:relative
+   * on the parent figure element. 
+   * See https://webdesign.tutsplus.com/tutorials/the-quirks-of-css-grid-and-absolute-positioning--cms-31437  */
+  top:60%;
+  left:0%;
+  height: 30%;
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.5); /* Black see-through */
   color: #f1f1f1; 
-  width: 90px;
+  width: fit-content;
+  height:fit-content;
   transition: .5s ease;
   opacity:0;
-  border-radius: 2px;
+  border-radius: 7%;
   color: white;
   font-size: x-small;
-  padding: 20px;
+  padding: 1vmin;
   text-align: left;
   font-family: 'Open Sans', sans-serif;
 }
@@ -296,19 +360,10 @@ figure:hover .overlay {
   opacity: 1;
 }
 
-div > figure{
-position: relative;
-display:block;
-margin-left: auto;
-margin-right: auto;
-margin:initial;
-flex-wrap: wrap;
- }
- 
- footer{
+footer{
      display: block;
-     margin-top: 10px;
-     bottom: 10px;
+     margin-top: 2%;
+     bottom: 2%;
      position: sticky;
  }
  
@@ -320,6 +375,12 @@ text-align: center;
      position: relative;
           border: none;
           background-color: transparent;
-          border-radius: 0px;
+          border-radius: 0%;
  }
  
+ img{
+display:block;
+border: 1vmin solid white;
+    background-color: white;
+    border-radius: 7%;
+}
