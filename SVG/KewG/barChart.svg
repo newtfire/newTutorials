@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+   <g transform="translate(0, 550)">
+      <line x1="0"
+            y1="0"
+            x2="1440"
+            y2="0"
+            stroke="black"
+            stroke-width="2"/>
+      <g class="page" id="4">
+         <text x="60" y="30" transform="rotate(-20 60,100)">
+            page#4</text>
+         <line class="color"
+               x1="60"
+               y1="0"
+               x2="60"
+               y2="-140.0000000000000001"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="60"
+               y1="-140.0000000000000001"
+               x2="60"
+               y2="-220.0000000000000002"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="60"
+               y1="-220.0000000000000002"
+               x2="60"
+               y2="-220.0000000000000002"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="60"
+               y1="-220.0000000000000002"
+               x2="60"
+               y2="-300.0000000000000003"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="5">
+         <text x="120" y="30" transform="rotate(-20 120,100)">
+            page#5</text>
+         <line class="color"
+               x1="120"
+               y1="0"
+               x2="120"
+               y2="-137.4999999999999999"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="120"
+               y1="-137.4999999999999999"
+               x2="120"
+               y2="-262.5"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="120"
+               y1="-262.5"
+               x2="120"
+               y2="-262.5"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="120"
+               y1="-262.5"
+               x2="120"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="6">
+         <text x="180" y="30" transform="rotate(-20 180,100)">
+            page#6</text>
+         <line class="color"
+               x1="180"
+               y1="0"
+               x2="180"
+               y2="-75"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="180"
+               y1="-75"
+               x2="180"
+               y2="-300"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="180"
+               y1="-300"
+               x2="180"
+               y2="-300"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="180"
+               y1="-300"
+               x2="180"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="7">
+         <text x="240" y="30" transform="rotate(-20 240,100)">
+            page#7</text>
+         <line class="color"
+               x1="240"
+               y1="0"
+               x2="240"
+               y2="-39.9999999999999999"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="240"
+               y1="-39.9999999999999999"
+               x2="240"
+               y2="-199.9999999999999998"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="240"
+               y1="-199.9999999999999998"
+               x2="240"
+               y2="-279.9999999999999999"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="240"
+               y1="-279.9999999999999999"
+               x2="240"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="8">
+         <text x="300" y="30" transform="rotate(-20 300,100)">
+            page#8</text>
+         <line class="color"
+               x1="300"
+               y1="0"
+               x2="300"
+               y2="-42.8571428571428571"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="300"
+               y1="-42.8571428571428571"
+               x2="300"
+               y2="-257.1428571428571429"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="300"
+               y1="-257.1428571428571429"
+               x2="300"
+               y2="-300"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="300"
+               y1="-300"
+               x2="300"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="9">
+         <text x="360" y="30" transform="rotate(-20 360,100)">
+            page#9</text>
+         <line class="color"
+               x1="360"
+               y1="0"
+               x2="360"
+               y2="-56.25"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="360"
+               y1="-56.25"
+               x2="360"
+               y2="-262.5"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="360"
+               y1="-262.5"
+               x2="360"
+               y2="-300"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="360"
+               y1="-300"
+               x2="360"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="10">
+         <text x="420" y="30" transform="rotate(-20 420,100)">
+            page#10</text>
+         <line class="color"
+               x1="420"
+               y1="0"
+               x2="420"
+               y2="-112.5"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="420"
+               y1="-112.5"
+               x2="420"
+               y2="-262.5"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="420"
+               y1="-262.5"
+               x2="420"
+               y2="-262.5"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="420"
+               y1="-262.5"
+               x2="420"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="11">
+         <text x="480" y="30" transform="rotate(-20 480,100)">
+            page#11</text>
+         <line class="color"
+               x1="480"
+               y1="0"
+               x2="480"
+               y2="-81.8181818181818181"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="480"
+               y1="-81.8181818181818181"
+               x2="480"
+               y2="-300"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="480"
+               y1="-300"
+               x2="480"
+               y2="-300"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="480"
+               y1="-300"
+               x2="480"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="12">
+         <text x="540" y="30" transform="rotate(-20 540,100)">
+            page#12</text>
+         <line class="color"
+               x1="540"
+               y1="0"
+               x2="540"
+               y2="0"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="540"
+               y1="0"
+               x2="540"
+               y2="-249.9999999999999999"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="540"
+               y1="-249.9999999999999999"
+               x2="540"
+               y2="-300"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="540"
+               y1="-300"
+               x2="540"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="13">
+         <text x="600" y="30" transform="rotate(-20 600,100)">
+            page#13</text>
+         <line class="color"
+               x1="600"
+               y1="0"
+               x2="600"
+               y2="0"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="600"
+               y1="0"
+               x2="600"
+               y2="-249.9999999999999999"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="600"
+               y1="-249.9999999999999999"
+               x2="600"
+               y2="-300"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="600"
+               y1="-300"
+               x2="600"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="14">
+         <text x="660" y="30" transform="rotate(-20 660,100)">
+            page#14</text>
+         <line class="color"
+               x1="660"
+               y1="0"
+               x2="660"
+               y2="-21.4285714285714287"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="660"
+               y1="-21.4285714285714287"
+               x2="660"
+               y2="-257.1428571428571429"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="660"
+               y1="-257.1428571428571429"
+               x2="660"
+               y2="-300"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="660"
+               y1="-300"
+               x2="660"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="15">
+         <text x="720" y="30" transform="rotate(-20 720,100)">
+            page#15</text>
+         <line class="color"
+               x1="720"
+               y1="0"
+               x2="720"
+               y2="0"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="720"
+               y1="0"
+               x2="720"
+               y2="-300"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="720"
+               y1="-300"
+               x2="720"
+               y2="-300"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="720"
+               y1="-300"
+               x2="720"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="16">
+         <text x="780" y="30" transform="rotate(-20 780,100)">
+            page#16</text>
+         <line class="color"
+               x1="780"
+               y1="0"
+               x2="780"
+               y2="0"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="780"
+               y1="0"
+               x2="780"
+               y2="-257.1428571428571429"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="780"
+               y1="-257.1428571428571429"
+               x2="780"
+               y2="-257.1428571428571429"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="780"
+               y1="-257.1428571428571429"
+               x2="780"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="17">
+         <text x="840" y="30" transform="rotate(-20 840,100)">
+            page#17</text>
+         <line class="color"
+               x1="840"
+               y1="0"
+               x2="840"
+               y2="-75"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="840"
+               y1="-75"
+               x2="840"
+               y2="-300"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="840"
+               y1="-300"
+               x2="840"
+               y2="-300"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="840"
+               y1="-300"
+               x2="840"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="18">
+         <text x="900" y="30" transform="rotate(-20 900,100)">
+            page#18</text>
+         <line class="color"
+               x1="900"
+               y1="0"
+               x2="900"
+               y2="-60"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="900"
+               y1="-60"
+               x2="900"
+               y2="-300"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="900"
+               y1="-300"
+               x2="900"
+               y2="-300"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="900"
+               y1="-300"
+               x2="900"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="19">
+         <text x="960" y="30" transform="rotate(-20 960,100)">
+            page#19</text>
+         <line class="color"
+               x1="960"
+               y1="0"
+               x2="960"
+               y2="0"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="960"
+               y1="0"
+               x2="960"
+               y2="-300"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="960"
+               y1="-300"
+               x2="960"
+               y2="-300"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="960"
+               y1="-300"
+               x2="960"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="20">
+         <text x="1020" y="30" transform="rotate(-20 1020,100)">
+            page#20</text>
+         <line class="color"
+               x1="1020"
+               y1="0"
+               x2="1020"
+               y2="-150"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="1020"
+               y1="-150"
+               x2="1020"
+               y2="-300"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="1020"
+               y1="-300"
+               x2="1020"
+               y2="-300"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="1020"
+               y1="-300"
+               x2="1020"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="21">
+         <text x="1080" y="30" transform="rotate(-20 1080,100)">
+            page#21</text>
+         <line class="color"
+               x1="1080"
+               y1="0"
+               x2="1080"
+               y2="0"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="1080"
+               y1="0"
+               x2="1080"
+               y2="-240"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="1080"
+               y1="-240"
+               x2="1080"
+               y2="-300"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="1080"
+               y1="-300"
+               x2="1080"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="22">
+         <text x="1140" y="30" transform="rotate(-20 1140,100)">
+            page#22</text>
+         <line class="color"
+               x1="1140"
+               y1="0"
+               x2="1140"
+               y2="-107.1428571428571429"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="1140"
+               y1="-107.1428571428571429"
+               x2="1140"
+               y2="-278.5714285714285716"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="1140"
+               y1="-278.5714285714285716"
+               x2="1140"
+               y2="-300.0000000000000003"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="1140"
+               y1="-300.0000000000000003"
+               x2="1140"
+               y2="-300.0000000000000003"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="23">
+         <text x="1200" y="30" transform="rotate(-20 1200,100)">
+            page#23</text>
+         <line class="color"
+               x1="1200"
+               y1="0"
+               x2="1200"
+               y2="-192.8571428571428571"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="1200"
+               y1="-192.8571428571428571"
+               x2="1200"
+               y2="-300"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="1200"
+               y1="-300"
+               x2="1200"
+               y2="-300"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="1200"
+               y1="-300"
+               x2="1200"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+      <g class="page" id="24">
+         <text x="1260" y="30" transform="rotate(-20 1260,100)">
+            page#24</text>
+         <line class="color"
+               x1="1260"
+               y1="0"
+               x2="1260"
+               y2="0"
+               stroke="red"
+               stroke-width="20"/>
+         <line class="nature"
+               x1="1260"
+               y1="0"
+               x2="1260"
+               y2="-128.5714285714285713"
+               stroke="green"
+               stroke-width="20"/>
+         <line class="tech"
+               x1="1260"
+               y1="-128.5714285714285713"
+               x2="1260"
+               y2="-300"
+               stroke="yellow"
+               stroke-width="20"/>
+         <line class="shape"
+               x1="1260"
+               y1="-300"
+               x2="1260"
+               y2="-300"
+               stroke="blue"
+               stroke-width="20"/>
+      </g>
+   </g>
+</svg>

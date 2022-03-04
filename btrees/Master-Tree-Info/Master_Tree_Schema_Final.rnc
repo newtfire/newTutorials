@@ -1,0 +1,41 @@
+datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+start = btrees
+btrees = element btrees {entry+}
+
+entry = element entry {id, tn*, cname, sname, treeType, status, origin, height, 
+seed, desc?, leaf, long, lat, elev}
+
+id = attribute xml:id {xsd:ID}
+#ged: we need to change this in the master list to id not xml:id
+tn = attribute tn {xsd:integer | "N/A"} 
+#ged: tn means trail number
+cname = element cname {altName* , text}
+sname = element sname {text}
+altName = attribute altName {text}
+treeType = element treeType {"Deciduous" | "Coniferous"}
+
+status = element status {"Presumed Extinct" | "Possibly Extinct" | "Critically Imperiled" | "Imperiled" | "Vulnerable" | "Apparently Secure" | "Secure" | "Undefined"}
+origin = element origin { continent+}
+continent = element continent {direct+,("Europe" | "Asia" | "Oceania" | "South America" | "North America" | "Africa" | "Antarctica")}
+direct = attribute direct {"Central" | "Eastern" | "Western" | "Northern" | "Southern" | "South Eastern" | "South Western" | "North Western" | "North Eastern" | "West" | "East" | "North" | "South" }
+#ged:  I am still working on the origins!
+#I want to make these options more specific
+
+#ged: Maybe adding an Invasive Element
+height = element height {unit, min?, max?, avg?, empty}
+min = attribute min {xsd:integer}
+max = attribute max {xsd:integer}
+avg = attribute avg {xsd:integer}
+unit = attribute unit {"ft" | text}
+# Example: <height unit="ft" min="60" max="80"/>
+seed = element seed {"Gymnosperm (Naked)" | "Angiosperm (Enclosed)"}
+desc = element desc {text}
+# ged and gmh discussion: <desc> should hold something unique and special like a fun fact about the tree.
+leaf = element leaf {"Simple" | "Compound" | "Evergreen"}
+#shape = attribute shape {"oval" | "truncate" | "elliptical" | "lancolate" | "linear" | "und"}
+#ged: I think if we have the leaf element it is fine 
+#struct = attribute struct {"simple" | "compound" | "evergreen"}
+long = element long {xsd:float}
+lat = element lat {xsd:float}
+elev = element elev {xsd:float}

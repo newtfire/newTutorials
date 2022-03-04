@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-model href="../KewG_relax_ng.rnc" type="application/relax-ng-compact-syntax"?>
+<xml>
+    
+    <metadata>
+        <source>
+            <title>Kew Gardens</title>
+            <author>Virginia Woolf</author>
+            <illustrator>Vanessa Bell</illustrator>
+            <publisher>Hogarth Press</publisher>
+            <pubDate>1927</pubDate>
+            <format>Book</format>
+            <archive>British Library</archive>
+            <sourceLink>https://www.bl.uk/collection-items/kew-gardens-by-virginia-woolf-1927</sourceLink>
+        </source>
+        <edition>
+            <editor xml:id="avr edm yxj"></editor>
+            <consultant xml:id="ebb"></consultant>
+            <place>Penn State Behrend</place>
+            <date>2021</date>
+            <license>Public Domain</license>
+        </edition>
+    </metadata>
+    
+    
+    <page n="13" facs="../docs/img/page13.jpg">
+        <description resp="#yxj">Surrounded by curves. At the top, there is a dashed curve and four shorter
+            solid curve. The left and right curves are symmetrical. At the center of bottom, there
+            is a circle filled with many dots. There are symmetrical dashed curves on both sides of
+            the circle. A long solid curve is below the circle.</description>
+        <line n="1"/>He was talking about spirits—the
+                spirits of the dead, 
+        <line n="2"/>who, according to him, were even now telling him 
+        <line n="3"/>all sorts of odd things about their experiences in 
+        <line n="4"/>Heaven. 
+        <line n="5"/>&quot;Heaven was known to the ancients as
+            Thessaly, 
+        <line n="6"/>William, and now, with this war, the
+                spirit matter 
+        <line n="7"/>is rolling between the <nature type="ground">hills</nature> like
+            <nature type="sky">thunder</nature>.&quot; He 
+        <line n="8"/>paused, seemed to listen, smiled, jerked his <nature type="human-body">head</nature> and 
+        <line n="9"/>continued:—
+        <line n="10"/>&quot;You have a small eletric <tech type="parts">battery</tech> and a piece of 
+        <line n="11"/>rubber to insulate the wire—isolate?—insulate?—well, 
+        <line n="12"/>we&apos;ll skip the details, no good going into details that 
+        <line n="13"/>wouldn&apos;t be understood—and in short the little machine
+        <line n="14"/>stands in any convenient position by the head of the 
+        <line n="15"/>bed, we will say, on a neat <nature type="wood">mahogany</nature> stand. All 
+        <line n="16"/>arrangements being properly fixed by workmen under 
+        <line n="17"/>my direction, the widow applies her <nature type="human-body"
+                >ear</nature> and summons 
+        <line n="18"/>the spirit by sign as agreed, Women! Widows! 
+        <line n="19"/>Women in black—&quot;
+    </page>
+
+    <page n="14" facs="../docs/img/page14.jpg">
+        <description resp="#yxj">One thick and one thin curve at the top, right and bottom of the text. </description>
+        <line n="1"/>Here he seemed to have caught sight of a woman's <tech type="cloth">dress</tech>
+        <line n="2"/>in the distance, which in the shade looked a <color>purple black</color>. 
+        <line n="3"/>He took off his <tech type="cloth">hat</tech>, placed his <nature type="human-body">hand</nature>
+            upon his <nature type="human-body">heart</nature>, 
+        <line n="4"/>and hurried towards her muttering and gesticulating 
+        <line n="5"/>feverishly. But William caught him by
+            the sleeve and 
+        <line n="6"/>touched a <nature type="plant">flower</nature> with the tip of his walking-stick in order 
+        <line n="7"/>to divert the old man's attention. After looking at it for 
+        <line n="8"/>a moment in some confusion the old man bent his 
+        <line n="9"/><nature type="human-body">ear</nature> to it and seemed to answer a voice speaking from 
+        <line n="10"/>it, for he began talking about the <nature type="ground">forests</nature> of 
+        <line n="11"/>Uruguay which he had visited hundreds of years 
+        <line n="12"/>ago in company with the most beautiful young 
+        <line n="13"/>woman in Europe. He could be heard mur-
+        <line n="14"/>muring about <nature type="ground">forests</nature> of Uruguay
+            blanketed 
+        <line n="15"/>with the wax <nature type="plant">petals</nature> of tropical <nature type="flower"
+                >roses</nature>, <nature type="bird">night-
+        <line n="16"/>ingales</nature>, sea <nature type="ground">beaches</nature>, mermaids, and women drowned 
+        <line n="17"/>at sea, as he suffered himself to be moved on by 
+        <line n="18"/>William, upon whose <nature type="human-body">face</nature> the look of 
+        <line n="19"/>stoical patience grew slowly deeper 
+        <line n="20"/>and deeper. 
+    </page>
+    <page n="15" facs="../docs/img/page15.jpg">
+        <description resp="#yxj">Picture of bushes fills at the top. A twist is on the left side and right side of the text. At the bottom, there is thick solid curve, and a rhombus grid breaks it in the middle.</description>
+        <line n="1"/>Following his steps so closely as to be slightly puzzled 
+        <line n="2"/>by his gestures came two elderly women of the 
+        <line n="3"/>lower middle class, one <nature type="human-body">stout</nature> and <nature type="human-body">ponderous</nature>, 
+        <line n="4"/>the other <nature type="human-body">rosy-checked</nature> and <nature type="human-body">nimble</nature>. Like most 
+        <line n="5"/>people of their station they were frankly fascinated 
+        <line n="6"/>by any sign of eccentricity betokening a disordered 
+        <line n="7"/><nature type="human-body">brain</nature>, especially in the well-to-do; but they were 
+        <line n="8"/>too far off to be certain whether the gestures
+        <line n="9"/>were merely eccentric or genuinely mad. After 
+        <line n="10"/>they had scrutinised the old man&apos; back in 
+        <line n="11"/>silence for a moment and given each other 
+        <line n="12"/>a queer, sly look, they went on energeticlly 
+        <line n="13"/>piecing together their very complicated 
+        <line n="14"/>dialogue: 
+        <line n="15"/>&quot;Nell, Bert, Lot, Cess, Phil, Pa, he says, I says, 
+        <line n="16"/>she says, I says, I says, I says—&quot;
+        <line n="17"/>&quot;My Bert, Sis, Bill, Grandad, the old man, 
+        <line n="18"/>sugar. 
+        <line n="19"/>Sugar, flour, kippers, greens, 
+        <line n="20"/>Sugar, sugar, sugar.
+    </page>
+    <page n="16" facs="../docs/img/page16.jpg">
+        <description resp="#yxj">At the top, 15 short arcs form a long arc. One thick solid straight line is on the left, and one is on the right. Both they are broken by several petals. At the bottom, some curves and straight lines form the shape of the ground. A large flower and some petals break the sentences in the line 6-16.</description>
+        <line n="1"/>The <nature type="human-body">ponderous</nature> woman looked through the pattern of falling 
+        <line n="2"/>words at the <nature type="plant">flower</nature>s standing cool, firm and upright 
+        <line n="3"/>in the earth, with a curious expression. She saw them 
+        <line n="4"/>as a sleeper waking from a heavy sleep sees a brass 
+        <line n="5"/>candlestick reflecting the light in an unfamiliar way, and 
+        <line n="6"/>closes his <nature type="human-body">eyes</nature> and opens them, 
+        <line n="7"/>and seeing the brass candlestick again, 
+        <line n="8"/>finally starts wide awake and stares at the candle-
+        <line n="9"/>stick with all his powers. So the heavy 
+        <line n="10"/>woman came to a standstill opposite the 
+        <line n="11"/><shape>oval</shape> shaped <nature type="plant">flower bed</nature>, and ceased even 
+        <line n="12"/>to pretend to listen to what the other woman 
+        <line n="13"/>was saying. She stood there letting the words fall 
+        <line n="14"/>over her, swaying the top part 
+        <line n="15"/>of her <nature type="human-body">body</nature> slowly backwards 
+        <line n="16"/>and forwards, looking at the 
+        <line n="17"/><nature type="plant">flower</nature>s. Then she suggested that 
+        <line n="18"/>they should find a seat 
+        <line n="19"/>and have their tea. 
+    </page>
+    <page n="17" facs="../docs/img/page17.jpg">
+        <description resp="#yxj">Curves and straight line form a net which is around left, right and bottom of the page. At the top, there are many flowers and dots.</description>
+        <line n="1"/>The <nature type="animal">snail</nature> had now considered every possible method 
+        <line n="2"/>of reaching his goal without going round the 
+        <line n="3"/>dead <nature type="plant">leaf</nature> or climbing over it. Let alone 
+        <line n="4"/>the effort needed for climbing a <nature type="plant">leaf</nature>, he was 
+        <line n="5"/>doubtful whether the thin texture which vibrated 
+        <line n="6"/>with such an alarming crackle when touched 
+        <line n="7"/>even by the tip of his horns would bear his 
+        <line n="8"/>weight; and this determined him finally to 
+        <line n="9"/>creep and beneath it, for there was a point where 
+        <line n="10"/>the <nature type="plant">leaf</nature> curved high enough from the ground 
+        <line n="11"/>to admit him. He had just inserted his <nature type="human-body">head</nature> 
+        <line n="12"/>in the opening and was taking stock of the 
+        <line n="13"/>high <color>brown</color> roof and was getting used to the 
+        <line n="14"/>cool <color>brown</color> light when two other people came 
+        <line n="15"/>past outside on the <nature type="plant">turf</nature>. This time they were 
+        <line n="16"/>both young, a young man and a young woman.
+    </page>
+    <page n="18" facs="../docs/img/page18.jpg">
+        <description resp="#yxj">The container of this page looks like a big window with a flower at the top. The big window consists of two thin solid lines.</description>
+        <line n="1"/>They were both in the prime of youth, 
+        <line n="2"/>or even in that season which precedes the prime 
+        <line n="3"/>of youth, the season before the smooth <color>pink</color> folds 
+        <line n="4"/>of the <nature type="plant">flower</nature>s have burst their gummy case, when the 
+        <line n="5"/>wings of the <nature type="insect">butterfly</nature>, though fully grown, are motionless 
+        <line n="6"/>in the <nature type="sky">sun</nature>.
+        <line n="7"/>&quot;Lucky it isn&apos;t Friday,&quot; he observed.
+        <line n="8"/>&quot;Why? D&apos;you believe in luck?&quot;
+        <line n="9"/>&quot;They make you pay sixpence on Friday.&quot;
+        <line n="10"/>What&apos;s sixpence anyway? Isn&apos;t it worth 
+        <line n="11"/>sixpence?&quot;
+        <line n="12"/>&quot;What&apos;s &apos;it&apos;—what do you mean by
+            &apos;it&apos;?&quot;
+        <line n="13"/>&quot;O anything—I mean—you know what I mean.&quot;
+        <line n="14"/>Long pauses came between each of these remarks; 
+        <line n="15"/>they were uttered in toneless and monotonous voices. 
+        <line n="16"/>The couple stood still on the edge of the flower 
+        <line n="17"/>bed, and together pressed the end of her parasol 
+        <line n="18"/>deep down into the <nature type="ground">soft earth</nature>. 
+    </page>
+    <page n="19" facs="../docs/img/page19.jpg">
+        <description resp="#yxj">The container of this page looks like a piece of paper whose upper left corner and upper right  corner are slightly rolled up. The bottom the paper consists of six arcs, and each arc has two concentric circles above it. </description>
+        <line n="1"/>The action and the fact that his <nature type="human-body">hand</nature> 
+        <line n="2"/>rested on the top of hers expressed their feelings 
+        <line n="3"/>in a strange way, as these short insignificant words 
+        <line n="4"/>also expressed something, words with short wings 
+        <line n="5"/>for their heavy body of meaning, inadequate to 
+        <line n="6"/>carry them far and thus alighting awkwardly upon 
+        <line n="7"/>the very common objects that surrounded them 
+        <line n="8"/>and were to their inexperienced touch so massive: 
+        <line n="9"/>but who knows (so they thought as they pressed 
+        <line n="10"/>the parasol into the <nature type="ground">earth</nature>) what precipices aren&apos;t 
+        <line n="11"/>concealed in them, or what ridges of <nature type="water">ice</nature> don&apos;t 
+        <line n="12"/>shine in the <nature type="sky">sun</nature> on the other side? who 
+        <line n="13"/>knows? Who has ever seen this before? Even 
+        <line n="14"/>when she wondered what sort of tea they gave 
+        <line n="15"/>you at Kew he felt that something loomed up 
+        <line n="16"/>behind her words and stood vast and solid behind 
+        <line n="17"/>them; and the mist very slowly rose and uncovered 
+    </page>
+    <page n="20" facs="../docs/img/page20.jpg">
+        <description resp="#yxj">The container of this page looks like a large jar. Its top, left and right consist of two layers of curves. At the bottom, there are 6 smaller jars. Many dots and curves are below them, which form something like cushions. </description>
+        <line n="1"/>—O heavens!— what were those shapes?—little 
+        <line n="2"/><color>white</color> tables, and waitresses who looked first at 
+        <line n="3"/>her and then at him; and there was a bill 
+        <line n="4"/>that he would pay with a real two shilling 
+        <line n="5"/>piece, and it was real, all real, he assured 
+        <line n="6"/>himself, fingering the coin in his pocket, 
+        <line n="7"/>real to everyone except to hum and to her; 
+        <line n="8"/>even to him it began to seem real; and 
+        <line n="9"/>then—but it was too exciting to stand and
+        <line n="10"/>think any longer, and he pulled the parasol 
+        <line n="11"/>out of the <nature type="ground">earth</nature> with a jerk and was 
+        <line n="12"/>impatient to find the place 
+        <line n="13"/>where one had tea with other 
+        <line n="14"/>people, like other people. 
+    </page>
+    <page n="21" facs="../docs/img/page21.jpg">
+        <description resp="#yxj">At the top, there is a long straight line. In the upper left corner, there is half a vase pattern, and two flowers stretch to the right from the mouth of the vase. Below the vase, we can see two straight lines with different length. On the right, there are two curves. At the bottom, there are two straight lines with the similar length but different thickness. </description>
+        <line n="1"/>&quot;Come along, Trissie; it&apos;s time we had our 
+        <line n="2"/>tea.&quot;
+        <line n="3"/>&quot;Wherever does one have one&apos;s tea?" she 
+        <line n="4"/>asked with the oddest thrill of excitement 
+        <line n="5"/>in her voice, looking vaguely round and letting 
+        <line n="6"/>herself be drawn on down the <nature type="ground">grass path</nature>, trailing 
+        <line n="7"/>her parasol, turning her <nature type="human-body">head</nature> this way and that 
+        <line n="8"/>way, forgetting her tea, wishing to go down there 
+        <line n="9"/>and then down there, remembering orchids and 
+        <line n="10"/>cranes among wild <nature type="plant">flower</nature>s, a Chinese <tech type="building">pagoda</tech> and 
+        <line n="11"/>a<nature type="bird"> crimson-crested bird</nature>; but he bore her on. 
+    </page>
+    <page n="22" facs="../docs/img/page22.jpg">
+        <description resp="#yxj">At the top of the page, the picture looks like the roof of a pavilion. We can find a curvy path and three trees both on the left and on the right. At the bottom, there are some fences. </description>
+        <line n="1"/>Thus one couple after another with much the same irregular 
+        <line n="2"/>and aimless movement passed the <nature type="plant">flower-bed</nature> and 
+        <line n="3"/>were enveloped in layer after layer of <color>green blue</color> 
+        <line n="4"/>vapour, in which at first their <nature type="human-body">bodies</nature> had substance 
+        <line n="5"/>and a dash of colour, but later both substance and 
+        <line n="6"/>colour dissolved in the <color>green-blue</color> and atmosphere. How 
+        <line n="7"/>hot it was! So hot that even the thrush chose to 
+        <line n="8"/>hop, like a mechanical <nature type="bird">bird</nature>, in the shadow of the 
+        <line n="9"/><nature type="plant">flower</nature>s, with long pauses between one movement and 
+        <line n="10"/>the next; instead of rambling vaguely the <color>white</color> 
+        <line n="11"/><nature type="insect">butterflies</nature> danced one above another, making 
+        <line n="12"/>with their <color>white</color> shifting flakes the outline of a 
+        <line n="13"/>shattered marble column above the tallest 
+        <line n="14"/><nature type="nature">flower</nature>s; the glass roofs of the <tech type="building">palm house </tech>
+        <line n="15"/>shone as if a whole market full 
+        <line n="16"/>of shiny <color>green</color> umbrellas had opened 
+        <line n="17"/>in the <nature type="sky">sun</nature>; and in the drone of the 
+        <line n="18"/>aeroplane the voice of the summer 
+        <line n="19"/><nature type="sky">sky</nature> murmured its fierce soul. 
+    </page>
+    <page n="23" facs="../docs/img/page23.jpg">
+        <description resp="#yxj">At the top, there are many dots, which form a forest. There are some fallen leaves at the bottom left of the forest. A long straight is on the left. At the bottom, there are 6 similar unclear pattern.</description>
+        <line n="1"/><color>Yellow</color> and <color>black</color>, <color>pink</color> and <color>snow white</color>, 
+        <line n="2"/>shapes of all these colours, men, women and 
+        <line n="3"/>children were spotted for a second upon the 
+        <line n="4"/>horizon, and then, seeing the breadth of <color>yellow</color> that 
+        <line n="5"/>lay upon the <nature type="plant">grass</nature>, they wavered and sought shade 
+        <line n="6"/>beneath the <nature type="plant">trees</nature>, dissolving like drops of <nature type="water">water</nature> in 
+        <line n="7"/>the <color>yellow</color> and <color>green</color> atmosphere, staining it faintly with 
+        <line n="8"/><color>red</color> and <color>blue</color>. It seemed as if all gross and heavy 
+        <line n="9"/><nature type="human-body">bodies</nature> had sunk down in the heat motionless and lay
+        <line n="10"/>huddled upon the ground, but their voices went wavering 
+        <line n="11"/>from them as if they were flames lolling 
+        <line n="12"/>from the thick waxen <nature type="human-body">bodies</nature> of candles. 
+    </page>
+    <page n="24" facs="../docs/img/page24.jpg">
+        <description resp="#yxj">At the top, there is a semicircular flowerbed. Two polylines interlaced are around left, right and bottom of the page. In the center of the bottom, two arcs break two polylines separately. Between the two arcs, there is a circle flower core.</description>
+        <line n="1"/>Voices, yes, vioces, breaking the silence
+        <line n="2"/>suddently with such depth of contentment, such passion
+        <line n="3"/>of desire, or, in the voices of children, such freshness
+        <line n="4"/>of surprise; breaking the silence? But there was no
+        <line n="5"/>silence; all the time the <tech type="transport">motor omnibuses</tech> were turning
+        <line n="6"/>their <tech type="parts">wheels</tech> and changing their <tech type="parts">gear</tech>; like a vast
+        <line n="7"/>nest of Chinese boxes all of wrought <tech type="parts">steel</tech> turning
+        <line n="8"/>ceaselessly one within another the city murmured;
+        <line n="9"/>on the top of which the voices cried aloud and 
+        <line n="10"/>the <nature type="plant">petals</nature> of myriads of <nature type="plant">flower</nature>s flashed their colours
+        <line n="11"/>into the <nature type="sky">air</nature>.
+    </page>
+</xml>
