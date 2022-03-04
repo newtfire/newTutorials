@@ -1,4 +1,4 @@
-# ArgGIS Tutorials #
+# ArcGIS Tutorials #
 
 ## What is GIS? ##
 A geographic information system is used to display various types of data within a map-like format. GIS can connect various types of local data that display the physical geographical locations, as well as additional descriptions. 
