@@ -8,8 +8,8 @@ A way to generate thumbnails without complicating a website's code is through a 
 A computer's build and operating system will determine which version of the program is best. The creators [dedicated a page](https://imagemagick.org/script/download.php) to download links for *Windows*, *Macintosh*, *Linux* and other operating systems with support for 32-bit and 64-bit processors.
 
 ## Intro to *Image Magick*
+*Image Magick* is an independent program, but is compatible with the Git Bash shell. Both inside and outside of a repository, it can generate thumbnails, rename images, change DPI, and convert file types among others. [*Smashing Magazine's*](https://www.smashingmagazine.com/2015/06/efficient-image-resizing-with-imagemagick/) article discusses several capabilities of the program while providing sample code, side-by-side comparisons, and demonstrations for other techniques that are not discussed here. [A master coding index](https://imagemagick.org/script/command-line-options.php) was released by the developers containing dozens of commands and code samples for each. If you are using *GitHub*, have a folder set up outside the repository so command tests won't be picked up by a ```git pull```
 
-*Image Magick* is an independent program, but is compatible with the Git Bash shell. Both inside and outside of a repository, it can generate thumbnails, rename images, change DPI, and convert file types among others. [*Smashing Magazine's*](https://imagemagick.org/script/command-line-options.php) article discusses several capabilities of the program while providing sample code, side-by-side comparisons, and demonstrations for other techniques that are not discussed here. 
 
 ## Magick convert vs. Magick mogrify
 
