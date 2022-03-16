@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SVG Pie Chart Tutorial Walkthru - Review</title>
+    </head>
+    <body>
+        <h1>SVG Pie Chart Tutorial Walkthru - Review</h1>
+    stroke-dasharray with one value:
+<svg width="150" height="50" style="background-color:lightgrey">
+    <g transform="translate(20,20)" >   
+    
+            <line x1="0" y1="0" x2="100" y2="0" stroke="black" 
+                  stroke-dasharray="8"/>
+                  
+    </g>
+</svg>
+
+stroke-dasharray with two values:
+<svg width="150" height="50" style="background-color:lightgrey">
+    <g transform="translate(20,20)">
+        <line x1="0" y1="0" x2="100" y2="0" stroke="black"
+              stroke-dasharray="15 8"/>
+    </g>
+</svg>  
+
+Stroke-dasharray in <code> < circle > </code> :
+<svg width="100" height="100" style="background-color:lightgrey">
+    <g>
+            <circle cx="50" cy="50" r="20" stroke="black" stroke-width="3"
+                    fill="none "stroke-dasharray="15 8"/>
+    </g>
+</svg>
+
+<h2>Drawing a Pie Chart</h2>
+
+<p>Drawing a stroke-dasharray with a very high second value for the gap:</p>
+<svg width="100" height="100" style="background-color:lightgrey">
+  
+<circle cx="50" cy="50" r="20" stroke="black" stroke-width="3" 
+fill="none" stroke-dasharray="15 999"/>
+</svg>
+
+<p>Trying to increase the width of the stroke by doubling the radius (<code>20 * 2 = 40</code> => new <code>@stroke-width</code> value) to get a slice: </p>
+
+<svg width="120" height="100" style="background-color:lightgrey">
+    <g>
+        <circle cx="50" cy="50" r="20" stroke="black" stroke-width="40" 
+fill="none" stroke-dasharray="15 999"/>
+    </g>
+</svg>
+
+<h3>Controlling the percentage of a slice</h3>
+
+Two formulas:
+
+    <p><code>slice = percent * whole</code></p>
+
+    <p><code>whole(circle circumference) = 2 * pi * $r</code></p>
+<p>
+    
+    Set the size of dashes as value <code>slice</code>, and 
+    set the size of gaps as value <code>whole</code>.
+</p>
+
+So, we can get:
+
+<p><code>stroke-dasharray="slice, whole"</code></p>
+<p>
+    <code>stroke-dasharray="2 * pi * $r * $percent , 2 * pi * $r"</code>
+</p>
+
+<h3>Fake Soda Sales data being used to test this tutorial:</h3>
+
+<table>
+    <tr><th>Grape</th><th>Orange</th><th>Strawberry Kiwi</th><th>Lime</th></tr>
+    <tr><Td>15</Td><td>40</td><td>35</td><td>10</td></tr>
+</table>
+
+<h4>Using my Grape Soda sales data to draw the percent of sales that were grape:</h4>
+
+<pre>
+    <code>
+         draw a 15% slice for grape
+    
+             radius = 25
+             slice = 2 * pi * 25 * 15% = 23.561
+             whole = 2 * pi * 25 = 157.079
+    
+    </code>
+</pre>
+<svg width="120" height="100" style="background-color:lightgrey">
+   <g>
+       <circle cx="50" cy="50" r="25" stroke="blueviolet" stroke-width="50"
+               fill="none" stroke-dasharray="23.561 157.079"/>
+   </g>
+</svg>
+
+<h4><b>Step 1:</b> draw the whole circle</h4>
+
+<pre>
+    <code>
+             radius = 25
+             Slice:
+                Grape% + Orange% + StrawKiwi% + Lime% = 100%
+                2*pi*25*100% = 157.079
+             Whole:
+                2*pi*25 = 157.079
+    </code>
+</pre>
+<svg width="120" height="120" style="background-color:lightgrey">
+    <g transform="translate(10,10)">
+        <circle cx="50" cy="50" r="25" stroke="darkslategrey" stroke-width="50"
+                fill="none" stroke-dasharray="157.079, 157.079"/>
+    </g>
+</svg>
+<h4><b>Step 2:</b> draw a slice with percentage of sum of A% and B%.</h4>
+<p>In the case of the Soda Sales, <code>A% = Grape</code> and <code>B% = Orange</code></p>
+
+<pre>
+    <code>
+             radius = 25
+             Slice:
+                Grape% + Orange% = 55%
+                2*pi*25*55% = 86.393
+             Whole:
+                2*pi*25 = 157.079
+    </code>
+</pre>
+<svg width="120" height="120" style="background-color:lightgrey">
+    <g transform="translate(10,10)">
+        <circle cx="50" cy="50" r="25" stroke="darkslategrey" stroke-width="50"
+                fill="none" stroke-dasharray="86.393, 157.079"/>
+    </g>
+</svg>
+
+<p><b>Note:</b> Here, it would be helpful to include the fact that if you have more than 3 percentages to calculate into the pie chart,
+    you must first start with creating the <b>largest pie slice</b> by calculating the sum of the rest of the lower-value percentages.
+
+</p>
+
+<p>
+    In my case, I actually to add up the sum of <code>Grape</code>, <code>Strawberry Kiwi</code>, and <code>Lime</code> to create the pie slice for <code>Orange</code>, since it is the largest.
+</p>
+
+<p>
+    It may also help to state that you need a new <code>< circle ></code> element for each slice, as well as the whole.
+</p>
+
+<h4>Fixed Soda calculation:</h4>
+
+<pre>
+    <code>
+             radius = 25
+             Slice:
+                Grape% + StrawKiwi% + Lime% = 60%
+                2*pi*25*60% = 94.247
+             Whole:
+                2*pi*25 = 157.079
+    </code>
+</pre>
+
+<svg width="120" height="120" style="background-color:lightgrey">
+    <g transform="translate(10,10)">
+        <circle cx="50" cy="50" r="25" stroke="orange" stroke-width="50"
+        fill="none" stroke-dasharray="157.079, 157.079"/>
+        <circle cx="50" cy="50" r="25" stroke="darkslategrey" stroke-width="50"
+                fill="none" stroke-dasharray="94.247, 157.079"/>
+    </g>
+</svg>
+
+<h4><b>Step 3:</b> calculate percentage of A for "A" slice</h4>
+
+<p>In my test case, "A" = Strawberry Kiwi (second-largest value)</p>
+
+<p><b>Note:</b> Again, I think it would be helpful to mention that you must create the pie slices in order of percentage size, largest to smallest.
+</p>
+
+<p>It would be easy to assume by this tutorial that "A" simply means whatever your first percentage value is - which likely won't be the second-largest percentage in others' cases.</p>
+
+<p>
+    Since I have two other values besides Strawberry Kiwi, I actually need to calculate it by adding up the percentages of Lime, Grape, and Orange.
+</p>
+<pre>
+    <code>
+             radius = 25
+             Slice:
+                Grape% + Lime% + Orange% = 65% (Whole% - StrawKiwi%)
+                2*pi*25*65% = 102.101
+             Whole:
+                2*pi*25 = 157.079
+    </code>
+</pre>
+<svg width="120" height="120" style="background-color:lightgrey">
+    <g transform="translate(10,10)">
+        <circle cx="50" cy="50" r="25" stroke="orange" stroke-width="50"
+        fill="none" stroke-dasharray="157.079, 157.079"/>
+        <circle cx="50" cy="50" r="25" stroke="darkslategrey" stroke-width="50"
+                fill="none" stroke-dasharray="94.247, 157.079"/>
+        <circle cx="50" cy="50" r="25" stroke="pink" stroke-width="50"
+         		  fill="none" stroke-dasharray="102.101, 157.079"/>
+    </g>
+</svg>
+
+<h4><b>Step 5:</b> Calculate the next-lowest percentage value slice</h4>
+
+<p><b>Note:</b> This is actually where the first part of the tutorial ends, 
+which may leave users a bit lost on what to do if they have more than three values to put into their pie chart.</p>
+
+<p>I'm guessing that in order to calculate Grape, I need to add the values of Lime and Grape?</p>
+
+
+
+    </body>
+</html>
