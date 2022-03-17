@@ -1,14 +1,21 @@
-# ArcGIS Tutorials #
-
-## What is GIS? ##
+# ArcGIS Tutorials 
+## Introduction to ArcGIS
+### What is GIS? 
 A geographic information system is used to display various types of data within a map-like format. GIS can connect various types of local data that display the physical geographical locations, as well as additional descriptions. 
-## ArcGIS Online ##
+### ArcGIS Online 
 Is a cloud-based software that allows you to build interactive visual maps. This is Esri’s web-based mapping platform. You will need a License through ArcGIS in order to use it and thankful we have access to ArchGIS through Penn State!
 
-## ArcGIS Pro ##
+### ArcGIS Pro:
 This is Esri’s desktop application for ArcGIS. Please keep in mind the ArcGIS was made for Windows, not Macs. 
 
-## How to Create an Account and Download ArcGIS Pro: ##
+## Check Your System Requirements
+Follow this link and click the section labeled ***Check your computer’s ability to run ArcGIS Pro 2.9.***  
+[ArcGIS Pro 2.9 system requirements](https://pro.arcgis.com/en/pro-app/latest/get-started/arcgis-pro-system-requirements.htm)
+
+Follow all the steps and press the ***Run Tech Check*** button to make sure your system can handle the ArcGIS Pro desktop application. This will download a detection.exe file. Open the file and leave your tab open and wait until the file is done checking your computer. This process might take a few minutes to complete. 
+
+
+## How to Create an Account and Download ArcGIS Pro: 
 1. Go to [ArcGIS Online](https://www.esri.com/en-us/arcgis/products/arcgis-online/overview) and click the Sign In button.
 2. You will want to sign with the ArcGIS Organization’s URL section.
     1. You will want to type in the word pennstate
@@ -33,6 +40,7 @@ There is a Contents pane located on the left side of the window. The Contents pa
 
 There is a Catalog pane located on the right side of the window. This pane allows the user to access items of your project disk or through your portal. Using the Portal tab can be very useful to find various datasets from ArcGIS Online and Living Atlas geodatabases. 
 
+Listed Here is a Youtube playlist with quick tutorials for [ArcGIS Pro](https://www.youtube.com/watch?v=1YhdQToyPg4&list=PLGZUzt4E4O2IJFxX_Bhp98MJEw5ItRtvb)
 ## How to Look up Data within Living Atlas: ##
 First let's use the Basemap tool in the top panel to change the base style of our Map. Select the *Light Gray Canvas setting*
 
@@ -56,7 +64,13 @@ This is what your map should look like so far.
 
 ![Map of Native American Reservations](ArcGIS-Imgs/Map-Native-Res.PNG)
 
-## Formatting Data for ArcGIS: ##
-## Adding Data to your Map: ##
-## Display Data and Tables on your Map: ##
+## Formatting Data for ArcGIS: 
+
+Most of the data for this tutorial originated from federal government websites. Most federal government data is usually formatted within Excel to begin. So due to this fact we will be using Excel for convenience.  and in a spreadsheet format. For the sake of this tutorial we will create spreadsheets and then save them as csv files to prepare to import the data into ArcGIS Pro inorder to create a map layer.
+
+IMPORTANT TIP: Make sure there are no empty spaces within the columns and rows of your spreadsheets. ArcGIS will only read csv or tsv files that are computer readable, NOT human readable. If you have any blank cells within your spreadsheet 
+
+![Example of  the Excel spreadsheet](ArcGIS-Imgs/spreadsheet.PNG)
+## Adding Data to your Map: 
+## Display Data and Tables on your Map: 
 
