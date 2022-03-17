@@ -20,17 +20,16 @@ declare variable $c_DSGrey := "#2F4F4F";
 
 declare variable $radius := 200;
 declare variable $pi := math:pi();
-declare variable $circumf := 2 * math:pi() * $radius";
-
+declare variable $circumf := 2 * $pi * $radius;
 declare variable $total := $btrees/Q{}entry => count();
 
-declare variable $Secure := $btree//Q{}entry[Q{}status ! text() ! replace(. , ' ','') =Q{} "Secure"]=>count();
-declare variable $Undefined := $btree//Q{}entry[Q{}status ! text() ! replace(. , ' ', '') =Q{}"Undefined"]=>count();
-declare variable $ApparentlySecure := $btree//Q{}entry[Q{}status ! text() ! replace(. , ' ', '') =Q{}"ApparentlySecure"]=>count();
-declare variable $Imperiled := $btree//Q{}entry[Q{}status ! text() ! replace(. , ' ', '') =Q{}"Imperiled"]=>count();
-declare variable $PossiblyExtinct := $btree//Q{}entry[Q{}status ! text() ! replace(. , ' ', '') =Q{}"PossiblyExtinct"]=>count();
-declare variable $Vulnerable := $btree//Q{}entry[Q{}status ! text() ! replace(. , ' ', '') =Q{}"Vulnerable"]=>count();
-declare variable $CriticallyImperiled  := $btree//Q{}entry[Q{}status ! text() ! replace(. , ' ', '') =Q{}"CriticallyImperiled"]=>count();
+declare variable $Secure := $btrees//Q{}entry[Q{}status ! replace(text() , ' ','') =  "Secure"]=>count();
+declare variable $Undefined := $btrees//Q{}entry[Q{}status ! text() ! replace(. , ' ', '') ="Undefined"]=>count();
+declare variable $ApparentlySecure := $btrees//Q{}entry[Q{}status ! text() ! replace(. , ' ', '') ="ApparentlySecure"]=>count();
+declare variable $Imperiled := $btrees//Q{}entry[Q{}status ! text() ! replace(. , ' ', '') ="Imperiled"]=>count();
+declare variable $PossiblyExtinct := $btrees//Q{}entry[Q{}status ! text() ! replace(. , ' ', '') ="PossiblyExtinct"]=>count();
+declare variable $Vulnerable := $btrees//Q{}entry[Q{}status ! text() ! replace(. , ' ', '') ="Vulnerable"]=>count();
+declare variable $CriticallyImperiled  := $btrees//Q{}entry[Q{}status ! text() ! replace(. , ' ', '') ="CriticallyImperiled"]=>count();
 
 declare variable $p_Secure := $total div $Secure;
 declare variable $p_Undefined := $total div $Undefined;
@@ -42,8 +41,8 @@ declare variable $p_CriticallyImperiled  := $total div $CriticallyImperiled;
 
 
 
-<svg width="{$xSpace * $maxHeight + 300}" height="{$countEntries * $ySpace + 200}" style="background-color:lightgrey">
-<g transform="translate(50, 50)">
+<svg width="100%" height="100%" style="background-color:lightgrey" viewBox="0 0 1000 1000">
+<g transform="translate(50, 500)">
     <g transform = "translate(210)">
         <rect x="0" y="-15" width="20" height="20" fill="{$c_DOGreen}"/>
         <text x="30" y="0" fill="black"></text>
@@ -85,15 +84,15 @@ return
     
     <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$circumf *  ($p_Secure  + $p_Undefined  +  $p_ApparentlySecure  + $p_Imperiled + $p_PossiblyExtinct + $p_Vulnerable), $circumf}" stroke="{c_DOGreen}"/>
     
-    <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$p_Secure  + $p_Undefined  +  $p_ApparentlySecure  + $p_Imperiled + $p_PossiblyExtinct), $circumf}" stroke="{$c_DSGrey}"/>
+    <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{($p_Secure  + $p_Undefined  +  $p_ApparentlySecure  + $p_Imperiled + $p_PossiblyExtinct), $circumf}" stroke="{$c_DSGrey}"/>
     
-    <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$p_Secure  + $p_Undefined  +  $p_ApparentlySecure  + $p_Imperiled), $circumf}" stroke="{$c_Green}"/>
+    <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{($p_Secure  + $p_Undefined  +  $p_ApparentlySecure  + $p_Imperiled), $circumf}" stroke="{$c_Green}"/>
 
-    <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$p_Secure  + $p_Undefined  +  $p_ApparentlySecure), $circumf}" stroke="{$c_OliveDrab}"/>
+    <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{($p_Secure  + $p_Undefined  +  $p_ApparentlySecure), $circumf}" stroke="{$c_OliveDrab}"/>
 
-    <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$p_Secure  + $p_Undefined), $circumf}" stroke="{$c_SeaGreen}"/>
+    <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{($p_Secure  + $p_Undefined), $circumf}" stroke="{$c_SeaGreen}"/>
  
-    <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$p_Secure), $circumf}" stroke="{$c_YGreen}"/>
+    <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{($p_Secure), $circumf}" stroke="{$c_YGreen}"/>
  
 </g>
 }
