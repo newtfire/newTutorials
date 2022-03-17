@@ -8,12 +8,6 @@ declare variable $ySpace := 35;
 declare variable $countEntries := $btrees//Q{}entry => count();
 
 
-
-declare variable $DOGreen := "#556B2F";
-declare variable $YGreen := "#9ACD32";
-declare variable $Green :=  "#008000";
-
-
 <svg width="{$xSpace * $maxHeight + 300}" height="{$countEntries * $ySpace + 200}" style="background-color:lightgrey">
 <g transform="translate(50, 50)">
 {
@@ -39,8 +33,6 @@ for $s at $pos in $sortedEntries
 let $cname := $s/Q{}cname ! text() ! replace(. , ' \d', '')
 let $height := $s/Q{}height/@avg ! number(.)
 
-let $treeType := $s/Q{}treeType
-let $treeType_color := if($treeType = "Deciduous") then $DOGreen else $Green
 return
    
     
