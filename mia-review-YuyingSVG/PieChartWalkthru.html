@@ -186,6 +186,9 @@ So, we can get:
              Slice:
                 Grape% + Lime% + Orange% = 65% (Whole% - StrawKiwi%)
                 2*pi*25*65% = 102.101
+                OR
+                StrawKiwi% = 35%
+                2*pi*25*35% = 54.977
              Whole:
                 2*pi*25 = 157.079
     </code>
@@ -197,7 +200,7 @@ So, we can get:
         <circle cx="50" cy="50" r="25" stroke="darkslategrey" stroke-width="50"
                 fill="none" stroke-dasharray="94.247, 157.079"/>
         <circle cx="50" cy="50" r="25" stroke="pink" stroke-width="50"
-         		  fill="none" stroke-dasharray="102.101, 157.079"/>
+         		  fill="none" stroke-dasharray="54.977, 157.079"/>
     </g>
 </svg>
 
@@ -208,7 +211,81 @@ which may leave users a bit lost on what to do if they have more than three valu
 
 <p>I'm guessing that in order to calculate Grape, I need to add the values of Lime and Grape?</p>
 
+<pre>
+    <code>
+             radius = 25
+             Slice:
+                Lime% + grape% = 25% 
+                2*pi*25*25% = 39.268
+             Whole:
+                2*pi*25 = 157.079
+    </code>
+</pre>
+<svg width="120" height="120" style="background-color:lightgrey">
+    <g transform="translate(10,10)">
+        <circle cx="50" cy="50" r="25" stroke="orange" stroke-width="50"
+        fill="none" stroke-dasharray="157.079, 157.079"/>
+        <circle cx="50" cy="50" r="25" stroke="darkslategrey" stroke-width="50"
+                fill="none" stroke-dasharray="94.247, 157.079"/>
+        <circle cx="50" cy="50" r="25" stroke="pink" stroke-width="50"
+         		  fill="none" stroke-dasharray="94.305, 157.079"/>
+     <circle cx="50" cy="50" r="25" stroke="purple" stroke-width="50"
+         		  fill="none" stroke-dasharray="39.268, 157.079"/> 
+    </g>
+</svg>
 
+<h4><b>Step 6:</b> Calculate Last Value</h4>
+
+<pre>
+    <code>
+             radius = 25
+             Slice:
+                Lime% = 10% 
+                2*pi*25*10% = 15.707
+             Whole:
+                2*pi*25 = 157.079
+    </code>
+</pre>
+<svg width="120" height="120" style="background-color:lightgrey">
+    <g transform="translate(10,10)">
+        <circle cx="50" cy="50" r="25" stroke="orange" stroke-width="50"
+        fill="none" stroke-dasharray="157.079, 157.079"/>
+        <circle cx="50" cy="50" r="25" stroke="darkslategrey" stroke-width="50"
+                fill="none" stroke-dasharray="94.247, 157.079"/>
+        <circle cx="50" cy="50" r="25" stroke="pink" stroke-width="50"
+         		  fill="none" stroke-dasharray="94.205, 157.079"/>
+     <circle cx="50" cy="50" r="25" stroke="purple" stroke-width="50"
+         		  fill="none" stroke-dasharray="39.268, 157.079"/> 
+   <circle cx="50" cy="50" r="25" stroke="lime" stroke-width="50"
+         		  fill="none" stroke-dasharray="15.707, 157.079"/> 
+    </g>
+</svg>
+
+<h2>Final Thoughts on 1st Part of SVG Pie Chart Tutorial</h2>
+
+<p>This tutorial was very helpful and instructive up until the last few steps, where I got a bit lost on how to calculate my remaining 3 data percentages into the pie chart to produce an accurate result. </p>
+<p>
+    I think editing this tutorial to explain how to capture more than three data points in a pie chart would make this first half of the tutorial perfect.
+</p>
+
+<h1>Part 2: Making an SVG Pie Chart using XSLT</h1>
+
+<p><b>First Impressions:</b> Great job including the XSLT math function namespace! Your use of variables to do the calculations is also very interesting and effective. (:</p>
+
+<p><b>Bumps in the Road:</b>
+<ul>
+    <li>The namespace is helpful, but when I slap it into the root element of my XSLT stylesheet, it creates an error.
+        <ul>
+            <li><b>Suggested Solution:</b> maybe include the entire line of code that allows you to declare the math namespace in a new XSLT document, instead of just the attributes and values.</li>
+        </ul>
+    </li>
+    <li>Your example of how to put variables in for the calculations of the stroke-dasharray values in the XSLT is very illustrative, but it's a bit of a mind-bender to try this for oneself using one's own dataset since there is no example of how the input XML should be captured by the various variables being used.
+        <ul>
+            <li><b>Suggested Solution:</b> Include an example of what the input XML data should look like, and how it is captured with you <code>$color</code>, <code>$nature</code>, <code>$tech</code>, <code>$shape</code>, and <code>$total</code> variables. Or, at least include a link to the input XML you used to craft this XSLT stylesheet.</li>
+        </ul>
+    </li>
+</ul>
+</p>
 
     </body>
 </html>
