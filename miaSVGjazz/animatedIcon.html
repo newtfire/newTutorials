@@ -263,23 +263,26 @@
             <code>
             &lt;svg width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
                  &lt;circle id="yellowCircle" cx="57.5" cy="57.5" r="50" fill="yellow"/>  
-                 &lt;circle id="demoCyanCirc" cx="22.5" cy="22.5" r="22.5" fill="aqua"/>
-                 &lt;circle id="demoBlueCirc" cx="89.5" cy="89.5" r="25.5" fill="navyblue"/>  
-                 &lt;circle id="pinkCircle" cx="25.5" cy="89.5" r="20" fill="pink"/>
-                &lt;circle id="purpleCircle" cx="91.5" cy="23.5" r="20" fill="purple"/>
+                 &lt;rect id="aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6" fill="transparent" stroke="#00CFFF"/>
+                 &lt;rect id="tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5" fill="transparent" stroke="#5adbab"/>  
+                &lt;path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5" fill="transparent" stroke="blue"/>
+                 &lt;circleellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3" fill="transparent" stroke="pink"/>
+                &lt;circle id="purpleCircle" cx="91.5" cy="90" r="20" fill="purple"/>
            &lt;/svg>
             </code>
            
        </pre>
        <p>Which should render in your browser looking something like this:</p>
        <svg width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle id="yellowCircle" cx="57.5" cy="57.5" r="50" fill="yellow"/>        
-        <circle id="demoCyanCirc" cx="22.5" cy="22.5" r="22.5" fill="aqua"/>
-                <circle id="demoBlueCirc" cx="89.5" cy="89.5" r="25.5" fill="blue"/>  
-                <circle id="pinkCircle" cx="25.5" cy="89.5" r="20" fill="pink"/>
-            <circle id="purpleCircle" cx="91.5" cy="23.5" r="20" fill="purple"/>
+        <circle cx="57.5" cy="57.5" r="50" fill="yellow"/>       
                 
-       </svg>
+                <rect x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6" stroke="#2e636e" fill="transparent"/>
+            <rect x="50" y="20" rx="10" ry="10" width="60" height="70"  fill="transparent" stroke="#5adbab" stroke-width="5"/>
+            
+            <path d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"  fill="transparent" stroke="blue"/>   
+            <ellipse cx="35" cy="78" rx="20" ry="25" stroke-width="3"  fill="transparent" stroke="pink"/>
+            <circle cx="91.5" cy="90" r="20" fill="purple"/>
+        </svg>
 
        <h1>Step 2: CSS Manipulations and Variables</h1>
        <p>In your CSS, create a style rule for the <code>:root</code> pseudo-class of your HTML document. The <code>:root</code> applies to the root of your HTML document, and since all style expressions written here will apply to the entire document, it is a good place to store your CSS Variables.</p>
@@ -288,29 +291,240 @@
        <pre>
            <code>
                :root{
-                   --yellow: #FF0;
-                   --aqua: #0FF;
-                   --blue: #00F;
-                   --pink: #ffc0cb;
-                   --purple: #800080;
+                -yellow: #FF0;
+                --aqua: #00CFFF;
+                --blue: #00F;
+               --pink: #ffc0cb;
+               --purple: #800080;
+               --teal: #5adbab;
+               --transparent: #5adbab00;           
                }
            </code>
        </pre>
+
+       <p>
+           Since we now have variables declaring our shape colors, we no longer need the <code>@fill</code> 
+           attributes in our SVG circles. Delete the fill from our SVG, and write CSS rules declaring the fill for each
+           of our shapes using our CSS variables:
+       </p>
+
+       <pre>
+           <code>    
+            #yellowCircle{
+             fill:var(--yellow)
+            }
+
+            #aquaRect{
+             stroke:var(--aqua);
+             fill:var(--transparent);
+            }
+
+            #tealRect{
+             stroke:var(--teal);
+            fill: var(--transparent);
+            }
+
+             #blueLine{
+                 fill:none;
+                stroke:var(--blue)
+            }
+
+
+            #pinkCircle{
+             stroke:var(--pink);
+            fill:var(--transparent);
+            }
+
+            #purpleCircle{
+               fill:var(--purple)
+            }
+           </code>
+       </pre>
+
+
        <p>
            Now, you'll want to create a CSS rule that applies a smooth transition over every element within your SVG that you want to animate. You don't have to animate every singe shape in your SVG (in fact, we encourage you not to! Simplicity and subtleness are key!) For this example though, we will be animating all five of our circles.
        </p>
        <p>To do this, we need to utilize the <code>transition</code> CSS property:</p>
        <pre>
            <code>
-               #yellowCircle,
-               #demoCyanCirc,
-               #demoBlueCirc,
-               #pinkCircle,
-               #purpleCircle{
-                   transition: all 1s ease;
-               }
+            #yellowCircle,
+            #aquaRect,
+             #tealRect,
+            #blueLine,
+            #pinkCircle,
+            #purpleCircle{
+                 transition: all 1s ease;
+            }
            </code>
        </pre>
        <p>We encourage you to mess with the values of the <code>transition</code> property to tweak how your SVG transitions between animation points to your liking! But we won't see any of the animation until we apply <code>:hover</code> style rules in our CSS.</p>
-</body>
+
+       <h1>Animation CSS</h1>
+
+       <h3><b><code>Transform:translate</code> to move an object</b></h3>
+
+       <p>Let's try getting two of our SVG objects to move their positions when the mouse overs over the SVG.</p>
+
+<p>
+    To do this, we will utilize the CSS pseudo-property <code>:hover</code> on our root SVG element, and then apply a new CSS rule for the objects we wish to move.
+</p>
+
+<p>
+    To move an object's position, we will use <code>transform:translate(x, y)</code>
+</p>
+
+<p>It's good practice to adjust the X and Y positions by % instead of pixel (px) units, because it's easier to adjust and it stays relative to the original position.</p>
+
+<pre>
+    <code>
+        svg:hover #purpleCircle{
+         transform:translate(-50%, -10%)
+        }
+
+        svg:hover #pinkCircle{
+            transform:translate(40%, -40%)
+        }
+    </code>
+</pre>
+
+<p>This CSS code should make your objects move upon mouse over:</p>
+
+<svg width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="57.5" cy="57.5" r="50" fill="yellow"/>       
+                
+                <rect x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6" stroke="#2e636e" fill="transparent"/>
+            <rect x="50" y="20" rx="10" ry="10" width="60" height="70"  fill="transparent" stroke="#5adbab" stroke-width="5"/>
+            
+        <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>   
+        <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
+        <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
+    </svg>
+
+    <h3><b>Changing Colors</b></h3>
+
+    <p>
+        Using the same <code>svg:hover</code> method we used to animate position changes, we can also change fill and stroke colors of our objects.
+    </p>
+
+    <pre>
+        <code>
+            svg:hover #yellowCircle{
+                fill:var(--teal)
+            }
+            svg:hover #aquaRect{
+                stroke:var(--yellow)
+            }   
+            svg:hover #tealRect{
+                stroke:var(--aqua);
+                fill:var(--purple);
+            }
+        </code>
+    </pre>
+
+    <p>
+        Your result should look something like this:
+    </p>
+
+    <svg id="color" width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle id="yellowCircle" cx="57.5" cy="57.5" r="50"/>       
+                
+                <rect id="aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6"/>
+            <rect id="tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5"/>
+            
+            <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>   
+            <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
+            <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
+        </svg>
+
+        <h3><b>Scaling objects with <code>transform:scale()</code></b></h3>
+
+        <p>
+            Lets try animating a change in size of two of our objects. We can animate multiple properties of the same object within the same CSS rule.
+        </p>
+
+        <p>
+            One limitation you will encounter is if you apply two different <code>transform:</code> changes on the same SVG object.
+            The second <code>transform:</code> rule will cancel out the first. Try it yourself to see it.
+        </p>
+
+        <pre>
+            <code>
+                svg:hover #pinkCircle{
+                    transform:translate(40%, -40%);
+                    transform:scale(140%);
+                }
+            </code>
+        </pre>
+
+        <p>
+            The pink circle will now scale, but it will no longer move positions. 
+        </p>
+
+        <p>To compromise, try scaling objects who do not already have a <code>tranform:</code> property applied to them.</p>
+
+
+        <pre>
+            <code>
+                svg:hover #aquaRect{
+                    stroke:var(--yellow);
+                    transform:scale(150%);
+                }
+                svg:hover #yellowCircle{
+                    fill:var(--teal);
+                    transform:scale(110%);
+                }
+                svg:hover #tealRect{
+                    stroke:var(--aqua);
+                    fill:var(--purple);
+                    transform:scale(75%);
+                }
+            </code>
+        </pre>
+
+        <svg id="badscale" width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle id="yellowCircle" cx="57.5" cy="57.5" r="50"/>       
+                    
+                    <rect id="aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6"/>
+                <rect id="tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5"/>
+                
+                <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>   
+                <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
+                <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
+            </svg>
+
+        <p>
+            Notice how the objects will only scale from the top left corner of the object.
+            To make the objects scale from the center, we will use the <code>transform-origin</code> property:
+        </p>
+
+        <pre>
+            <code>
+                svg:hover #yellowCircle{
+                    fill:var(--teal);
+                    transform:scale(110%);
+                    transform-origin:center;
+                }
+                svg:hover #tealRect{
+                    stroke:var(--aqua);
+                    fill:var(--purple);
+                    transform:scale(75%);
+                    transform-origin:center;
+                }
+            </code>
+        </pre>
+
+        <svg id="scale" width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle id="yellowCircle" cx="57.5" cy="57.5" r="50"/>       
+                    
+                    <rect id="aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6"/>
+                <rect id="tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5"/>
+                
+                <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>   
+                <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
+                <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
+            </svg>
+
+            <h3><b>Rotating objects with <code>transform:rotate()</code></b></h3>
+    </body>
 </html>

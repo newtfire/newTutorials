@@ -1,3 +1,104 @@
+/* DEMO SVG  */
+
+#yellowCircle,
+#aquaRect,
+ #tealRect,
+#blueLine,
+#pinkCircle,
+#purpleCircle{
+     transition: all 1s ease;
+}
+
+#yellowCircle{
+    fill:var(--yellow);
+    
+}
+
+svg#color:hover #yellowCircle{
+    fill:var(--teal);
+}
+
+svg#scale:hover #yellowCircle{
+    fill:var(--teal);
+    transform:scale(110%);
+    transform-origin:center;
+}
+
+svg#badscale:hover #yellowCircle{
+    fill:var(--teal);
+    transform:scale(110%);
+}
+
+#aquaRect{
+    stroke:var(--aqua);
+    fill:var(--transparent);
+}
+
+svg#color:hover #aquaRect{
+    stroke:var(--yellow);
+}
+
+svg#color:hover #aquaRect{
+    stroke:var(--yellow);
+}
+
+svg#scale:hover #aquaRect{
+    stroke:var(--yellow);
+    transform:scale(150%);
+}
+
+svg#badscale:hover #aquaRect{
+    stroke:var(--yellow);
+    transform:scale(150%);
+}
+
+#tealRect{
+    stroke:var(--teal);
+    fill: var(--transparent);
+}
+
+svg#scale:hover #tealRect{
+    stroke:var(--aqua);
+    fill:var(--purple);
+    transform:scale(75%);
+    transform-origin:center;
+}
+
+svg#badscale:hover #tealRect{
+    stroke:var(--aqua);
+    fill:var(--purple);
+    transform:scale(75%);
+}
+
+svg#color:hover #tealRect{
+    stroke:var(--aqua);
+    fill:var(--purple);
+}
+
+#blueLine{
+    fill:none;
+    stroke:var(--blue)
+}
+
+
+#pinkCircle{
+    stroke:var(--pink);
+    fill:var(--transparent);
+}
+
+#purpleCircle{
+    fill:var(--purple)
+}
+
+svg:hover #purpleCircle{
+    transform:translate(-50%, -10%)
+}
+
+svg:hover #pinkCircle{
+    transform:translate(40%, -40%);
+}
+
+
 
 .katex-error {
 	color: var(--vscode-editorError-foreground);
@@ -70,6 +171,19 @@ pre code {
 /* ANIMATED SVG */
 
 :root{
+    /* DEMO SVG COLORS */
+
+    --yellow: #FF0;
+     --aqua: #2e636e;
+     --blue: #00F;
+    --pink: #ffc0cb;
+    --purple: #800080;
+    --teal: #5adbab;
+    --transparent: #5adbab00;
+
+
+    /* svg colors from portfolio */
+
     --dark-hair:#5E5546;
     --brown-hair:#988364;
     --blonde-hair:#CFC19C;
