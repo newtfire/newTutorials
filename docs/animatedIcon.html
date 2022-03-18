@@ -2,7 +2,7 @@
     <head>
         <meta charset="UTF-8"/>
         <title>SVG Animation Tutorial</title>
-        <link rel="stylesheet" type="text/css" href="newWebstyle.css" />
+        <link rel="stylesheet" type="text/css" href="SVGanimStyle.css" />
         <link rel="shortcut icon" type="image/jpg" href="images/moon.jpg" />
     </head>
     <body>
@@ -13,7 +13,7 @@
                 <li>GIS</li>
                 <li>XSLT / Transformations</li>
                 <li><a href="web/">HTML and Website Work</a></li>
-                <li><a href="animatedIcon.html">SVG Tricks</a></li>
+                <li><a href="animatedIcon.html">SVG Animations</a></li>
             </ul>
         </nav>
         <h1>Bring your SVG to Life - SVG/CSS Transitions Tutorial</h1>
@@ -261,7 +261,7 @@
        <pre>
            
             <code>
-            &lt;svg width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+            &lt;svg width="350" height="300" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
                  &lt;circle id="yellowCircle" cx="57.5" cy="57.5" r="50" fill="yellow"/>  
                  &lt;rect id="aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6" fill="transparent" stroke="#00CFFF"/>
                  &lt;rect id="tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5" fill="transparent" stroke="#5adbab"/>  
@@ -273,16 +273,18 @@
            
        </pre>
        <p>Which should render in your browser looking something like this:</p>
-       <svg width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="57.5" cy="57.5" r="50" fill="yellow"/>       
-                
-                <rect x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6" stroke="#2e636e" fill="transparent"/>
-            <rect x="50" y="20" rx="10" ry="10" width="60" height="70"  fill="transparent" stroke="#5adbab" stroke-width="5"/>
-            
-            <path d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"  fill="transparent" stroke="blue"/>   
-            <ellipse cx="35" cy="78" rx="20" ry="25" stroke-width="3"  fill="transparent" stroke="pink"/>
-            <circle cx="91.5" cy="90" r="20" fill="purple"/>
-        </svg>
+       <div class="svgWrap">
+           <svg width="350" height="300" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="57.5" cy="57.5" r="50" fill="yellow"/>
+           
+                    <rect x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6" stroke="#2e636e" fill="transparent"/>
+                <rect x="50" y="20" rx="10" ry="10" width="60" height="70"  fill="transparent" stroke="#5adbab" stroke-width="5"/>
+           
+                <path d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"  fill="transparent" stroke="blue"/>
+                <ellipse cx="35" cy="78" rx="20" ry="25" stroke-width="3"  fill="transparent" stroke="pink"/>
+                <circle cx="91.5" cy="90" r="20" fill="purple"/>
+            </svg>
+       </div>
 
        <h1>Step 2: CSS Manipulations and Variables</h1>
        <p>In your CSS, create a style rule for the <code>:root</code> pseudo-class of your HTML document. The <code>:root</code> applies to the root of your HTML document, and since all style expressions written here will apply to the entire document, it is a good place to store your CSS Variables.</p>
@@ -389,17 +391,19 @@
 </pre>
 
 <p>This CSS code should make your objects move upon mouse over:</p>
-
-<svg width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="57.5" cy="57.5" r="50" fill="yellow"/>       
-                
-                <rect x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6" stroke="#2e636e" fill="transparent"/>
-            <rect x="50" y="20" rx="10" ry="10" width="60" height="70"  fill="transparent" stroke="#5adbab" stroke-width="5"/>
-            
-        <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>   
-        <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
-        <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
-    </svg>
+<div class="svgWrap">
+    
+    <svg width="350" height="300" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="57.5" cy="57.5" r="50" fill="yellow"/>
+    
+                    <rect x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6" stroke="#2e636e" fill="transparent"/>
+                <rect x="50" y="20" rx="10" ry="10" width="60" height="70"  fill="transparent" stroke="#5adbab" stroke-width="5"/>
+    
+            <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>
+            <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
+            <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
+        </svg>
+</div>
 
     <h3><b>Changing Colors</b></h3>
 
@@ -425,17 +429,19 @@
     <p>
         Your result should look something like this:
     </p>
-
-    <svg id="color" width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle id="yellowCircle" cx="57.5" cy="57.5" r="50"/>       
-                
-                <rect id="aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6"/>
-            <rect id="tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5"/>
-            
-            <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>   
-            <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
-            <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
-        </svg>
+<div class="svgWrap">
+    
+        <svg id="color" width="350" height="300" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle id="yellowCircle" cx="57.5" cy="57.5" r="50"/>
+    
+                    <rect id="aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6"/>
+                <rect id="tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5"/>
+    
+                <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>
+                <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
+                <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
+            </svg>
+</div>
 
         <h3><b>Scaling objects with <code>transform:scale()</code></b></h3>
 
@@ -481,17 +487,19 @@
                 }
             </code>
         </pre>
-
-        <svg id="badscale" width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle id="yellowCircle" cx="57.5" cy="57.5" r="50"/>       
-                    
-                    <rect id="aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6"/>
-                <rect id="tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5"/>
-                
-                <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>   
-                <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
-                <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
-            </svg>
+<div class="svgWrap">
+    
+            <svg id="badscale" width="350" height="300" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle id="yellowCircle" cx="57.5" cy="57.5" r="50"/>
+    
+                        <rect id="aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6"/>
+                    <rect id="tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5"/>
+    
+                    <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>
+                    <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
+                    <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
+                </svg>
+</div>
 
         <p>
             Notice how the objects will only scale from the top left corner of the object.
@@ -513,17 +521,19 @@
                 }
             </code>
         </pre>
-
-        <svg id="scale" width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle id="yellowCircle" cx="57.5" cy="57.5" r="50"/>       
-                    
-                    <rect id="aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6"/>
-                <rect id="tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5"/>
-                
-                <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>   
-                <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
-                <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
-            </svg>
+<div class="svgWrap">
+    
+            <svg id="scale" width="350" height="300" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle id="yellowCircle" cx="57.5" cy="57.5" r="50"/>
+    
+                        <rect id="aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6"/>
+                    <rect id="tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5"/>
+    
+                    <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>
+                    <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
+                    <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
+                </svg>
+</div>
 
             <h3><b>Rotating objects with <code>transform:rotate()</code></b></h3>
 
@@ -549,17 +559,19 @@
                     }
                 </code>
             </pre>
-
-            <svg id="rotate" width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle id="yellowCircle" cx="57.5" cy="57.5" r="50"/>       
-                        
-                        <rect id="aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6"/>
-                    <rect id="tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5"/>
-                    
-                    <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>   
-                    <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
-                    <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
-                </svg>
+<div class="svgWrap">
+    
+                <svg id="rotate" width="350" height="300" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle id="yellowCircle" cx="57.5" cy="57.5" r="50"/>
+    
+                            <rect id="aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6"/>
+                        <rect id="tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5"/>
+    
+                        <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>
+                        <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
+                        <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
+                    </svg>
+</div>
 
             <p>
                 We can change the <code>transform:origin</code> value to alter from what side of the object it will rotate.
@@ -578,16 +590,18 @@
                     }
                 </code>
             </pre>
-
-            <svg id="altRotate" width="150" height="150" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle id="yellowCircle" cx="57.5" cy="57.5" r="50"/>       
-                        
-                        <rect id="aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6"/>
-                    <rect id="tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5"/>
-                    
-                    <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>   
-                    <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
-                    <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
-                </svg>
+<div class="svgWrap">
+    
+                <svg id="altRotate" width="350" height="300" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle id="yellowCircle" cx="57.5" cy="57.5" r="50"/>
+    
+                            <rect id="aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6"/>
+                        <rect id="tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5"/>
+    
+                        <path id="blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>
+                        <ellipse id="pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
+                        <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
+                    </svg>
+</div>
     </body>
 </html>

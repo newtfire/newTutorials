@@ -1,5 +1,10 @@
 /* DEMO SVG  */
 
+div.svgWrap{
+    display:flex;
+    justify-content: center;
+}
+
 #yellowCircle,
 #aquaRect,
  #tealRect,
