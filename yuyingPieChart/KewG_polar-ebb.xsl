@@ -90,7 +90,17 @@
                The function could involve testing whether the values less than the cx value, 
                and output a - or + value accordingly. 
                
-               
+              My suggestions for the tutorial include:
+              * Add a new image of the polar coordinate system that represents SVG as different from 
+              how we usually look at it. 
+              
+              * Add link to resource for learning SVG path (w3schools) [already added. :-) ]
+              
+              * Explain why we would want to use <path>. 
+              
+              * Explain why we would use the text end-anchor, as well ("for beauty" to prevent overlap, etc. etc)
+              
+              * You do not need to write a tutorial on radians. But you could link to a good site to explain it. 
                
                --> 
                 
