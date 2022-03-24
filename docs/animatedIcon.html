@@ -608,19 +608,6 @@
 
 <p>All of these animation properties can be adjusted to your liking! Sometime's it's fun to see how the animation looks when it is slowed down in the <code>transition:</code> property.</p>
 
-<pre>
-    <code>
-        #yellowCircle,
-        #aquaRect,
-         #tealRect,
-        #blueLine,
-        #pinkCircle,
-        #purpleCircle{
-             transition: all 3s ease-in-out;
-        }
-    </code>
-</pre>
-
 <p>You can also change the type of <code>ease</code> mechanism your animation uses.</p>
 
 <p>
@@ -647,15 +634,31 @@
 <pre>
     <code>
         #yellowCircle,
-        #aquaRect,
-         #tealRect,
-        #blueLine,
         #pinkCircle,
         #purpleCircle{
-             transition: all .5s ease-in-out;
+             transition: all 3s ease-in-out;
         }
+        #aquaRect,
+        #tealRect,
+       #blueLine{
+           transition: all 2s ease-out;
+       }
     </code>
 </pre>
+
+<div class="svgWrap">
+    
+    <svg id="trans1" width="350" height="300" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle id="trans1yellowCircle" cx="57.5" cy="57.5" r="50"/>
+
+                <rect id="trans1aquaRect" x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6"/>
+            <rect id="trans1tealRect" x="50" y="20" rx="10" ry="10" width="60" height="70" stroke-width="5"/>
+
+            <path id="trans1blueLine" d="M10,63 Q40,85 60,60 T105,63" stroke-width="5"/>
+            <ellipse id="trans1pinkCircle" cx="35" cy="78" rx="20" ry="25" stroke-width="3"/>
+            <circle id="trans1purpleCircle" cx="91.5" cy="90" r="20"/>
+        </svg>
+</div>
 
 
     </body>

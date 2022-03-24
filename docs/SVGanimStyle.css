@@ -13,15 +13,24 @@ div.svgWrap{
     transition: 1s ease;
 }
 
-.slow{
+#trans1yellowCircle,
+        #trans1pinkCircle,
+        #trans1purpleCircle{
     transition: 3s ease-in-out;
 }
+
+#trans1aquaRect,
+        #trans1tealRect,
+       #trans1blueLine{
+           transition: all 2s ease-out;
+       }
+
 /* 
 svg#fast #yellowCircle, #aquaRect, #tealRect, #blueLine, #pinkCircle, #purpleCircle{
     transition: all .5s ease-in-out;
 } */
 
-#yellowCircle{
+#yellowCircle, #trans1yellowCircle{
     fill:var(--yellow);
     
 }
@@ -53,13 +62,13 @@ svg#altRotate:hover #yellowCircle{
     transform-origin:center;
 }
 
-svg#slow:hover .slow #yellowCircle{
+svg#trans1:hover #trans1yellowCircle{
     fill:var(--teal);
     transform:scale(110%);
     transform-origin:center;
 }
 
-#aquaRect{
+#aquaRect, #trans1aquaRect{
     stroke:var(--aqua);
     fill:var(--transparent);
 }
@@ -78,7 +87,7 @@ svg#altRotate:hover #aquaRect{
     transform-origin:right;
 }
 
-svg#slow:hover .slow #aquaRect{
+svg#trans1:hover #trans1aquaRect{
     stroke:var(--yellow);
     transform:rotate(360deg);
     transform-origin:right;
@@ -102,7 +111,7 @@ svg#badscale:hover #aquaRect{
     transform:scale(150%);
 }
 
-#tealRect{
+#tealRect, #trans1tealRect{
     stroke:var(--teal);
     fill: var(--transparent);
 }
@@ -115,7 +124,7 @@ svg#altRotate:hover #tealRect{
 }
 
 
-svg#slow:hover .slow #tealRect{
+svg#trans1:hover #trans1tealRect{
     stroke:var(--aqua);
     fill:var(--purple);
     transform:scale(75%);
@@ -149,7 +158,7 @@ svg#color:hover #tealRect{
     fill:var(--purple);
 }
 
-#blueLine{
+#blueLine, #trans1blueLine{
     fill:none;
     stroke:var(--blue)
 }
@@ -164,7 +173,7 @@ svg#altRotate:hover #blueLine{
     transform:rotate(-180deg);
 }
 
-svg#slow:hover .slow #blueLine{
+svg#trans1:hover #trans1blueLine{
     transform-origin:center;
     transform:rotate(-180deg);
 }
@@ -172,12 +181,12 @@ svg#slow:hover .slow #blueLine{
 
 
 
-#pinkCircle{
+#pinkCircle, #trans1pinkCircle{
     stroke:var(--pink);
     fill:var(--transparent);
 }
 
-#purpleCircle{
+#purpleCircle, #trans1purpleCircle{
     fill:var(--purple)
 }
 
@@ -185,7 +194,7 @@ svg:hover #purpleCircle{
     transform:translate(-50%, -10%)
 }
 
-svg:hover .slow #purpleCircle{
+svg#trans1:hover #trans1purpleCircle{
     transform:translate(-50%, -10%)
 }
 
@@ -193,9 +202,11 @@ svg:hover #pinkCircle{
     transform:translate(40%, -40%);
 }
 
-svg:hover .slow #pinkCircle{
+svg#trans1:hover #trans1pinkCircle{
     transform:translate(40%, -40%);
 }
+
+
 
 
 
