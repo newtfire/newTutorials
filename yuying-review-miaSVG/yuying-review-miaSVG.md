@@ -14,3 +14,4 @@ For example, in the first animation for rotate, we can see the blue line flies o
 
 Also,  transform-origin:center looks not work very well, because when the element rotates, it seems to have moved positions, but we have not let it move. The center seems not to mean the center of the element, so what the center exactly means?
 
+Additionally, I suggest to reorganize the codes in css. For example, the code for #scale of #yellowCircle should be before that for #badscale of #yellowCircle, because in the tutorials, it introduces the bad one before the good one. When I learn the codes in css, I found I could not locate the code very well because some of them is disorder.
