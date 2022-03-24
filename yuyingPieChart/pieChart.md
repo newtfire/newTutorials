@@ -226,7 +226,11 @@ Add this code to xslt element, so that we can work with math:pi().
 
 Output:
 
+<<<<<<< HEAD
  ![](mages/pieChart.svg)
+=======
+ ![](images/pieChart.svg)
+>>>>>>> f431973ece93470945f162ae168531e53e40b452
 
 [Link to the sample xml file](KewG_p4-12.xml)
 
