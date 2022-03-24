@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" width="600"  viewBox="0 0 600 580" style="background-color:none">
+    <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="1.5" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,3 L8,1.5 z" fill="black" />
+        </marker>
+    </defs>
+    <!-- coordination plane -->
+    <g transform="translate(300,300)" fill="none" stroke="#B8B8B8"  stroke-width="2.5">
+        
+        <circle r="50" cx="0" cy="0"></circle>
+        <circle r="100" cx="0" cy="0"></circle>
+        <circle r="150" cx="0" cy="0"></circle>
+        <circle r="200" cx="0" cy="0"></circle>
+        
+        <g transform="rotate(45)">
+            <line x1="-250" y1="0" x2="0" y2="0"/>
+            <line x1="-250" y1="0" x2="250" y2="0"/>
+            <line y2="-250" x2="0" y1="250" x1="0"/>
+        </g>
+    </g>
+    
+    <g transform="translate(300,300)" stroke="black" fill="black" text-anchor="end" stroke-width="0.5">
+        <line x1="-250" y1="0" x2="250" y2="0" stroke-width="4" marker-end="url(#arrow)"/>
+        <line y2="-250" x2="0" y1="250" x1="0" stroke-width="4" marker-end="url(#arrow)"/>
+        <g transform="translate(0,5)">
+            <text x="-5" y="-50">50</text>
+            <text x="-5" y="-100">100</text>
+            <text x="-5" y="-150">150</text>
+            <text x="-5" y="-200">200</text>
+        </g>
+        <g transform="translate(0,5)">
+            <text x="-5" y="50">-50</text>
+            <text x="-5" y="100">-100</text>
+            <text x="-5" y="150">-150</text>
+            <text x="-5" y="200">-200</text>
+        </g>
+        
+        <g transform="translate(8)">
+            <text y="20" x="50">50</text>
+            <text y="20" x="100">100</text>
+            <text y="20" x="150">150</text>
+            <text y="20" x="200">200</text>
+        </g>
+        
+        <g transform="translate(8)">
+            <text y="20" x="-50">-50</text>
+            <text y="20" x="-100">-100</text>
+            <text y="20" x="-150">-150</text>
+            <text y="20" x="-200">-200</text>
+        </g>
+    </g>
+    <g transform="translate(300,300)" fill="grey">
+        <!--<text x="240" y="-10">0°(360°)</text>
+        <text x="180" y="-180">45°</text>
+        <text x="-20" y="-220">90°</text>
+        <text x="-200" y="-180">135°</text>
+        <text x="-240" y="-10">180°</text>
+        <text x="-200" y="180">225°</text>
+        <text x="-25" y="240">270°</text>
+        <text x="180" y="180">315°</text>-->
+        <text x="240" y="-10">0(2π)</text>
+        <text x="180" y="-180">π/4</text>
+        <text x="-40" y="-220">2π/4</text>
+        <text x="-200" y="-180">3π/4</text>
+        <text x="-240" y="-10">π</text>
+        <text x="-200" y="180">5π/4</text>
+        <text x="-40" y="240">6π/4</text>
+        <text x="180" y="180">7π/4</text>
+    </g>
+
+    <!-- Plotting point -->
+    <g transform="translate(300,300)" fill="black" stroke="black" stroke-width="4">
+        <!-- 
+            cx = rcosθ = 100 * cos(3π/4) = -70.71 
+            cy = rsinθ = 100 * sin(3π/4) = 70.71
+        -->
+        
+        <circle r="5" cx="-70.71" cy="-70.71"/>
+        <line x1="-70.71" y1="-70.71" x2="0" y2="-70.71" stroke-dasharray="10"/>
+        <line x1="-70.71" y1="-70.71" y2="0" x2="-70.71" stroke-dasharray="10"/>
+        <text x="-190" y="-70"  stroke-width="0.5">(-70.71, 70.71)</text>
+    </g>
+</svg>

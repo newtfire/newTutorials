@@ -23,34 +23,33 @@
     
 
     <xsl:template match="/">
-        <svg viewBox="-10 -10 1000 1000">
+        <svg width="400" viewBox="-10 -10 1000 1000">
             <g transform="translate(500, 500)">
                 <xsl:variable name="circumf" select="2 * math:pi() * $radius"/>
-                <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$circumf * ($techPercent  + $colorPercent  +  $naturePercent  + $shapePercent), $circumf}" stroke="palegreen"/>
+                <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$circumf * ($colorPercent  + $naturePercent  +  $shapePercent  + $techPercent), $circumf}" stroke="palegreen"/>
                 
-                <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$circumf *  ($techPercent + $colorPercent + $naturePercent), $circumf}" stroke="lightblue"/>
+                <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$circumf *  ($colorPercent + $naturePercent + $shapePercent), $circumf}" stroke="lightblue"/>
                 
-                <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$circumf * ($techPercent + $colorPercent), $circumf}" stroke="blanchedalmond"/>
+                <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$circumf * ($colorPercent + $naturePercent), $circumf}" stroke="blanchedalmond"/>
                 
-                <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$circumf * $techPercent, $circumf}" stroke="pink"/>
-                
+                <circle fill="none" cx="0" cy="0" r="{$radius}" stroke-width="{$radius * 2}" stroke-dasharray="{$circumf * $colorPercent, $circumf}" stroke="pink"/>
             </g>
             
             
             <g transform="translate(500, 500)" fill="black" font-weight="bold" font-size="30">
-                <text x="{-20}" y="{240}">
+                <text x="{40}" y="{200}">
                  color: 
                 <xsl:value-of select='format-number($colorPercent*100,"#.00")'/>%
                 </text>
-                <text x="{-180}" y="{-140}">
+                <text x="{-280}" y="{-20}">
                     nature: 
                     <xsl:value-of select='format-number($naturePercent*100,"#.00")'/>%
                 </text>
-                <text x="{180}" y="{-40}">
+                <text x="{150}" y="{-180}">
                     shape: 
                     <xsl:value-of select='format-number($shapePercent*100,"#.00")'/>%
                 </text>
-                <text x="{190}" y="{60}">
+                <text x="{190}" y="{-40}">
                     tech: 
                     <xsl:value-of select='format-number($techPercent*100,"#.00")'/>%
                 </text>
