@@ -274,7 +274,7 @@
        </pre>
        <p>Which should render in your browser looking something like this:</p>
        <div class="svgWrap">
-           <svg width="350" height="300" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <svg id="move" width="350" height="300" viewBox="0 0 115 115" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="57.5" cy="57.5" r="50" fill="yellow"/>
            
                     <rect x="5" y="10" rx="10" ry="10" width="70" height="25" stroke-width="6" stroke="#2e636e" fill="transparent"/>
@@ -603,5 +603,60 @@
                         <circle id="purpleCircle" cx="91.5" cy="90" r="20"/>
                     </svg>
 </div>
+
+<h3><b>Now make it your own!</b></h3>
+
+<p>All of these animation properties can be adjusted to your liking! Sometime's it's fun to see how the animation looks when it is slowed down in the <code>transition:</code> property.</p>
+
+<pre>
+    <code>
+        #yellowCircle,
+        #aquaRect,
+         #tealRect,
+        #blueLine,
+        #pinkCircle,
+        #purpleCircle{
+             transition: all 3s ease-in-out;
+        }
+    </code>
+</pre>
+
+<p>You can also change the type of <code>ease</code> mechanism your animation uses.</p>
+
+<p>
+    Here is a handy list of all the different types of transition properties you can apply to your animation style:
+
+    <ul>
+        
+        <li>
+            <code>ease</code> - specifies a transition effect with a slow start, then fast, then end slowly (this is default)</li> 
+            <li><code>linear</code> - specifies a transition effect with the same speed from start to end</li>  
+             <li>
+            <code>ease-in</code> - specifies a transition effect with a slow start
+        </li>
+        <li>
+            <code>ease-out</code> - specifies a transition effect with a slow end
+        </li>
+        <li>
+            <code>ease-in-out</code> - specifies a transition effect with a slow start and end
+        </li>
+        <li><code>cubic-bezier(n,n,n,n)</code> - lets you define your own values in a cubic-bezier function</li> </ul>
+
+</p>
+
+<pre>
+    <code>
+        #yellowCircle,
+        #aquaRect,
+         #tealRect,
+        #blueLine,
+        #pinkCircle,
+        #purpleCircle{
+             transition: all .5s ease-in-out;
+        }
+    </code>
+</pre>
+
+
     </body>
 </html>

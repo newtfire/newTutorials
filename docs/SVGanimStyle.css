@@ -5,14 +5,21 @@ div.svgWrap{
     justify-content: center;
 }
 
-#yellowCircle,
-#aquaRect,
- #tealRect,
-#blueLine,
-#pinkCircle,
-#purpleCircle{
-     transition: all 1s ease;
+.slow:not {
+    transition: 1s ease;
 }
+
+#yellowCircle, #aquaRect, #tealRect, #blueLine, #pinkCircle, #purpleCircle{
+    transition: 1s ease;
+}
+
+.slow{
+    transition: 3s ease-in-out;
+}
+/* 
+svg#fast #yellowCircle, #aquaRect, #tealRect, #blueLine, #pinkCircle, #purpleCircle{
+    transition: all .5s ease-in-out;
+} */
 
 #yellowCircle{
     fill:var(--yellow);
@@ -46,6 +53,12 @@ svg#altRotate:hover #yellowCircle{
     transform-origin:center;
 }
 
+svg#slow:hover .slow #yellowCircle{
+    fill:var(--teal);
+    transform:scale(110%);
+    transform-origin:center;
+}
+
 #aquaRect{
     stroke:var(--aqua);
     fill:var(--transparent);
@@ -64,6 +77,14 @@ svg#altRotate:hover #aquaRect{
     transform:rotate(360deg);
     transform-origin:right;
 }
+
+svg#slow:hover .slow #aquaRect{
+    stroke:var(--yellow);
+    transform:rotate(360deg);
+    transform-origin:right;
+}
+
+
 
 svg#rotate:hover #aquaRect{
     stroke:var(--yellow);
@@ -92,6 +113,16 @@ svg#altRotate:hover #tealRect{
     transform:scale(75%);
     transform-origin:center;
 }
+
+
+svg#slow:hover .slow #tealRect{
+    stroke:var(--aqua);
+    fill:var(--purple);
+    transform:scale(75%);
+    transform-origin:center;
+}
+
+
 
 svg#rotate:hover #tealRect{
     stroke:var(--aqua);
@@ -133,6 +164,12 @@ svg#altRotate:hover #blueLine{
     transform:rotate(-180deg);
 }
 
+svg#slow:hover .slow #blueLine{
+    transform-origin:center;
+    transform:rotate(-180deg);
+}
+
+
 
 
 #pinkCircle{
@@ -148,7 +185,15 @@ svg:hover #purpleCircle{
     transform:translate(-50%, -10%)
 }
 
+svg:hover .slow #purpleCircle{
+    transform:translate(-50%, -10%)
+}
+
 svg:hover #pinkCircle{
+    transform:translate(40%, -40%);
+}
+
+svg:hover .slow #pinkCircle{
     transform:translate(40%, -40%);
 }
 
