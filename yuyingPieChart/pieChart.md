@@ -226,7 +226,7 @@ Add this code to xslt element, so that we can work with math:pi().
 
 Output:
 
- ![](/images/pieChart.svg)
+ ![](mages/pieChart.svg)
 
 [Link to the sample xml file](KewG_p4-12.xml)
 
