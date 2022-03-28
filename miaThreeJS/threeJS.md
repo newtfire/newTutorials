@@ -1,5 +1,12 @@
 # Three.JS Tutorial - Create 3D Environments with HTML and Javascript
 
+![three.js blog](images/screenshots/threeJSblog.jpg)
+
+Check out an example:
+[Three.js Blog](https://am0eba-byte.github.io/internshipblog-3js/)
+
+See other awesome things you can do with three.js:
+[Three.JS examples page](https://threejs.org/examples/#webgl_animation_keyframes)
 
 ## Step 1: *Install the Three.JS node package module using your Terminal/Command Line*
 
@@ -120,6 +127,170 @@ To do this, simply paste these `import` instructions on the first line of your J
 ```
 import * as THREE from 'https://unpkg.com/three@0.127.0/build/three.module.js';
 ```
+
+## Scene Setup
+
+[Helpful Three.JS documentation in case you need it](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene)
+
+You need three main components to set up your Three.JS scene:
+
+- a new scene
+- a camera
+- a renderer
+
+We create these objects by declaring a new `const`, a type of variable in Javascript, and defining it with new THREE methods.
+
+```
+// Setup
+
+const scene = new THREE.Scene();
+
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+
+// create a new renderer by instating the canvas element in our HTML // file
+const renderer = new THREE.WebGLRenderer({
+  canvas: document.querySelector('#bg'),
+});
+```
+
+You will not be able to view your new scene until you tell the renderer to render the scene and the camera with Three.js's `.render` method:
+
+```
+renderer.render(scene, camera);
+```
+
+
+Now that we have each of these objects set as constants, we can manipulate them with Three.JS's built-in methods. 
+
+Let's set the pixel ratio, the size, and the camera position:
+
+```
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth, window.innerHeight);
+camera.position.setZ(50);
+camera.position.setX(-3);
+
+```
+
+
+## Create your first object!
+
+Now that our scene is set up, we can add 3D objects! 
+
+There are three basic components you need in order to create a 3D object in Three.JS:
+
+- the geometry
+- the material
+- the mesh (combining the geometry and the material)
+
+We need to create new `const` variabels for each of these components so that we may manipulate them and add the final mesh to our scene.
+
+Let's create a basic cube.
+
+```
+const geometry = new THREE.BoxGeometry();
+
+//set the color of the basic material in the object parameters `{}`
+const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+
+const cube = new THREE.Mesh( geometry, material );
+```
+
+To add our cube into the scene, use the `.add()` method.
+
+```
+scene.add( cube );
+```
+
+## Manipulating your object
+
+You can change the position of the object by manipulating the cube's `.position` property and attaching the axis on which you want to move it:
+
+```
+cube.position.z = 5;
+```
+
+Change the rotation of your object by manipulating the `.rotation` property and attaching the axis on which you wish to rotate it:
+
+```
+cube.rotation.x = 2;
+cube.rotation.y = .5;
+```
+
+## Lights and Material Types
+
+Three.JS allows you to create objects with a wide variety of customizable material types and textures. Some material types require lights in the scene in order to be visible, including the `Phong` material. Your cube is visible because it is made of a `Basic` material, which is not affected by lights.
+
+Let's create a new object to test out new materials:
+
+```
+const ico = new THREE.IcosahedronGeometry(10);
+const icoMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
+const icoMesh = new THREE.Mesh(ico, icoMaterial);
+
+scene.add(icoMesh);
+
+icoMesh.position.z= 10;
+icoMesh.position.x= 10;
+```
+
+If you try to view your new object in the browser, you will not be able to see it. Since Phong materials require light, you will need to at least one light object in your scene:
+
+```
+// Lights
+
+const pointLight = new THREE.PointLight(0xffffff);
+pointLight.position.set(25, -15, 560);
+
+const ambientLight = new THREE.AmbientLight(0xffffff);
+
+scene.add(pointLight, ambientLight);
+```
+
+- Point Lights are lights that only go in one direction.
+
+- Ambient lights act more like the sun, spreading light in all directions. 
+
+- You can change the color of the light by manipulating the HEX code value of the new THREE.Light() object within the parentheses.
+
+
+# Animate your scene
+
+To make your objects move through time, we need to create a new `animate` function and set our animation properties within it.
+
+You can animate just about any property of an object you want.
+
+```
+function animate() {
+	requestAnimationFrame( animate );
+
+    // slowly rotate the cube:
+
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+
+    // rotate the icosahedron a little faster in the opposite direction:
+
+    icoMesh.rotation.z += -0.03
+    icoMesh.rotation.y += -0.03
+
+	renderer.render( scene, camera );
+}
+```
+
+You must call the animate() function in order to tell the browser to use it:
+```
+animate();
+```
+
+
+
+
+
+
+
+
 
 
 
