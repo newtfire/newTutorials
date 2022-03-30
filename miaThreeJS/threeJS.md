@@ -57,9 +57,26 @@ npm install -g npm
 
 Now you're all set to create your new project repository!
 
-### **Create an empty project directory, and install THREE.js**
+### **Create an empty project directory, and install VITE**
 
 Once you have made your project directory, open the command line at your empty directory and enter this command:
+
+
+```
+npm init @vitejs/app
+```
+Follow the prompts given at command line:
+
+- name your project
+- name your package (press enter for default)
+- select `vanilla` framework (yellow)
+- select `Javascript` for the language (yellow)
+
+This will create some new files in your directory.
+
+### Install Three.JS at command line
+
+enter this command:
 
 ```
 npm install --save three
@@ -74,7 +91,7 @@ These files and directory contain dependencies that NPM automagically generates 
 
 
 
-## Create your HTML
+## Write your HTML
 
 You'll need three basic elements in your HTML to render your 3D world:
 - `<canvas>` with a unique `@id` that will literally act as the canvas for your 3D objects to live in.
@@ -112,20 +129,43 @@ It should look something like this:
 </html>
 ```
 
-## Create your CSS and JS files
+## Create your background canvas by editing your CSS
 
-In the same directory as your index.html file, create your CSS and JS files. 
+In the same directory as your index.html file, you should find a CSS file called `style.css`. Write the following code into that CSS to make the `<canvas>` element in your HTML be the background for your site:
 
-We won't mess with your CSS just yet, but it's nice to have all of your necessary documents at the ready right off the bat.
+```
+canvas{
+  position:fixed;
+  top: 0;
+  left: 0;
+}
+```
+
+This is where your 3D objects will appear when we start creating them in your javascript.
+
+
+# HOW TO VIEW YOUR SITE LOCALLY
+
+Since Three.JS requires dependencies in order to render, you need to tell your app to run in the command line every time you make changes in order to view it locally.
+
+In the command line terminal, run this command:
+
+```
+npm run dev
+```
+
+a `localhost` link should appear in the command line. Copy it, and paste it in your browser to view your app.
+
+
 
 # Javascript Time!
 
-In your new javascript file, you'll need to tell it to import the Three.JS node package module in order to reference the many pre-built 3D-building methods and objects.
+In your new `main.js` javascript file, you'll need to tell it to import the Three.JS node package module in order to reference the many pre-built 3D-building methods and objects.
 
 To do this, simply paste these `import` instructions on the first line of your JS file:
 
 ```
-import * as THREE from 'https://unpkg.com/three@0.127.0/build/three.module.js';
+import * as THREE from 'three';
 ```
 
 ## Scene Setup
@@ -188,11 +228,14 @@ We need to create new `const` variabels for each of these components so that we 
 
 Let's create a basic cube.
 
+  - The dimensions of the length, width, and height of your box go inside the new THREE geometry object parentheses `()` as arguments separated by commas:
+
 ```
-const geometry = new THREE.BoxGeometry();
+const geometry = new THREE.BoxGeometry(10, 10, 10);
 
 //set the color of the basic material in the object parameters `{}`
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+
+const material = new THREE.MeshBasicMaterial( { color: 0xFF6347 } );
 
 const cube = new THREE.Mesh( geometry, material );
 ```
@@ -209,6 +252,7 @@ You can change the position of the object by manipulating the cube's `.position`
 
 ```
 cube.position.z = 5;
+cube.position.x = -15;
 ```
 
 Change the rotation of your object by manipulating the `.rotation` property and attaching the axis on which you wish to rotate it:
@@ -244,8 +288,10 @@ const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(25, -15, 560);
 
 const ambientLight = new THREE.AmbientLight(0xffffff);
+ambientLight.position.set(25, -15, -400);
 
-scene.add(pointLight, ambientLight);
+scene.add(pointLight);
+scene.add(ambientLight);
 ```
 
 - Point Lights are lights that only go in one direction.
@@ -253,6 +299,15 @@ scene.add(pointLight, ambientLight);
 - Ambient lights act more like the sun, spreading light in all directions. 
 
 - You can change the color of the light by manipulating the HEX code value of the new THREE.Light() object within the parentheses.
+
+
+Watch what happens if you change your `cube` material to a `StandardMaterial` which accepts light, replacing it with `BasicMaterial` , which does not accept light:
+
+```
+const material = new THREE.MeshStandardMaterial( { color: 0xFF6347 } );
+```
+
+![standard material cube](images/screenshots/standardMaterial.jpg)
 
 
 # Animate your scene
@@ -283,6 +338,10 @@ You must call the animate() function in order to tell the browser to use it:
 ```
 animate();
 ```
+
+Congratulations! Your scene should now look something like this:
+
+![three.JS object screenshot](images/screenshots/twoObjects.jpg)
 
 
 
