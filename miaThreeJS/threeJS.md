@@ -251,7 +251,7 @@ scene.add( cube );
 You can change the position of the object by manipulating the cube's `.position` property and attaching the axis on which you want to move it:
 
 ```
-cube.position.z = 5;
+cube.position.z = -15;
 cube.position.x = -15;
 ```
 
@@ -275,8 +275,8 @@ const icoMesh = new THREE.Mesh(ico, icoMaterial);
 
 scene.add(icoMesh);
 
-icoMesh.position.z= 10;
-icoMesh.position.x= 10;
+icoMesh.position.z= -15;
+icoMesh.position.x= 15;
 ```
 
 If you try to view your new object in the browser, you will not be able to see it. Since Phong materials require light, you will need to at least one light object in your scene:
@@ -285,7 +285,7 @@ If you try to view your new object in the browser, you will not be able to see i
 // Lights
 
 const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(25, -15, 560);
+pointLight.position.set(0, -10, 10);
 
 const ambientLight = new THREE.AmbientLight(0xffffff);
 ambientLight.position.set(25, -15, -400);
@@ -345,11 +345,99 @@ Congratulations! Your scene should now look something like this:
 
 
 
+## Three.JS Helpers
+
+Three.JS comes with a wide variety of scene helpers to assist in orienting the view of your scene. 
+
+We can add a **Light Helper**, which shows us where in the scene our light objects are positioned.
+
+Let's add a light helper to our `pointLight` object:
+
+```
+// Helpers
+
+const lightHelper = new THREE.PointLightHelper(pointLight);
+
+scene.add(lightHelper)
+```
+![light helper](images/screenshots/lightHelper.jpg)
 
 
+We can also add a **Grid Helper** to show the 3D axes of our scene.
+
+```
+const gridHelper = new THREE.GridHelper(200,50);
+
+scene.add(gridHelper)
+```
 
 
+## Orbit Controls
 
+Three.JS has various types of Control methods to allow you to add interactive functionality to your scene. 
 
+Let's add an `Orbit Control`, which will allow us to move our camera and traverse our scene with mouse controls and zoom.
+
+In order to add the Orbit Controls as a function, we need to import that package from the three.js dependencies. At the top of your document where you imported THREE.JS, (directly underneath `import * as THREE from 'three';`) add this line of code:
+
+```
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+```
+
+Then, under your `Helpers`, activate your orbit controls by declaring it as a constant:
+
+```
+// Orbit Control
+
+const controls = new OrbitControls(camera, renderer.domElement)
+```
+
+Your orbit controls will not be functional until you add an `.update()` method to your new `controls` object WITHIN your `animate(){}` function:
+
+```
+function animate() {
+	requestAnimationFrame( animate );
+
+    // slowly rotate the cube:
+
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+
+    // rotate the icosahedron a little faster in the opposite direction:
+
+    icoMesh.rotation.z += -0.03
+    icoMesh.rotation.y += -0.03
+
+    // ALLOWS YOUR ORBIT CONTROLS TO UPDATE LIVE IN REAL-TIME:
+    controls.update()
+
+	renderer.render( scene, camera );
+}
+```
+
+When you refresh your server, you should now be able to click and drag to orbit the camera view of your scene!
+
+## Scene Backgrounds
+
+We can set our scene backgrounds to whatever we want, using regular image files. 
+
+- create a new folder in your project and name it `images` 
+
+- find a cool, high-resolution image that you'd like to appear as the background of your scene. We are using this one:
+
+![night sky background photo](images/night_sky.jpg)
+
+- save the image file of your choosing inside your new `/images` directory.
+
+- create a new `Texture` object by referencing your image, and add it to the scene:
+
+```
+// Background
+
+const spaceTexture = new THREE.TextureLoader().load('images/night_sky.jpg')
+
+scene.background = spaceTexture;
+```
+![background texture scene](images/screenshots/backgroundTexture.jpg)
 
 
