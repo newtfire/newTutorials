@@ -504,7 +504,7 @@ function animate() {
     icoMesh.rotation.y += -0.03
 
     // rotate the smiley sphere on the Y axis:
-    
+
     smileMesh.rotation.y += 0.05
 
     controls.update()
@@ -513,4 +513,54 @@ function animate() {
 }
 ```
 
+### Normal Texture Mapping
 
+Three.JS also allows you to create vivid textures to alter the surface shape of your mesh to create real, light-reactive textures on your objects.
+
+To do this, we need to create a **normal**. 
+
+**Normal mapping** in the 3D world refers to a texture mapping technique used for faking the lighting of bumps and dents – an implementation of bump mapping. It is used to add details without using more polygons.
+
+To create a normal, you must first find a texture image you like that can be converted into a normal.
+
+We used this site to generate and customize a texture:
+[Texture Generator Online](http://cpetry.github.io/TextureGenerator-Online/)
+
+Here's the texture we generated:
+
+![texture](images/texture.png)
+
+Now, we must convert this texture image file into a normal map. We used this site to upload our texture image file and have it converted into a normal:
+[Normal Map Online](https://cpetry.github.io/NormalMap-Online/)
+
+Here's the normal map that was generated from our image:
+![normal map](images/textureNormal.png)
+
+Now we need to create a new `normalTexture` object in our Javascript by loading a new texture and loading in our normalMap image file:
+
+```
+const normalTexture = new THREE.TextureLoader().load('images/normals/textureNormal.png');
+```
+
+Now, to apply our normal map to a new object, we must apply our normal map image to the `normalMap` property within our new `MeshStandardMaterial`. 
+
+```
+// Normal Texture Map
+
+const torusGeo = new THREE.TorusKnotGeometry( 5, 1, 250, 5, 9, 15 );
+const torusMaterial = new THREE.MeshStandardMaterial( { 
+  normalMap: normalTexture,
+  roughness: 0,
+  metalness: .8
+} );
+
+const torusKnot = new THREE.Mesh( torusGeo, torusMaterial );
+
+scene.add( torusKnot );
+torusKnot.position.y = 20
+
+```
+
+We also added a `roughness` and `metalness` property value to make our new object look more shiny and reflect light. Your scene should look something like this:
+
+![normal mapping](images/screenshots/normalMapping.jpg)
