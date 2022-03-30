@@ -441,3 +441,76 @@ scene.background = spaceTexture;
 ![background texture scene](images/screenshots/backgroundTexture.jpg)
 
 
+
+## Texture Mapping
+
+In the world of 3D modeling, `Texture Mapping` refers to mapping flat images onto the surface of a 3D object. Three.JS allows us to do this by creating `Texture` objects and applying them to our 3D objects using methods.
+
+Find an image file that you'd like to apply to the surface of a new object. We will be using this one:
+
+![smiley face texture](images/smile.jpg)
+
+Save your texture image file in your `/images` directory.
+
+Now, in our `main.js`, let's create a new texture that we will map onto a new object:
+
+```
+// Object texture mapping
+
+const smileTexture = new THREE.TextureLoader().load('images/smile.jpg')
+```
+
+Now, let's create a new `Sphere` object to map our new texture onto. 
+
+**Remember** new objects require three basic components:
+
+- a `geometry`
+- a `material`
+  - in this case, our new `BasicMaterial` will have a value of `{map: smileTexture}` instead of a color hex code.
+- a `mesh`, which combines the `geometry` and `material` to create the final visible object.
+
+```
+// Object texture mapping
+
+const smileTexture = new THREE.TextureLoader().load('images/smile.jpg')
+
+const sphereGeometry = new THREE.SphereGeometry( 10, 22, 10 );
+
+const smileMaterial = new THREE.MeshBasicMaterial({map: smileTexture})
+
+const smileMesh = new THREE.Mesh(sphereGeometry, smileMaterial);
+
+scene.add(smileMesh);
+```
+
+![new texture-mapped object](images/screenshots/textureMapping.jpg)
+
+You can manipulate the object's static position, rotation, and size as you wish, the same as your other objects.
+
+You can also add property changes to this new texture to be animated in real-time in your `animate()` function:
+
+```
+function animate() {
+	requestAnimationFrame( animate );
+
+    // slowly rotate the cube:
+
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+
+    // rotate the icosahedron a little faster in the opposite direction:
+
+    icoMesh.rotation.z += -0.03
+    icoMesh.rotation.y += -0.03
+
+    // rotate the smiley sphere on the Y axis:
+    
+    smileMesh.rotation.y += 0.05
+
+    controls.update()
+
+	renderer.render( scene, camera );
+}
+```
+
+
