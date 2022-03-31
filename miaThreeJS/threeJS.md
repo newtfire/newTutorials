@@ -8,6 +8,7 @@ Check out an example:
 See other awesome things you can do with three.js:
 [Three.JS examples page](https://threejs.org/examples/#webgl_animation_keyframes)
 
+
 ## Step 1: *Install the Three.JS node package module using your Terminal/Command Line*
 
 Before we dive into making our awesome 3D website, we need to install `Node.js` and `npm` at the command line.
