@@ -1,0 +1,550 @@
+/* DEMO SVG  */
+
+#yellowCircle,
+#aquaRect,
+ #tealRect,
+#blueLine,
+#pinkCircle,
+#purpleCircle{
+     transition: all 1s ease;
+}
+
+#yellowCircle{
+    fill:var(--yellow);
+    
+}
+
+svg#color:hover #yellowCircle{
+    fill:var(--teal);
+}
+
+svg#scale:hover #yellowCircle{
+    fill:var(--teal);
+    transform:scale(110%);
+    transform-origin:center;
+}
+
+svg#badscale:hover #yellowCircle{
+    fill:var(--teal);
+    transform:scale(110%);
+}
+
+svg#rotate:hover #yellowCircle{
+    fill:var(--teal);
+    transform:scale(110%);
+    transform-origin:center;
+}
+
+svg#altRotate:hover #yellowCircle{
+    fill:var(--teal);
+    transform:scale(110%);
+    transform-origin:center;
+}
+
+#aquaRect{
+    stroke:var(--aqua);
+    fill:var(--transparent);
+}
+
+svg#color:hover #aquaRect{
+    stroke:var(--yellow);
+}
+
+svg#color:hover #aquaRect{
+    stroke:var(--yellow);
+}
+
+svg#altRotate:hover #aquaRect{
+    stroke:var(--yellow);
+    transform:rotate(360deg);
+    transform-origin:right;
+}
+
+svg#rotate:hover #aquaRect{
+    stroke:var(--yellow);
+    transform:rotate(360deg);
+    transform-origin:center;
+}
+
+svg#scale:hover #aquaRect{
+    stroke:var(--yellow);
+    transform:scale(150%);
+}
+
+svg#badscale:hover #aquaRect{
+    stroke:var(--yellow);
+    transform:scale(150%);
+}
+
+#tealRect{
+    stroke:var(--teal);
+    fill: var(--transparent);
+}
+
+svg#altRotate:hover #tealRect{
+    stroke:var(--aqua);
+    fill:var(--purple);
+    transform:scale(75%);
+    transform-origin:center;
+}
+
+svg#rotate:hover #tealRect{
+    stroke:var(--aqua);
+    fill:var(--purple);
+    transform:scale(75%);
+    transform-origin:center;
+}
+
+svg#scale:hover #tealRect{
+    stroke:var(--aqua);
+    fill:var(--purple);
+    transform:scale(75%);
+    transform-origin:center;
+}
+
+svg#badscale:hover #tealRect{
+    stroke:var(--aqua);
+    fill:var(--purple);
+    transform:scale(75%);
+}
+
+svg#color:hover #tealRect{
+    stroke:var(--aqua);
+    fill:var(--purple);
+}
+
+#blueLine{
+    fill:none;
+    stroke:var(--blue)
+}
+
+svg#rotate:hover #blueLine{
+   
+    transform:rotate(-180deg);
+}
+
+svg#altRotate:hover #blueLine{
+    transform-origin:center;
+    transform:rotate(-180deg);
+}
+
+
+
+#pinkCircle{
+    stroke:var(--pink);
+    fill:var(--transparent);
+}
+
+#purpleCircle{
+    fill:var(--purple)
+}
+
+svg:hover #purpleCircle{
+    transform:translate(-50%, -10%)
+}
+
+svg:hover #pinkCircle{
+    transform:translate(40%, -40%);
+}
+
+
+
+.katex-error {
+	color: var(--vscode-editorError-foreground);
+}
+html, body{
+font-family: var(--markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", system-ui, "Ubuntu", "Droid Sans",);
+font-size: var(--markdown-font-size, 14px);
+padding: 0 26px;
+  padding-top: 0px;
+line-height: var(--markdown-line-height, 22px);
+word-wrap: break-word;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+h1 {
+    padding-bottom: 0.3em;
+    line-height: 1.2;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    font-weight: normal;
+  }
+
+section.svg{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+
+.slideWrap{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
+
+.twinkie {width:40vw;}
+
+.imgWrap{
+    display:flex;
+    justify-content:center;
+}
+
+#merging{
+    width:40vw;
+}
+
+div{
+    padding:5px;
+}
+
+.menuB{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+}
+
+pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    /* padding: 20px; */
+  }
+
+/* ANIMATED SVG */
+
+:root{
+    /* DEMO SVG COLORS */
+
+    --yellow: #FF0;
+     --aqua: #2e636e;
+     --blue: #00F;
+    --pink: #ffc0cb;
+    --purple: #800080;
+    --teal: #5adbab;
+    --transparent: #5adbab00;
+
+
+    /* svg colors from portfolio */
+
+    --dark-hair:#5E5546;
+    --brown-hair:#988364;
+    --blonde-hair:#CFC19C;
+    --body: #E8E8E8;
+    --face:#E4C89E;
+
+    --bigCircle:#73E0C6;
+    --darkCircle:#388678;
+    --lightCircle:#FFFACF;
+
+    --bulbHead: #f69a8b;
+
+    --outline:#2d4356;
+    --blackline: #626975;
+
+    /* ROCKET COLORS */
+
+    --sun:#F1F8CE;
+    --sunCircle:#388678;
+
+    --smolCirc:#ABF4E7;
+    --exlCirc:#3c4992;
+    --waves:#59DCC9;
+    
+    --stars:#ffffff;
+    --skyCircs:#2E475A;
+
+    /* RESUME COLORS */
+
+    --burnCircle:#e6e59c;
+    --aqua:#388678;
+    --blueCircle:#8EB6D5;
+    --cyanCircle:#68F1D9;
+
+
+}
+
+#darkHair{
+    fill: var(--dark-hair);
+}
+#brownHairL, #brownHairR{
+    fill: var(--brown-hair)
+}
+#blondeHair{
+    fill: var(--blonde-hair)
+}
+
+#body{
+    fill: var(--body);
+}
+#face{
+    fill:var(--face);
+}
+
+#container{
+    fill: var(--bigCircle)
+}
+#darkCircle{
+    fill:var(--darkCircle)
+}
+#lightCircle{
+    fill:var(--lightCircle)
+}
+
+
+
+#darkCircle,
+#lightCircle,
+#container,
+#bulbHead,
+#lightbulb,
+#sunCircle,
+#smolcirc,
+#exlCirc,
+#sun,
+#stars,
+#skyCircs,
+#burnCircle,
+#blueCircle,
+#cyanCircle,
+#textLines path,
+.star{
+    transition: all 1s ease;
+}
+
+svg#bio:hover #darkCircle{
+    /* transform:translate(50%, 25%); */
+    transform:translate(0%, 50%);
+  
+}
+
+svg#bio:hover #lightCircle{
+    /* transform:translate(-50%, -25%); */
+    transform: translateY(-50%);
+}
+
+svg#bio:hover #container{
+    fill:#358673;
+}
+
+/* 
+svg:hover #eyeL{
+    transform: scaleX(-2); 
+    transform-origin:center;
+} */
+
+
+/* COURSE WORK ICON */
+
+
+#bulbHead{
+    fill:var(--bulbHead)
+}
+
+#book{
+    fill:var(--outline)
+}
+
+.blackline{
+    fill:var(--outline);
+    /* color:#434647;
+    color:#2d4356 */
+
+}
+
+svg#schoolProj:hover #lightbulb{
+    transform:translateY(-4%)
+}
+
+#lightCircle{
+    transform-origin: center;
+}
+
+svg#schoolProj:hover #lightCircle{
+    transform:translateY(-60%);
+    opacity:.85;
+    transform:scale(-1);
+    
+}
+
+svg#schoolProj #container{
+    transform-origin:center;
+}
+svg#schoolProj:hover #container{
+    transform:translateY(17%);
+    fill: var(--darkCircle);
+    /* transform:scale(.8); */
+}
+
+svg#schoolProj #darkCircle{
+    transform-origin: center;
+}
+svg#schoolProj:hover #darkCircle{
+    fill:var(--bigCircle);
+    transform:scale(1.05);
+}
+
+svg#schoolProj:hover #bulbHead{
+    fill: #c56b6b;
+}
+/* green line: #5bbe88
+    white line: #dae8f0*/
+
+
+    /* OTHER PROJ SVG (ROCKET) */
+
+#sun{
+    fill:var(--sun)
+}
+
+#sunCircle{
+    fill:var(--sunCircle);
+    opacity: .7;
+    transform-origin:center;
+}
+
+#smolcirc{
+    fill:var(--smolCirc)
+}
+
+#exlCirc{
+    fill:var(--exlCirc)
+}
+
+#Lwaves, #Rwaves{
+    stroke: var(--waves);
+}
+
+#stars{
+    stroke:var(--stars);
+    transform-origin: center;
+}
+
+#skyCircs{
+    stroke:var(--skyCircs);
+    transform-origin: center;
+}
+
+svg#otherProj:hover #sunCircle{
+    transform:translateY(-60%);
+   opacity:.5;
+   fill:var(--face)
+}
+
+svg#otherProj:hover #smolcirc{
+    transform:translateX(60%);
+    fill:var(--exlCirc)
+}
+
+svg#otherProj:hover #exlCirc{
+    transform:translateX(-50%);
+    fill:var(--smolCirc)
+}
+/* 
+svg#otherProj:hover #sun{
+    fill:#ccbe82
+} */
+
+svg#otherProj:hover #stars{
+    /* transform:translate(0%,20%); */
+    /* transform:scaleY(105%) */
+    transform:scale(109%)
+}
+svg#otherProj:hover #skyCircs{
+    /* transform:translate(5%,20%) */
+    transform:scale(105%)
+}
+
+
+/* RESUME ICON */
+
+.star{
+    stroke:var(--aqua)
+}
+
+#svg#resume:hover .star{
+    stroke:var(--stars)
+}
+
+#burnCircle{
+    fill:var(--burnCircle);
+    transform-origin: center;
+    transform:scale(0%);
+}
+
+svg#resume:hover #stars{
+    /* transform:translate(0%,20%); */
+    /* transform:scaleY(105%) */
+    transform:scale(110%);
+    stroke:var(--stars)
+}
+svg#resume:hover #skyCircs{
+    /* transform:translate(5%,20%) */
+    transform:scale(90%)
+}
+
+svg#resume:hover #burnCircle{
+    transform:scale(120%);
+    fill:#bbb374bd;
+}
+
+svg#resume:hover #RlineTopBlk, 
+svg#resume:hover #RlineTopBlue{
+    transform:translateX(-14%);
+}
+svg#resume:hover #LlineTopBlue,
+svg#resume:hover #LlineMidSmolBlk{
+    transform:translateX(35%);
+}
+svg#resume:hover #LlineMidLongBlk{
+    transform:translateX(14%)
+}
+svg#resume:hover #RlineBotBlue{
+    transform:translateX(-21%);
+}
+svg#resume:hover #RlineBotBlk{
+    transform:translateX(-35%);
+}
+
+svg#resume #stars{
+    fill:white;
+}
+
+#blueCircle{
+    transform-origin: unset;
+    fill:var(--blueCircle);
+    transform:scale(110%);
+    transform:translate(-25%, -29%);
+    /* opacity:.5; */
+    /* transform:scale(80%); */
+}
+svg#resume:hover #blueCircle {
+    transform:rotate(180deg);
+    fill:#ABF4E7;
+    opacity:1;
+   
+}
+
+#cyanCircle{
+    fill:var(--cyanCircle);
+    transform-origin: unset;
+    transform:scale(110%);
+    transform:translate(24%, 29%);
+    /* opacity:.5; */
+}
+svg#resume:hover #cyanCircle{
+    /* transform:translate(-50%, 50%); */
+    transform:rotate(180deg);
+    fill:#8EB6D5;
+    opacity:1;
+}
+
+svg#resume #lightCircle{
+    opacity:.8;
+}
