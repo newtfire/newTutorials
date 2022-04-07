@@ -401,7 +401,7 @@ We get:
 
 ### Set text-anchor for labels
 
-The default text-anchor for text is **start**. Thus, sometimes, the labels on the left of pie chart needs larger radius to be outside the pie chart. Instead of continuing to increase the radius for labels, we can change their text-anchor to **end**.
+The default text-anchor for text is **start**. Thus, sometimes, the labels on the left of pie chart needs larger radius to be outside the pie chart. Instead of continuing to increase the radius for labels, we can change their text-anchor to **end**. 
 
 If the label is on the left of center of pie chart, its text anchor is end. Otherwise it is start.
 
