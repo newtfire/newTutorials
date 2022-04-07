@@ -226,7 +226,7 @@ Add this code to xslt element, so that we can work with math:pi().
 
 Output:
 
- ![](images/pieChart.svg)
+ ![](/images/pieChart.svg)
 
 [Link to the sample xml file](KewG_p4-12.xml)
 
@@ -242,9 +242,11 @@ Here, we will learn how to plot points on polar coordinates and how to convert p
 
 ## How to plot points on polar coordinates?
 
-In polar coordinates, points are plotted by (r, θ).  r is radius, and θ is the angle in radians. 
+In polar coordinates, points are plotted by (r, θ).  r is radius, and θ is the angle in [radians](https://www.mathsisfun.com/geometry/radians.html). 
 
-Below is the polar coordinate plane.
+### Normal polar coordination system
+
+Below is the normal polar coordinate plane.
 
  ![](polarImages/plane.svg)
 
@@ -254,9 +256,19 @@ r is the circle, which shows different distances between the circle and origin.
 
 θ is the straight line, which sweeps and grows in the counterclockwise from 3 o'clock. 
 
+### Polar coordination system in SVG
+
+In svg rectangular coordinate, Y axis is flipped. Thus, θ also is flipped in svg polar coordinate. In svg, θ grows in the clockwise from 3 o'clock. This feature can help us to label the pie chart in xslt, because it makes the direction of growing of θ same as that of stroke-dasharray for pie chart. Both are in the clockwise.
+
+Below is svg polar coordinate plane.
+
+ ![](polarImages/plane_svg.svg)
+
+In this tutorial, we will focus on the svg polar coordinate plane.
+
 ### Example
 
-#### Plotting the point(100, 3π/4)
+#### Plotting the point(100, 3π/4) in svg polar coordination system
 
  ![](polarImages/plane_point.svg)
 
@@ -376,6 +388,8 @@ This way to label suits to short labels and wide pie wedges. If we want to set l
 
 ## How to set long labels for pie chart?
 
+###  Increase radius for label to larger than that for pie chart
+
 For setting long labels, we can use label lines, and for setting label lines, we need to move labels outside of the pie chart, so we increase radius for labels:
 
 ```xml
@@ -386,7 +400,11 @@ We get:
 
  ![](polarImages/polar_out.svg)
 
-Set text anchor for all labels. If the label is on the left of center of pie chart, its text anchor is end. Otherwise it is start.
+### Set text-anchor for labels
+
+The default text-anchor for text is **start**. Thus, sometimes, the labels on the left of pie chart needs larger radius to be outside the pie chart. Instead of continuing to increase the radius for labels, we can change their text-anchor to **end**.
+
+If the label is on the left of center of pie chart, its text anchor is end. Otherwise it is start.
 
 ```xml
 <!-- Set the text anchor for labels -->
@@ -408,6 +426,8 @@ So, we can get:
 
 Now we can set any type of label lines as we like. 
 
+### Set simple label line
+
 We can just connect the point of label and the mid of its arc.
 
 ```xml
@@ -428,7 +448,9 @@ Output:
 
  ![](polarImages/polar_simpleLine.svg)
 
-In the sample file, I use path to draw the label lines and add a small circle for decoration. The label line connects the the mid point of arc, a point (mid of arc +/- 10, height of label), and a point beside the label.
+### Set label line with \<path>
+
+In the sample file, I use [path](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths) to draw the label lines and add a small circle for decoration. The label line connects the the mid point of arc, a point (mid of arc +/- 10, height of label), and a point beside the label. \<path> can draw complex lines, curves, shapes, and so on. 
 
 ```xml
 <!-- Set the direction for label lines -->
@@ -456,16 +478,24 @@ In the sample file, I use path to draw the label lines and add a small circle fo
 
 <!-- label lines -->
 <g transform="translate(500, 500)" stroke="grey" stroke-width="3" fill="none">   
-    <path d="M{$colorMidX} {$colorMidY} L{$colorMidX+$colorLine} {$colorY+10 -$font-size div 2} H{$colorX -$colorLine}"/>
+    <path d="M{$colorMidX} {$colorMidY} 
+             L{$colorMidX+$colorLine} {$colorY+10 -$font-size div 2} 
+             H{$colorX -$colorLine}"/>
     <circle cx="{$colorX -$colorLine}" cy="{$colorY+10 -$font-size div 2}" r="4" fill="grey"/>
     
-    <path d="M{$natureMidX} {$natureMidY} L{$natureMidX+$natureLine} {$natureY+10 -$font-size div 2} H{$natureX -$natureLine}"/>
+    <path d="M{$natureMidX} {$natureMidY} 
+             L{$natureMidX+$natureLine} {$natureY+10 -$font-size div 2} 
+             H{$natureX -$natureLine}"/>
     <circle cx="{$natureX -$natureLine}" cy="{$natureY+10 -$font-size div 2}" r="4" fill="grey"/>
     
-    <path d="M{$shapeMidX} {$shapeMidY} L{$shapeMidX+$shapeLine} {$shapeY+10 -$font-size div 2} H{$shapeX -$shapeLine}"/>
+    <path d="M{$shapeMidX} {$shapeMidY} 
+             L{$shapeMidX+$shapeLine} {$shapeY+10 -$font-size div 2} 
+             H{$shapeX -$shapeLine}"/>
     <circle cx="{$shapeX -$shapeLine}" cy="{$shapeY+10 -$font-size div 2}" r="4" fill="grey"/>
     
-    <path d="M{$techMidX} {$techMidY} L{$techMidX+$techLine} {$techY+10 -$font-size div 2} H{$techX -$techLine}"/>
+    <path d="M{$techMidX} {$techMidY} 
+             L{$techMidX+$techLine} {$techY+10 -$font-size div 2} 
+             H{$techX -$techLine}"/>
     <circle cx="{$techX -$techLine}" cy="{$techY+10 -$font-size div 2}" r="4" fill="grey"/>
 </g>
 
