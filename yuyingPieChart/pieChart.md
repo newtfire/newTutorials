@@ -290,11 +290,10 @@ It should be noted that svg flips Y axis, so when we plot points with these form
 ```xml
 <g transform="translate(300,300)" fill="black">
         <!-- 
-            cx = rcosθ = 100 * cos(3π/4) = -70.71 
-            cy = rsinθ = 100 * sin(3π/4) = 70.71
-			Toggle the sign of cy, so it should be -70.71.
+            cx = r*cosθ = 100 * cos(3π/4) = -70.71 
+            cy = r*sinθ = 100 * sin(3π/4) = 70.71
         -->
-        <circle r="5" cx="-70.71" cy="-70.71" stroke-width="5"/>
+        <circle r="5" cx="-70.71" cy="70.71" stroke-width="5"/>
 </g>
 ```
 
