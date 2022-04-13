@@ -17,6 +17,7 @@
 * Don't put any files in the `docs/` directory: Start with an empty directory for hosting the website. Navigate to that directory and run `jekyll new --skip-bundle .` (as instructed)
 * To serve your site locally run: `bundle exec jekyll serve`
 * Preview in a web browser at `http://localhost:4000`
+* To "shut off" the locally hosted site and clean up the generated files: `bundle exec jekyll clean`
 * Create a `.gitignore` file and add `_site/` so that your locally built files don't get tracked by git commits.
 * When attempting to run locally, you may see an error that jekyll "cannot load such file -- webrick (LoadError)". [If you see this](https://github.com/jekyll/jekyll/issues/8523), you just need to add this gem to your Gemfile: 
 `gem "webrick"`
