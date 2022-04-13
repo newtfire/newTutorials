@@ -2,7 +2,7 @@
 
 ## Install package module
 
-Here I made a mistake. I did not run ```cd test``` before running ```npm install --save three```. I hope you will remind readers to run these three command lines in the tutorial.
+Here I made a mistake. I did not run ```cd test``` before running ```npm install --save three```. I hope you will remind readers to run it before install in the tutorial.
 
  ![](1.png)
 
@@ -12,7 +12,7 @@ In the last step **Write your HTML**, I have created html file and css files for
 
  ![](3.png)
 
-After asking for a help for Mia, I learn that after running ```npm run dev```, Vite generate a project folder with a start website for me, so I need to replace the code in these files.
+After asking for a help for Mia, I learn that after running ```npm run dev```, Vite generates a project folder with a start website for me, so I need to replace the code in these files.
 
  ![](2.png)
 
@@ -22,7 +22,7 @@ Here, I suggest you inverse the steps of **Write your HTML** and **HOW TO VIEW Y
 
 I stop in the step of **Light and Material Types** and try to run my site, but the site did not show my 3D objects successfully. I try to move to the next step **Animate your scene**. After I adding animate function into my code, Three.JS worked well, and I get the 3D objects with animation. 
 
-I found it worked well because there is the code ```renderer.render( scene, camera );``` in the animation function. In the step of **Scene Setup**, I have added render for scene and camera. It seems if I add render before adding cubes and camera, both cubes and camera could not be rendered successfully. Since I just copy the code according to the steps in the tutorial, I got this error of rendering.
+I found it worked well because there is the code ```renderer.render( scene, camera );``` in the animation function. In the step of **Scene Setup**, I have added render for scene and camera. It seems that I add the render too early. If I add render before adding cubes and camera, both cubes and camera could not be rendered successfully. Since I just copy the code according to the steps in the tutorial, I got this error of rendering.
 
 Therefore, I suggest you remind readers to add ```renderer.render( scene, camera );``` after all objects added.
 
@@ -49,7 +49,7 @@ The rest steps are very clear.
 
 * **Javascript Time!**
   * code ```renderer.render( scene, camera );``` after all objects added.
-  * introduce how navigate the 3D space instead of only how to orbit it:
+  * introduce how to navigate the 3D space instead of only how to orbit it:
     * Orbit - left-click and drag
     * Zoom - rotate or drag the wheel
     * Pan - right-click and drag
