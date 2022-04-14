@@ -29,6 +29,7 @@
      * **Read this for the web architecture.** Don't do this stuff in the web interface if you already know how to work with git at command line.
 
 * Your YML file can be super simple if you're *not* using a Jekyll theme
+     * Fun fact: YML stands for "YAML Ain't Markup Language": it's a data format for helping to configure web production environments. 
 * [Choose the **markdown renderer**](https://jekyllrb.com/docs/configuration/markdown/) to translate markdown syntax into HTML on your site: kramdown is GitHub's default. Indicate this in your Yaml
     * You can add [syntax highlighting by installing the CodeRay gem](https://github.com/kramdown/syntax-coderay), and configuring it in your YML file. 
 
