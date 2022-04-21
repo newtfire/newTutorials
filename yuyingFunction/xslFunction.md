@@ -143,7 +143,7 @@ We will talk about what data type is and what data types we have in XSLT below.
 
 #### What is data type?
 
-Each data type has a specific value range and operation can be applied to such variable. With data types, the editor can return errors when we using variables with an incompatible operation. For example, we could not divide a string by a number. It is very common that we need to convert from one datatype to another, say from a string version of a number to an actual number for calculation. For example, to convert a string value of "2.5" to the decimal number, we can usually apply an XPath `number()` function. 
+Each data type has a specific value range and operation can be applied to such variable. With data types, the editor can return errors when we using variables with an incompatible operation. For example, we could not divide a string by a number. It is very common that we need to convert from one datatype to another, say from a string version of a number to an actual number for calculation. For example, to convert a string value of "2.5" to the decimal number, we can usually apply an XPath `number()` function. For lots of detail on converting datatypes, see Michael Kay's *XSLT 2.0 and XPath 2.0* book, pages 654-664.
 
 ##### Table 1. All basic data types in XML/XSLT
 
