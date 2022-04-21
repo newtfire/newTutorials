@@ -106,8 +106,8 @@
         <p><img src="images\screenshots\VScodeTerminal.jpg" alt="VS code terminal"></p>
         <ul>
             <li>Enter this command to check if you already have Node.JS Installed:
-                <pre><code><code><div>  node -v
-        </div></code></code></pre>
+                <pre>  node -v
+        </pre>
             </li>
         </ul>
         <p>If you already have Node.JS installed, the terminal will print a version number that looks something like
@@ -132,15 +132,18 @@
         <ul>
             <li>First, check to see if you already have NPM installed:</li>
         </ul>
-        <pre><code><code><div>npm -v
-        </div></code></code></pre>
+        <pre>npm -v
+        </pre>
         <p>Again, similar to when we checked for node.js, a version number will print if you already have npm installed.
         </p>
         <ul>
             <li>If not, you need to install it. We can do this at the command line with this command:</li>
         </ul>
-        <pre><code><code><div>npm install -g npm
-        </div></code></code></pre>
+        <pre>
+      
+            npm install -g npm
+   
+    </pre>
         <p>Now you're all set to create your new project repository!</p>
     </section>
     <section>
@@ -150,8 +153,9 @@
         <p>Once you have made your project directory, open the command line at your empty directory and enter this
             command:
         </p>
-        <pre><code><code><div>npm init @vitejs/app
-        </div></code></code></pre>
+        <pre>
+            npm init @vitejs/app
+        </pre>
         <p>Follow the prompts given at command line:</p>
         <ul>
             <li>name your project</li>
@@ -163,21 +167,15 @@
         <p>Now, enter these commands <i>separately</i>. The command line terminal prompts these for you when you create
             your Vite app:</p>
         <pre>
-            <code>cd your-project-name</code>
+          cd your-project-name
         </pre>
         <pre>
-            <code>npm install</code>
+           npm install
         </pre>
-        <pre>
-            <code>npm run dev</code>
-        </pre>
-        <p>
-            Click the link to your https://localhost:3000 dev server to preview your app, and voila! Your Vite project
-            is set up and ready for some Three.JS
-        </p>
-        <p>
-            To kill your dev server process in your command line terminal, simply <b>CTRL + C</b> (or CMD + C on Mac)
-        </p>
+        <div>
+            <img src="images/screenshots/setting-up-vite-CMD.jpg" alt="command line vite setup screenshot"/>
+        </div>
+      
     </section>
 
     <section>
@@ -185,9 +183,9 @@
         <p>First, make sure you are at the root level of your Vite project directory. Once you <code>cd</code> into it,
             enter this command:</p>
         <pre>
-            <code>
+           
                 npm install --save three
-             </code>
+             
         </pre>
         <p>This will install Three.JS as a dependency in your project. You should see a new <code>node_modules</code>
             directory, a <code>package.json</code> file, and a
@@ -208,20 +206,34 @@
         <p>Since Three.JS requires dependencies in order to render, you need to tell your app to run in the command line
             in order to view it locally.</p>
         <p>In the command line terminal, run this command:</p>
-        <pre><code><code><div>npm run dev
-    </div></code></code></pre>
-        <p>a <code>localhost</code> link should appear in the command line. Copy it, and paste it in your browser to
-            view
-            your app.</p>
+        <pre>
+           npm run dev
+        </pre>
+        <div>
+            <img src="images/screenshots/npm-run-dev.jpg" alt="static dev server runnning"/>
+        </div>
+    <p>
+        Click the link to your <code>https://localhost:3000</code> dev server to preview your app, and voila! Your Vite project
+        is set up and running locally.
+    </p>
+  
+
         <p>
             When you run the command <code>npm run dev</code>, whenever you make new edits to your code, your localhost
             browser will automatically refresh and
             reflect your changes.
-            You will not be able to enter any new commands into your terminal until you kill the localhost serve
-            process.
+            <ab>
+                You will not be able to enter any new commands into your terminal until you kill the localhost serve
+                process.
+            </ab>
         </p>
-        <p>To "kill" or end the server process and free up your terminal, enter <code>Ctrl/Cmd + C</code> into the
-            terminal. This should end the localhost process</p>
+        <p>
+            To "kill" or end your dev server process in your command line terminal, simply enter <b>CTRL + C</b> (or CMD + C on Mac) in the terminal.
+        </p>
+        <p>It will ask you if you want to "Terminate Batch Job". To confirm, type <code>y</code> and hit enter.</p>
+        <div>
+            <img src="images/screenshots/kill-local-server.jpg" alt="killing local server in command line"/>
+        </div>
     </section>
 
     <section>
@@ -242,7 +254,7 @@
             Go into your index.html file and change it to look like this:
         </p>
 
-        <pre><code><code><div>&lt;!DOCTYPE html&gt;
+        <pre>&lt;!DOCTYPE html&gt;
         &lt;html&gt;
         &lt;head&gt;
             &lt;title&gt;Three JS Demo&lt;/title&gt;
@@ -254,7 +266,7 @@
             &lt;script type=&quot;module&quot; src=&quot;/main.js&quot;&gt;&lt;/script&gt;
         &lt;/body&gt;
         &lt;/html&gt;
-        </div></code></code></pre>
+      </pre>
     </section>
     <section>
         <h2 id="create-your-background-canvas-by-editing-your-css">Create your background canvas by editing your CSS
@@ -264,12 +276,12 @@
             the following code into that CSS to make the <code>&lt;canvas&gt;</code> element in your HTML be the
             background
             for your site:</p>
-        <pre><code><code><div>canvas{
+        <pre>canvas{
           position:fixed;
           top: 0;
           left: 0;
         }
-        </div></code></code></pre>
+        </pre>
         <p>This is where your 3D objects will appear when we start creating them in your javascript.</p>
     </section>
 
@@ -278,8 +290,8 @@
         <p>In your new <code>main.js</code> javascript file, you'll need to tell it to import the Three.JS node package
             module in order to reference the many pre-built 3D-building methods and objects.</p>
         <p>To do this, simply paste these <code>import</code> instructions on the first line of your JS file:</p>
-        <pre><code><code><div>import * as THREE from 'three';
-        </div></code></code></pre>
+        <pre>import * as THREE from 'three';
+        </pre>
         <h2 id="scene-setup">Scene Setup</h2>
         <p><a href="https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene">Helpful Three.JS
                 documentation in case you need it</a></p>
@@ -292,7 +304,7 @@
         <p>We create these objects by declaring a new <code>const</code>, a type of variable in Javascript, and defining
             it
             with new THREE methods.</p>
-        <pre><code><code><div>// Setup
+        <pre>// Setup
         
         const scene = new THREE.Scene();
         
@@ -303,22 +315,22 @@
         const renderer = new THREE.WebGLRenderer({
           canvas: document.querySelector('#bg'),
         });
-        </div></code></code></pre>
+      </pre>
         <p>You will not be able to view your new scene until you tell the renderer to render the scene and the camera
             with
             Three.js's <code>.render</code> method:</p>
-        <pre><code><code><div>renderer.render(scene, camera);
-        </div></code></code></pre>
+        <pre>renderer.render(scene, camera);
+        </pre>
         <p>Now that we have each of these objects set as constants, we can manipulate them with Three.JS's built-in
             methods.
         </p>
         <p>Let's set the pixel ratio, the size, and the camera position:</p>
-        <pre><code><code><div>renderer.setPixelRatio(window.devicePixelRatio);
+        <pre>renderer.setPixelRatio(window.devicePixelRatio);
         renderer.setSize(window.innerWidth, window.innerHeight);
         camera.position.setZ(50);
         camera.position.setX(-3);
         
-        </div></code></code></pre>
+       </pre>
     </section>
     <section>
         <h2 id="create-your-first-object">Create your first object!</h2>
@@ -337,31 +349,31 @@
             <li>The dimensions of the length, width, and height of your box go inside the new THREE geometry object
                 parentheses <code>()</code> as arguments separated by commas:</li>
         </ul>
-        <pre><code><code><div>const geometry = new THREE.BoxGeometry(10, 10, 10);
+        <pre>const geometry = new THREE.BoxGeometry(10, 10, 10);
         
         //set the color of the basic material in the object parameters `{}`
         
         const material = new THREE.MeshBasicMaterial( { color: 0xFF6347 } );
         
         const cube = new THREE.Mesh( geometry, material );
-        </div></code></code></pre>
+        </pre>
         <p>To add our cube into the scene, use the <code>.add()</code> method.</p>
-        <pre><code><code><div>scene.add( cube );
-        </div></code></code></pre>
+        <pre>scene.add( cube );
+        </pre>
     </section>
     <section>
         <h2 id="manipulating-your-object">Manipulating your object</h2>
         <p>You can change the position of the object by manipulating the cube's <code>.position</code> property and
             attaching the axis on which you want to move it:</p>
-        <pre><code><code><div>cube.position.z = -15;
+        <pre>cube.position.z = -15;
         cube.position.x = -15;
-        </div></code></code></pre>
+        </pre>
         <p>Change the rotation of your object by manipulating the <code>.rotation</code> property and attaching the axis
             on
             which you wish to rotate it:</p>
-        <pre><code><code><div>cube.rotation.x = 2;
+        <pre>cube.rotation.x = 2;
         cube.rotation.y = .5;
-        </div></code></code></pre>
+        </pre>
     </section>
     <section>
         <h2 id="lights-and-material-types">Lights and Material Types</h2>
@@ -371,7 +383,7 @@
             Your cube is visible because it is made of a <code>Basic</code> material, which is not affected by lights.
         </p>
         <p>Let's create a new object to test out new materials:</p>
-        <pre><code><code><div>const ico = new THREE.IcosahedronGeometry(10);
+        <pre>const ico = new THREE.IcosahedronGeometry(10);
         const icoMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
         const icoMesh = new THREE.Mesh(ico, icoMaterial);
         
@@ -379,11 +391,11 @@
         
         icoMesh.position.z= -15;
         icoMesh.position.x= 15;
-        </div></code></code></pre>
+        </pre>
         <p>If you try to view your new object in the browser, you will not be able to see it. Since Phong materials
             require
             light, you will need to at least one light object in your scene:</p>
-        <pre><code><code><div>// Lights
+        <pre>// Lights
         
         const pointLight = new THREE.PointLight(0xffffff);
         pointLight.position.set(0, -10, 10);
@@ -393,7 +405,7 @@
         
         scene.add(pointLight);
         scene.add(ambientLight);
-        </div></code></code></pre>
+        </pre>
         <ul>
             <li>
                 <p>Point Lights are lights that only go in one direction.</p>
@@ -410,8 +422,8 @@
         <p>Watch what happens if you change your <code>cube</code> material to a <code>StandardMaterial</code> which
             accepts
             light, replacing it with <code>BasicMaterial</code> , which does not accept light:</p>
-        <pre><code><code><div>const material = new THREE.MeshStandardMaterial( { color: 0xFF6347 } );
-        </div></code></code></pre>
+        <pre>const material = new THREE.MeshStandardMaterial( { color: 0xFF6347 } );
+        </pre>
         <p><img src="images\screenshots\standardMaterial.jpg" alt="standard material cube"></p>
     </section>
     <section>
@@ -419,7 +431,7 @@
         <p>To make your objects move through time, we need to create a new <code>animate</code> function and set our
             animation properties within it.</p>
         <p>You can animate just about any property of an object you want.</p>
-        <pre><code><code><div>function animate() {
+        <pre>function animate() {
             requestAnimationFrame( animate );
         // slowly rotate the cube:
         cube.rotation.x += 0.01;
@@ -430,10 +442,10 @@
         
             renderer.render( scene, camera );
         }
-        </div></code></code></pre>
+        </pre>
         <p>You must call the animate() function in order to tell the browser to use it:</p>
-        <pre><code><code><div>animate();
-        </div></code></code></pre>
+        <pre>animate();
+        </pre>
         <p>Congratulations! Your scene should now look something like this:</p>
         <p><img src="images\screenshots\twoObjects.jpg" alt="three.JS object screenshot"></p>
     </section>
@@ -444,18 +456,18 @@
             positioned.
         </p>
         <p>Let's add a light helper to our <code>pointLight</code> object:</p>
-        <pre><code><code><div>// Helpers
+        <pre>// Helpers
         
         const lightHelper = new THREE.PointLightHelper(pointLight);
         
         scene.add(lightHelper)
-        </div></code></code></pre>
+        </pre>
         <p><img src="images\screenshots\lightHelper.jpg" alt="light helper"></p>
         <p>We can also add a <strong>Grid Helper</strong> to show the 3D axes of our scene.</p>
-        <pre><code><code><div>const gridHelper = new THREE.GridHelper(200,50);
+        <pre>const gridHelper = new THREE.GridHelper(200,50);
         
         scene.add(gridHelper)
-        </div></code></code></pre>
+        </pre>
     </section>
     <section>
         <h2 id="orbit-controls">Orbit Controls</h2>
@@ -469,17 +481,17 @@
             At the top of your document where you imported THREE.JS, (directly underneath
             <code>import * as THREE from 'three';</code>) add this line of code:
         </p>
-        <pre><code><code><div>import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-        </div></code></code></pre>
+        <pre>import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+        </pre>
         <p>Then, under your <code>Helpers</code>, activate your orbit controls by declaring it as a constant:</p>
-        <pre><code><code><div>// Orbit Control
+        <pre>// Orbit Control
         
         const controls = new OrbitControls(camera, renderer.domElement)
-        </div></code></code></pre>
+        </pre>
         <p>Your orbit controls will not be functional until you add an <code>.update()</code> method to your new
             <code>controls</code> object WITHIN your <code>animate(){}</code> function:
         </p>
-        <pre><code><code><div>function animate() {
+        <pre>function animate() {
             requestAnimationFrame( animate );
         // slowly rotate the cube:
         cube.rotation.x += 0.01;
@@ -492,7 +504,7 @@
         
             renderer.render( scene, camera );
         }
-        </div></code></code></pre>
+        </pre>
         <p>When you refresh your server, you should now be able to click and drag to orbit the camera view of your
             scene!
         </p>
@@ -518,12 +530,12 @@
                 <p>create a new <code>Texture</code> object by referencing your image, and add it to the scene:</p>
             </li>
         </ul>
-        <pre><code><code><div>// Background
+        <pre>// Background
         
         const spaceTexture = new THREE.TextureLoader().load('images/night_sky.jpg')
         
         scene.background = spaceTexture;
-        </div></code></code></pre>
+        </pre>
         <p><img class="img" src="images\screenshots\backgroundTexture.jpg" alt="background texture scene"></p>
     </section>
     <section>
@@ -536,10 +548,10 @@
         <p><img class="img" src="images\smile.jpg" alt="smiley face texture"></p>
         <p>Save your texture image file in your <code>/images</code> directory.</p>
         <p>Now, in our <code>main.js</code>, let's create a new texture that we will map onto a new object:</p>
-        <pre><code><code><div>// Object texture mapping
+        <pre>// Object texture mapping
         
         const smileTexture = new THREE.TextureLoader().load('images/smile.jpg')
-        </div></code></code></pre>
+        </pre>
         <p>Now, let's create a new <code>Sphere</code> object to map our new texture onto.</p>
         <p><strong>Remember</strong> new objects require three basic components:</p>
         <ul>
@@ -555,7 +567,7 @@
                 final
                 visible object.</li>
         </ul>
-        <pre><code><code><div>// Object texture mapping
+        <pre>// Object texture mapping
         
         const smileTexture = new THREE.TextureLoader().load('images/smile.jpg')
         
@@ -566,7 +578,7 @@
         const smileMesh = new THREE.Mesh(sphereGeometry, smileMaterial);
         
         scene.add(smileMesh);
-        </div></code></code></pre>
+        </pre>
         <div class="imgWrap"><img class="img" src="images\screenshots\textureMapping.jpg"
                 alt="new texture-mapped object"></div>
         <p>You can manipulate the object's static position, rotation, and size as you wish, the same as your other
@@ -576,7 +588,7 @@
             <code>animate()</code>
             function:
         </p>
-        <pre><code><code><div>function animate() {
+        <pre>function animate() {
             requestAnimationFrame( animate );
         // slowly rotate the cube:
         cube.rotation.x += 0.01;
@@ -590,7 +602,7 @@
         
             renderer.render( scene, camera );
         }
-        </div></code></code></pre>
+        </pre>
     </section>
     <section>
         <h3 id="normal-texture-mapping">Normal Texture Mapping</h3>
@@ -616,13 +628,13 @@
         <div class="imgWrap"> <img class="imgSm" src="images\textureNormal.png" alt="normal map"></div>
         <p>Now we need to create a new <code>normalTexture</code> object in our Javascript by loading a new texture and
             loading in our normalMap image file:</p>
-        <pre><code><code><div>const normalTexture = new THREE.TextureLoader().load('images/normals/textureNormal.png');
-        </div></code></code></pre>
+        <pre>const normalTexture = new THREE.TextureLoader().load('images/normals/textureNormal.png');
+        </pre>
         <p>Now, to apply our normal map to a new object, we must apply our normal map image to the
             <code>normalMap</code>
             property within our new <code>MeshStandardMaterial</code>.
         </p>
-        <pre><code><code><div>// Normal Texture Map
+        <pre>// Normal Texture Map
         
         const torusGeo = new THREE.TorusKnotGeometry( 5, 1, 250, 5, 9, 15 );
         const torusMaterial = new THREE.MeshStandardMaterial( { 
@@ -636,7 +648,7 @@
         scene.add( torusKnot );
         torusKnot.position.y = 20
         
-        </div></code></code></pre>
+        </pre>
         <p>We also added a <code>roughness</code> and <code>metalness</code> property value to make our new object look
             more
             shiny and reflect light. Your scene should look something like this:</p>

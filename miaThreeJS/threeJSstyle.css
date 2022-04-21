@@ -45,3 +45,10 @@ img.img{
 img.imgSm{
     width:20vw;
 }
+
+code {
+    background-color: rgb(134, 134, 134);
+    color: white;
+    padding: 4px;
+    border-radius: 5px;
+}
