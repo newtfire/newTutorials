@@ -101,7 +101,7 @@ A function consists of **declaration** and **definition**. We have three basic e
 * ```<xsl:funtion>``` is to define:
   * function name (prefix with our custom namespace)
   
-  * return type: the data type of the value returned (We will talk about data type below.)
+  * return type: the data type of the value returned
   
 * ```<xsl:param>``` is to define:
 * parameters name 
@@ -112,6 +112,12 @@ A function consists of **declaration** and **definition**. We have three basic e
 
 * ```<xsl:sequence>``` is to define:
   * what the function executes.
+
+##### Why ```<xsl:sequence>```?
+
+Both ```<xsl:value-of>``` and ```<xsl:sequence>``` can return the result of function. However, ```<xsl:value-of>``` returns a text node, while ```<xsl:squence>``` can return a value with any specific data type we expecting. 
+
+We will talk about what data type is and what data types we have in XSLT below.
 
 #### Example: Add two numbers
 
