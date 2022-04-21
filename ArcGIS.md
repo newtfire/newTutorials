@@ -1,7 +1,10 @@
 # ArcGIS Tutorials 
 ## Introduction to ArcGIS
 ### What is GIS? 
-A geographic information system is used to display various types of data within a map-like format. GIS can connect various types of local data that display the physical geographical locations, as well as additional descriptions. 
+A geographic information system is used to display various types of data within a map. GIS can connect various types of local data that display the physical geographical locations, as well as additional descriptions. 
+
+Learn More about [GIS](https://www.esri.com/en-us/what-is-gis/overview) here.
+
 ### ArcGIS Online 
 Is a cloud-based software that allows you to build interactive visual maps. This is Esri’s web-based mapping platform. You will need a License through ArcGIS in order to use it and thankful we have access to ArchGIS through Penn State!
 
@@ -71,6 +74,15 @@ Most of the data for this tutorial originated from federal government websites. 
 IMPORTANT TIP: Make sure there are no empty spaces within the columns and rows of your spreadsheets. ArcGIS will only read csv or tsv files that are computer readable, NOT human readable. If you have any blank cells within your spreadsheet 
 
 ![Example of  the Excel spreadsheet](ArcGIS-Imgs/spreadsheet.PNG)
-## Adding Data to your Map: 
-## Display Data and Tables on your Map: 
+## Adding and Displaying Data on your Map:
+1. Go to the Map Tab on the Top left and Add Data section. When the drop down menu displays, look for the XY Point Data option.
+1. You will see a panel pop up on the right side of the screen in the Geoprocessing section. Select your Input Table within your local file directory or through Living Atlas.
+1. The blank sections should autofill but still make sure the X Field contains the Longitude coordinates and the Y Field contains the Latitude coordinates.
+1. You can use the auto generated Coordinate System, but if needed for your project select the best Coordinate System for you. 
+1. Click the run button in the button right corner of the Geoprocessing section.
+You will see the data display on the map with basic points.
+
+## Future Tutorials and Helpful Links:
+[ArcGIS Pro Quick Tutorials ](https://www.youtube.com/watch?v=1YhdQToyPg4&list=PLGZUzt4E4O2IJFxX_Bhp98MJEw5ItRtvb)
+ 
 
