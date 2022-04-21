@@ -82,7 +82,11 @@ IMPORTANT TIP: Make sure there are no empty spaces within the columns and rows o
 1. Click the run button in the button right corner of the Geoprocessing section.
 You will see the data display on the map with basic points.
 
-## Future Tutorials and Helpful Links:
+##How to Export or Upload your Project:
+This tutorial provides detailed steps to [create a project package](https://pro.arcgis.com/en/pro-app/2.7/help/sharing/overview/project-package.htm) as well as upload the project package to your online account.
+
+
+##Future Tutorials and Helpful Links:
 [ArcGIS Pro Quick Tutorials ](https://www.youtube.com/watch?v=1YhdQToyPg4&list=PLGZUzt4E4O2IJFxX_Bhp98MJEw5ItRtvb)
  
 
