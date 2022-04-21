@@ -98,7 +98,7 @@ A function consists of **declaration** and **definition**. We have three basic e
 
 **Function declaration**
 
-* ```<xsl:funtion>``` is to define:
+* ```<xsl:function>``` is to define:
   * function name (prefix with our custom namespace)
   
   * return type: the data type of the value returned
@@ -115,7 +115,7 @@ A function consists of **declaration** and **definition**. We have three basic e
 
 ##### Why ```<xsl:sequence>```?
 
-Both ```<xsl:value-of>``` and ```<xsl:sequence>``` can return the result of function. However, ```<xsl:value-of>``` returns a text node, while ```<xsl:squence>``` can return a value with any specific data type we expecting. 
+Both ```<xsl:value-of>``` and ```<xsl:sequence>``` can return the result of function. However, ```<xsl:value-of>``` only can return a string, while ```<xsl:sequence>``` can return a value with any specific data type we expecting. 
 
 We will talk about what data type is and what data types we have in XSLT below.
 
@@ -143,7 +143,7 @@ We will talk about what data type is and what data types we have in XSLT below.
 
 #### What is data type?
 
-Each data type has a specific value range and operation can be applied to such variable. With data types, the editor can return errors when we using variables with an incompatible operation . For example, we could not divide a string by a number. 
+Each data type has a specific value range and operation can be applied to such variable. With data types, the editor can return errors when we using variables with an incompatible operation. For example, we could not divide a string by a number. 
 
 ##### Table 1. All basic data types in XML/XSLT
 
