@@ -2,7 +2,7 @@
 
 ## What is function?
 
-Function is a block of code to perform a specific task, including calculation, comparison and so on. 
+Function is a block of code to perform a specific task, including comparison, calculation, generating tables and so on. In XSLT, we use ```<xsl:function>``` to create a user-defined function.
 
 ## Why function?
 
@@ -42,7 +42,7 @@ This is a sample code without ```<xsl:function>```. It is to set text anchor for
 
 We can see that we have to repeat the same task 4 times since we have 4 labels to process. 
 
-If we use \<xsl:function>, it will be simplified like:
+If we use ```<xsl:function>```, it will be simplified:
 
 ```xml
 <xsl:function name="yxj:textAnchor">
@@ -94,23 +94,21 @@ ns:function
 
 ### Function Declaration and Definition
 
-A function consists of declaration and definition. We have three basic elements to define a function, including ```<xsl:funtion>```, ```<xsl:param>```, ```<xsl:sequence>```.
+A function consists of **declaration** and **definition**. We have three basic elements to define a function, including ```<xsl:funtion>```, ```<xsl:param>```, and ```<xsl:sequence>```.
 
-Function declaration:
+**Function declaration**
 
 * ```<xsl:funtion>``` is to define:
-
   * function name (prefix with our custom namespace)
-
+  
   * return type: the data type of the value returned (We will talk about data type below.)
-
+  
 * ```<xsl:param>``` is to define:
+* parameters name 
+  
+* parameter type: the data type of the value input
 
-  * parameters name
-
-  * parameter type: the data type of the value input
-
-Function definition:
+**Function definition**
 
 * ```<xsl:sequence>``` is to define:
   * what the function executes.
@@ -125,15 +123,21 @@ Function definition:
 </xsl:function>
 ```
 
-* function name:  ```ns:addition```
-* return datatype: ```xs:integer```
-* parameter name 1: ```x``` and ```y```
-* parameter type: both are ```xs:integer```
-* what to execute: ```$x + $y```
+* ```<xsl:function>```
+  * function name:  ```ns:addition```
+  * return datatype: ```xs:integer```
+
+* ```<xsl:param>```
+  * parameter name: ```x``` and ```y```
+  * parameter type: both are ```xs:integer```
+
+* ```<xsl:sequence>```
+  * what to execute: ```$x + $y```
+
 
 #### What is data type?
 
-Each data type has specific value range and operation can be applied to such data. 
+Each data type has a specific value range and operation can be applied to such variable. With data types, the editor can return errors when we using variables with an incompatible operation . For example, we could not divide a string by a number. 
 
 ##### Table 1. All basic data types in XML/XSLT
 
@@ -142,7 +146,7 @@ Each data type has specific value range and operation can be applied to such dat
 | **string**             | Any character                                                | **normalizedString**   | A whitespace normalized string where all spaces, tabs, carriage return and line feed characters are converted to single spaces |
 | **token**              | A string that does not contain a sequence of two or more spaces, tabs, carriage return and line feed characters | **byte**               | A numeric value from -128 to 127                             |
 | **unsignedByte**       | A numeric value from 0 to 255                                | **hex64Binary**        | Base 64 encoded binary information                           |
-| **hexBinary**          | Hexidecimaly encoded binary information                      | **integer**            | A numeric value representing a whole number                  |
+| **hexBinary**          | Hexadecimally encoded binary information                     | **integer**            | A numeric value representing a whole number                  |
 | **positiveInteger**    | An integer whose value is greater than 0                     | **negativeInteger**    | An integer whose value is less than 0                        |
 | **nonNegativeInteger** | An integer whose value is 0 or greater than 0                | **nonPositiveInteger** | An integer whose value is 0 or less than 0                   |
 | **int**                | A numeric value from -2 147 483 648 to 2 147 483 647         | **unsignedInt**        | A numeric value from 0 to 4 294 967 295                      |
