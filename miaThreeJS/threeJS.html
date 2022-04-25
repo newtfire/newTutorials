@@ -661,7 +661,119 @@
         </h1>
         <div>
             <p>Now comes the fun part.</p>
-        </div>
+            <p>
+                To deploy your three.JS app on GitHub Pages and display it to the world, we need to create a production folder in your main repository branch, and create a deployment branch that will point directly to your static production folder files.
+            </p>
+            <p>
+                Here are the steps you must follow:
+            </p>
+            <h3>Step 1</h3>
+            <p>
+                Create a new folder in your project root. Name it <code>dist</code>. 
+            </p>
+            <h3>
+                Step 2
+            </h3>
+            <p>
+                Move the following files inside the new <code>dist</code> folder:
+                 <ul>
+                    <li>index.html</li>
+                    <li>style.css</li>
+                     <li>main.js</li>
+                    <li>the <code>/images</code> folder containing your image files that you are using for your meshes and scene backgrounds.</li></ul></p>
+       <h3>
+           Step 3
+       </h3>
+                    <p>
+                        Within your <code>package.json</code> file, add the fillowing line of code inside your <code>"scripts"</code>:
+
+                        <pre>
+                            "deploy": "gh-pages -d dist"
+                        </pre>
+            
+        </p>
+        <p>Your <code>"scripts"</code> JSON should now look like this:</p>
+        <pre>
+            "scripts": {
+                "test": "echo \"Error: no test specified\" && exit 1",
+                "deploy": "gh-pages -d dist"
+           }
+        </pre>
+
+        <h3>
+            Step 4
+        </h3>
+        <p>
+            Make sure you are at the root of your project directory. Run the following command in your project to install gh-pages:
+        </p>
+        <pre>
+            npm install gh-pages
+        </pre>
+
+        <p>
+            gh-pages is an npm package that allows you to publish files to a branch named "gh-pages" on GitHub.
+            You may read more about it here - https://www.npmjs.com/package/gh-pages
+            
+        </p> 
+    <h3>
+        Step 5
+    </h3>
+    <p>
+        Now we just need to push the project to a new repository on GitHub. 
+        Go to <a href="https://github.com/">GitHub.com</a> and create a new repository.
+    </p>
+<p>
+    Fill in your repository name and a short description. <i>Tip: try naming your remote repo the same as what you named your Three.JS project lcoally.</i> 
+</p>
+    <p>
+        You do not need to add a readme, a gitignore, or a license. 
+    </p>
+    <img src="images/screenshots/new-repo-remoteGH.jpg" alt="new repo screen on github.com"/>
+
+    <p>
+        Hit "Create Repository". 
+    </p>
+    <p>Once you get to this page, <b>STOP!</b> Keep this page open in your browser. We need to go back into your command line terminal to push your project code into this new remote repository.</p>
+    <img src="images/screenshots/github-setup-screen.jpg" alt="github remote repo setup screen"/>
+    <h4><b>Enter the following commands in your Command Line Terminal, one after the other:</b></h4>
+    <pre>
+        git init
+    </pre>
+    <pre>
+        git remote add origin "YOUR_REPOSITORY_URL"
+    </pre>
+    <pre>
+        git add .
+    </pre>
+    <pre>
+        git commit -m "YOUR_COMMIT_MESSAGE"
+    </pre>
+    <pre>
+        git push origin master
+    </pre>
+
+    <h3>Step 6</h3>
+    <p>
+        Once all your code is pushed to the master branch, go to your repo on GitHub.com
+         and create a new branch. <b>Name it “<code>gh-pages</code>”.</b> 
+    </p>
+    <p>
+        Make sure you are at the root of your project directory, then run this command in your terminal:
+    </p>
+    <pre>
+        npm run deploy
+    </pre>
+    <p>
+        This step runs the “deploy” script that you added in Step 3.
+    </p>
+    <img src="images/screenshots/npm-run-deploy-publish.jpg" alt="npm run deploy gh-pages"/>
+    <p>
+        Once your terminal says "Published", you need to wait a few minutes for your GitHub Pages site to be ready for viewing.
+    </p>
+    <p>
+        After a few minutes, go to the "Pages" tab in your repository settings, and your website link will be there.
+    </p>
+    </div>
     </section>
 
 </body>
