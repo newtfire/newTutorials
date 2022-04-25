@@ -26,6 +26,7 @@ body {
 div.imgWrap{
     display:flex;
     justify-content:center;
+    padding:10px;
 }
 
 img#blog{
@@ -51,4 +52,7 @@ code {
     color: white;
     padding: 4px;
     border-radius: 5px;
+}
+section{
+    margin-top:10px;
 }

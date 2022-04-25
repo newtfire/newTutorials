@@ -103,7 +103,7 @@
                 you
                 can use as well:</li>
         </ul>
-        <p><img src="images\screenshots\VScodeTerminal.jpg" alt="VS code terminal"></p>
+        <div class="imgWrap"><img class="img" src="images\screenshots\VScodeTerminal.jpg" alt="VS code terminal"></div>
         <ul>
             <li>Enter this command to check if you already have Node.JS Installed:
                 <pre>  node -v
@@ -140,7 +140,7 @@
             <li>If not, you need to install it. We can do this at the command line with this command:</li>
         </ul>
         <pre>
-      
+
             npm install -g npm
    
     </pre>
@@ -172,10 +172,10 @@
         <pre>
            npm install
         </pre>
-        <div>
-            <img src="images/screenshots/setting-up-vite-CMD.jpg" alt="command line vite setup screenshot"/>
+        <div class="imgWrap">
+            <img class="img" src="images/screenshots/setting-up-vite-CMD.jpg" alt="command line vite setup screenshot" />
         </div>
-      
+
     </section>
 
     <section>
@@ -183,7 +183,7 @@
         <p>First, make sure you are at the root level of your Vite project directory. Once you <code>cd</code> into it,
             enter this command:</p>
         <pre>
-           
+
                 npm install --save three
              
         </pre>
@@ -209,14 +209,15 @@
         <pre>
            npm run dev
         </pre>
-        <div>
-            <img src="images/screenshots/npm-run-dev.jpg" alt="static dev server runnning"/>
+        <div class="imgWrap">
+            <img class="img" src="images/screenshots/npm-run-dev.jpg" alt="static dev server runnning" />
         </div>
-    <p>
-        Click the link to your <code>https://localhost:3000</code> dev server to preview your app, and voila! Your Vite project
-        is set up and running locally.
-    </p>
-  
+        <p>
+            Click the link to your <code>https://localhost:3000</code> dev server to preview your app, and voila! Your
+            Vite project
+            is set up and running locally.
+        </p>
+
 
         <p>
             When you run the command <code>npm run dev</code>, whenever you make new edits to your code, your localhost
@@ -228,11 +229,12 @@
             </ab>
         </p>
         <p>
-            To "kill" or end your dev server process in your command line terminal, simply enter <b>CTRL + C</b> (or CMD + C on Mac) in the terminal.
+            To "kill" or end your dev server process in your command line terminal, simply enter <b>CTRL + C</b> (or CMD
+            + C on Mac) in the terminal.
         </p>
         <p>It will ask you if you want to "Terminate Batch Job". To confirm, type <code>y</code> and hit enter.</p>
-        <div>
-            <img src="images/screenshots/kill-local-server.jpg" alt="killing local server in command line"/>
+        <div class="imgWrap">
+            <img class="img" src="images/screenshots/kill-local-server.jpg" alt="killing local server in command line" />
         </div>
     </section>
 
@@ -424,7 +426,7 @@
             light, replacing it with <code>BasicMaterial</code> , which does not accept light:</p>
         <pre>const material = new THREE.MeshStandardMaterial( { color: 0xFF6347 } );
         </pre>
-        <p><img src="images\screenshots\standardMaterial.jpg" alt="standard material cube"></p>
+        <div class="imgWrap"><img class="imgSm" src="images\screenshots\standardMaterial.jpg" alt="standard material cube"></div>
     </section>
     <section>
         <h1 id="animate-your-scene">Animate your scene</h1>
@@ -447,7 +449,7 @@
         <pre>animate();
         </pre>
         <p>Congratulations! Your scene should now look something like this:</p>
-        <p><img src="images\screenshots\twoObjects.jpg" alt="three.JS object screenshot"></p>
+        <div class="imgWrap"><img class="img" src="images\screenshots\twoObjects.jpg" alt="three.JS object screenshot"></div>
     </section>
     <section>
         <h2 id="threejs-helpers">Three.JS Helpers</h2>
@@ -462,7 +464,7 @@
         
         scene.add(lightHelper)
         </pre>
-        <p><img src="images\screenshots\lightHelper.jpg" alt="light helper"></p>
+        <div class="imgWrap"><img class="img" src="images\screenshots\lightHelper.jpg" alt="light helper"></div>
         <p>We can also add a <strong>Grid Helper</strong> to show the 3D axes of our scene.</p>
         <pre>const gridHelper = new THREE.GridHelper(200,50);
         
@@ -536,7 +538,7 @@
         
         scene.background = spaceTexture;
         </pre>
-        <p><img class="img" src="images\screenshots\backgroundTexture.jpg" alt="background texture scene"></p>
+        <div class="imgWrap"><img class="img" src="images\screenshots\backgroundTexture.jpg" alt="background texture scene"></div>
     </section>
     <section>
         <h2 id="texture-mapping">Texture Mapping</h2>
@@ -545,7 +547,7 @@
             object. Three.JS allows us to do this by creating <code>Texture</code> objects and applying them to our 3D
             objects using methods.</p>
         <p>Find an image file that you'd like to apply to the surface of a new object. We will be using this one:</p>
-        <p><img class="img" src="images\smile.jpg" alt="smiley face texture"></p>
+        <div class="imgWrap"><img class="imgSm" src="images\smile.jpg" alt="smiley face texture"></div>
         <p>Save your texture image file in your <code>/images</code> directory.</p>
         <p>Now, in our <code>main.js</code>, let's create a new texture that we will map onto a new object:</p>
         <pre>// Object texture mapping
@@ -662,118 +664,136 @@
         <div>
             <p>Now comes the fun part.</p>
             <p>
-                To deploy your three.JS app on GitHub Pages and display it to the world, we need to create a production folder in your main repository branch, and create a deployment branch that will point directly to your static production folder files.
+                To deploy your three.JS app on GitHub Pages and display it to the world, we need to create a production
+                folder in your main repository branch, and create a deployment branch that will point directly to your
+                static production folder files.
             </p>
             <p>
                 Here are the steps you must follow:
             </p>
-            <h3>Step 1</h3>
+            <h3><b>Step 1</b></h3>
             <p>
-                Create a new folder in your project root. Name it <code>dist</code>. 
+                Create a new folder in your project root. Name it <code>dist</code>.
             </p>
             <h3>
-                Step 2
+                <b>Step 2</b>
             </h3>
             <p>
                 Move the following files inside the new <code>dist</code> folder:
-                 <ul>
-                    <li>index.html</li>
-                    <li>style.css</li>
-                     <li>main.js</li>
-                    <li>the <code>/images</code> folder containing your image files that you are using for your meshes and scene backgrounds.</li></ul></p>
-       <h3>
-           Step 3
-       </h3>
-                    <p>
-                        Within your <code>package.json</code> file, add the fillowing line of code inside your <code>"scripts"</code>:
+                 
+            <ul>
+                <li>index.html</li>
+                <li>style.css</li>
+                <li>main.js</li>
+                <li>the <code>/images</code> folder containing your image files that you are using for your meshes and
+                    scene backgrounds.</li>
+            </ul>
+            </p>
+            <h3>
+                <b>Step 3</b>
+            </h3>
+            <p>
+                Within your <code>package.json</code> file, add the fillowing line of code inside your
+                <code>"scripts"</code>:
 
-                        <pre>
+            <pre>
                             "deploy": "gh-pages -d dist"
                         </pre>
-            
-        </p>
-        <p>Your <code>"scripts"</code> JSON should now look like this:</p>
-        <pre>
+
+            </p>
+            <p>Your <code>"scripts"</code> JSON should now look like this:</p>
+            <pre>
             "scripts": {
                 "test": "echo \"Error: no test specified\" && exit 1",
                 "deploy": "gh-pages -d dist"
            }
-        </pre>
+            </pre>
 
-        <h3>
-            Step 4
-        </h3>
-        <p>
-            Make sure you are at the root of your project directory. Run the following command in your project to install gh-pages:
-        </p>
-        <pre>
-            npm install gh-pages
-        </pre>
+            <h3>
+                Step 4
+            </h3>
+            <p>
+                Make sure you are at the root of your project directory. Run the following command in your project to
+                install gh-pages:
+            </p>
+            <pre>
+                npm install gh-pages
+            </pre>
 
-        <p>
-            gh-pages is an npm package that allows you to publish files to a branch named "gh-pages" on GitHub.
-            You may read more about it here - https://www.npmjs.com/package/gh-pages
-            
-        </p> 
-    <h3>
-        Step 5
-    </h3>
-    <p>
-        Now we just need to push the project to a new repository on GitHub. 
-        Go to <a href="https://github.com/">GitHub.com</a> and create a new repository.
-    </p>
-<p>
-    Fill in your repository name and a short description. <i>Tip: try naming your remote repo the same as what you named your Three.JS project lcoally.</i> 
-</p>
-    <p>
-        You do not need to add a readme, a gitignore, or a license. 
-    </p>
-    <img src="images/screenshots/new-repo-remoteGH.jpg" alt="new repo screen on github.com"/>
+            <p>
+                gh-pages is an npm package that allows you to publish files to a branch named "gh-pages" on GitHub.
+                You may read more about it here - https://www.npmjs.com/package/gh-pages
 
-    <p>
-        Hit "Create Repository". 
-    </p>
-    <p>Once you get to this page, <b>STOP!</b> Keep this page open in your browser. We need to go back into your command line terminal to push your project code into this new remote repository.</p>
-    <img src="images/screenshots/github-setup-screen.jpg" alt="github remote repo setup screen"/>
-    <h4><b>Enter the following commands in your Command Line Terminal, one after the other:</b></h4>
-    <pre>
-        git init
-    </pre>
-    <pre>
-        git remote add origin "YOUR_REPOSITORY_URL"
-    </pre>
-    <pre>
-        git add .
-    </pre>
-    <pre>
-        git commit -m "YOUR_COMMIT_MESSAGE"
-    </pre>
-    <pre>
-        git push origin master
-    </pre>
+            </p>
+            <h3>
+                <b>Step 5</b>
+            </h3>
+            <p>
+                Now we just need to push the project to a new repository on GitHub.
+                Go to <a href="https://github.com/">GitHub.com</a> and create a new repository.
+            </p>
+            <p>
+                Fill in your repository name and a short description. <i>Tip: try naming your remote repo the same as
+                    what you named your Three.JS project lcoally.</i>
+            </p>
+            <p>
+                You do not need to add a readme, a gitignore, or a license.
+            </p>
+            <div class="imgWrap"><img class="img" src="images/screenshots/new-repo-remoteGH.jpg"
+                    alt="new repo screen on github.com" /></div>
 
-    <h3>Step 6</h3>
-    <p>
-        Once all your code is pushed to the master branch, go to your repo on GitHub.com
-         and create a new branch. <b>Name it “<code>gh-pages</code>”.</b> 
-    </p>
-    <p>
-        Make sure you are at the root of your project directory, then run this command in your terminal:
-    </p>
-    <pre>
-        npm run deploy
-    </pre>
-    <p>
-        This step runs the “deploy” script that you added in Step 3.
-    </p>
-    <img src="images/screenshots/npm-run-deploy-publish.jpg" alt="npm run deploy gh-pages"/>
-    <p>
-        Once your terminal says "Published", you need to wait a few minutes for your GitHub Pages site to be ready for viewing.
-    </p>
-    <p>
-        After a few minutes, go to the "Pages" tab in your repository settings, and your website link will be there.
-    </p>
-    </div>
+            <p>
+                Hit "Create Repository".
+            </p>
+            <p>Once you get to this page, <b>STOP!</b> Keep this page open in your browser. We need to go back into your
+                command line terminal to push your project code into this new remote repository.</p>
+            <div class="imgWrap"><img class="img" src="images/screenshots/github-setup-screen.jpg"
+                    alt="github remote repo setup screen" /></div>
+            <h3><b>Enter the following commands in your Command Line Terminal, one after the other:</b></h3>
+            <pre>
+                 git init
+            </pre>
+            <pre>
+                 git remote add origin "YOUR_REPOSITORY_URL"
+             </pre>
+            <pre>
+                 git add .
+            </pre>
+            <pre>
+                 git commit -m "YOUR_COMMIT_MESSAGE"
+            </pre>
+            <pre>
+                  git push origin master
+            </pre>
+
+            <h3><b>Step 6</b></h3>
+            <p>
+                Once all your code is pushed to the master branch, go to your repo on GitHub.com
+                and create a new branch. <b>Name it “<code>gh-pages</code>”.</b>
+            </p>
+            <p>
+                Make sure you are at the root of your project directory, then run this command in your terminal:
+            </p>
+            <pre>
+                 npm run deploy
+            </pre>
+            <p>
+                This step runs the “deploy” script that you added in Step 3.
+            </p>
+            <div class="imgWrap">
+
+                <img class="img" src="images/screenshots/npm-run-deploy-publish.jpg" alt="npm run deploy gh-pages" />
+
+            </div>
+            <p>
+                Once your terminal says "Published", you need to wait a few minutes for your GitHub Pages site to be
+                ready for viewing.
+            </p>
+            <p>
+                After a few minutes, go to the "Pages" tab in your repository settings, and your website link will be
+                there.
+            </p>
+        </div>
     </section>
 
 </body>
