@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="500px"
+     viewBox="-100 100 1200 800"><g transform="translate(500, 500)">
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="942.4777960769379 942.4777960769379"
+              stroke="palegreen"/>
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="873.9339563622515 942.4777960769379"
+              stroke="lightblue"/>
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="796.8221366832294 942.4777960769379"
+              stroke="blanchedalmond"/>
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="274.17535885874554 942.4777960769379"
+              stroke="pink"/>
+   </g>
+   <g transform="translate(500, 500)"
+      fill="black"
+      font-weight="bold"
+      font-size="30">
+      <text x="-76.2655002580461" y="290.14405641058715">
+                 color: 
+                29.09%
+                </text>
+      <text x="169.33296566003065" y="-247.64156908883223">
+                    nature: 
+                    55.45%
+                </text>
+      <text x="269.2195286074075" y="-132.36633037296644">
+                    shape: 
+                    8.18%
+                </text>
+      <text x="300" y="-7.347880794884119E-14">
+                    tech: 
+                    7.27%
+                </text>
+      <circle cx="-76.2655002580461" cy="290.14405641058715" r="5" fill="red"/>
+      <circle cx="169.33296566003065"
+              cy="-247.64156908883223"
+              r="5"
+              fill="red"/>
+      <circle cx="269.2195286074075"
+              cy="-132.36633037296644"
+              r="5"
+              fill="red"/>
+      <circle cx="300" cy="-7.347880794884119E-14" r="5" fill="red"/>
+   </g>
+</svg>

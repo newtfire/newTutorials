@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="600px"
+     viewBox="-100 100 1200 800">
+   <g transform="translate(500, 500)">
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="942.4777960769379 942.4777960769379"
+              stroke="palegreen"/>
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="873.9339563622515 942.4777960769379"
+              stroke="lightblue"/>
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="796.8221366832294 942.4777960769379"
+              stroke="blanchedalmond"/>
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="274.17535885874554 942.4777960769379"
+              stroke="pink"/>
+   </g>
+   <g transform="translate(500, 500)"
+      fill="black"
+      font-weight="bold"
+      font-size="30">
+      <text x="244.25915185417523" y="316.76089836891003" text-anchor="start">
+                 color: 
+                29.09%
+                </text>
+      <text x="-363.8527981418074" y="-166.16600520075446" text-anchor="end">
+                    nature: 
+                    55.45%
+                </text>
+      <text x="302.29982974170315" y="-261.94429357811424" text-anchor="start">
+                    shape: 
+                    8.18%
+                </text>
+      <text x="389.60476677693345" y="-90.59870697030566" text-anchor="start">
+                    tech: 
+                    7.27%
+                </text>
+   </g>
+   <g transform="translate(500, 500)"
+      stroke="grey"
+      stroke-width="3"
+      fill="none">
+      <path d="M183.19436389063142 237.57067377668253 L193.19436389063142 311.76089836891003 H234.25915185417523"/>
+      <circle cx="234.25915185417523"
+              cy="311.76089836891003"
+              r="4"
+              fill="grey"/>
+      <path d="M-272.88959860635555 -124.62450390056583 L-282.88959860635555 -171.16600520075446 H-353.8527981418074"/>
+      <circle cx="-353.8527981418074"
+              cy="-171.16600520075446"
+              r="4"
+              fill="grey"/>
+      <path d="M226.72487230627735 -196.4582201835857 L236.72487230627735 -266.94429357811424 H292.29982974170315"/>
+      <circle cx="292.29982974170315"
+              cy="-266.94429357811424"
+              r="4"
+              fill="grey"/>
+      <path d="M292.20357508270007 -67.94903022772924 L302.20357508270007 -95.59870697030566 H379.60476677693345"/>
+      <circle cx="379.60476677693345"
+              cy="-95.59870697030566"
+              r="4"
+              fill="grey"/>
+   </g>
+</svg>

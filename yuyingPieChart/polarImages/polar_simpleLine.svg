@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="600px"
+     viewBox="-100 100 1200 800">
+   <g transform="translate(500, 500)">
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="942.4777960769379 942.4777960769379"
+              stroke="palegreen"/>
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="873.9339563622515 942.4777960769379"
+              stroke="lightblue"/>
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="796.8221366832294 942.4777960769379"
+              stroke="blanchedalmond"/>
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="274.17535885874554 942.4777960769379"
+              stroke="pink"/>
+   </g>
+   <g transform="translate(500, 500)"
+      fill="black"
+      font-weight="bold"
+      font-size="30">
+      <text x="244.25915185417523" y="316.76089836891003" text-anchor="start">
+                    color: 
+                    29.09%
+                </text>
+      <text x="-363.8527981418074" y="-166.16600520075446" text-anchor="end">
+                    nature: 
+                    55.45%
+                </text>
+      <text x="302.29982974170315" y="-261.94429357811424" text-anchor="start">
+                    shape: 
+                    8.18%
+                </text>
+      <text x="389.60476677693345" y="-90.59870697030566" text-anchor="start">
+                    tech: 
+                    7.27%
+                </text>
+      <circle cx="244.25915185417523"
+              cy="316.76089836891003"
+              r="5"
+              fill="red"/>
+      <circle cx="-363.8527981418074"
+              cy="-166.16600520075446"
+              r="5"
+              fill="red"/>
+      <circle cx="302.29982974170315"
+              cy="-261.94429357811424"
+              r="5"
+              fill="red"/>
+      <circle cx="389.60476677693345"
+              cy="-90.59870697030566"
+              r="5"
+              fill="red"/>
+      <circle cx="183.19436389063142"
+              cy="237.57067377668253"
+              r="5"
+              fill="blue"/>
+      <circle cx="-272.88959860635555"
+              cy="-124.62450390056583"
+              r="5"
+              fill="blue"/>
+      <circle cx="226.72487230627735"
+              cy="-196.4582201835857"
+              r="5"
+              fill="blue"/>
+      <circle cx="292.20357508270007"
+              cy="-67.94903022772924"
+              r="5"
+              fill="blue"/>
+   </g>
+   <g transform="translate(500, 500)"
+      stroke="grey"
+      stroke-width="3"
+      fill="none">
+      <line x1="244.25915185417523"
+            y1="316.76089836891003"
+            x2="183.19436389063142"
+            y2="237.57067377668253"/>
+      <line x1="-363.8527981418074"
+            y1="-166.16600520075446"
+            x2="-272.88959860635555"
+            y2="-124.62450390056583"/>
+      <line x1="302.29982974170315"
+            y1="-261.94429357811424"
+            x2="226.72487230627735"
+            y2="-196.4582201835857"/>
+      <line x1="389.60476677693345"
+            y1="-90.59870697030566"
+            x2="292.20357508270007"
+            y2="-67.94903022772924"/>
+   </g>
+</svg>
