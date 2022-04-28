@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="500px"
+     viewBox="-100 100 1200 800"><g transform="translate(500, 500)">
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="942.4777960769379 942.4777960769379"
+              stroke="palegreen"/>
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="873.9339563622515 942.4777960769379"
+              stroke="lightblue"/>
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="796.8221366832294 942.4777960769379"
+              stroke="blanchedalmond"/>
+      <circle fill="none"
+              cx="0"
+              cy="0"
+              r="150"
+              stroke-width="300"
+              stroke-dasharray="274.17535885874554 942.4777960769379"
+              stroke="pink"/>
+   </g>
+   <g transform="translate(500, 500)"
+      fill="black"
+      font-weight="bold"
+      font-size="30">
+      <text x="119.07633652891043" y="154.42093795484365">
+                 color
+
+                </text>
+      <text x="-177.37823909413112" y="-81.00592753536779">
+                    nature
+
+                </text>
+      <text x="147.3711669990803" y="-127.6978431193307">
+                    shape
+
+                </text>
+      <text x="189.93232380375505" y="-44.166869648024004">
+                    tech
+
+                </text>
+      <circle cx="119.07633652891043"
+              cy="154.42093795484365"
+              r="5"
+              fill="red"/>
+      <circle cx="-177.37823909413112"
+              cy="-81.00592753536779"
+              r="5"
+              fill="red"/>
+      <circle cx="147.3711669990803" cy="-127.6978431193307" r="5" fill="red"/>
+      <circle cx="189.93232380375505"
+              cy="-44.166869648024004"
+              r="5"
+              fill="red"/>
+   </g>
+</svg>
