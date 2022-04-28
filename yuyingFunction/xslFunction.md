@@ -8,7 +8,7 @@ Function is a block of code to perform a specific task, including comparison, ca
 
 When we need to perform a task repeatedly, we can consider defining a function for it to simplify our code.
 
-This is a sample code without ```<xsl:function>```. It is to set text anchor for 4 different labels according to whether the label is on the left or right of the center of the pie chart. Just notice its length.
+This is a sample code without `<xsl:function>`. It is to set text anchor for 4 different labels according to whether the label is on the left or right of the center of the pie chart. Just notice its length.
 
 ```xml
 <!-- Set the text anchor for labels -->
@@ -77,12 +77,12 @@ Then, set the code above as an attribute of the element \<xsl:stylesheet> like b
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:math="http://www.w3.org/2005/xpath-functions/math"
-    exclude-result-prefixes="xs math"
-    version="3.0"
-   	xmlns:ns="http://anyNameIsFine">  <!-- This line is my custom namespace. -->
-    
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:math="http://www.w3.org/2005/xpath-functions/math"
+                exclude-result-prefixes="xs math"
+                version="3.0"
+                xmlns:ns="http://anyNameIsFine">  <!-- This line is my custom namespace. -->
+
 </xsl:stylesheet>
 ```
 
@@ -194,11 +194,11 @@ This is a complete XSLT stylesheet. We can check where the function is called.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:math="http://www.w3.org/2005/xpath-functions/math"
-    exclude-result-prefixes="xs math"
-    version="3.0"
-    xmlns:ns="http://anyNameIsFine">
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:math="http://www.w3.org/2005/xpath-functions/math"
+                exclude-result-prefixes="xs math"
+                version="3.0"
+                xmlns:ns="http://anyNameIsFine">
 
     <!-- defining the function -->
     <xsl:function name="ns:addition" as="xs:integer">
@@ -225,12 +225,12 @@ Output:
 
 ```html
 <html xmlns:ns="http://anyNameIsFine">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-   </head>
-   <title></title>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <title></title>
 </html><body xmlns:ns="http://anyNameIsFine">
-   <p>3 + 4 = 7</p>
+    <p>3 + 4 = 7</p>
 </body>
 ```
 
@@ -243,56 +243,56 @@ This sample code is to make a table to show the number of times of different key
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  version="3.0"
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:yxj="http://www.yxj5181.com">
-  
-<xsl:output method="xhtml" html-version="5" omit-xml-declaration="yes" 
-  include-content-type="no" indent="yes"/>
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                version="3.0"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:yxj="http://www.yxj5181.com">
 
-<xsl:variable name="KG" select="collection('?select=KewG_p4-12.xml')"/>
+    <xsl:output method="xhtml" html-version="5" omit-xml-declaration="yes" 
+                include-content-type="no" indent="yes"/>
 
-<!-- Get the type of keywords -->
-<!-- Four types in all: color, nature, shape, and tech -->
-<xsl:variable name="types" select="$KG//page/*[not(self::line)][not(self::description)]! name() => distinct-values() => sort()"/>
+    <xsl:variable name="KG" select="collection('?select=KewG_p4-12.xml')"/>
 
-<!-- This is function is to reformat the keywords  -->
-<!-- To ensure all keywords with the same meaning but perhaps different forms can be treated as the same word. -->
-<xsl:function name="yxj:reformat" as="xs:string+">
-    <xsl:param name="node" as="node()+"/>
-    <xsl:sequence select="$node!lower-case(.)!normalize-space()!replace(.,'[- ]','')!replace(.,'ves','f')!replace(.,'shaped','')!replace(.,'ies','y')"/>
-</xsl:function>
+    <!-- Get the type of keywords -->
+    <!-- Four types in all: color, nature, shape, and tech -->
+    <xsl:variable name="types" select="$KG//page/*[not(self::line)][not(self::description)]! name() => distinct-values() => sort()"/>
 
-<!-- This function is to make a table for numbers of times of different keywords mentioned of a specific type -->
-<!-- In this example, we have 4 specific types, so when we call the function, it makes 4 tables. -->
-<xsl:function name="yxj:tableMaker">
-    <xsl:for-each select="$types">
-        <table>
-            <tr>
-				<!-- Table headers -->
-                <th><xsl:value-of select="current()"/></th>
-                <th><xsl:text>count</xsl:text></th>
-            </tr> 
-			<!-- For each keywords with the same meaning but perhaps different forms -->
-            <xsl:for-each select="yxj:reformat($KG//page/*[./name()=current()])=>distinct-values()">
-                <!-- Sorting the keywords according to their numbers of times mentioned -->
-                <xsl:sort select="count($KG//*[yxj:reformat(.) =current()])" order="descending"/>
+    <!-- This is function is to reformat the keywords  -->
+    <!-- To ensure all keywords with the same meaning but perhaps different forms can be treated as the same word. -->
+    <xsl:function name="yxj:reformat" as="xs:string+">
+        <xsl:param name="node" as="node()+"/>
+        <xsl:sequence select="$node!lower-case(.)!normalize-space()!replace(.,'[- ]','')!replace(.,'ves','f')!replace(.,'shaped','')!replace(.,'ies','y')"/>
+    </xsl:function>
+
+    <!-- This function is to make a table for numbers of times of different keywords mentioned of a specific type -->
+    <!-- In this example, we have 4 specific types, so when we call the function, it makes 4 tables. -->
+    <xsl:function name="yxj:tableMaker">
+        <xsl:for-each select="$types">
+            <table>
                 <tr>
-                    <td>
-                        <!-- print all forms of the keyword with the same meaning, separating by comma -->
-                        <xsl:value-of select="string-join($KG//page/*[yxj:reformat(.)=current()] => distinct-values(), ', ')"/>
-                    </td>
-                    <td>
-                        <!-- print the number of times of the keyword with the same meaning mentioned -->
-                        <xsl:value-of select="count($KG//*[yxj:reformat(.)=current()])"/>
-                    </td>
-                </tr>
-            </xsl:for-each>
-        </table>
-    </xsl:for-each>
-</xsl:function>
-    
+                    <!-- Table headers -->
+                    <th><xsl:value-of select="current()"/></th>
+                    <th><xsl:text>count</xsl:text></th>
+                </tr> 
+                <!-- For each keywords with the same meaning but perhaps different forms -->
+                <xsl:for-each select="yxj:reformat($KG//page/*[./name()=current()])=>distinct-values()">
+                    <!-- Sorting the keywords according to their numbers of times mentioned -->
+                    <xsl:sort select="count($KG//*[yxj:reformat(.) =current()])" order="descending"/>
+                    <tr>
+                        <td>
+                            <!-- print all forms of the keyword with the same meaning, separating by comma -->
+                            <xsl:value-of select="string-join($KG//page/*[yxj:reformat(.)=current()] => distinct-values(), ', ')"/>
+                        </td>
+                        <td>
+                            <!-- print the number of times of the keyword with the same meaning mentioned -->
+                            <xsl:value-of select="count($KG//*[yxj:reformat(.)=current()])"/>
+                        </td>
+                    </tr>
+                </xsl:for-each>
+            </table>
+        </xsl:for-each>
+    </xsl:function>
+
     <xsl:template match="/">
         <html>
             <head>
@@ -310,7 +310,9 @@ This sample code is to make a table to show the number of times of different key
 
 Output (partly):
 
- ![](tableMaker.PNG)![](tableMaker2.PNG)
+ ![](tableMaker.PNG)
+
+ ![](tableMaker2.PNG)
 
 Links to check out the source file:
 
