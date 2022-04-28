@@ -113,6 +113,8 @@ A function consists of **declaration** and **definition**. We have three basic e
 * ```<xsl:sequence>``` is to define:
   * what the function executes.
 
+NOTICE: Sometimes, `<xsl:param>` and `<xsl:sequence>` can be eliminated if not necessary. There is the example at the end of the tutorial.
+
 ##### Why ```<xsl:sequence>```?
 
 Both ```<xsl:value-of>``` and ```<xsl:sequence>``` can return the result of function. However, ```<xsl:value-of>``` only can return a string, while ```<xsl:sequence>``` can return a value with any specific data type we expecting. 
@@ -232,7 +234,91 @@ Output:
 </body>
 ```
 
-## 
+## Example of user-define function without inputs
+
+Input(s) and return type are not always necessary for user-defined function. 
+
+This sample code is to make a table to show the number of times of different keywords mentioned of a specific type. We can see we do not need to define input(s) and return type for it. Since we have 4 specific types in the xml file,  the function makes 4 tables for it.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  version="3.0"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:yxj="http://www.yxj5181.com">
+  
+<xsl:output method="xhtml" html-version="5" omit-xml-declaration="yes" 
+  include-content-type="no" indent="yes"/>
+
+<xsl:variable name="KG" select="collection('?select=KewG_p4-12.xml')"/>
+
+<!-- Get the type of keywords -->
+<!-- Four types in all: color, nature, shape, and tech -->
+<xsl:variable name="types" select="$KG//page/*[not(self::line)][not(self::description)]! name() => distinct-values() => sort()"/>
+
+<!-- This is function is to reformat the keywords  -->
+<!-- To ensure all keywords with the same meaning but perhaps different forms can be treated as the same word. -->
+<xsl:function name="yxj:reformat" as="xs:string+">
+    <xsl:param name="node" as="node()+"/>
+    <xsl:sequence select="$node!lower-case(.)!normalize-space()!replace(.,'[- ]','')!replace(.,'ves','f')!replace(.,'shaped','')!replace(.,'ies','y')"/>
+</xsl:function>
+
+<!-- This function is to make a table for numbers of times of different keywords mentioned of a specific type -->
+<!-- In this example, we have 4 specific types, so when we call the function, it makes 4 tables. -->
+<xsl:function name="yxj:tableMaker">
+    <xsl:for-each select="$types">
+        <table>
+            <tr>
+				<!-- Table headers -->
+                <th><xsl:value-of select="current()"/></th>
+                <th><xsl:text>count</xsl:text></th>
+            </tr> 
+			<!-- For each keywords with the same meaning but perhaps different forms -->
+            <xsl:for-each select="yxj:reformat($KG//page/*[./name()=current()])=>distinct-values()">
+                <!-- Sorting the keywords according to their numbers of times mentioned -->
+                <xsl:sort select="count($KG//*[yxj:reformat(.) =current()])" order="descending"/>
+                <tr>
+                    <td>
+                        <!-- print all forms of the keyword with the same meaning, separating by comma -->
+                        <xsl:value-of select="string-join($KG//page/*[yxj:reformat(.)=current()] => distinct-values(), ', ')"/>
+                    </td>
+                    <td>
+                        <!-- print the number of times of the keyword with the same meaning mentioned -->
+                        <xsl:value-of select="count($KG//*[yxj:reformat(.)=current()])"/>
+                    </td>
+                </tr>
+            </xsl:for-each>
+        </table>
+    </xsl:for-each>
+</xsl:function>
+    
+    <xsl:template match="/">
+        <html>
+            <head>
+                <title>Kew Garden</title>
+                <link rel="stylesheet" type="text/css" href="webstyle.css" />
+            </head>
+            <body>
+                <!-- call the function without any input -->
+                <xsl:sequence select="yxj:tableMaker()"/>
+            </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>
+```
+
+Output (partly):
+
+ ![](tableMaker.PNG)![](tableMaker2.PNG)
+
+Links to check out the source file:
+
+[xslt file](KewG.xsl)
+
+[xml file](KewG_p4-12.xml)
+
+
 
 
 
