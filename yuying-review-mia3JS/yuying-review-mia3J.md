@@ -10,11 +10,11 @@ Here I made a mistake. I did not run ```cd test``` before running ```npm install
 
 In the last step **Write your HTML**, I have created html file and css files for my website. In this step, I run ```npm run dev``` and jump to the localhost link. However, it's not my webpage, but the start page of Vite.
 
- ![](3.png)
+ ![](3.PNG)
 
 After asking for a help for Mia, I learn that after running ```npm run dev```, Vite generates a project folder with a start website for me, so I need to replace the code in these files.
 
- ![](2.png)
+ ![](2.PNG)
 
 Here, I suggest you inverse the steps of **Write your HTML** and **HOW TO VIEW YOUR SITE LOCALLY**. Thus, it will be clearer.
 
@@ -28,7 +28,7 @@ Therefore, I suggest you remind readers to add ```renderer.render( scene, camera
 
 ### Orbit Controls
 
-Your mention that to click and drag can orbit the camera view, but I hope you can introduce how to navigate the 3D space instead of only to orbit it.
+You mention that to click and drag can orbit the camera view, but I hope you can introduce how to navigate the 3D space instead of only to orbit it.
 
 * Orbit - left-click and drag
 * Zoom - rotate the wheel
@@ -36,7 +36,7 @@ Your mention that to click and drag can orbit the camera view, but I hope you ca
 
 The rest steps are very clear. 
 
- ![](4.png)
+ ![](4.PNG)
 
 ## Suggestions
 
