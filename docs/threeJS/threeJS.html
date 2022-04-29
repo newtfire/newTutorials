@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Three&period;JS Tutorial - Create 3D Environments with HTML and Javascript</title>
+    <link rel="stylesheet" href="threeJSstyle.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+</head>
+
+<body class="vscode-body vscode-light">
+
+    <nav>
+        <ul class="menuB">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../gitBranching.html">Git / GitHub</a></li>
+            <li>GIS</li>
+            <li>XSLT / Transformations</li>
+            <li><a href="../web/">HTML and Website Work</a></li>
+            <li><a href="../animatedIcon.html">SVG Animations</a></li>
+            <li><a href="threeJS.html">Three.JS 3D Javscript Tutorial</a></li>
+        </ul>
+    </nav>
+<section>
+    
+        <h1 id="threejs-tutorial---create-3d-environments-with-html-and-javascript">Three.JS Tutorial - Create 3D
+            Environments with HTML and Javascript</h1>
+        <div class="imgWrap"><img id="blog" src="images\screenshots\threeJSblog.jpg" alt="three.js blog"></div>
+        <p>Check out an example:
+            <a href="https://am0eba-byte.github.io/internshipblog-3js/">Three.js Blog</a>
+        </p>
+        <p>See other awesome things you can do with three.js:
+            <a href="https://threejs.org/examples/#webgl_animation_keyframes">Three.JS examples page</a>
+        </p>
+    
+        <div class="TOC">
+            <div>
+    
+                <strong>Table of Contents</strong>
+                <ul>
+                    <li><a href="#installations">Installations</a>
+                        <ul>
+                            <li><a href="#install-nodejs">Install Node.JS</a></li>
+                            <li><a href="#install-npm">Install NPM</a></li>
+                            <li><a href="#create-an-empty-project-directory-and-install-vite">Create new project and install
+                                    Vite</a></li>
+                            <li><a href="#install-threejs-at-command-line">Install Three.JS package module</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#how-to-view-your-site-locally">How to Launch your 3D Site Locally</a>
+                    </li>
+                    <li><a href="#write-your-html">Write your HTML</a></li>
+                    <li><a href="#create-your-background-canvas-by-editing-your-css">Prep your 3D Canvas in your CSS</a>
+                    </li>
+    
+                    <li><a href="#javascript-time">Three.JS Javascript Walkthrough</a>
+                        <ul>
+                            <li><a href="#scene-setup">Scene Setup</a></li>
+                            <li><a href="#create-your-first-object">Creating 3D Objects</a></li>
+                            <li><a href="#manipulating-your-object">Manipulating your Objects</a></li>
+                            <li><a href="#lights-and-material-types">Lights and Material Types</a></li>
+                            <li><a href="#animate-your-scene">Animating your Scene</a></li>
+                            <li><a href="#threejs-helpers">Three.JS Helpers</a></li>
+                            <li><a href="#orbit-controls">Orbit Controls</a></li>
+                            <li><a href="#scene-backgrounds">Creating Scene Backgrounds</a></li>
+                            <li><a href="#texture-mapping">Texture Mapping</a>
+                                <ul>
+                                    <li><a href="#normal-texture-mapping">Normal Mapping</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</section>
+
+    <section>
+        <h2 id="installations"><em>Installations</em></h2>
+        <p>Before we dive into making our awesome 3D website, we need to install <code>Node.js</code> and
+            <code>npm</code>
+            at the command line.
+        </p>
+        <ul>
+            <li><strong>Hot tip</strong>: Assuming you're reading this because you're in one of Dr. B's classes, you're
+                probably using oXygen as your code editor. oXygen is really great for working with XML, XSLT, and many
+                other
+                XML-based languages - but for languages like Javascript, where methods and functions are hard to
+                remember
+                for beginners, oXygen does not provide very good syntax highlighting and helpful suggestions as you
+                code.
+            </li>
+            <li><strong>FOR THIS REASON</strong>, we recommend downloading <a
+                    href="https://code.visualstudio.com/">Visual
+                    Studio Code</a> to develop your three.js websites in. It's completely free, and it is simply the
+                best
+                for writing Javascript. You'll never want to write Javascript in any other code editor ever again.
+                (Sorry
+                Dr. B lol)</li>
+            <li>you dont <em>neeeeed</em> VS Code to make your Three.JS website... but I'm tellin ya, it's just way
+                better.
+                You'll see what I mean.</li>
+        </ul>
+    </section>
+    <section>
+        <h3 id="install-nodejs"><strong>Install Node.js</strong></h3>
+        <p><b><a href="https://nodejs.org/en/">Node.JS</a></b> is what makes the Javascript world go round.</p>
+        <p>&quot;As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network
+            applications.&quot; <em>-Node.JS devs</em></p>
+        <p>Before downloading Node.JS, you should check to see if you already have it installed in your machine.
+            To do this, we will open our Command Line.</p>
+        <ul>
+            <li><strong>Hot tip part 2:</strong> VS code actually has a command line terminal built into the editor that
+                you
+                can use as well:</li>
+        </ul>
+        <div class="imgWrap"><img class="img" src="images\screenshots\VScodeTerminal.jpg" alt="VS code terminal"></div>
+        <ul>
+            <li>Enter this command to check if you already have Node.JS Installed:
+                <pre>  node -v
+        </pre>
+            </li>
+        </ul>
+        <p>If you already have Node.JS installed, the terminal will print a version number that looks something like
+            this:
+            <code>v0.10.35</code>
+        </p>
+        <p>If your terminal didn't print a version number, you need to go<b>
+                <a href="https://nodejs.org/en/">download
+                    Node.JS</a>
+            </b>. (Don't worry, it's completely free - and if you really want to get into Javascript on any
+            level, including professionally, Node.JS is a must-have.)</p>
+    </section>
+    <section>
+        <h3 id="install-npm"><strong>Install NPM</strong></h3>
+        <p>Now that you have Node.JS installed, allow me to introduce you to the wonderful world of the <strong><a
+                    href="https://www.npmjs.com/">Node Package Manager (NPM)</a></strong> community. NPM allows
+            brilliant
+            developers to write awesome open-source Node.JS package modules that will allow you to do super cool things
+            with
+            Javascript, including make 3D websites. We need to install NPM at the command line in order to install the
+            Three.JS package.</p>
+        <ul>
+            <li>First, check to see if you already have NPM installed:</li>
+        </ul>
+        <pre>npm -v
+        </pre>
+        <p>Again, similar to when we checked for node.js, a version number will print if you already have npm installed.
+        </p>
+        <ul>
+            <li>If not, you need to install it. We can do this at the command line with this command:</li>
+        </ul>
+        <pre>
+
+            npm install -g npm
+   
+    </pre>
+        <p>Now you're all set to create your new project repository!</p>
+    </section>
+    <section>
+        <h3 id="create-an-empty-project-directory-and-install-vite"><strong>Create an empty project directory, and
+                install
+                VITE</strong></h3>
+        <p>Once you have made your project directory, open the command line at your empty directory and enter this
+            command:
+        </p>
+        <pre>
+            npm init @vitejs/app
+        </pre>
+        <p>Follow the prompts given at command line:</p>
+        <ul>
+            <li>name your project</li>
+            <li>name your package (press enter for default)</li>
+            <li>select <code>vanilla</code> framework (yellow)</li>
+            <li>select <code>Javascript</code> for the language (yellow)</li>
+        </ul>
+        <p>This will create some new files in your directory.</p>
+        <p>Now, enter these commands <i>separately</i>. The command line terminal prompts these for you when you create
+            your Vite app:</p>
+        <pre>
+          cd your-project-name
+        </pre>
+        <pre>
+           npm install
+        </pre>
+        <div class="imgWrap">
+            <img class="img" src="images/screenshots/setting-up-vite-CMD.jpg" alt="command line vite setup screenshot" />
+        </div>
+
+    </section>
+
+    <section>
+        <h2 id="install-threejs-at-command-line"><b>Install Three.JS at command line</b></h2>
+        <p>First, make sure you are at the root level of your Vite project directory. Once you <code>cd</code> into it,
+            enter this command:</p>
+        <pre>
+
+                npm install --save three
+             
+        </pre>
+        <p>This will install Three.JS as a dependency in your project. You should see a new <code>node_modules</code>
+            directory, a <code>package.json</code> file, and a
+            <code>package-lock.json</code> file.
+        </p>
+        <ul>
+            <li><strong>DO NOT TOUCH THESE THINGS</strong></li>
+        </ul>
+        <p>These files and directory contain dependencies that NPM automagically generates for you. Humans do not need
+            to
+            touch them directly, and should never touch them for any reason at all - <em>or you'll destroy the
+                planet</em>
+        </p>
+    </section>
+    <section>
+
+        <h1 id="how-to-view-your-site-locally">HOW TO VIEW YOUR SITE LOCALLY</h1>
+        <p>Since Three.JS requires dependencies in order to render, you need to tell your app to run in the command line
+            in order to view it locally.</p>
+        <p>In the command line terminal, run this command:</p>
+        <pre>
+           npm run dev
+        </pre>
+        <div class="imgWrap">
+            <img class="img" src="images/screenshots/npm-run-dev.jpg" alt="static dev server runnning" />
+        </div>
+        <p>
+            Click the link to your <code>https://localhost:3000</code> dev server to preview your app, and voila! Your
+            Vite project
+            is set up and running locally.
+        </p>
+
+
+        <p>
+            When you run the command <code>npm run dev</code>, whenever you make new edits to your code, your localhost
+            browser will automatically refresh and
+            reflect your changes.
+            <ab>
+                You will not be able to enter any new commands into your terminal until you kill the localhost serve
+                process.
+            </ab>
+        </p>
+        <p>
+            To "kill" or end your dev server process in your command line terminal, simply enter <b>CTRL + C</b> (or CMD
+            + C on Mac) in the terminal.
+        </p>
+        <p>It will ask you if you want to "Terminate Batch Job". To confirm, type <code>y</code> and hit enter.</p>
+        <div class="imgWrap">
+            <img class="img" src="images/screenshots/kill-local-server.jpg" alt="killing local server in command line" />
+        </div>
+    </section>
+
+    <section>
+        <h2 id="write-your-html">Write your HTML</h2>
+        <p>You'll need three basic elements in your HTML to render your 3D world:</p>
+        <ul>
+            <li><code>&lt;canvas&gt;</code> with a unique <code>@id</code> that will literally act as the canvas for
+                your 3D
+                objects to live in.</li>
+            <li><code>&lt;script type=&quot;module&quot; src=&quot;./main.js&quot;&gt;</code> to connect your HTML to
+                your
+                Javascript file with all fo the 3D instructions inside it.</li>
+            <li><code>&lt;main&gt;</code> to hold the text contents that will float on top of your 3D environment.</li>
+        </ul>
+        <p>You should already have the <code>index.html</code>, <code>main.js</code>, and <code>style.css</code> files
+            you will use to edit in your project, which were generated when you initialized your new Vite app.</p>
+        <p>
+            Go into your index.html file and change it to look like this:
+        </p>
+
+        <pre>&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;Three JS Demo&lt;/title&gt;
+            &lt;meta charset=&quot;UTF-8&quot; /&gt;
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;canvas id=&quot;bg&quot;&gt;&lt;/canvas&gt;
+            &lt;script type=&quot;module&quot; src=&quot;/main.js&quot;&gt;&lt;/script&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+      </pre>
+    </section>
+    <section>
+        <h2 id="create-your-background-canvas-by-editing-your-css">Create your background canvas by editing your CSS
+        </h2>
+        <p>In the same directory as your index.html file, you should find a CSS file called <code>style.css</code>.
+            Write
+            the following code into that CSS to make the <code>&lt;canvas&gt;</code> element in your HTML be the
+            background
+            for your site:</p>
+        <pre>canvas{
+          position:fixed;
+          top: 0;
+          left: 0;
+        }
+        </pre>
+        <p>This is where your 3D objects will appear when we start creating them in your javascript.</p>
+    </section>
+
+    <section>
+        <h1 id="javascript-time">Javascript Time!</h1>
+        <p>In your new <code>main.js</code> javascript file, you'll need to tell it to import the Three.JS node package
+            module in order to reference the many pre-built 3D-building methods and objects.</p>
+        <p>To do this, simply paste these <code>import</code> instructions on the first line of your JS file:</p>
+        <pre>import * as THREE from 'three';
+        </pre>
+        <h2 id="scene-setup">Scene Setup</h2>
+        <p><a href="https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene">Helpful Three.JS
+                documentation in case you need it</a></p>
+        <p>You need three main components to set up your Three.JS scene:</p>
+        <ul>
+            <li>a new scene</li>
+            <li>a camera</li>
+            <li>a renderer</li>
+        </ul>
+        <p>We create these objects by declaring a new <code>const</code>, a type of variable in Javascript, and defining
+            it
+            with new THREE methods.</p>
+        <pre>// Setup
+        
+        const scene = new THREE.Scene();
+        
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        
+        
+        // create a new renderer by instating the canvas element in our HTML // file
+        const renderer = new THREE.WebGLRenderer({
+          canvas: document.querySelector('#bg'),
+        });
+      </pre>
+        <p>You will not be able to view your new scene until you tell the renderer to render the scene and the camera
+            with
+            Three.js's <code>.render</code> method:</p>
+        <pre>renderer.render(scene, camera);
+        </pre>
+        <p>Now that we have each of these objects set as constants, we can manipulate them with Three.JS's built-in
+            methods.
+        </p>
+        <p>Let's set the pixel ratio, the size, and the camera position:</p>
+        <pre>renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.position.setZ(50);
+        camera.position.setX(-3);
+        
+       </pre>
+    </section>
+    <section>
+        <h2 id="create-your-first-object">Create your first object!</h2>
+        <p>Now that our scene is set up, we can add 3D objects!</p>
+        <p>There are three basic components you need in order to create a 3D object in Three.JS:</p>
+        <ul>
+            <li>the geometry</li>
+            <li>the material</li>
+            <li>the mesh (combining the geometry and the material)</li>
+        </ul>
+        <p>We need to create new <code>const</code> variabels for each of these components so that we may manipulate
+            them
+            and add the final mesh to our scene.</p>
+        <p>Let's create a basic cube.</p>
+        <ul>
+            <li>The dimensions of the length, width, and height of your box go inside the new THREE geometry object
+                parentheses <code>()</code> as arguments separated by commas:</li>
+        </ul>
+        <pre>const geometry = new THREE.BoxGeometry(10, 10, 10);
+        
+        //set the color of the basic material in the object parameters `{}`
+        
+        const material = new THREE.MeshBasicMaterial( { color: 0xFF6347 } );
+        
+        const cube = new THREE.Mesh( geometry, material );
+        </pre>
+        <p>To add our cube into the scene, use the <code>.add()</code> method.</p>
+        <pre>scene.add( cube );
+        </pre>
+    </section>
+    <section>
+        <h2 id="manipulating-your-object">Manipulating your object</h2>
+        <p>You can change the position of the object by manipulating the cube's <code>.position</code> property and
+            attaching the axis on which you want to move it:</p>
+        <pre>cube.position.z = -15;
+        cube.position.x = -15;
+        </pre>
+        <p>Change the rotation of your object by manipulating the <code>.rotation</code> property and attaching the axis
+            on
+            which you wish to rotate it:</p>
+        <pre>cube.rotation.x = 2;
+        cube.rotation.y = .5;
+        </pre>
+    </section>
+    <section>
+        <h2 id="lights-and-material-types">Lights and Material Types</h2>
+        <p>Three.JS allows you to create objects with a wide variety of customizable material types and textures. Some
+            material types require lights in the scene in order to be visible, including the <code>Phong</code>
+            material.
+            Your cube is visible because it is made of a <code>Basic</code> material, which is not affected by lights.
+        </p>
+        <p>Let's create a new object to test out new materials:</p>
+        <pre>const ico = new THREE.IcosahedronGeometry(10);
+        const icoMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
+        const icoMesh = new THREE.Mesh(ico, icoMaterial);
+        
+        scene.add(icoMesh);
+        
+        icoMesh.position.z= -15;
+        icoMesh.position.x= 15;
+        </pre>
+        <p>If you try to view your new object in the browser, you will not be able to see it. Since Phong materials
+            require
+            light, you will need to at least one light object in your scene:</p>
+        <pre>// Lights
+        
+        const pointLight = new THREE.PointLight(0xffffff);
+        pointLight.position.set(0, -10, 10);
+        
+        const ambientLight = new THREE.AmbientLight(0xffffff);
+        ambientLight.position.set(25, -15, -400);
+        
+        scene.add(pointLight);
+        scene.add(ambientLight);
+        </pre>
+        <ul>
+            <li>
+                <p>Point Lights are lights that only go in one direction.</p>
+            </li>
+            <li>
+                <p>Ambient lights act more like the sun, spreading light in all directions.</p>
+            </li>
+            <li>
+                <p>You can change the color of the light by manipulating the HEX code value of the new THREE.Light()
+                    object
+                    within the parentheses.</p>
+            </li>
+        </ul>
+        <p>Watch what happens if you change your <code>cube</code> material to a <code>StandardMaterial</code> which
+            accepts
+            light, replacing it with <code>BasicMaterial</code> , which does not accept light:</p>
+        <pre>const material = new THREE.MeshStandardMaterial( { color: 0xFF6347 } );
+        </pre>
+        <div class="imgWrap"><img class="imgSm" src="images\screenshots\standardMaterial.jpg" alt="standard material cube"></div>
+    </section>
+    <section>
+        <h1 id="animate-your-scene">Animate your scene</h1>
+        <p>To make your objects move through time, we need to create a new <code>animate</code> function and set our
+            animation properties within it.</p>
+        <p>You can animate just about any property of an object you want.</p>
+        <pre>function animate() {
+            requestAnimationFrame( animate );
+        // slowly rotate the cube:
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        // rotate the icosahedron a little faster in the opposite direction:
+        icoMesh.rotation.z += -0.03
+        icoMesh.rotation.y += -0.03
+        
+            renderer.render( scene, camera );
+        }
+        </pre>
+        <p>You must call the animate() function in order to tell the browser to use it:</p>
+        <pre>animate();
+        </pre>
+        <p>Congratulations! Your scene should now look something like this:</p>
+        <div class="imgWrap"><img class="img" src="images\screenshots\twoObjects.jpg" alt="three.JS object screenshot"></div>
+    </section>
+    <section>
+        <h2 id="threejs-helpers">Three.JS Helpers</h2>
+        <p>Three.JS comes with a wide variety of scene helpers to assist in orienting the view of your scene.</p>
+        <p>We can add a <strong>Light Helper</strong>, which shows us where in the scene our light objects are
+            positioned.
+        </p>
+        <p>Let's add a light helper to our <code>pointLight</code> object:</p>
+        <pre>// Helpers
+        
+        const lightHelper = new THREE.PointLightHelper(pointLight);
+        
+        scene.add(lightHelper)
+        </pre>
+        <div class="imgWrap"><img class="img" src="images\screenshots\lightHelper.jpg" alt="light helper"></div>
+        <p>We can also add a <strong>Grid Helper</strong> to show the 3D axes of our scene.</p>
+        <pre>const gridHelper = new THREE.GridHelper(200,50);
+        
+        scene.add(gridHelper)
+        </pre>
+    </section>
+    <section>
+        <h2 id="orbit-controls">Orbit Controls</h2>
+        <p>Three.JS has various types of Control methods to allow you to add interactive functionality to your scene.
+        </p>
+        <p>Let's add an <code>Orbit Control</code>, which will allow us to move our camera and traverse our scene with
+            mouse
+            controls and zoom.</p>
+        <p>In order to add the Orbit Controls as a function, we need to import that package from the three.js
+            dependencies.
+            At the top of your document where you imported THREE.JS, (directly underneath
+            <code>import * as THREE from 'three';</code>) add this line of code:
+        </p>
+        <pre>import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+        </pre>
+        <p>Then, under your <code>Helpers</code>, activate your orbit controls by declaring it as a constant:</p>
+        <pre>// Orbit Control
+        
+        const controls = new OrbitControls(camera, renderer.domElement)
+        </pre>
+        <p>Your orbit controls will not be functional until you add an <code>.update()</code> method to your new
+            <code>controls</code> object WITHIN your <code>animate(){}</code> function:
+        </p>
+        <pre>function animate() {
+            requestAnimationFrame( animate );
+        // slowly rotate the cube:
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        // rotate the icosahedron a little faster in the opposite direction:
+        icoMesh.rotation.z += -0.03
+        icoMesh.rotation.y += -0.03
+        // ALLOWS YOUR ORBIT CONTROLS TO UPDATE LIVE IN REAL-TIME:
+        controls.update()
+        
+            renderer.render( scene, camera );
+        }
+        </pre>
+        <p>When you refresh your server, you should now be able to click and drag to orbit the camera view of your
+            scene!
+        </p>
+    </section>
+    <section>
+        <h2 id="scene-backgrounds">Scene Backgrounds</h2>
+        <p>We can set our scene backgrounds to whatever we want, using regular image files.</p>
+        <ul>
+            <li>
+                <p>create a new folder in your project and name it <code>images</code></p>
+            </li>
+            <li>
+                <p>find a cool, high-resolution image that you'd like to appear as the background of your scene. We are
+                    using this one:</p>
+            </li>
+        </ul>
+        <div class="imgWrap"><img class="img" src="images\night_sky.jpg" alt="night sky background photo"></div>
+        <ul>
+            <li>
+                <p>save the image file of your choosing inside your new <code>/images</code> directory.</p>
+            </li>
+            <li>
+                <p>create a new <code>Texture</code> object by referencing your image, and add it to the scene:</p>
+            </li>
+        </ul>
+        <pre>// Background
+        
+        const spaceTexture = new THREE.TextureLoader().load('images/night_sky.jpg')
+        
+        scene.background = spaceTexture;
+        </pre>
+        <div class="imgWrap"><img class="img" src="images\screenshots\backgroundTexture.jpg" alt="background texture scene"></div>
+    </section>
+    <section>
+        <h2 id="texture-mapping">Texture Mapping</h2>
+        <p>In the world of 3D modeling, <code>Texture Mapping</code> refers to mapping flat images onto the surface of a
+            3D
+            object. Three.JS allows us to do this by creating <code>Texture</code> objects and applying them to our 3D
+            objects using methods.</p>
+        <p>Find an image file that you'd like to apply to the surface of a new object. We will be using this one:</p>
+        <div class="imgWrap"><img class="imgSm" src="images\smile.jpg" alt="smiley face texture"></div>
+        <p>Save your texture image file in your <code>/images</code> directory.</p>
+        <p>Now, in our <code>main.js</code>, let's create a new texture that we will map onto a new object:</p>
+        <pre>// Object texture mapping
+        
+        const smileTexture = new THREE.TextureLoader().load('images/smile.jpg')
+        </pre>
+        <p>Now, let's create a new <code>Sphere</code> object to map our new texture onto.</p>
+        <p><strong>Remember</strong> new objects require three basic components:</p>
+        <ul>
+            <li>a <code>geometry</code></li>
+            <li>a <code>material</code>
+                <ul>
+                    <li>in this case, our new <code>BasicMaterial</code> will have a value of
+                        <code>{map: smileTexture}</code> instead of a color hex code.
+                    </li>
+                </ul>
+            </li>
+            <li>a <code>mesh</code>, which combines the <code>geometry</code> and <code>material</code> to create the
+                final
+                visible object.</li>
+        </ul>
+        <pre>// Object texture mapping
+        
+        const smileTexture = new THREE.TextureLoader().load('images/smile.jpg')
+        
+        const sphereGeometry = new THREE.SphereGeometry( 10, 22, 10 );
+        
+        const smileMaterial = new THREE.MeshBasicMaterial({map: smileTexture})
+        
+        const smileMesh = new THREE.Mesh(sphereGeometry, smileMaterial);
+        
+        scene.add(smileMesh);
+        </pre>
+        <div class="imgWrap"><img class="img" src="images\screenshots\textureMapping.jpg"
+                alt="new texture-mapped object"></div>
+        <p>You can manipulate the object's static position, rotation, and size as you wish, the same as your other
+            objects.
+        </p>
+        <p>You can also add property changes to this new texture to be animated in real-time in your
+            <code>animate()</code>
+            function:
+        </p>
+        <pre>function animate() {
+            requestAnimationFrame( animate );
+        // slowly rotate the cube:
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        // rotate the icosahedron a little faster in the opposite direction:
+        icoMesh.rotation.z += -0.03
+        icoMesh.rotation.y += -0.03
+        // rotate the smiley sphere on the Y axis:
+        smileMesh.rotation.y += 0.05
+        controls.update()
+        
+            renderer.render( scene, camera );
+        }
+        </pre>
+    </section>
+    <section>
+        <h3 id="normal-texture-mapping">Normal Texture Mapping</h3>
+        <p>Three.JS also allows you to create vivid textures to alter the surface shape of your mesh to create real,
+            light-reactive textures on your objects.</p>
+        <p>To do this, we need to create a <strong>normal</strong>.</p>
+        <p><strong>Normal mapping</strong> in the 3D world refers to a texture mapping technique used for faking the
+            lighting of bumps and dents – an implementation of bump mapping. It is used to add details without using
+            more
+            polygons.</p>
+        <p>To create a normal, you must first find a texture image you like that can be converted into a normal.</p>
+        <p>We used this site to generate and customize a texture:
+            <a href="http://cpetry.github.io/TextureGenerator-Online/">Texture Generator Online</a>
+        </p>
+        <p>Here's the texture we generated:</p>
+        <div class="imgWrap"><img class="imgSm" src="images\texture.png" alt="texture"></div>
+        <p>Now, we must convert this texture image file into a normal map. We used this site to upload our texture image
+            file and have it converted into a normal:
+            <a href="https://cpetry.github.io/NormalMap-Online/">Normal Map Online</a>
+        </p>
+        <p>Here's the normal map that was generated from our image:
+        </p>
+        <div class="imgWrap"> <img class="imgSm" src="images\textureNormal.png" alt="normal map"></div>
+        <p>Now we need to create a new <code>normalTexture</code> object in our Javascript by loading a new texture and
+            loading in our normalMap image file:</p>
+        <pre>const normalTexture = new THREE.TextureLoader().load('images/normals/textureNormal.png');
+        </pre>
+        <p>Now, to apply our normal map to a new object, we must apply our normal map image to the
+            <code>normalMap</code>
+            property within our new <code>MeshStandardMaterial</code>.
+        </p>
+        <pre>// Normal Texture Map
+        
+        const torusGeo = new THREE.TorusKnotGeometry( 5, 1, 250, 5, 9, 15 );
+        const torusMaterial = new THREE.MeshStandardMaterial( { 
+          normalMap: normalTexture,
+          roughness: 0,
+          metalness: .8
+        } );
+        
+        const torusKnot = new THREE.Mesh( torusGeo, torusMaterial );
+        
+        scene.add( torusKnot );
+        torusKnot.position.y = 20
+        
+        </pre>
+        <p>We also added a <code>roughness</code> and <code>metalness</code> property value to make our new object look
+            more
+            shiny and reflect light. Your scene should look something like this:</p>
+        <div class="imgWrap"><img class="img" src="images\screenshots\normalMapping.jpg" alt="normal mapping"></div>
+    </section>
+
+    <section>
+        <h1>
+            How to Deploy your Three.JS App to Github Pages
+        </h1>
+        <div>
+            <p>Now comes the fun part.</p>
+            <p>
+                To deploy your three.JS app on GitHub Pages and display it to the world, we need to create a production
+                folder in your main repository branch, and create a deployment branch that will point directly to your
+                static production folder files.
+            </p>
+            <p>
+                Here are the steps you must follow:
+            </p>
+            <h3><b>Step 1</b></h3>
+            <p>
+                Create a new folder in your project root. Name it <code>dist</code>.
+            </p>
+            <h3>
+                <b>Step 2</b>
+            </h3>
+            <p>
+                Move the following files inside the new <code>dist</code> folder:
+                 
+            <ul>
+                <li>index.html</li>
+                <li>style.css</li>
+                <li>main.js</li>
+                <li>the <code>/images</code> folder containing your image files that you are using for your meshes and
+                    scene backgrounds.</li>
+            </ul>
+            </p>
+            <h3>
+                <b>Step 3</b>
+            </h3>
+            <p>
+                Within your <code>package.json</code> file, add the fillowing line of code inside your
+                <code>"scripts"</code>:
+
+            <pre>
+                            "deploy": "gh-pages -d dist"
+                        </pre>
+
+            </p>
+            <p>Your <code>"scripts"</code> JSON should now look like this:</p>
+            <pre>
+            "scripts": {
+                "test": "echo \"Error: no test specified\" && exit 1",
+                "deploy": "gh-pages -d dist"
+           }
+            </pre>
+
+            <h3>
+                Step 4
+            </h3>
+            <p>
+                Make sure you are at the root of your project directory. Run the following command in your project to
+                install gh-pages:
+            </p>
+            <pre>
+                npm install gh-pages
+            </pre>
+
+            <p>
+                gh-pages is an npm package that allows you to publish files to a branch named "gh-pages" on GitHub.
+                You may read more about it here - https://www.npmjs.com/package/gh-pages
+
+            </p>
+            <h3>
+                <b>Step 5</b>
+            </h3>
+            <p>
+                Now we just need to push the project to a new repository on GitHub.
+                Go to <a href="https://github.com/">GitHub.com</a> and create a new repository.
+            </p>
+            <p>
+                Fill in your repository name and a short description. <i>Tip: try naming your remote repo the same as
+                    what you named your Three.JS project lcoally.</i>
+            </p>
+            <p>
+                You do not need to add a readme, a gitignore, or a license.
+            </p>
+            <div class="imgWrap"><img class="img" src="images/screenshots/new-repo-remoteGH.jpg"
+                    alt="new repo screen on github.com" /></div>
+
+            <p>
+                Hit "Create Repository".
+            </p>
+            <p>Once you get to this page, <b>STOP!</b> Keep this page open in your browser. We need to go back into your
+                command line terminal to push your project code into this new remote repository.</p>
+            <div class="imgWrap"><img class="img" src="images/screenshots/github-setup-screen.jpg"
+                    alt="github remote repo setup screen" /></div>
+            <h3><b>Enter the following commands in your Command Line Terminal, one after the other:</b></h3>
+            <pre>
+                 git init
+            </pre>
+            <pre>
+                 git remote add origin "YOUR_REPOSITORY_URL"
+             </pre>
+            <pre>
+                 git add .
+            </pre>
+            <pre>
+                 git commit -m "YOUR_COMMIT_MESSAGE"
+            </pre>
+            <pre>
+                  git push origin master
+            </pre>
+
+            <h3><b>Step 6</b></h3>
+            <p>
+                Once all your code is pushed to the master branch, go to your repo on GitHub.com
+                and create a new branch. <b>Name it “<code>gh-pages</code>”.</b>
+            </p>
+            <p>
+                Make sure you are at the root of your project directory, then run this command in your terminal:
+            </p>
+            <pre>
+                 npm run deploy
+            </pre>
+            <p>
+                This step runs the “deploy” script that you added in Step 3.
+            </p>
+            <div class="imgWrap">
+
+                <img class="img" src="images/screenshots/npm-run-deploy-publish.jpg" alt="npm run deploy gh-pages" />
+
+            </div>
+            <p>
+                Once your terminal says "Published", you need to wait a few minutes for your GitHub Pages site to be
+                ready for viewing.
+            </p>
+            <p>
+                After a few minutes, go to the "Pages" tab in your repository settings, and your website link will be
+                there.
+            </p>
+        </div>
+    </section>
+
+</body>
+
+</html>
