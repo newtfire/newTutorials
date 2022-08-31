@@ -62,6 +62,31 @@ Install Bundler (in either Mac Terminal or Git Bash on Windows) with:
 gem install bundler
 ```
 
+#### Finally, install Jekyll
+
+On Mac, in your terminal enter:
+```
+gem install jekyll
+```
+
+**On Windows**, this doesn't seem to work in the Git Bash shell, apparently because some PATH modification needs to happen. So we recommend opening the native command prompt on your Windows computer (find Command Prompt on the Start menu). Open it and enter:
+
+```
+gem install jekyll
+```
+
+This takes a little while to install. You'll know it's complete when you see something like this:
+
+```
+Done installing documentation for sassc, jekyll-sass-converter, concurrent-ruby, i18n, http_parser.rb, eventmachine, em-websocket, colorator, public_suffix, addressable, jekyll after 12 seconds
+Successfully installed bundler-2.3.21
+Parsing documentation for bundler-2.3.21
+Done installing documentation for bundler after 0 seconds
+12 gems installed
+
+
+```
+
 ### Set up your GitHub repo with Jekyll
 Now you can begin work on your GitHub repo. For our context, I imagine that you are starting with a GitHub repo that is already sharing a website over GitHub Pages, but you could also be initiating a new GitHub repo. I recommend as you're learning to start with a website that you've already designed. 
 
