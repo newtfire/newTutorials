@@ -1,4 +1,5 @@
 # Setting up a Jekyll development environment for GitHub Pages 
+Probably you are beginning with a GitHub repo that is hosting a website using GitHub Pages, but without working with Ruby or Jekyll locally. You could also follow this tutorial if you are starting a new GitHub Pages website to work with a Jekyll development environment. 
 
 ## Wait, what is Jekyll anyway? 
 Jekyll is a **static website generator**: It's a *generator* in that it helps automate the construction of your HTML pages, but it outputs a *static site* which means that visitors won't be triggering dynamic server-side interactions when they visit your page. Static sites can handle client-side Javascript interactions, but they don't fundamentally change their content when a visitor interacts with them.  
@@ -60,7 +61,7 @@ gem install bundler
 ```
 
 ### Set up your GitHub repo with Jekyll
-
+Now you can begin work on your GitHub repo. For our context, I imagine that you are starting with a GitHub repo that is already sharing a website over GitHub Pages.
 
 ## Resources and further reading
 
