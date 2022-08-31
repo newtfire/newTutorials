@@ -69,13 +69,15 @@ Your Jekyll-powered website will need to be organized according to [Jekyll's fil
 
 #### Create the `_config.yml` file
 
-YML meant "YAML ain't markup language" and it's there to establish some basic information about your site and manage any plugins you might eventually supply. Let's start with a super simple YAML file to configure your site. Customize this to your website's information:
+YML meant "YAML ain't markup language" and it's there to establish some basic information about your site and manage any plugins you might eventually supply. Let's start with a super simple YAML file to configure your site. (Obviously, you should customize this to your website's information). This is basically a text file that you save with the name `_config.yml` and save in the directory that will be publishing your website. If you will be configuring GitHub Pages to publish from your `docs/` directory, save this in `docs/`. 
 
 ```
 title: Elisa Beshero's Portfolio Website
-description: representing my projects, etc.
+description: representing my digital projects
 
 ```
+
+
 
 ## Resources and further reading
 
