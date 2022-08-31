@@ -32,12 +32,23 @@ brew install ruby
 
 #### Install Ruby on Windows
 
-For Windows, it's recommended to install Ruby using the Windows Package Manager (known as "winget), which is a little like Homebrew on a Mac. First, check and see if your computer already has winget by opening up your Git Bash Shell and entering:
+Go to RubyInstaller for Windows: https://rubyinstaller.org/downloads/
+
+Choose the Ruby+Devkit 3.1...(x64) version at the top and download its .exe file. 
+
+Find the .exe file in your Downloads and click on it to run the installer. 
+
+In the installer (if these are not already checked), check the box to "Add Ruby executables to your PATH." Also check the box to associate .rb and .rbw files with this Ruby installation.
+
+Wait for it to finish installing, and click "Finish" on the screen to exit the installer.
+
+This will open the Windows cmd.exe window and a cute Ruby 2 Installer screen. You'll be asked: "Which components shall be installed? Click "enter" to let it install in the default way.
+
+To verify the installation is complete, open up the Git Bash again, and type in 
 ```
-winget
+ruby -v
 ```
-If you're running Windows 10 1809 or later, you probably have winget. If you have it, it will tell you what version you have.
-If you *don't* have it, here's how to get winget: Follow the instructions here: https://phoenixnap.com/kb/install-winget, but just use Git Bash shell where they mention Powershell. (You could use either one, but you might as well use the Git Bash because it's how we'll be interacting with GitHub.) 
+You should see the version of Ruby you installed. 
 
 
 
