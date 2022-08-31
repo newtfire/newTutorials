@@ -43,3 +43,8 @@
      * You could also choose to [keep this theme and modify it](https://urishx.github.io/2020/12/16/Customizing-Jekyll%27s-default-theme.html). 
      * Or change the theme to something else you like   
 
+## Resources for SEO and Analytics
+* Generate an XML sitemap for search engine optimization: https://github.com/marketplace/actions/generate-sitemap 
+* Add Google Analytics to GitHub Pages: https://www.christopherlovell.co.uk/blog/2015/04/13/google-analytics-ghpages.html 
+
+
