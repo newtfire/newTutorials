@@ -26,7 +26,7 @@ El Capitan).
 If you don't have it or want the latest version, [get yourself Homebrew first](https://brew.sh/):
 Homebrew is a very cool "package manager" for Mac for handling installations of libraries and languages like Ruby and Python. When you install something it plays a little game of pretending it's brewing casks of the finest beer or ale in your computer, and thereby establishing one of the reasons why we love Macs for installing and updating complicated things. Wait until you've installed Homebrew (it takes a little while), and when everything is ready, go to your Terminal and at the prompt type in:
 ```
-brew install ruby
+brew install ruby###
 ```
 
 
@@ -50,8 +50,16 @@ ruby -v
 ```
 You should see the version of Ruby you installed. 
 
+### Got Ruby? Now install the Bundler!
+You'll need to install the Bundler next. What is this for? It's basically for your website configuration to be able to call on any "Ruby gems" you need. Jekyll is a Ruby gem, and you'll need Bundler to be able to read the **Gemfile** or the configuration of Ruby gems you'll be using.  
 
+Install Bundler (in either Mac Terminal or Git Bash on Windows) with:
 
+```
+gem install bundler
+```
+
+### Installing Jekyll
 
 
 
