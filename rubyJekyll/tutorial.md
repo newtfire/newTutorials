@@ -12,6 +12,8 @@ Even when you don't have Jekyll configured locally, you still use it when you pu
 To configure Jekyll in your own way, you need to install it locally. That requires installing Ruby first.
 
 ### Installing Ruby
+Here, you want to follow [Jekyll's instructions for installing Ruby on your system](http://jekyllrb.com/docs/installation/).
+
 Do you have Ruby installed already? Check.
 Open your Terminal (Mac) or Git Bash shell (Windows) and at the command prompt enter:
 ```
@@ -22,9 +24,9 @@ If you don't have it follow the instructions for your computer type below (Mac o
 
 #### Install Ruby on Mac
 If you're on a Mac, you most likely have Ruby already. (They say it comes with Ruby versions 2.0 and higher since 
-El Capitan). 
+El Capitan). But [the Jekyll developers advise](http://jekyllrb.com/docs/installation/macos/) that you should always install a more current Ruby than the one provided by the Mac OS. 
 
-If you don't have it or want the latest version, [get yourself Homebrew first](https://brew.sh/):
+To get the latest version, [get yourself Homebrew first](https://brew.sh/):
 Homebrew is a very cool "package manager" for Mac for handling installations of libraries and languages like Ruby and Python. When you install something it plays a little game of pretending it's brewing casks of the finest beer or ale in your computer, and thereby establishing one of the reasons why we love Macs for installing and updating complicated things. Wait until you've installed Homebrew (it takes a little while), and when everything is ready, go to your Terminal and at the prompt type in:
 ```
 brew install ruby###
