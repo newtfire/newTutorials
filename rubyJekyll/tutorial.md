@@ -138,6 +138,9 @@ description: representing my digital projects
 ### TBD: `_layouts` and `_includes`
 
 ### TBD: Building your site locally
+
+We are following GitHub's documentation here:
+
 https://docs.github.com/en/enterprise-server@3.1/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll 
 
 ### TBD: Publishing with GitHub Pages
