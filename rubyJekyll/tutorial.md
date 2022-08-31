@@ -59,7 +59,9 @@ Install Bundler (in either Mac Terminal or Git Bash on Windows) with:
 gem install bundler
 ```
 
-### Installing Jekyll
+### Set up your GitHub repo with Jekyll
+Next steps:
+https://docs.github.com/en/enterprise-server@3.1/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site
 
 
 
