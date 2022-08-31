@@ -19,7 +19,7 @@ ruby -v
 When you press enter, you'll be told if you have Ruby or not. 
 If you don't have it follow the instructions for your computer type below (Mac or Windows):
 
-#### Mac
+#### Install Ruby on Mac
 If you're on a Mac, you most likely have Ruby already. (They say it comes with Ruby versions 2.0 and higher since 
 El Capitan). 
 
@@ -30,7 +30,19 @@ brew install ruby
 ```
 
 
-#### Windows
+#### Install Ruby on Windows
+
+For Windows, it's recommended to install Ruby using the Windows Package Manager (known as "winget), which is a little like Homebrew on a Mac. First, check and see if your computer already has winget by opening up your Git Bash Shell and entering:
+```
+winget
+```
+If you're running Windows 10 1809 or later, you probably have winget. If you have it, it will tell you what version you have.
+If you *don't* have it, here's how to get winget: Follow the instructions here: https://phoenixnap.com/kb/install-winget, but just use Git Bash shell where they mention Powershell. (You could use either one, but you might as well use the Git Bash because it's how we'll be interacting with GitHub.) 
+
+
+
+
+
 
 
 
