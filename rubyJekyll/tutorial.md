@@ -60,10 +60,18 @@ gem install bundler
 ```
 
 ### Set up your GitHub repo with Jekyll
-Next steps:
+
+
+## Resources and further reading
+
+GitHub documentation on setting up a GitHub Pages site with Jekyll: 
 https://docs.github.com/en/enterprise-server@3.1/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site
 
 
+ Jonathan McGlone's [Creating and Hosting a Personal Site on GitHub](http://jmcglone.com/guides/github-pages/index.html)
+     * Why I like this: It shows you the *least* that you need to set up a simple Jekyll site.
+     * Scroll down to "Using Jekyll with GitHub Pages"
+     * **Read this for the web architecture.** Don't do this stuff in the web interface if you already know how to work with git at command line.
 
 
 
