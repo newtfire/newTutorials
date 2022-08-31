@@ -87,14 +87,14 @@ Done installing documentation for bundler after 0 seconds
 
 ```
 
-### Set up your GitHub repo with Jekyll
+## Set up your GitHub repo with Jekyll
 Now you can begin work on your GitHub repo. For our context, I imagine that you are starting with a GitHub repo that is already sharing a website over GitHub Pages, but you could also be initiating a new GitHub repo. I recommend as you're learning to start with a website that you've already designed. 
 
 *If redesigning a site, keep in mind that you will be changing the file structure for delivering your webpages.* So, in that case, let's not disturb the structure of your existing GitHub repo. Instead, we'll begin a new repo and adapt your files for your new website structure.  
 
 Your Jekyll-powered website will need to be organized according to [Jekyll's file directory structure](http://jekyllrb.com/docs/structure/). Follow that link to get a sense of it. Notice that how the configuration folder and filenames begin with a leading underscore: `_.config.yml`, `_layouts`, etc.
 
-#### Create the `_config.yml` file
+### Create the `_config.yml` file
 
 YML meant "YAML ain't markup language" and it's there to establish some basic information about your site and manage any plugins you might eventually supply. Let's start with a super simple YAML file to configure your site. (Obviously, you should customize this to your website's information). This is basically a text file that you save with the name `_config.yml` and save in the directory that will be publishing your website. If you will be configuring GitHub Pages to publish from your `docs/` directory, save this in `docs/`. 
 
@@ -104,7 +104,11 @@ description: representing my digital projects
 
 ```
 
+### TBD: `_layouts` and `_includes`
 
+### TBD: Building your site locally
+
+### TBD: Publishing with GitHub Pages
 
 ## Resources and further reading
 
