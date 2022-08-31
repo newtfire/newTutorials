@@ -65,9 +65,9 @@ Now you can begin work on your GitHub repo. For our context, I imagine that you 
 
 *If redesigning a site, keep in mind that you will be changing the file structure for delivering your webpages.* So, in that case, let's not disturb the structure of your existing GitHub repo. Instead, we'll begin a new repo and adapt your files for your new website structure.  
 
-Your Jekyll-powered website will need to be organized according to [Jekyll's file directory structure](http://jekyllrb.com/docs/structure/). Follow that link to get a sense of it. 
+Your Jekyll-powered website will need to be organized according to [Jekyll's file directory structure](http://jekyllrb.com/docs/structure/). Follow that link to get a sense of it. Notice that how the configuration folder and filenames begin with a leading underscore: `_.config.yml`, `_layouts`, etc.
 
-
+#### Create the `_config.yml` file
 
 
 ## Resources and further reading
