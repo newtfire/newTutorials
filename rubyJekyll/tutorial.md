@@ -141,6 +141,18 @@ description: representing my digital projects
 
 ### TBD: Building your site locally
 
+In your (Mac) Terminal or (Windows) Git Bash, enter:
+
+```
+bundle exec jekyll serve
+```
+
+If this succeeds, Jekyll will locate your configuration files successfully and build your site in a new local `sites/` directory. Jekyll will also share a local URL served by your computer from a special port number. Copy and paste the local URL that Jekyll provides into a web browser. It'll look something like:
+
+```
+http://someNumbers.0.0.1:4000
+```
+
 We are following GitHub's documentation here:
 
 https://docs.github.com/en/enterprise-server@3.1/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll 
