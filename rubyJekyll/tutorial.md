@@ -288,12 +288,13 @@ url: "https://newtfire.github.io/jekyllSetup/index.html"
 
 ```
 
-### Set up your cloud GitHub repo for GitHub Pages with GitHub Actions
+### Set up your cloud GitHub repo for GitHub Pages 
 
-At this point, go ahead and push your new code to the cloud repo. We should configure the repo to publish GitHub Pages.
-We'll do this using **GitHub Actions**, which will be able to locate your Jekyll site wherever you build it in the repo. (We still recommend doing the site setup in a `docs/` directory if you want to archive other code outside the website files.)
-GitHub Actions was introduced in late December 2021 and it contains lots of nifty automated testing and building features for Jekyll sites. 
+At this point, go ahead and push your new code to the cloud repo. We should configure the repo to publish GitHub Pages. 
+I recommend doing this the usual way, by publishing from a branch and choosing the `/docs` directory. 
 
+
+(Sidenote: I tried an alternative, using GitHub Actions, but ran into some file dependency issues with the GitHub Actions workflow not finding my includes files. That said, I'd like to get it working: GitHub Actions was introduced in late December 2021 and it contains lots of nifty automated testing and building features for Jekyll sites. ) 
 
 
 ###  Building your site locally
@@ -322,12 +323,13 @@ bundle exec jekyll serve
 
 ### Pushing your website files to publish on GitHub Pages
 
-Remember, you're screening these **local build** files from being pushed to GitHub. (GitHub Actions should do in the cloud what your Jekyll build is doing locally.) 
+Remember, you're screening these **local build** files from being pushed to GitHub. (GitHub Pages should do in the cloud what your Jekyll build is doing locally.) 
 
-When you push your site to the cloud, it'll take the usual few minutes for GitHub Actions to publish GitHub Pages. Watch to make sure there aren't any build errors on GitHub Pages, too, or anything that prevents the site from publishing. Most likely, if your site built locally, GitHub Pages will publish it in close to the same way, but your site might not look *quite* identical to your local build. For example, we're having trouble posting a "last-updated" date/timestamp on GitHub Pages, but we can get it to show in the local build. That's a matter [for further research and development](https://github.com/newtfire/jekyllSetup/issues/1)! 
+When you push your site to the cloud, it'll take the usual few minutes for GitHub Pages to publish your website. You will first see a yellow dot on your repo as GitHub Pages works on assembling your site and publishing it. If it *fails*, you'll see a red X, and you can try to investigate what went wrong. If it *succeeds* you'll see a green checkmark, and you can go and look at your updated website. 
 
+Watch to make sure there aren't any build errors on GitHub Pages, too, or anything that prevents the site from publishing. Most likely, if your site built locally, GitHub Pages will publish it in close to the same way, but your site might not look *quite* identical to your local build. For example, we're having trouble posting a "last-updated" date/timestamp on GitHub Pages, but we can get it to show in the local build. That's a matter [for further research and development](https://github.com/newtfire/jekyllSetup/issues/1)! 
 
-
+Remember to post a link to your published website on the little "About" window in the GitHub code repository (or in your main Readme.md file) to help you and visitors to your repo see the site.
 
 ## Resources and further reading
 
