@@ -198,7 +198,7 @@ timezone: America/New_York
 
 ```
 
-### Install some useful plugins: Update the `Gemfile` and `_config.yml`
+### Update the `Gemfile` and `_config.yml` to install some useful plugins
 Let's install some useful Jekyll plugins now, if you like. We'll just install a few to start, but this process will orient you on how to add other plugins you may discover. 
 
 * **jekyll-sitemap** : This creates a site map, which is helpful for **search engine optimization (SEO)** 
