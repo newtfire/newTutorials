@@ -144,7 +144,7 @@ bundle add jekyll
 
 This will take a few minutes to fetch gem info and resolve dependencies and eventually return you to the command prompt. Wait for it. 
 
-Look in your directory now and you'll find a file named Gemfile with no file extension. You may also see a Gemfile.lock. 
+Look in your directory now and you'll find a file named `Gemfile` with no file extension. You will also see a Gemfile.lock. (Gem.lock is there to "lock" the gem versions you've installed in place until you're ready to update your bundle of gems—which you can do by entering the command `bundle update`.) 
 
 Open the Gemfile (as a text file), and you'll see a few lines of code like this:
 
@@ -157,6 +157,7 @@ source "https://rubygems.org"
 
 gem "jekyll", "-> 4.2"
 ```
+
 
 
 
@@ -195,9 +196,7 @@ If this succeeds, Jekyll will locate your configuration files successfully and b
 http://someNumbers.0.0.1:4000
 ```
 
-We are following GitHub's documentation here:
 
-https://docs.github.com/en/enterprise-server@3.1/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll 
 
 ### TBD: Publishing with GitHub Pages
 
@@ -206,7 +205,10 @@ https://docs.github.com/en/enterprise-server@3.1/pages/setting-up-a-github-pages
 GitHub documentation on setting up a GitHub Pages site with Jekyll: 
 https://docs.github.com/en/enterprise-server@3.1/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site
 
+Jekyll documentation on Gemfiles and plugins for GitHub Pages: https://jekyllrb.com/docs/step-by-step/10-deployment/ 
+
 Testing your GitHub Pages site locally with Jekyll: https://docs.github.com/en/enterprise-server@3.1/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll 
+
 
 
 Jonathan McGlone's [Creating and Hosting a Personal Site on GitHub](http://jmcglone.com/guides/github-pages/index.html)
