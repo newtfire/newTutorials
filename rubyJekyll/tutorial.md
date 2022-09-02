@@ -27,7 +27,7 @@ If you're on a Mac, you most likely have Ruby already. (They say it comes with R
 El Capitan). But [the Jekyll developers advise](http://jekyllrb.com/docs/installation/macos/) that you should always install a more current Ruby than the one provided by the Mac OS. After a bit of testing, here's the command that seems to work best in the Terminal prompt:
 
 ```
-brew install homebrew/portable-ruby/portable-ruby
+brew install ruby
 ```
 
 To do these installations, [get yourself Homebrew first](https://brew.sh/):
