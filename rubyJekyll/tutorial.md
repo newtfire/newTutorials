@@ -125,6 +125,41 @@ _site/
 
 ```
 
+### Install Jekyll in your repo: plant the Gemfile!
+Just a few steps here: We need to install Jekyll, which will result in a special **Gemfile** being installed in the directory
+where you want your website files to be stored. 
+
+First enter this line:
+
+```
+bundle init
+```
+(The result should be something like this: "Writing new Gemfile to C:/your/special/filepath/to/your/repo/web-directory/")
+
+Then enter:
+
+```
+bundle add jekyll
+```
+
+This will take a few minutes to fetch gem info and resolve dependencies and eventually return you to the command prompt. Wait for it. 
+
+Look in your directory now and you'll find a file named Gemfile with no file extension. You may also see a Gemfile.lock. 
+
+Open the Gemfile (as a text file), and you'll see a few lines of code like this:
+
+```
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+# gem "rails" 
+
+gem "jekyll", "-> 4.2"
+```
+
+
+
 ### Create the `_config.yml` file
 
 YML means "YAML ain't markup language" (I'm serious). The `_config.yml` file is there to establish some basic information about your site and manage any plugins you might eventually supply. Let's start with a super simple YAML file to configure your site. (Obviously, you should customize this to your website's information). This is basically a text file that you save with the name `_config.yml` and save in the directory that will be publishing your website. **If you will be configuring GitHub Pages to publish from your `docs/` directory, save this in `docs/`**. 
@@ -134,6 +169,13 @@ title: Elisa Beshero's Portfolio Website
 description: representing my digital projects
 
 ```
+
+### Set up your cloud GitHub repo for GitHub Pages with GitHub Actions
+
+At this point, go ahead and push your new code to the cloud repo. We should configure the repo to publish GitHub Pages.
+We'll do this using **GitHub Actions**, which will be able to locate your Jekyll site wherever you build it in the repo. (We still recommend doing the site setup in a `docs/` directory if you want to archive other code outside the website files.)
+GitHub Actions was introduced in late December 2021 and it contains lots of nifty automated testing and building features for Jekyll sites. 
+
 
 
 
