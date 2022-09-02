@@ -333,6 +333,9 @@ Remember to post a link to your published website on the little "About" window i
 
 ## Resources and further reading
 
+Our model Jekyll website repo: https://github.com/newtfire/jekyllSetup 
+* and its published website: https://newtfire.github.io/jekyllSetup/ 
+
 GitHub documentation on setting up a GitHub Pages site with Jekyll: 
 https://docs.github.com/en/enterprise-server@3.1/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site
 
