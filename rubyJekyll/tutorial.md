@@ -271,6 +271,20 @@ https://github.com/newtfire/jekyllSetup
 * You still have an index.html as the root page of your website, but notice how differently it is organized! Our sample index.html looks like this: 
 
 ```
+---
+layout: default
+title: Home
+url: "https://newtfire.github.io/jekyllSetup/index.html"
+---
+<section>
+    <p>Welcome to my site.</p>
+    
+   {% include mirrornewts.html %}
+   
+   
+    <p>We are at <a href="https://behrend.psu.edu/">Penn State Erie, The Behrend
+        College</a>.</p>
+</section>
 
 ```
 
@@ -310,7 +324,9 @@ bundle exec jekyll serve
 
 Remember, you're screening these **local build** files from being pushed to GitHub. (GitHub Actions should do in the cloud what your Jekyll build is doing locally.) 
 
-When you push your site to the cloud, it'll take the usual few minutes for GitHub Actions to publish GitHub Pages, and your site might not look *quite* identical to your local build. For example, we're having trouble posting a "last-updated" date/timestamp on GitHub Pages, but we can get it to show in the local build. That's a matter [for further research and development](https://github.com/newtfire/jekyllSetup/issues/1)!
+When you push your site to the cloud, it'll take the usual few minutes for GitHub Actions to publish GitHub Pages. Watch to make sure there aren't any build errors on GitHub Pages, too, or anything that prevents the site from publishing. Most likely, if your site built locally, GitHub Pages will publish it in close to the same way, but your site might not look *quite* identical to your local build. For example, we're having trouble posting a "last-updated" date/timestamp on GitHub Pages, but we can get it to show in the local build. That's a matter [for further research and development](https://github.com/newtfire/jekyllSetup/issues/1)! 
+
+
 
 
 ## Resources and further reading
