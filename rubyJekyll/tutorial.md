@@ -158,18 +158,83 @@ source "https://rubygems.org"
 gem "jekyll", "-> 4.2"
 ```
 
-
-
-
 ### Create the `_config.yml` file
 
 YML means "YAML ain't markup language" (I'm serious). The `_config.yml` file is there to establish some basic information about your site and manage any plugins you might eventually supply. Let's start with a super simple YAML file to configure your site. (Obviously, you should customize this to your website's information). This is basically a text file that you save with the name `_config.yml` and save in the directory that will be publishing your website. **If you will be configuring GitHub Pages to publish from your `docs/` directory, save this in `docs/`**. 
 
 ```
 title: Elisa Beshero's Portfolio Website
+name: Elisa Beshero
 description: representing my digital projects
+timezone: America/New_York
 
 ```
+
+### Install some useful plugins: Update the `Gemfile` and `_config.yml`
+Let's install some useful Jekyll plugins now, if you like. We'll just install a few to start, but this process will orient you on how to add other plugins you may discover. 
+
+* **jekyll-sitemap** : This creates a site map, which is helpful for **search engine optimization (SEO)** 
+(it helps web crawling engines to optimize your site in search results)
+
+* **jekyll-seo-tag** : This is good for SEO, too, because it adds helpful meta tags for the web crawling bots
+
+* **jekyll-feed** : If you're creating blog posts, this is good for creating an RSS feed for your posts
+
+
+1. To call for these plugins, start with the `Gemfile`: 
+**Enter this code after the last line in your `Gemfile`**, to call for a Jekyll plugin group (and save the file)
+
+```
+group :jekyll_plugins do
+  gem 'jekyll-sitemap'
+  gem 'jekyll-seo-tag'
+  gem 'jekyll-feed'
+end
+```
+
+2. To be able to apply the plugins, we *also* need to add them to `_config.yml`.
+Open up `_config.yml` and add the following lines (and save the file)
+
+```
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+ 
+```
+
+3. Now, time to install the plugins. Go to your Terminal (Mac) or Git Bash (Windows) and enter:
+
+```
+bundle update
+```
+Wait a second for this to update your gems! 
+
+#### Using the plugins (seo-tag and RSS feed)
+
+When you're ready with your website files and your default.html layout, you can call the plugins on your site something like this (taken from a sample **default.html** in the Jekyll documentation https://jekyllrb.com/docs/step-by-step/10-deployment/)
+Notice how these get set in the `<head>` element in the HTML:
+
+```
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    {% feed_meta %}
+    {% seo %}
+  </head>
+  <body>
+    {% include navigation.html %}
+    {{ content }}
+  </body>
+</html>
+
+```
+
+
+### TBD: `_layouts` and `_includes`
 
 ### Set up your cloud GitHub repo for GitHub Pages with GitHub Actions
 
@@ -180,7 +245,7 @@ GitHub Actions was introduced in late December 2021 and it contains lots of nift
 
 
 
-### TBD: `_layouts` and `_includes`
+
 
 ### TBD: Building your site locally
 
