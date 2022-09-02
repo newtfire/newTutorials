@@ -158,6 +158,34 @@ source "https://rubygems.org"
 gem "jekyll", "-> 4.2"
 ```
 
+#### Add some gems you will likely need
+You may need something to handle time zone information if you're going to try tracking timestamps.
+Add this gem:
+
+```
+gem "tzinfo-data"
+```
+
+**WINDOWS users need WDM gem**
+You will need to add a gem called Windows Directory Monitor (wdm) to the Gemfile:
+
+```
+gem "wdm"
+```
+
+At the Git Bash shell (Windows) or Terminal (Mac), run two more commands:
+```
+bundle add webrick
+```
+
+Apparently `webrick` is something missing from the latest Ruby gems that apparently needs to be added back (grumble). 
+Then install the new gems by entering:
+
+```
+bundle install
+```
+(It will take a few seconds or so for wdm to install.)
+
 ### Create the `_config.yml` file
 
 YML means "YAML ain't markup language" (I'm serious). The `_config.yml` file is there to establish some basic information about your site and manage any plugins you might eventually supply. Let's start with a super simple YAML file to configure your site. (Obviously, you should customize this to your website's information). This is basically a text file that you save with the name `_config.yml` and save in the directory that will be publishing your website. **If you will be configuring GitHub Pages to publish from your `docs/` directory, save this in `docs/`**. 
@@ -234,7 +262,17 @@ Notice how these get set in the `<head>` element in the HTML:
 ```
 
 
-### TBD: `_layouts` and `_includes`
+### Work on `_layouts` and `_includes` and site contents
+
+You want to familiarize yourself with how Jekyll sites are organized now! Our sample repo files should help: 
+https://github.com/newtfire/jekyllSetup 
+
+* You store a default.html (and any other layout files) in the `_layouts/` folder. 
+* You still have an index.html as the root page of your website, but notice how differently it is organized! Our sample index.html looks like this: 
+
+```
+
+```
 
 ### Set up your cloud GitHub repo for GitHub Pages with GitHub Actions
 
@@ -244,10 +282,7 @@ GitHub Actions was introduced in late December 2021 and it contains lots of nift
 
 
 
-
-
-
-### TBD: Building your site locally
+###  Building your site locally
 
 In your (Mac) Terminal or (Windows) Git Bash, enter:
 
@@ -255,15 +290,28 @@ In your (Mac) Terminal or (Windows) Git Bash, enter:
 bundle exec jekyll serve
 ```
 
-If this succeeds, Jekyll will locate your configuration files successfully and build your site in a new local `sites/` directory. Jekyll will also share a local URL served by your computer from a special port number. Copy and paste the local URL that Jekyll provides into a web browser. It'll look something like:
+**If this succeeds**, Jekyll will locate your configuration files successfully and build your site in a new local `sites/` directory. Jekyll will also share a local URL served by your computer from a special port number. Copy and paste the local URL that Jekyll provides into a web browser. It'll look something like:
 
 ```
 http://someNumbers.0.0.1:4000
 ```
 
+**If it fails**, look carefully at the messages in your shell, which will try to explain the problem. You might be missing a gem, or need to install/configure something. Looking up error messages in Google often helps! Compare notes with each other and me over the #digit-400 channel in DIGIT-Coders Slack!
 
+Once you get the website's local build running, take a look at the new files build inside `_sites/`. Do you see a new .xml file with the sitemap? (Open it up in oXygen and take a look at it.) Also (of course!) take a look at your locally built website by plugging in the URL your shell gives you. You can use this to help you debug your site.
 
-### TBD: Publishing with GitHub Pages
+If you need to make a change to your site, **stop the local build** (usually by entering CTRL + C). On Windows, you then answer "Y/N" to "Terminate batch job?" Save your changes, and then rebuild your site with 
+
+```
+bundle exec jekyll serve
+```
+
+### Pushing your website files to publish on GitHub Pages
+
+Remember, you're screening these **local build** files from being pushed to GitHub. (GitHub Actions should do in the cloud what your Jekyll build is doing locally.) 
+
+When you push your site to the cloud, it'll take the usual few minutes for GitHub Actions to publish GitHub Pages, and your site might not look *quite* identical to your local build. For example, we're having trouble posting a "last-updated" date/timestamp on GitHub Pages, but we can get it to show in the local build. That's a matter [for further research and development](https://github.com/newtfire/jekyllSetup/issues/1)!
+
 
 ## Resources and further reading
 
@@ -273,7 +321,6 @@ https://docs.github.com/en/enterprise-server@3.1/pages/setting-up-a-github-pages
 Jekyll documentation on Gemfiles and plugins for GitHub Pages: https://jekyllrb.com/docs/step-by-step/10-deployment/ 
 
 Testing your GitHub Pages site locally with Jekyll: https://docs.github.com/en/enterprise-server@3.1/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll 
-
 
 
 Jonathan McGlone's [Creating and Hosting a Personal Site on GitHub](http://jmcglone.com/guides/github-pages/index.html)
