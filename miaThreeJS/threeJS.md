@@ -18,7 +18,7 @@ Before we dive into making our awesome 3D website, we need to install `Node.js` 
             at the command line. 
   -We strongly recommend writing your code in [JetBrains' WebStorm](https://www.jetbrains.com/webstorm/download/), 
                 which we will explore as an alternative
-            to the oXygen XML Editor for working intensively on JavaScript projects.</li>
+            to the oXygen XML Editor for working intensively on JavaScript projects.
 
 
 ### **Install Node.js**

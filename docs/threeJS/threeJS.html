@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -28,7 +28,7 @@
     
         <h1 id="threejs-tutorial---create-3d-environments-with-html-and-javascript">Three.JS Tutorial - Create 3D
             Environments with HTML and Javascript</h1>
-        <div class="imgWrap"><img id="blog" src="images\screenshots\threeJSblog.jpg" alt="three.js blog"></div>
+        <div class="imgWrap"><img id="blog" src="images/screenshots/threeJSblog.jpg" alt="three.js blog"></div>
         <p>Check out an example:
             <a href="https://am0eba-byte.github.io/internshipblog-3js/">Three.js Blog</a>
         </p>
@@ -80,30 +80,21 @@
 
     <section>
         <h2 id="installations"><em>Installations</em></h2>
-        <p>Before we dive into making our awesome 3D website, we need to install <code>Node.js</code> and
+        <ul><li>Before we dive into making our awesome 3D website, we need to install <code>Node.js</code> and
             <code>npm</code>
             at the command line.
-        </p>
-        <ul>
-            <li><strong>Hot tip</strong>: Assuming you're reading this because you're in one of Dr. B's classes, you're
-                probably using oXygen as your code editor. oXygen is really great for working with XML, XSLT, and many
-                other
-                XML-based languages - but for languages like Javascript, where methods and functions are hard to
-                remember
-                for beginners, oXygen does not provide very good syntax highlighting and helpful suggestions as you
-                code.
-            </li>
-            <li><strong>FOR THIS REASON</strong>, we recommend downloading <a
-                    href="https://code.visualstudio.com/">Visual
-                    Studio Code</a> to develop your three.js websites in. It's completely free, and it is simply the
-                best
-                for writing Javascript. You'll never want to write Javascript in any other code editor ever again.
-                (Sorry
-                Dr. B lol)</li>
-            <li>you dont <em>neeeeed</em> VS Code to make your Three.JS website... but I'm tellin ya, it's just way
-                better.
-                You'll see what I mean.</li>
+        </li>
+            <li>We strongly recommend writing your code in <a href="https://www.jetbrains.com/webstorm/download/">JetBrains' WebStorm</a>,
+                which we will explore as an alternative
+                to the oXygen XML Editor for working intensively on JavaScript projects.</li>
         </ul>
+        <p>Note from Dr. B (2023-10-18): This tutorial was originally written with VS Code instead of Webstorm as the code editor.
+        You'll probably see some references to VS Code that we haven't converted over to Webstorm yet--just read around those parts, and
+            we'll try to update them as we go. ALSO, this tutorial is a fresh work in progress, and we'll be debugging it together as we
+            work on it! Thanks for helping catch bugs here! Report them in the DIGIT-Codere Slack #javascript channel!
+        </p>
+
+
     </section>
     <section>
         <h3 id="install-nodejs"><strong>Install Node.js</strong></h3>
@@ -117,7 +108,7 @@
                 you
                 can use as well:</li>
         </ul>
-        <div class="imgWrap"><img class="img" src="images\screenshots\VScodeTerminal.jpg" alt="VS code terminal"></div>
+        <div class="imgWrap"><img class="img" src="images/screenshots/VScodeTerminal.jpg" alt="VS code terminal"></div>
         <ul>
             <li>Enter this command to check if you already have Node.JS Installed:
                 <pre>  node -v
@@ -168,7 +159,7 @@
             command:
         </p>
         <pre>
-            npm init @vitejs/app
+            npm init vite
         </pre>
         <p>Follow the prompts given at command line:</p>
         <ul>
@@ -177,7 +168,9 @@
             <li>select <code>vanilla</code> framework (yellow)</li>
             <li>select <code>Javascript</code> for the language (yellow)</li>
         </ul>
-        <p>This will create some new files in your directory.</p>
+        <p>This will create some new files in your directory. <strong>On Windows and the arrow keys don't work?</strong>
+            Switch to Windows Powershell or Windows terminal, navigate to your project folder and enter the same commands.
+        </p>
         <p>Now, enter these commands <i>separately</i>. The command line terminal prompts these for you when you create
             your Vite app:</p>
         <pre>
@@ -236,12 +229,12 @@
         <p>
             When you run the command <code>npm run dev</code>, whenever you make new edits to your code, your localhost
             browser will automatically refresh and
-            reflect your changes.
-            <ab>
+            reflect your changes.</p>
+            <blockquote>
                 You will not be able to enter any new commands into your terminal until you kill the localhost serve
                 process.
-            </ab>
-        </p>
+            </blockquote>
+
         <p>
             To "kill" or end your dev server process in your command line terminal, simply enter <b>CTRL + C</b> (or CMD
             + C on Mac) in the terminal.
@@ -440,7 +433,7 @@
             light, replacing it with <code>BasicMaterial</code> , which does not accept light:</p>
         <pre>const material = new THREE.MeshStandardMaterial( { color: 0xFF6347 } );
         </pre>
-        <div class="imgWrap"><img class="imgSm" src="images\screenshots\standardMaterial.jpg" alt="standard material cube"></div>
+        <div class="imgWrap"><img class="imgSm" src="images/screenshots/standardMaterial.jpg" alt="standard material cube"></div>
     </section>
     <section>
         <h1 id="animate-your-scene">Animate your scene</h1>
@@ -463,7 +456,7 @@
         <pre>animate();
         </pre>
         <p>Congratulations! Your scene should now look something like this:</p>
-        <div class="imgWrap"><img class="img" src="images\screenshots\twoObjects.jpg" alt="three.JS object screenshot"></div>
+        <div class="imgWrap"><img class="img" src="images/screenshots/twoObjects.jpg" alt="three.JS object screenshot"></div>
     </section>
     <section>
         <h2 id="threejs-helpers">Three.JS Helpers</h2>
@@ -478,7 +471,7 @@
         
         scene.add(lightHelper)
         </pre>
-        <div class="imgWrap"><img class="img" src="images\screenshots\lightHelper.jpg" alt="light helper"></div>
+        <div class="imgWrap"><img class="img" src="images/screenshots/lightHelper.jpg" alt="light helper"></div>
         <p>We can also add a <strong>Grid Helper</strong> to show the 3D axes of our scene.</p>
         <pre>const gridHelper = new THREE.GridHelper(200,50);
         
@@ -537,7 +530,7 @@
                     using this one:</p>
             </li>
         </ul>
-        <div class="imgWrap"><img class="img" src="images\night_sky.jpg" alt="night sky background photo"></div>
+        <div class="imgWrap"><img class="img" src="images/night_sky.jpg" alt="night sky background photo"></div>
         <ul>
             <li>
                 <p>save the image file of your choosing inside your new <code>/images</code> directory.</p>
@@ -552,7 +545,7 @@
         
         scene.background = spaceTexture;
         </pre>
-        <div class="imgWrap"><img class="img" src="images\screenshots\backgroundTexture.jpg" alt="background texture scene"></div>
+        <div class="imgWrap"><img class="img" src="images/screenshots/backgroundTexture.jpg" alt="background texture scene"></div>
     </section>
     <section>
         <h2 id="texture-mapping">Texture Mapping</h2>
@@ -561,7 +554,7 @@
             object. Three.JS allows us to do this by creating <code>Texture</code> objects and applying them to our 3D
             objects using methods.</p>
         <p>Find an image file that you'd like to apply to the surface of a new object. We will be using this one:</p>
-        <div class="imgWrap"><img class="imgSm" src="images\smile.jpg" alt="smiley face texture"></div>
+        <div class="imgWrap"><img class="imgSm" src="images/smile.jpg" alt="smiley face texture"></div>
         <p>Save your texture image file in your <code>/images</code> directory.</p>
         <p>Now, in our <code>main.js</code>, let's create a new texture that we will map onto a new object:</p>
         <pre>// Object texture mapping
@@ -595,7 +588,7 @@
         
         scene.add(smileMesh);
         </pre>
-        <div class="imgWrap"><img class="img" src="images\screenshots\textureMapping.jpg"
+        <div class="imgWrap"><img class="img" src="images/screenshots/textureMapping.jpg"
                 alt="new texture-mapped object"></div>
         <p>You can manipulate the object's static position, rotation, and size as you wish, the same as your other
             objects.
@@ -634,14 +627,14 @@
             <a href="http://cpetry.github.io/TextureGenerator-Online/">Texture Generator Online</a>
         </p>
         <p>Here's the texture we generated:</p>
-        <div class="imgWrap"><img class="imgSm" src="images\texture.png" alt="texture"></div>
+        <div class="imgWrap"><img class="imgSm" src="images/texture.png" alt="texture"></div>
         <p>Now, we must convert this texture image file into a normal map. We used this site to upload our texture image
             file and have it converted into a normal:
             <a href="https://cpetry.github.io/NormalMap-Online/">Normal Map Online</a>
         </p>
         <p>Here's the normal map that was generated from our image:
         </p>
-        <div class="imgWrap"> <img class="imgSm" src="images\textureNormal.png" alt="normal map"></div>
+        <div class="imgWrap"> <img class="imgSm" src="images/textureNormal.png" alt="normal map"></div>
         <p>Now we need to create a new <code>normalTexture</code> object in our Javascript by loading a new texture and
             loading in our normalMap image file:</p>
         <pre>const normalTexture = new THREE.TextureLoader().load('images/normals/textureNormal.png');
@@ -668,7 +661,7 @@
         <p>We also added a <code>roughness</code> and <code>metalness</code> property value to make our new object look
             more
             shiny and reflect light. Your scene should look something like this:</p>
-        <div class="imgWrap"><img class="img" src="images\screenshots\normalMapping.jpg" alt="normal mapping"></div>
+        <div class="imgWrap"><img class="img" src="images/screenshots/normalMapping.jpg" alt="normal mapping"></div>
     </section>
 
     <section>
@@ -694,7 +687,7 @@
             </h3>
             <p>
                 Move the following files inside the new <code>dist</code> folder:
-                 
+                     </p>
             <ul>
                 <li>index.html</li>
                 <li>style.css</li>
@@ -702,19 +695,19 @@
                 <li>the <code>/images</code> folder containing your image files that you are using for your meshes and
                     scene backgrounds.</li>
             </ul>
-            </p>
+
             <h3>
                 <b>Step 3</b>
             </h3>
             <p>
                 Within your <code>package.json</code> file, add the fillowing line of code inside your
-                <code>"scripts"</code>:
+                <code>"scripts"</code>:  </p>
 
             <pre>
                             "deploy": "gh-pages -d dist"
                         </pre>
 
-            </p>
+
             <p>Your <code>"scripts"</code> JSON should now look like this:</p>
             <pre>
             "scripts": {
