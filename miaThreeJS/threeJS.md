@@ -68,7 +68,7 @@ Once you have made your project directory, open the command line at your empty d
 
 
 ```
-npm init @vitejs/app
+npm init vite
 ```
 Follow the prompts given at command line:
 
@@ -76,6 +76,9 @@ Follow the prompts given at command line:
 - name your package (press enter for default)
 - select `vanilla` framework (yellow)
 - select `Javascript` for the language (yellow)
+
+* **NOTE** If you cannot select with the arrow keys on your Windows computer, 
+switch to Windows Powershell or Windows terminal (instead of Git Bash)
 
 This will create some new files in your directory.
 
