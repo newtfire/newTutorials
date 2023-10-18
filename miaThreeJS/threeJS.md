@@ -13,9 +13,13 @@ See other awesome things you can do with three.js:
 
 Before we dive into making our awesome 3D website, we need to install `Node.js` and `npm` at the command line.
 
-- **Hot tip**: Assuming you're reading this because you're in one of Dr. B's classes, you're probably using oXygen as your code editor. oXygen is really great for working with XML, XSLT, and many other XML-based languages - but for languages like Javascript, where methods and functions are hard to remember for beginners, oXygen does not provide very good syntax highlighting and helpful suggestions as you code.
-- **FOR THIS REASON**, we recommend downloading [Visual Studio Code](https://code.visualstudio.com/) to develop your three.js websites in. It's completely free, and it is simply the best for writing Javascript. You'll never want to write Javascript in any other code editor ever again. (Sorry Dr. B lol)
-- you dont *neeeeed* VS Code to make your Three.JS website... but I'm tellin ya, it's just way better. You'll see what I mean.
+  -Before we dive into making our awesome 3D website, we need to install <code>Node.js</code> and
+            <code>npm</code>
+            at the command line. 
+  -We strongly recommend writing your code in [JetBrains' WebStorm](https://www.jetbrains.com/webstorm/download/), 
+                which we will explore as an alternative
+            to the oXygen XML Editor for working intensively on JavaScript projects.</li>
+
 
 ### **Install Node.js**
 
