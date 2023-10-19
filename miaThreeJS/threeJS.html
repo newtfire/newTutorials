@@ -27,7 +27,7 @@
 
     <h1 id="threejs-tutorial---create-3d-environments-with-html-and-javascript">Three.JS Tutorial - Create 3D
         Environments with HTML and Javascript</h1>
-    <div class="imgWrap"><img id="blog" src="images\screenshots\threeJSblog.jpg" alt="three.js blog"></div>
+    <div class="imgWrap"><img id="blog" src="images/screenshots/threeJSblog.jpg" alt="three.js blog"></div>
     <p>Check out an example:
         <a href="https://am0eba-byte.github.io/internshipblog-3js/">Three.js Blog</a>
     </p>
@@ -120,7 +120,7 @@
                 you
                 can use as well:</li>
         </ul>
-        <div class="imgWrap"><img class="img" src="images\screenshots\VScodeTerminal.jpg" alt="VS code terminal"></div>
+        <div class="imgWrap"><img class="img" src="images/screenshots/VScodeTerminal.jpg" alt="VS code terminal"></div>
         <ul>
             <li>Enter this command to check if you already have Node.JS Installed:
                 <pre>  node -v
@@ -447,7 +447,7 @@
             light, replacing it with <code>BasicMaterial</code> , which does not accept light:</p>
         <pre>const material = new THREE.MeshStandardMaterial( { color: 0xFF6347 } );
         </pre>
-        <div class="imgWrap"><img class="imgSm" src="images\screenshots\standardMaterial.jpg" alt="standard material cube"></div>
+        <div class="imgWrap"><img class="imgSm" src="images/screenshots/standardMaterial.jpg" alt="standard material cube"></div>
     </section>
     <section>
         <h1 id="animate-your-scene">Animate your scene</h1>
@@ -470,7 +470,7 @@
         <pre>animate();
         </pre>
         <p>Congratulations! Your scene should now look something like this:</p>
-        <div class="imgWrap"><img class="img" src="images\screenshots\twoObjects.jpg" alt="three.JS object screenshot"></div>
+        <div class="imgWrap"><img class="img" src="images/screenshots/twoObjects.jpg" alt="three.JS object screenshot"></div>
     </section>
     <section>
         <h2 id="threejs-helpers">Three.JS Helpers</h2>
@@ -485,7 +485,7 @@
         
         scene.add(lightHelper)
         </pre>
-        <div class="imgWrap"><img class="img" src="images\screenshots\lightHelper.jpg" alt="light helper"></div>
+        <div class="imgWrap"><img class="img" src="images/screenshots/lightHelper.jpg" alt="light helper"></div>
         <p>We can also add a <strong>Grid Helper</strong> to show the 3D axes of our scene.</p>
         <pre>const gridHelper = new THREE.GridHelper(200,50);
         
@@ -559,7 +559,7 @@
         
         scene.background = spaceTexture;
         </pre>
-        <div class="imgWrap"><img class="img" src="images\screenshots\backgroundTexture.jpg" alt="background texture scene"></div>
+        <div class="imgWrap"><img class="img" src="images/screenshots/backgroundTexture.jpg" alt="background texture scene"></div>
     </section>
     <section>
         <h2 id="texture-mapping">Texture Mapping</h2>
@@ -568,7 +568,7 @@
             object. Three.JS allows us to do this by creating <code>Texture</code> objects and applying them to our 3D
             objects using methods.</p>
         <p>Find an image file that you'd like to apply to the surface of a new object. We will be using this one:</p>
-        <div class="imgWrap"><img class="imgSm" src="images\smile.jpg" alt="smiley face texture"></div>
+        <div class="imgWrap"><img class="imgSm" src="images/smile.jpg" alt="smiley face texture"></div>
         <p>Save your texture image file in your <code>/images</code> directory.</p>
         <p>Now, in our <code>main.js</code>, let's create a new texture that we will map onto a new object:</p>
         <pre>// Object texture mapping
@@ -602,7 +602,7 @@
         
         scene.add(smileMesh);
         </pre>
-        <div class="imgWrap"><img class="img" src="images\screenshots\textureMapping.jpg"
+        <div class="imgWrap"><img class="img" src="images/screenshots/textureMapping.jpg"
                 alt="new texture-mapped object"></div>
         <p>You can manipulate the object's static position, rotation, and size as you wish, the same as your other
             objects.
@@ -675,7 +675,7 @@
         <p>We also added a <code>roughness</code> and <code>metalness</code> property value to make our new object look
             more
             shiny and reflect light. Your scene should look something like this:</p>
-        <div class="imgWrap"><img class="img" src="images\screenshots\normalMapping.jpg" alt="normal mapping"></div>
+        <div class="imgWrap"><img class="img" src="images/screenshots/normalMapping.jpg" alt="normal mapping"></div>
     </section>
 
     <section>
