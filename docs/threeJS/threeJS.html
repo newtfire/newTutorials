@@ -152,10 +152,10 @@
         <p>Now you're all set to create your new project repository!</p>
     </section>
     <section>
-        <h3 id="create-an-empty-project-directory-and-install-vite"><strong>Create an empty project directory, and
+        <h3 id="create-an-empty-project-directory-and-install-vite"><strong>Create or locate an empty project-container directory to sit outside your project, and
                 install
-                VITE</strong></h3>
-        <p>Once you have made your project directory, open the command line at your empty directory and enter this
+                VITE</strong>. Note that this will NOT be your actual project, just a directory to house it. (Dr. B edit: Mine is named Node-JS-Projects.)</h3>
+        <p>Once you have made your project-container directory, open the command line at your empty directory and enter this
             command:
         </p>
         <pre>
@@ -168,8 +168,8 @@
             <li>select <code>vanilla</code> framework (yellow)</li>
             <li>select <code>Javascript</code> for the language (yellow)</li>
         </ul>
-        <p>This will create some new files in your directory. <strong>On Windows and the arrow keys don't work?</strong>
-            Switch to Windows Powershell or Windows terminal, navigate to your project folder and enter the same commands.
+        <p>This will create a new directory with the name you give you project, and it will contain some new files. <strong>On Windows and the arrow keys don't work?</strong>
+            Switch to Windows Powershell or Windows terminal, navigate to your new project folder and enter the same commands.
         </p>
         <p>Now, enter these commands <i>separately</i>. The command line terminal prompts these for you when you create
             your Vite app:</p>
@@ -204,7 +204,7 @@
         <p>These files and directory contain dependencies that NPM automagically generates for you. Humans do not need
             to
             touch them directly, and should never touch them for any reason at all - <em>or you'll destroy the
-                planet</em>
+                planet</em>. (Not really, actually we will be editing package.json later.)
         </p>
     </section>
     <section>
@@ -220,9 +220,9 @@
             <img class="img" src="images/screenshots/npm-run-dev.jpg" alt="static dev server runnning" />
         </div>
         <p>
-            Click the link to your <code>https://localhost:3000</code> dev server to preview your app, and voila! Your
+            Click the link to your <code>https://localhost:5173</code> dev server to preview your app, and voila! Your
             Vite project
-            is set up and running locally.
+            is set up and running locally. (The port number you are given might be different: mine is 5173.)
         </p>
 
 
@@ -272,7 +272,7 @@
         &lt;/head&gt;
         &lt;body&gt;
             &lt;canvas id=&quot;bg&quot;&gt;&lt;/canvas&gt;
-            &lt;script type=&quot;module&quot; src=&quot;/main.js&quot;&gt;&lt;/script&gt;
+            &lt;script type=&quot;module&quot; src=&quot;main.js&quot;&gt;&lt;/script&gt;
         &lt;/body&gt;
         &lt;/html&gt;
       </pre>
@@ -622,7 +622,7 @@
             lighting of bumps and dents – an implementation of bump mapping. It is used to add details without using
             more
             polygons.</p>
-        <p>To create a normal, you must first find a texture image you like that can be converted into a normal.</p>
+        <p>To create a "normal", you must first find a texture image you like that can be converted into a "normal".</p>
         <p>We used this site to generate and customize a texture:
             <a href="http://cpetry.github.io/TextureGenerator-Online/">Texture Generator Online</a>
         </p>
@@ -695,9 +695,28 @@
                 <li>the <code>/images</code> folder containing your image files that you are using for your meshes and
                     scene backgrounds.</li>
             </ul>
-
             <h3>
                 <b>Step 3</b>
+            </h3>
+            <p>We need to make a change to the files in the dist folder so that GitHub Pages can access the Three JS library.
+                (Explanation: We can't install three.js on GitHub's servers and it is only running in our local computer environment. But
+                there are cloud service providers who can make the Three.JS library available in the GitHub environment, too. 
+                We are going to add them here.)</p>
+            <p><strong>Look the dist folder</strong> and locate your main.js file. Open that dist/main.js file and edit the top lines
+                that handle the three.js library import so they look like this:</p>
+       
+            <pre>
+                import * as THREE from 'https://cdn.skypack.dev/three@0.128.0/build/three.module.js';
+                import { OrbitControls } from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/controls/OrbitControls.js';
+                import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/loaders/GLTFLoader.js';
+            </pre>
+            
+            (You may find yourself needing more or different links to the CDN (content-delivery-network) service. Check out 
+            <a href="https://threejs.org/docs/#manual/en/introduction/Installation">the Three.JS installation documentation</a> for more details and some other 
+            alternatives.
+
+            <h3>
+                <b>Step 4</b>
             </h3>
             <p>
                 Within your <code>package.json</code> file, add the fillowing line of code inside your
@@ -717,7 +736,7 @@
             </pre>
 
             <h3>
-                Step 4
+                Step 5
             </h3>
             <p>
                 Make sure you are at the root of your project directory. Run the following command in your project to
@@ -733,7 +752,7 @@
 
             </p>
             <h3>
-                <b>Step 5</b>
+                <b>Step 6</b>
             </h3>
             <p>
                 Now we just need to push the project to a new repository on GitHub.
@@ -773,7 +792,7 @@
                   git push origin main
             </pre>
 
-            <h3><b>Step 6</b></h3>
+            <h3><b>Step 7</b></h3>
             <p>
                 Once all your code is pushed to the master branch, go to your repo on GitHub.com
                 and create a new branch. <b>Name it “<code>gh-pages</code>”.</b>
