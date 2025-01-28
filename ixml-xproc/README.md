@@ -11,6 +11,9 @@ MAC OS notes
      * Dr. B's version is java 19, so upgrading
      * To get the latest Open JDK 23, go here: <https://jdk.java.net/23/>
      * Choose the version for your computer. Note that macOS / AArch64 is for the M series macs (non-Intel chip)
-     * Follow these installation instructions for Mac: <https://www.codejava.net/java-se/install-openjdk-23-on-macos>
+     * Installing latest openjdk on Mac with homebrew: <https://ansidev.xyz/posts/2023-07-11-how-to-install-openjdk-on-macos>
+     * **Note** if uninstalling Oracle Java, follow these instructions: <https://www.java.com/en/download/help/mac_uninstall_java.html> 
+         
+  
 
 
