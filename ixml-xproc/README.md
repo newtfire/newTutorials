@@ -22,6 +22,8 @@ MAC OS notes
           * Enter this command `chmod 775 xmlcalabash-app-3.0.0-alpha17.jar`.
       * If you enter `ls -lisa` again, you should now see the permissions look like this, with the `x` set for "executable":
           *  ` -rwxrwxr-x@ `
+    * Now you should be able to run the java file. Test if it works. This 'help' shell command will show you all the different commands available:
+          * `java -jar xmlcalabash-app-3.0.0-alpha1 help`
 
          
   
