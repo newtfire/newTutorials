@@ -19,9 +19,9 @@ MAC OS notes
     * Open your shell and navigate to your new xmlcalabash folder. For this to work we need to be able to use Java to execute the .jar file inside.
       * Check whether your **xmlcalabash-app[...].jar** file is executable by running the command `ls -lisa` which reveals lots of information: Check the permissions:
       * Do they read `-rw-r--r--@`? If so we need to use the `chmod` command to make the file be executable on your computer system. 
-        Enter this command `chmod 775 xmlcalabash-app-3.0.0-alpha17.jar`.
-      * If you enter `ls -lisa` again, you should now see the permissions look like this, with the `x` set for "executable": 
-        ` -rwxrwxr-x@ `
+          * Enter this command `chmod 775 xmlcalabash-app-3.0.0-alpha17.jar`.
+      * If you enter `ls -lisa` again, you should now see the permissions look like this, with the `x` set for "executable":
+          *  ` -rwxrwxr-x@ `
 
          
   
