@@ -18,7 +18,7 @@ MAC OS notes
     * Unzip this and move it somewhere central where it's easy to work with. I set my unzipped xmlcalabash folder in my GitHub directory so it's near where I work on code.
     * Open your shell and navigate to your new xmlcalabash folder. For this to work we need to be able to use Java to execute the .jar file inside.
        Test if your Java installation works. This 'help' shell command will show you all the different commands available:
-          * `java -jar xmlcalabash-app-3.0.0-alpha1.jar help`
+          * `java -jar xmlcalabash-app-3.0.0-alpha17.jar help`
           * (NOTE: on the XML Calabash repo, they left out the `.jar` portion of the filename, so their line won't work)
 
          
