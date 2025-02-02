@@ -18,6 +18,7 @@ This is related to a tutorial under development at <http://dh.obdurodon.org/ixml
 
 # XProc Processors
 ## Calabash
+This one is for simpler pipelines.
 * Installing Calabash:
     * Get it from here: https://github.com/xmlcalabash/xmlcalabash3/releases/tag/3.0.0-alpha17 and look for the zip file at the bottom of the page after the release notes. The zip directory you need is the third one from the top (named something like this with the version number in the name): **xmlcalabash-3.0.0-alpha17.zip**
     * Unzip this and move it somewhere central where it's easy to work with. I set my unzipped xmlcalabash folder in my GitHub directory so it's near where I work on code.
@@ -28,14 +29,14 @@ This is related to a tutorial under development at <http://dh.obdurodon.org/ixml
           * (NOTE: on the XML Calabash repo, they left out the `.jar` portion of the filename, so their line won't work)
    * NOTE: **alpha18 release of 2 February 2025 indicates it is not backwards compatible with earlier releases** (Find out / test if we want a specific version?)
 
-* Macs: Test if you have graphviz by entering this in your terminal: `dot -V` . Probably you need to install GraphViz, and you can do that with `brew install graphviz`. 
+* Macs: **Test if you have graphviz** by entering this in your terminal: `dot -V` . Probably you need to install GraphViz, and you can do that with `brew install graphviz`. 
      * (Windows will need to install from https://graphviz.org/download/ )
 
 * CoffeeSacks: Get this from the versioned releases on the repo, here: https://github.com/nineml/coffeesacks/releases and find the latest one to download.
 * **Make the .xmlcalabash3* dot-file**: 
     * Navigate to your "home" directory (which is where you set up your .zshrc file and establish your aliases and environment variables and such like). In this location we'll be storing a dot-file which will help Calabash to run.
     * NOTE: We will NOT be using Saxon EE at all. We also need to know where Homebrew installed graphviz. Double-check by navigating to see if Homebrew installed it in the default location: `/opt/homebrew/bin/dot` .
-        * In my (probably extra special and weird) case, it did not. I found out where graphviz was installed by typing in `where dot` and following the paths. Mine is "symlinked" from `/usr/local/bin` which eventually showed me my way to the exact location on my machine (which was `/usr/local/Cellar/graphviz/12.2.1/bin`). This may be because I've installed a few different versions of graphviz for Python and other applications over the years. Anyway, just check and make sure you know where Homebrew installed graphviz and its executable `dot`. You will need this path.
+        * In my (probably extra special and weird) case, it did not. **I found out where graphviz was installed by typing in `where dot` and following the paths**. Mine is "symlinked" from `/usr/local/bin` which eventually showed me my way to the exact location on my machine (which was `/usr/local/Cellar/graphviz/12.2.1/bin`). This may be because I've installed a few different versions of graphviz for Python and other applications over the years. Anyway, just check and make sure you know where Homebrew installed graphviz and its executable `dot`. You will need this path.
     * Back in your "home" directory, make the new file. You can copy in this command in your terminal: `touch .xmlcalabash3` (with that leading dot exactly like that). Here's what you'll need inside:
 
     
@@ -69,6 +70,8 @@ alias calabash='/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/xmlcalaba
 
 ## CoffeePot
 To be used with the XProc processor [**Calabash**](#calabash)
+
+
 
 ## Markup Blitz
 
