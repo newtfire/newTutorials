@@ -18,7 +18,7 @@ This is related to a tutorial under development at <http://dh.obdurodon.org/ixml
 
 # XProc Processors
 ## Calabash
-This one is for simpler pipelines.
+This is an XProc processor that you can use with the ixml processor [**CoffeePot**](#coffeepot) that's good for simple grammars and input files that aren't super large.
 * Installing Calabash:
     * Get it from here: https://github.com/xmlcalabash/xmlcalabash3/releases/tag/3.0.0-alpha17 and look for the zip file at the bottom of the page after the release notes. The zip directory you need is the third one from the top (named something like this with the version number in the name): **xmlcalabash-3.0.0-alpha17.zip**
     * Unzip this and move it somewhere central where it's easy to work with. I set my unzipped xmlcalabash folder in my GitHub directory so it's near where I work on code.
@@ -64,6 +64,10 @@ alias calabash='/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/xmlcalaba
     
    * *For future reference*: As soon as we have an XProc pipeline file (`.xpl`) ready to run, we'll be running with a command like this, using the alias you created: `calabash filename.xpl` ). And we can see some nifty graphviz sketches of our pipeline if we append this to the command (including the dot at the end: `--graphs:.` like so: `calabash filename.xpl --graphs:.`
 
+
+# Morgana
+This is an XProc processor that you can use with more complex ixml contexts and for processing lots of input. It works with the ixml processor [**Markup Blitz**](#markup-blitz).
+
 =========================
 
 # ixml processors
@@ -74,6 +78,7 @@ To be used with the XProc processor [**Calabash**](#calabash)
 
 
 ## Markup Blitz
+To be used with the XProc processor [**Morgana**](#morgana)
 
 
   
