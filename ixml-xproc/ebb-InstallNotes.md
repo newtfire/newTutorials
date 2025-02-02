@@ -68,7 +68,7 @@ alias calabash='/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/xmlcalaba
 # ixml processors
 
 ## CoffeePot
-
+To be used with the XProc processor [**Calabash**](#calabash)
 
 ## Markup Blitz
 
