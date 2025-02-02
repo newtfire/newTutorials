@@ -68,7 +68,7 @@ alias calabash='/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/xmlcalaba
 # Morgana
 This is an XProc processor that you can use with more complex ixml contexts and for processing lots of input. It works with the ixml processor [**Markup Blitz**](#markup-blitz).
 
-=========================
+*********************
 
 # ixml processors
 
