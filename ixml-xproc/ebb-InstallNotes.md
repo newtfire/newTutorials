@@ -21,6 +21,8 @@ MAC OS notes
           * `java -jar xmlcalabash-app-3.0.0-alpha17.jar help`
           * (NOTE: on the XML Calabash repo, they left out the `.jar` portion of the filename, so their line won't work)
 
+* CoffeeSacks: Get this from the versioned releases on the repo, here: https://github.com/nineml/coffeesacks/releases and find the latest one to download.
+
          
   
 
