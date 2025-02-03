@@ -233,9 +233,20 @@ coffeepot -g:filename.ixml -i:filename.txt
         * NOTE: The SVG option is meant for simple/small things. CoffeePot won't be able to generate the SVG if it's going to be a large and complicated file. 
 
 ## Markup Blitz
-To be used with the XProc processor [**Morgana**](#morgana)
+To be used with the XProc processor [**Morgana**](#morgana). Up to this point, we have been unpacking a lot of jar (java archive) files. This time, we're actually going to *build* the jar for Markup Blitz in order to install it. 
+* For this, we'll follow the [official Markup Blitz instructions (on the README)](https://github.com/GuntherRademacher/markup-blitz).
+* (I cloned the markup-blitz repo in my GitHub directory.)
+* For Macs, this line (marked for Linux/Unix) works to build our jar: `./gradlew clean jar`
+* When Gradle finishes building you'll be returned to the command prompt. Check for the new jar, which you should now find in the repo in `build/libs/markup-blitz.jar`.
+* Finally, go to "home" to your `.zshrc` and make an alias for running your new markup-blitz.jar file. I called my alias "blitz" and my alias definition looks like this:
 
+  ```
+  alias blitz='java -jar /Users/eeb4/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar'
+  ```
+* To run Markup Blitz to process an ixml grammar and an input .txt file, use your new alias like this:
 
+  ```
+  blitz filename.ixml filename.txt
+  ```
   
-
 
