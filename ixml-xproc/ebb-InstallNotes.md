@@ -77,9 +77,14 @@ This is an XProc processor that you can use with more complex ixml contexts and 
   * You'll need the path to the SchXSLT transpile.xsl file: You'll find that in the main directory of the schxslt directory you just saved. (Mine is here: `/Users/eeb4/Documents/GitHub/schxslt2-1.3.1`
   * You'll need the path to a Saxon processor that can run XSLT and XQuery and such. You have this already if you installed Calabash: Saxon-HE comes in its library or "lib" folder: 
     Find/copy the path to the Saxon_HE jar file in your xml-calabash lib. (Here's mine:  `/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar`)
+  * We presume you're going to be installing [Markup Blitz](#markup-blitz) for your ixml processor (so our configuration settings for Morgana will be set to Markup Blitz.)
  
   * In your "home", make the configuration file with `touch morgana-config.xml`
-  * `nano morgana-config.xml`, paste in the following, and change the `<xslt-config>` line to your path to Saxon-HE.
+  * `nano morgana-config.xml`, paste in the following, and **adapt it** so you:
+     * Change the `<path_to_SchXSLT2_transpiler>` element contents to your path to the transpile.xsl file in schxslt directory. 
+     * Change the `<xslt-config>` element contents to your path to Saxon-HE.
+     * One more thing: notice the contents of the `<ixml-connector>` element. That's not a filepath, but it is an indicator of which ixml processor you're using. Our active setting in the code below is for Markup Blitz, but you can set this to Calabash instead. (We think you can set it to Calabash by using the NineMLConnector version that is commented out above it, but we should check the documentation to be sure). 
+    
 
     ```xml
     <morgana-config xmlns="http://www.xml-project.com/morganaxproc">
@@ -112,8 +117,57 @@ This is an XProc processor that you can use with more complex ixml contexts and 
 	-->
     </morgana-config>
     ```
+    
+* **Morgana alias**: Okay, now it's time to make an alias for Morgana! Open your `.zshrc` file. You will need to adapt my sample alias below to repreesent the location of 
+  * the location of your Morgana.sh file in the Morgana directory (I put mine over in my "GitHub" folder). 
+  * the location of your morgana-config.xml file (in your "home").
+  * My morgana alias looks like this:
+    ```
+    alias morgana='/Users/eeb4/Documents/GitHub/MorganaXProc-IIIse-1.4.10/Morgana.sh -config=/Users/eeb4/morgana-config.xml'
+    ```
+* Now we need some coffee! We'll go and download and install CoffeeFilter and CoffeeGrinder from <https://github.com/nineml>. (As usual I'm setting coffee stuff in my GitHub folder.)
+    * Download [the most recent CoffeeFilter](https://github.com/nineml/coffeefilter/releases), unzip it where you want it. 
+    * Download [the most recent CoffeeGrinder](), unzip it where you want it.
+ 
+* Now we need to make sure Morgana's executable script (the Morgana.sh file) can find its way to the CoffeeGrinder and CoffeeFilter jar files you just unpacked.
+    * First, navigate in your shell to where you saved the MorganaXproc-IIISe directory. Take a look with `ls` and make sure it has a file named `Morgana.sh` inside.
+    * Try `ls -lisa` to see its rwx (read-write-execute) prooperties. They probably look like this: `-rw-r--r--@`. We need to change it to make it executable.
+    * **Make Morgana.sh executable** : Do this with `chmod +x Morgana.sh`
+    * **Now, we need to edit Morgana.sh**.
+        * You'll need to adjust the lines marked `#Local customization` to identify the lcoation of Saxon-HE (we'll use the one in Calabash library), the CoffeeGrinder and CoffeeFilter .jar files, and finally the location of the Markup Blitz .jar file (after you install [Markup Blitz](#markup-blitz)).
+        * Take a look at the `CLASSPATH` near the end of the file: every variable there is defined earlier as one of the local customizations, so you probably don't need to change this line.
+        * Here is how my Morgana.sh looks:
 
+ ```
+CURRENT_SCRIPT=$0
+#CURRENT_SCRIPT="$(readlink -f "$0")"  #resolves symlinks on unix based systems (Does not work on BSD systems like MacOS)
 
+#echo $0
+MORGANA_HOME=$(dirname $CURRENT_SCRIPT)
+MORGANA_LIB=$MORGANA_HOME/MorganaXProc-IIIse_lib/*
+
+#Local customization
+SAXON_JAR=/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar
+COFFEEGRINDER_JAR=/Users/eeb4/Documents/GitHub/coffeegrinder-3.2.7/CoffeeGrinder-3.2.7.jar
+COFFEEFILTER_JAR=/Users/eeb4/Documents/GitHub/coffeefilter-3.2.7/CoffeeFilter-3.2.7.jar
+BLITZ_JAR=/Users/eeb4/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar
+
+#Settings for JAVA_AGENT: Only for Java 8 we have to use -javaagent.
+JAVA_AGENT=""
+
+JAVA_VER=$(java -version 2>&1 | sed -n ';s/.* version "\(.*\)\.\(.*\)\..*".*/\1\2/p;')
+
+if [ $JAVA_VER = "18" ]
+then
+	JAVA_AGENT=-javaagent:$MORGANA_HOME/MorganaXProc-IIIse_lib/quasar-core-0.7.9.jar
+fi
+
+# All related jars are expected to be in $MORGANA_LIB. For externals jars: Add them to $CLASSPATH
+CLASSPATH=$BLITZ_JAR:$COFFEEGRINDER_JAR:$COFFEEFILTER_JAR:$SAXON_JAR:$MORGANA_LIB:$MORGANA_HOME/MorganaXProc-IIIse.jar
+
+java $JAVA_AGENT -cp $CLASSPATH com.xml_project.morganaxproc3.XProcEngine "$@"
+ ```
+  
 
 *********************
 
