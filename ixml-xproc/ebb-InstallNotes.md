@@ -27,27 +27,28 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
           * `java -jar xmlcalabash-app-3.0.0-alpha18.jar help`
           * ADAPT THE LINE ABOVE TO APPLY YOUR VERSION NUMBER AS NEEDED!
           * (NOTE: on the XML Calabash repo, they left out the `.jar` portion of the filename, so their line won't work)
-   * NOTE: **alpha18 release of 2 February 2025 indicates it is not backwards compatible with earlier releases** (Find out / test if we want a specific version?)
+   * NOTE: **alpha18 is the latest release as of 2 February 2025** 
 
-* Macs: **Test if you have graphviz** by entering this in your terminal: `dot -V` . Probably you need to install GraphViz, and you can do that with `brew install graphviz`. 
+* **Test if you have graphviz** by entering this in your terminal: `dot -V` . Probably you need to install GraphViz, and you can do that with `brew install graphviz`. 
      * (Windows will need to install from https://graphviz.org/download/ )
 
-* CoffeeSacks: Get this from the versioned releases on the repo, here: https://github.com/nineml/coffeesacks/releases and find the latest one to download.
+* **CoffeeSacks**: (This is needed for Calabash.) Pick up CoffeeSacks from the versioned releases on the repo, here: https://github.com/nineml/coffeesacks/releases and find the latest one to download.
 * **Make the .xmlcalabash3* dot-file**: 
     * Navigate to your "home" directory (which is where you set up your .zshrc file and establish your aliases and environment variables and such like). In this location we'll be storing a dot-file which will help Calabash to run.
-    * NOTE: We will NOT be using Saxon EE at all. We also need to know where Homebrew installed graphviz. Double-check by navigating to see if Homebrew installed it in the default location: `/opt/homebrew/bin/dot` .
+    * NOTE: We will NOT be using Saxon EE at all.
+    * We need to know where Homebrew installed graphviz. Double-check by navigating to see if Homebrew installed it in the default location: `/opt/homebrew/bin/dot` .
         * In my (probably extra special and weird) case, it did not. **I found out where graphviz was installed by typing in `where dot` and following the paths**. Mine is "symlinked" from `/usr/local/bin` which eventually showed me my way to the exact location on my machine (which was `/usr/local/Cellar/graphviz/12.2.1/bin`). This may be because I've installed a few different versions of graphviz for Python and other applications over the years. Anyway, just check and make sure you know where Homebrew installed graphviz and its executable `dot`. You will need this path.
     * Back in your "home" directory, make the new file. You can copy in this command in your terminal: `touch .xmlcalabash3` (with that leading dot exactly like that). Here's what you'll need inside:
 
     
-   **Default location for Homebrew Graphviz**
+    * **Default location for Homebrew Graphviz**
    ```xml
       <cc:xml-calabash xmlns:cc="https://xmlcalabash.com/ns/configuration">
          <cc:graphviz dot="/opt/homebrew/bin/dot"/>
       </cc:xml-calabash>
    ```
 
-  (Dr. B's weird special case b/c Graphviz was installed elsewhere):    
+    * (Dr. B's weird special case b/c Graphviz was installed elsewhere):    
    ```xml
       <cc:xml-calabash xmlns:cc="https://xmlcalabash.com/ns/configuration">
          <cc:graphviz dot="/usr/local/Cellar/graphviz/12.2.1/bin/dot"/>
@@ -74,8 +75,61 @@ This is an XProc processor that you can use with more complex ixml contexts and 
 
 ## CoffeePot
 To be used with the XProc processor [**Calabash**](#calabash)
+You may think you installed this already, but that was "CoffeeSacks" (made by the same NineML developers) which we needed for Calabash to run, and we'll see a running theme on "coffee" related installations in our XProc and ixml setup. :-) 
 
+* Here's the [CoffeePot](https://github.com/nineml/coffeepot) repo, and here's where to [download the latest release](https://github.com/nineml/coffeepot/releases).
+* I'm storing CoffeePot in my GitHub directory on my local computer.
+* We need to **create an alias for the coffeepot .jar file in your `.zshrc` file**. Note the filepath that leads to the coffeepot jar  (use `pwd` to help), and your alias might look something like mine (make sure yours applies the version number that you downloaded:
 
+```
+alias coffeepot='java -jar /Users/eeb4/Documents/GitHub/coffeepot-3.2.7/coffeepot-3.2.7.jar'
+```
+
+* To do things with CoffeePot, we need to create a system dot-file named `nineml.properties` in the same "home" location as your `zshrc`. This contains some default settings for pretty-printing your output XML and your graphviz visualizations. You'll need to note (again) where your GraphViz bin/dot is located, and you've entered that already in your `.xmlcalabash3` file, so use the same filepath location here.
+
+  * In your "home" (same place where you open `.zshrc`) create a new system file with `touch .nineml.properties`
+  * Edit your file (`nano .nineml.properties`) and adapt the following (using your own filepath to graphviz that you copied from `.xmlcalabash3`). Examples:
+ 
+      * **Default location for Homebrew Graphviz**
+    ```
+    graphviz=/opt/homebrew/bin/dot
+    ignore-trailing-whitespace=true
+    pretty-print=true
+    progress-bar=tty
+    assert-valid-xml-characters=true
+    assert-valid-xml-names=true
+    ignore-bom=true
+    normalize-line-endings=true
+    trailing-newline-on-output=true
+    ```
+
+    * (Dr. B's weird special case b/c Graphviz was installed elsewhere):
+   
+    ```
+    graphviz=/usr/local/Cellar/graphviz/12.2.1/bin/dot
+    ignore-trailing-whitespace=true
+    pretty-print=true
+    progress-bar=tty
+    assert-valid-xml-characters=true
+    assert-valid-xml-names=true
+    ignore-bom=true
+    normalize-line-endings=true
+    trailing-newline-on-output=true
+    ```   
+
+  * If you ever need to adjust these settings or find out more, here's [the CoffeePot documentation](https://docs.nineml.org/current/coffeepot/bk02ch07.html).
+
+### Running CoffeePot 
+* Run CoffeePot over an ixml grammar and a .txt file like this, using your alias: (Think of "g" as standing for "grammar" and "i" as "input file")
+
+```
+coffeepot -g:filename.ixml -i:filename.txt
+``` 
+
+* You can add a couple of things to this command to check for ambiguities in the ixml, and to visualize the output:
+    * Try adding `--analyze-ambiguity` like so: `coffeepot -g:filename.ixml -i:filename.txt --analyze-ambiguity`
+    * Try adding `--graph:filename.svg` to get some SVG output, like so: `coffeepot -g:filename.ixml -i:filename.txt --graph:filename.svg`
+        * NOTE: if the grammar is really complicated, CoffeePot won't be able to generate the SVG if it's going to be a large and complicated file. 
 
 ## Markup Blitz
 To be used with the XProc processor [**Morgana**](#morgana)
