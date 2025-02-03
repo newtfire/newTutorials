@@ -7,6 +7,12 @@ This is related to a tutorial under development at <http://dh.obdurodon.org/ixml
 **********
 # MAC OS notes 
 
+          _ ,
+        C| |)         
+         |_|     ([]  
+
+    coffee pot   mug   
+
 # Preliminaries
 
 ## First, make sure you have developer (jdk) java installed:
