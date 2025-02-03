@@ -110,12 +110,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
 		<map file-extension="123" media-type="application/xml" />
 	</mediatype-mapping>
 	-->
-</morgana-config>
-
-
-
-
-
+    </morgana-config>
     ```
 
 
