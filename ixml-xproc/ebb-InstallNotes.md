@@ -278,5 +278,5 @@ When you have finished all these installations, congratulations! You have everyt
      `"--.__                   __.--"'
             `""-------------""'
 ⠀⠀⠀⠀
-ASCII art credit: <https://ascii.co.uk/art/cup>
+ASCII art credits: <https://ascii.co.uk/art/cup>
 
