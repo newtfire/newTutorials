@@ -69,6 +69,57 @@ alias calabash='/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/xmlcalaba
 # Morgana
 This is an XProc processor that you can use with more complex ixml contexts and for processing lots of input. It works with the ixml processor [**Markup Blitz**](#markup-blitz).
 
+* Official documentation: <https://www.xml-project.com/manual/index.html>
+* Download MorganaXProc-IIIse from [Sourceforge](https://www.xml-project.com/manual/index.html) and unzip the folder. I'm saving this to my GitHub folder so it's near my projects.
+* Now we're going to install [SchXslt](https://git.sr.ht/~dmaus/schxslt2) (which is pronounced "Shicksilt"!) This is an XSLT-based Schematron processor that can handle Schematron validation.
+    * On this sourcehut page, find the installation in the top center under "refs", and follow the link to "release notes" (As of 2 February 2025, the current SchXslt2 release is <https://git.sr.ht/~dmaus/schxslt2/refs/v1.3.1>) I also unzipped this to my GitHub directory. 
+* Okay, for this next part, navigate to your "home" directory (where your `.zshrc` lives, and we'll set up a `morgana-config.xml` configuration file there. For this configuration you're going to need to have some inforamtion ready:
+  * You'll need the path to the SchXSLT transpile.xsl file: You'll find that in the main directory of the schxslt directory you just saved. (Mine is here: `/Users/eeb4/Documents/GitHub/schxslt2-1.3.1`
+  * You'll need the path to a Saxon processor that can run XSLT and XQuery and such. You have this already if you installed Calabash: Saxon-HE comes in its library or "lib" folder: 
+    Find/copy the path to the Saxon_HE jar file in your xml-calabash lib. (Here's mine:  `/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar`)
+ 
+  * In your "home", make the configuration file with `touch morgana-config.xml`
+  * `nano morgana-config.xml`, paste in the following, and change the `<xslt-config>` line to your path to Saxon-HE.
+
+    ```xml
+    <morgana-config xmlns="http://www.xml-project.com/morganaxproc">
+	<!-- Relative paths are resolved by uri of this file -->
+	
+	    <path_to_SchXSLT2_transpiler>/Users/eeb4/Documents/GitHub/schxslt2-1.3.1</path_to_SchXSLT2_transpiler>
+		
+	    <XSLTValidationMode>LAX</XSLTValidationMode>
+	
+	    <xslt-connector>Saxon12-3</xslt-connector>
+	    <xquery-connector>Saxon12-3</xquery-connector>
+	    <schematron-connector>schxslt2</schematron-connector>
+
+	    <xslt-config>/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar</xslt-config>
+	    <xslt-config></xslt-config>
+          <silent>true</silent>
+    
+	<!--
+	<fo-connector>com.xml_project.morganaxproc3.fop2x.ApacheFOP2xConnector</fo-connector>
+	<fo-connector>com.xml_project.fosupport.AHFormatterV65.AHF65Connector</fo-connector>
+	-->
+	
+	<!-- <ixml-connector>com.xml_project.morganaxproc3.ninemlConnector.NineMLConnector</ixml-connector> -->`
+	<ixml-connector>com.xml_project.morganaxproc3.markupblitzConnector.MarkupBlitzConnector</ixml-connector>
+
+	<!--
+	<mediatype-mapping>
+		<map file-extension="123" media-type="application/xml" />
+	</mediatype-mapping>
+	-->
+</morgana-config>
+
+
+
+
+
+    ```
+
+
+
 *********************
 
 # ixml processors
