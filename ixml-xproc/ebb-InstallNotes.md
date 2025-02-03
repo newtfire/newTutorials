@@ -129,7 +129,7 @@ coffeepot -g:filename.ixml -i:filename.txt
 * You can add a couple of things to this command to check for ambiguities in the ixml, and to visualize the output:
     * Try adding `--analyze-ambiguity` like so: `coffeepot -g:filename.ixml -i:filename.txt --analyze-ambiguity`
     * Try adding `--graph:filename.svg` to get some SVG output, like so: `coffeepot -g:filename.ixml -i:filename.txt --graph:filename.svg`
-        * NOTE: if the grammar is really complicated, CoffeePot won't be able to generate the SVG if it's going to be a large and complicated file. 
+        * NOTE: The SVG option is meant for simple/small things. CoffeePot won't be able to generate the SVG if it's going to be a large and complicated file. 
 
 ## Markup Blitz
 To be used with the XProc processor [**Morgana**](#morgana)
