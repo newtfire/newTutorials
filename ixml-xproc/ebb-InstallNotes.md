@@ -135,7 +135,8 @@ This is an XProc processor that you can use with more complex ixml contexts and 
     * **Make Morgana.sh executable** : Do this with `chmod +x Morgana.sh`
     * **Now, we need to edit Morgana.sh**.
         * **You'll need to add and adjust the lines marked `#Local customization`** to identify the lcoation of Saxon-HE (we'll use the one in Calabash library), the CoffeeGrinder and CoffeeFilter .jar files, and finally the location of the Markup Blitz .jar file (after you install [Markup Blitz](#markup-blitz)).
-        * Take a look at the `CLASSPATH` near the end of the file: every variable there is defined earlier as one of the local customizations, so you probably don't need to change this line.
+        * **Edit the `CLASSPATH`** near the end of the file: Basically you need to add all the local customization variables here, and it will be kind of like pouring Markup Blitz through a coffee grinder, into a coffee filter, and then through some saxon into a morgana mug. :-) Here's how the CLASSPATH should be edited, and you just need to make sure that each of these variables has been defined in order for Morgana to run.
+          `CLASSPATH=$BLITZ_JAR:$COFFEEGRINDER_JAR:$COFFEEFILTER_JAR:$SAXON_JAR:$MORGANA_LIB:$MORGANA_HOME/MorganaXProc-IIIse.jar`
         * Here is how my Morgana.sh looks:
 
  ```
