@@ -134,7 +134,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
     * Try `ls -lisa` to see its rwx (read-write-execute) prooperties. They probably look like this: `-rw-r--r--@`. We need to change it to make it executable.
     * **Make Morgana.sh executable** : Do this with `chmod +x Morgana.sh`
     * **Now, we need to edit Morgana.sh**.
-        * You'll need to adjust the lines marked `#Local customization` to identify the lcoation of Saxon-HE (we'll use the one in Calabash library), the CoffeeGrinder and CoffeeFilter .jar files, and finally the location of the Markup Blitz .jar file (after you install [Markup Blitz](#markup-blitz)).
+        * **You'll need to add and adjust the lines marked `#Local customization`** to identify the lcoation of Saxon-HE (we'll use the one in Calabash library), the CoffeeGrinder and CoffeeFilter .jar files, and finally the location of the Markup Blitz .jar file (after you install [Markup Blitz](#markup-blitz)).
         * Take a look at the `CLASSPATH` near the end of the file: every variable there is defined earlier as one of the local customizations, so you probably don't need to change this line.
         * Here is how my Morgana.sh looks:
 
