@@ -36,7 +36,6 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
    * NOTE: **alpha18 is the latest release as of 2 February 2025** 
 
 * **Test if you have graphviz** by entering this in your terminal: `dot -V` . Probably you need to install GraphViz, and you can do that with `brew install graphviz`. 
-     * (Windows will need to install from https://graphviz.org/download/ )
 
 * **CoffeeSacks**: (This is needed for Calabash.) Pick up CoffeeSacks from the versioned releases on the repo, here: https://github.com/nineml/coffeesacks/releases and find the latest one to download.
 * **Make the .xmlcalabash3* dot-file**: 
