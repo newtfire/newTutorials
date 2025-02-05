@@ -59,8 +59,8 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
          <cc:graphviz dot="/usr/local/Cellar/graphviz/12.2.1/bin/dot"/>
       </cc:xml-calabash>
    ```
-* We are not going to configure a special Saxon config file b/c we are going to use the default Saxon HE that comes packaged with Calabash.
-* Now, we'll make an alias for running calabash. Open up your `.zsrhc` and add an alias line that makes sense for you to call it. Your alias needs to execute a pretty long command. 
+
+* Now we make an alias for running calabash. Open up your `.zsrhc` and add an alias line that makes sense for you to type in when you want to run a calabash command. Your alias needs to execute a pretty long command. 
     * You need to find where you installed Calabash (I put mine in my GitHub directory). You'll be pointing your script to the `xmlcalabash.sh` line inside.
     * Here's what my calabash execution alias looks like in my `.zshrc` file, giving it the name "calabash"
 
