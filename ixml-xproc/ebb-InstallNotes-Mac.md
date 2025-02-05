@@ -146,7 +146,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
           `CLASSPATH=$BLITZ_JAR:$COFFEEGRINDER_JAR:$COFFEEFILTER_JAR:$SAXON_JAR:$MORGANA_LIB:$MORGANA_HOME/MorganaXProc-IIIse.jar`
         * Here is how my Morgana.sh looks:
 
- ```
+ ```shell
 CURRENT_SCRIPT=$0
 #CURRENT_SCRIPT="$(readlink -f "$0")"  #resolves symlinks on unix based systems (Does not work on BSD systems like MacOS)
 
