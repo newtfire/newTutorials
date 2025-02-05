@@ -37,7 +37,9 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
 
 * **Test if you have graphviz** by entering this in your terminal: `dot -V` . Probably you need to install GraphViz, and you can do that with `brew install graphviz`. 
 
-* **CoffeeSacks**: (This is needed for Calabash.) Pick up CoffeeSacks from the versioned releases on the repo, here: https://github.com/nineml/coffeesacks/releases and find the latest one to download.
+* **CoffeeSacks**: (This is needed for Calabash.)
+    * Pick up CoffeeSacks from the versioned releases on the repo, here: https://github.com/nineml/coffeesacks/releases and find the latest one to download.
+    * Copy the **CoffeeSacks jar** file into your XML Calabash `extra/` subdirectory.
 * **Make the .xmlcalabash3 dot-file**: 
     * Navigate to your "home" directory (which is where you set up your .zshrc file and establish your aliases and environment variables and such like). In this location we'll be storing a dot-file which will help Calabash to run.
     * NOTE: We will NOT be using Saxon EE at all.
