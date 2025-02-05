@@ -26,7 +26,7 @@ This is related to a tutorial under development at <http://dh.obdurodon.org/ixml
 ## Calabash
 This is an XProc processor that you can use with the ixml processor [**CoffeePot**](#coffeepot) that's good for simple grammars and input files that aren't super large.
 * Installing Calabash:
-    * Get it from here: https://github.com/xmlcalabash/xmlcalabash3/releases/tag/3.0.0-alpha17 and look for the zip file at the bottom of the page after the release notes. The zip directory you need is the third one from the top (named something like this with the version number in the name): **xmlcalabash-3.0.0-alpha17.zip**
+    * Get it from here: <https://github.com/xmlcalabash/xmlcalabash3/releases> and look for the **xmlcalabash zip file** in the latest release, after the release notes. The zip directory you need is the third one from the top (named something like this with the version number in the name): **xmlcalabash-3.0.0-alpha18.zip**
     * Unzip this and move it somewhere central where it's easy to work with. I set my unzipped xmlcalabash folder in my GitHub directory so it's near where I work on code.
     * Open your shell and navigate to your new xmlcalabash folder. For this to work we need to be able to use Java to execute the .jar file inside.
        Test if your Java installation works. This 'help' shell command will show you all the different commands available:
@@ -36,10 +36,9 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
    * NOTE: **alpha18 is the latest release as of 2 February 2025** 
 
 * **Test if you have graphviz** by entering this in your terminal: `dot -V` . Probably you need to install GraphViz, and you can do that with `brew install graphviz`. 
-     * (Windows will need to install from https://graphviz.org/download/ )
 
 * **CoffeeSacks**: (This is needed for Calabash.) Pick up CoffeeSacks from the versioned releases on the repo, here: https://github.com/nineml/coffeesacks/releases and find the latest one to download.
-* **Make the .xmlcalabash3* dot-file**: 
+* **Make the .xmlcalabash3 dot-file**: 
     * Navigate to your "home" directory (which is where you set up your .zshrc file and establish your aliases and environment variables and such like). In this location we'll be storing a dot-file which will help Calabash to run.
     * NOTE: We will NOT be using Saxon EE at all.
     * We need to know where Homebrew installed graphviz. Double-check by navigating to see if Homebrew installed it in the default location: `/opt/homebrew/bin/dot` .
@@ -60,8 +59,8 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
          <cc:graphviz dot="/usr/local/Cellar/graphviz/12.2.1/bin/dot"/>
       </cc:xml-calabash>
    ```
-* We are not going to configure a special Saxon config file b/c we are going to use the default Saxon HE that comes packaged with Calabash.
-* Now, we'll make an alias for running calabash. Open up your `.zsrhc` and add an alias line that makes sense for you to call it. Your alias needs to execute a pretty long command. 
+
+* Now we make an alias for running calabash. Open up your `.zsrhc` and add an alias line that makes sense for you to type in when you want to run a calabash command. Your alias needs to execute a pretty long command. 
     * You need to find where you installed Calabash (I put mine in my GitHub directory). You'll be pointing your script to the `xmlcalabash.sh` line inside.
     * Here's what my calabash execution alias looks like in my `.zshrc` file, giving it the name "calabash"
 
