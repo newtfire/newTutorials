@@ -26,7 +26,7 @@ This is related to a tutorial under development at <http://dh.obdurodon.org/ixml
 ## Calabash
 This is an XProc processor that you can use with the ixml processor [**CoffeePot**](#coffeepot) that's good for simple grammars and input files that aren't super large.
 * Installing Calabash:
-    * Get it from here: https://github.com/xmlcalabash/xmlcalabash3/releases/tag/3.0.0-alpha17 and look for the zip file at the bottom of the page after the release notes. The zip directory you need is the third one from the top (named something like this with the version number in the name): **xmlcalabash-3.0.0-alpha17.zip**
+    * Get it from here: https://github.com/xmlcalabash/xmlcalabash3/releases/tag/3.0.0-alpha17 and look for the **xmlcalabash zip file** at the bottom of the page after the release notes. The zip directory you need is the third one from the top (named something like this with the version number in the name): **xmlcalabash-3.0.0-alpha17.zip**
     * Unzip this and move it somewhere central where it's easy to work with. I set my unzipped xmlcalabash folder in my GitHub directory so it's near where I work on code.
     * Open your shell and navigate to your new xmlcalabash folder. For this to work we need to be able to use Java to execute the .jar file inside.
        Test if your Java installation works. This 'help' shell command will show you all the different commands available:
