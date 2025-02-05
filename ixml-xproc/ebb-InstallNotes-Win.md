@@ -32,26 +32,21 @@ Use your Windows PowerShell in "Run as Administrator" mode, and follow [Chocolat
 
 You can quickly test out your new installation of Chocolatey by installling Marktext, popular free markdown editor for Windows (which I'm using to write up this guide). Try the command `choco install marktext` You should see the new software come up in your taskbar and you can try it out!
 
-
-
 ## Now, make sure you have developer (jdk) java installed:
 
 * To check if you have java, you can use your Git Bash shell to enter `which java` or `where java`(Those commands won't work in PowerShell, but all the shells will respond to `java -version` (which tells you if you have an old version or nothing at all.)
   * Dr. B here: My version was Java 19 (from 2022) on my Lenovo laptop. For the invisible XML / XProc work we're doing here, I'm going ahead and installing the latest easily available OpenJDK developer version for Windows.
 * Most likely you need JDK java. We'll use chocolatey to install it. Open your PowerShell (running as Administrator) and enter:
-  
-  
-  
-  
-  ```shell
-  choco install openjdk
-  ```
-  
+
+```shell
+choco install openjdk
+```
+
   (When doing all these shell installations be sure you read the responses and enter "Y" as needed to continue processes.)
+
 * Now when you check your `java -version` you should see the current JDK that you installed with chocolatey.
 * Next we need to make sure the location of the JDK you installed is set in your system environment variables. In your Search bar, look for System or Control Panel (or Edit the System Environment Variables). Find the tab to edit the Environment Variables and look for JAVA_HOME. Click Edit User Variable and paste in the new filepath of your Java. (Find that in Git Bash with `where java`)
-  
-  
+
   ![](environvar-win.png)
 
 # XProc Processors
@@ -65,13 +60,16 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
   * Get it from here: [Releases · xmlcalabash/xmlcalabash3 · GitHub](https://github.com/xmlcalabash/xmlcalabash3/releases) and look for the **xmlcalabash zip file** in the latest release, after the release notes. The zip directory you 
     need is the third one from the top (named something like this with the 
     version number in the name): **xmlcalabash-3.0.0-alpha18.zip**
+  
   * Unzip this and move it somewhere central where it's easy to work with. I set my unzipped xmlcalabash folder in my GitHub directory so it's near where I work on code.
+  
   * Open your shell and navigate to your new xmlcalabash folder. For this to work we need to be able to use Java to execute the .jar file inside.
      Test if your Java installation works. This 'help' shell command will show you all the different commands available:
     
         * `java -jar xmlcalabash-app-3.0.0-alpha18.jar help`
         * ADAPT THE LINE ABOVE TO APPLY YOUR VERSION NUMBER AS NEEDED!
         * (NOTE: on the XML Calabash repo, they left out the `.jar` portion of the filename, so their line won't work)
+    
     * NOTE: **alpha18 is the latest release as of 2 February 2025** 
 
 * **Test if you have graphviz** by entering this in your terminal: `dot -V` . Probably you need to install GraphViz, and you can do that with `choco install graphviz`. 
@@ -101,11 +99,8 @@ alias calabash='~/Documents/GitHub/xmlcalabash-3.0.0-alpha18/xmlcalabash.sh --in
 ```
 
 * *For future reference*: As soon as we have an XProc pipeline file (`.xpl`) ready to run, we'll be running with a command like this, using the alias you created: `calabash filename.xpl` ). And we can see some nifty graphviz sketches of our pipeline if we append this to the command (including the dot at the end: `--graphs:.` like so: `calabash filename.xpl --graphs:.`
-  
-  
-  
-  
-  <!-- WINDOWS ADAPTATION TO HERE. -->
+
+<!-- WINDOWS ADAPTATION TO HERE. -->
 
 # Morgana
 
@@ -135,7 +130,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
     * Change the `<path_to_SchXSLT2_transpiler>` element contents to your path to the transpile.xsl file in schxslt directory. 
     * Change the `<xslt-config>` element contents to your path to Saxon-HE.
     * One more thing: notice the contents of the `<ixml-connector>` element. That's not a filepath, but it is an indicator of which ixml processor you're using. Our active setting in the code below is for Markup Blitz, but you can set this to Calabash instead. (We think you can set it to Calabash by using the NineMLConnector version that is commented out above it, but we should check the documentation to be sure). 
-
+    
     ```xml
     <morgana-config xmlns="http://www.xml-project.com/morganaxproc">
     <!-- Relative paths are resolved by uri of this file -->
@@ -171,7 +166,9 @@ This is an XProc processor that you can use with more complex ixml contexts and 
 * **Morgana alias**: Okay, now it's time to make an alias for Morgana! Open your `.zshrc` file. You will need to adapt my sample alias below to repreesent the location of 
   
   * the location of your Morgana.sh file in the Morgana directory (I put mine over in my "GitHub" folder). 
+  
   * the location of your morgana-config.xml file (in your "home").
+  
   * My morgana alias looks like this:
     
     ```
