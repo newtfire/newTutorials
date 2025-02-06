@@ -7,8 +7,8 @@ This is related to a tutorial under development at <http://dh.obdurodon.org/ixml
 **********
 # MAC OS notes 
 
-          _ ,
-        C| |)         
+          _ 
+        C| |/         
          |_|     ([]  
 
     coffee pot   mug   
