@@ -8,8 +8,8 @@ This is related to a tutorial under development at <http://dh.obdurodon.org/ixml
 # MAC OS notes 
 
           _ 
-        C| |/         
-         |_|    []D 
+        C| |/        
+         |_|    []D
 	
        coffee   mug
          pot      
