@@ -13,7 +13,8 @@ This is related to a tutorial under development at <http://dh.obdurodon.org/ixml
              \| |D         
       C{_}    |_|     
     
-       mug   coffee pot     
+       mug   coffee 
+              pot     
 
 # Preliminaries
 
