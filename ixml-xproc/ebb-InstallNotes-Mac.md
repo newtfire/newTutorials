@@ -98,7 +98,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
     <morgana-config xmlns="http://www.xml-project.com/morganaxproc">
 	<!-- Relative paths are resolved by uri of this file -->
 	
-	    <path_to_SchXSLT2_transpiler>/Users/eeb4/Documents/GitHub/schxslt2-1.3.1</path_to_SchXSLT2_transpiler>
+	    <path_to_SchXSLT2_transpiler>/Users/eeb4/Documents/GitHub/schxslt2-1.3.1/transpile.xsl</path_to_SchXSLT2_transpiler>
 		
 	    <XSLTValidationMode>LAX</XSLTValidationMode>
 	
