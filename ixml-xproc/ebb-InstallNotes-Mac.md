@@ -9,7 +9,7 @@ This is related to a tutorial under development at <http://dh.obdurodon.org/ixml
 
           _ 
         C| |/        
-         |_|    [_]D
+         |_|    {_}D
 	
        coffee   mug
          pot      
