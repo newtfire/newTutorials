@@ -9,9 +9,10 @@ This is related to a tutorial under development at <http://dh.obdurodon.org/ixml
 
           _ 
         C| |/         
-         |_|     ([]  
-
-    coffee pot   mug   
+         |_|    []D 
+	
+       coffee   mug
+         pot      
 
 # Preliminaries
 
