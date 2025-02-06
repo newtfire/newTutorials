@@ -9,7 +9,7 @@ This is related to a tutorial under development at <http://dh.obdurodon.org/ixml
 
 # Windows OS notes
 
-               _ ,
+              \_ 
              (| |D         
        ([]    |_|     
     
