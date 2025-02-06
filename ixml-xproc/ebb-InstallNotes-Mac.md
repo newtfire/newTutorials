@@ -90,7 +90,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
   * `nano morgana-config.xml`, paste in the following, and **adapt it** so you:
      * Change the `<path_to_SchXSLT2_transpiler>` element contents to your path to the transpile.xsl file in schxslt directory. 
      * Change the `<xslt-config>` element contents to your path to Saxon-HE.
-     * One more thing: notice the contents of the `<ixml-connector>` element. That's not a filepath, but it is an indicator of which ixml processor you're using. Our active setting in the code below is for Markup Blitz, but you can set this to Calabash instead. (We think you can set it to Calabash by using the NineMLConnector version that is commented out above it, but we should check the documentation to be sure). 
+     * One more thing: notice the contents of the `<ixml-connector>` element. That's not a filepath, but it is an indicator of which ixml processor you're using. Our active setting in the code below is for Markup Blitz, but you can set this to CoffeePot instead. (We think you can set it to CoffeePot by using the NineMLConnector version that is commented out above it, but we should check the documentation to be sure). 
     
 
     ```xml
