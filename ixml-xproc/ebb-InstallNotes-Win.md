@@ -24,7 +24,11 @@ On Windows, you will need to move between different shells to handle installatio
 
 * Git Bash Shell (where you use git commands / interface with GitHub)
 
-You will also need to find and edit your system PATH variables. Some of this can be done in your Control Panel. 
+You will also need to: 
+
+* have a `.bashrc` file for storing aliases. An alias is a short word / phrase you can type in your shell to stand in for longer commands, and it will make it easy to run the programs we're installing.
+
+* find and edit your system PATH variables. Some of this can be done in your Control Panel. 
 
 ## First, install the chocolatey package manager for Windows
 
@@ -46,8 +50,9 @@ choco install openjdk
   (When doing all these shell installations be sure you read the responses and enter "Y" as needed to continue processes.)
 
 * Now when you check your `java -version` you should see the current JDK that you installed with chocolatey.
-* Next we need to make sure the location of the JDK you installed is set in your system environment variables. In your Search bar, look for System or Control Panel (or Edit the System Environment Variables). Find the tab to edit the Environment Variables and look for JAVA_HOME. Click Edit User Variable and paste in the new filepath of your Java. (Find that in Git Bash with `where java`)
 
+* Next we need to make sure the location of the JDK you installed is set in your system environment variables. In your Search bar, look for System or Control Panel (or Edit the System Environment Variables). Find the tab to edit the Environment Variables and look for JAVA_HOME. Click Edit User Variable and paste in the new filepath of your Java. (Find that in Git Bash with `where java`)
+  
   ![](environvar-win.png)
 
 # XProc Processors
@@ -76,8 +81,9 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
 * **Test if you have graphviz** by entering this in your terminal: `dot -V` . Probably you need to install GraphViz, and you can do that with `choco install graphviz`. 
 
 * **CoffeeSacks**: (This is needed for Calabash.)
-    * Pick up CoffeeSacks from the versioned releases on the repo, here: https://github.com/nineml/coffeesacks/releases and find the latest one to download.
-    * Copy the **CoffeeSacks jar** file into your XML Calabash `extra/` subdirectory.
+  
+  * Pick up CoffeeSacks from the versioned releases on the repo, here: https://github.com/nineml/coffeesacks/releases and find the latest one to download.
+  * Copy the **CoffeeSacks jar** file into your XML Calabash `extra/` subdirectory.
 
 * **Make the .xmlcalabash3 dot-file**: 
   
@@ -92,9 +98,9 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
    </cc:xml-calabash>
 ```
 
-* * Now we make an alias for running calabash. Open up your `.bash_profile` and add an alias line that makes sense for you to type in when you want to run a calabash command. (We figure "calabash" is pretty good.) Your alias needs to execute a pretty long command. 
+* * Now we make an alias for running calabash. Open up your `.bashrc` and add an alias line that makes sense for you to type in when you want to run a calabash command. (We figure "calabash" is pretty good.) Your alias needs to execute a pretty long command. 
   * You need to know out where you installed calabash (Mine is in my GitHub directory). You'll be pointing your script to the `xmlcalabash.sh` line inside.
-  * Here's what my calabash execution alias looks like in my `.bash_profile` file, giving it the name "calabash"
+  * Here's what my calabash execution alias looks like in my `.bashrc` file, giving it the name "calabash"
 
 ```
 alias calabash='~/Documents/GitHub/xmlcalabash-3.0.0-alpha18/xmlcalabash.sh --init:org.nineml.coffeesacks.RegisterCoffeeSacks'
@@ -110,7 +116,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
 
 * Official documentation: <https://www.xml-project.com/manual/index.html>
 
-* Download MorganaXProc-IIIse from [Sourceforge](https://sourceforge.net/projects/morganaxproc-iiise/) and unzip the folder. I'm saving this to my GitHub folder so it's near my projects.
+* Download MorganaXProc-IIIse from [Sourceforge](https://sourceforge.net/projects/morganaxproc-iiise/) and unzip the folder. I'm extracting this to my GitHub folder so it's near my projects.
 
 * Now we're going to install [SchXslt](https://git.sr.ht/~dmaus/schxslt2) (which is pronounced "Shicksilt"!) This is an XSLT-based Schematron processor that can handle Schematron validation.
   
@@ -192,7 +198,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
     * **Edit the `CLASSPATH`** near the end of the file: Basically you need to add all the local customization variables here, and it will be kind of like pouring Markup Blitz through a coffee grinder, into a coffee filter, and then through some saxon into a morgana mug. :-) Here's how the CLASSPATH should be edited, and you just need to make sure that each of these variables has been defined in order for Morgana to run.
       `CLASSPATH=$BLITZ_JAR:$COFFEEGRINDER_JAR:$COFFEEFILTER_JAR:$SAXON_JAR:$MORGANA_LIB:$MORGANA_HOME/MorganaXProc-IIIse.jar`
     * Here is how my Morgana.sh looks:
-  
+
 ```shell
 CURRENT_SCRIPT=$0
 #CURRENT_SCRIPT="$(readlink -f "$0")"  #resolves symlinks on unix based systems (Does not work on BSD systems like MacOS)
@@ -214,28 +220,31 @@ JAVA_VER=$(java -version 2>&1 | sed -n ';s/.* version "\(.*\)\.\(.*\)\..*".*/\1\
 
 if [ $JAVA_VER = "18" ]
 then
-	JAVA_AGENT=-javaagent:$MORGANA_HOME/MorganaXProc-IIIse_lib/quasar-core-0.7.9.jar
+    JAVA_AGENT=-javaagent:$MORGANA_HOME/MorganaXProc-IIIse_lib/quasar-core-0.7.9.jar
 fi
 
 # All related jars are expected to be in $MORGANA_LIB. For externals jars: Add them to $CLASSPATH
 CLASSPATH=$BLITZ_JAR:$COFFEEGRINDER_JAR:$COFFEEFILTER_JAR:$SAXON_JAR:$MORGANA_LIB:$MORGANA_HOME/MorganaXProc-IIIse.jar
 
 java $JAVA_AGENT -cp $CLASSPATH com.xml_project.morganaxproc3.XProcEngine "$@"
- ```
+```
 
- 
 *********************
 
 # ixml processors
 
 ## CoffeePot
+
 To be used with the XProc processor [**Calabash**](#calabash)
 You may think you installed this already, but that was "CoffeeSacks" (made by the same NineML developers) which we needed for Calabash to run, and we'll see a running theme on "coffee" related installations in our XProc and ixml setup. :-) 
 
 * Here's the [CoffeePot](https://github.com/nineml/coffeepot) repo, and here's where to [download the latest release](https://github.com/nineml/coffeepot/releases).
 * I'm storing CoffeePot in my GitHub directory on my local computer.
 * We need to **create an alias for the coffeepot .jar file in your `.zshrc` file**. Note the filepath that leads to the coffeepot jar  (use `pwd` to help), and your alias might look something like mine (make sure yours applies the version number that you downloaded:
-```
+  
+  ```
+  
+  ```
 
 alias coffeepot='java -jar /Users/eeb4/Documents/GitHub/coffeepot-3.2.7/coffeepot-3.2.7.jar'
 
