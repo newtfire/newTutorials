@@ -78,7 +78,7 @@ alias calabash='/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/xmlcalaba
 This is an XProc processor that you can use with more complex ixml contexts and for processing lots of input. It works with the ixml processor [**Markup Blitz**](#markup-blitz).
 
 * Official documentation: <https://www.xml-project.com/manual/index.html>
-* Download MorganaXProc-IIIse from [Sourceforge](https://www.xml-project.com/manual/index.html) and unzip the folder. I'm saving this to my GitHub folder so it's near my projects.
+* Download MorganaXProc-IIIse from [Sourceforge](https://sourceforge.net/projects/morganaxproc-iiise/) and unzip the folder. I'm saving this to my GitHub folder so it's near my projects.
 * Now we're going to install [SchXslt](https://git.sr.ht/~dmaus/schxslt2) (which is pronounced "Shicksilt"!) This is an XSLT-based Schematron processor that can handle Schematron validation.
     * On this sourcehut page, find the installation in the top center under "refs", and follow the link to "release notes" (As of 2 February 2025, the current SchXslt2 release is <https://git.sr.ht/~dmaus/schxslt2/refs/v1.3.1>) I also unzipped this to my GitHub directory. 
 * Okay, for this next part, navigate to your "home" directory (where your `.zshrc` lives, and we'll set up a `morgana-config.xml` configuration file there. For this configuration you're going to need to have some inforamtion ready:
