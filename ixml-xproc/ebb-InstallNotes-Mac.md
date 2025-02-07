@@ -135,11 +135,11 @@ This is an XProc processor that you can use with more complex ixml contexts and 
     ```
 * Time for some coffee! We'll go and download and install CoffeeFilter and CoffeeGrinder from <https://github.com/nineml>. (As usual I'm setting coffee stuff in my GitHub folder.)
     * Download [the most recent CoffeeFilter](https://github.com/nineml/coffeefilter/releases), unzip it where you want it. 
-    * Download [the most recent CoffeeGrinder](), unzip it where you want it.
+    * Download [the most recent CoffeeGrinder](https://github.com/nineml/coffeegrinder/releases), unzip it where you want it.
  
 * **Modifying Morgana.sh**: Now we need to make sure Morgana's executable script (the Morgana.sh file) can find its way to the CoffeeGrinder and CoffeeFilter jar files you just unpacked.
     * First, navigate in your shell to where you saved the MorganaXproc-IIISe directory. Take a look with `ls` and make sure it has a file named `Morgana.sh` inside.
-    * Try `ls -lisa` to see its rwx (read-write-execute) prooperties. They probably look like this: `-rw-r--r--@`. We need to change it to make it executable.
+    * Try `ls -lisa` to see its rwx (read-write-execute) properties. They probably look like this: `-rw-r--r--@`. We need to change it to make it executable.
     * **Make Morgana.sh executable** : Do this with `chmod +x Morgana.sh`
     * **Now, we need to edit Morgana.sh**.
         * **You'll need to add and adjust the lines marked `#Local customization`** to identify the lcoation of Saxon-HE (we'll use the one in Calabash library), the CoffeeGrinder and CoffeeFilter .jar files, and finally the location of the Markup Blitz .jar file (after you install [Markup Blitz](#markup-blitz)).
