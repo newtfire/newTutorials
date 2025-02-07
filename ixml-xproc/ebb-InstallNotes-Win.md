@@ -260,10 +260,9 @@ You may think you installed this already, but that was "CoffeeSacks" (made by th
   * In your "home" (same place where you open `.bashrc`) create a new system file and open it for editing with `nano .nineml.properties`
     
     * Edit your file to adapt the following (using your own filepath to graphviz that you copied from `.xmlcalabash3`). Examples:
-          
       
-      
-         ` graphviz=/Program Files/Graphviz/bin/dot.exe
+         ```
+          graphviz=/Program Files/Graphviz/bin/dot.exe
           ignore-trailing-whitespace=true
           pretty-print=true
           progress-bar=tty
@@ -271,9 +270,8 @@ You may think you installed this already, but that was "CoffeeSacks" (made by th
           assert-valid-xml-names=true
           ignore-bom=true
           normalize-line-endings=true
-          trailing-newline-on-output=true
-          
-      `
+          trailing-newline-on-output=true   
+      ```
       
       * If you ever need to adjust these settings or find out more, here's [the CoffeePot documentation](https://docs.nineml.org/current/coffeepot/bk02ch07.html).
         
