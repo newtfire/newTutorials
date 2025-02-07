@@ -193,10 +193,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
   * First, navigate in your shell to where you saved the MorganaXproc-IIISe directory. Take a look with `ls` and make sure it has a file named `Morgana.sh` inside.
   * Try `ls -lisa` to see its rwx (read-write-execute) properties. They probably look like this: `-rw-r--r--`. We need to change it to make it executable.
   * **Now, we need to edit Morgana.sh**. Open the file in your nano or vi editor.
-    * First, we need to **make Morgana.sh executable**. In Windows we have to do this by adding this special line at the top of the file:
-      
-      
-      
+    * First, we need to **make Morgana.sh executable**. In Windows we have to do this by adding this special line at the top of the file:     
       
       ```shell
       #!/bin/bash
@@ -298,10 +295,7 @@ coffeepot -g:filename.ixml -i:filename.txt
   * Try adding `--graph:filename.svg` to get some SVG output, like so: `coffeepot -g:filename.ixml -i:filename.txt --graph:filename.svg` * NOTE: The SVG option is meant for simple/small things. CoffeePot won't be able to generate the SVG if it's going to be a large and complicated file.
     
     
-    
-    
-    
-    ## ## Markup Blitz
+## Markup Blitz
 
 To be used with the XProc processor [**Morgana**](#morgana). Up to this point, we have been unpacking a lot of jar (java archive) files. This time, we're actually going to *build* the jar for Markup Blitz in order to install it.
 
@@ -311,24 +305,17 @@ To be used with the XProc processor [**Morgana**](#morgana). Up to this point, w
 - When Gradle finishes building you'll be returned to the command prompt. Check for the new jar, which you should now find in the repo in `build/libs/markup-blitz.jar`.
 - Finally, go to "home" to your `.zshrc` and make an alias for running your new markup-blitz.jar file. I called my alias "blitz" and my alias definition looks like this:
 
-
-
-
-
-` alias blitz='java -jar /Users/eeb4/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar'`
-
-
-
-
-
+```shell
+ alias blitz='java -jar /Users/eeb4/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar'
 ```
+
 
 * To run Markup Blitz to process an ixml grammar and an input .txt file, use your new alias like this:
-```
 
+```shell
   blitz filename.ixml filename.txt
-
 ```
+
 ********************
 
 When you have finished all these installations, congratulations! You have everything you need (with Coffee Pot and Markup Blitz) to apply invisible xml to convert text files to xml according to your grammar definition. And you have everything you need (with Calabash and Morgana) to set that ixml conversion into a processing pipeline that can apply XSLT, XQuery, and Schematron to the XML that you create with ixml! 
