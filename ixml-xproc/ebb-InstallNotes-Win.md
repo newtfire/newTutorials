@@ -320,8 +320,7 @@ To be used with the XProc processor [**Morgana**](#morgana). Up to this point, w
 When you have finished all these installations, congratulations! You have everything you need (with Coffee Pot and Markup Blitz) to apply invisible xml to convert text files to xml according to your grammar definition. And you have everything you need (with Calabash and Morgana) to set that ixml conversion into a processing pipeline that can apply XSLT, XQuery, and Schematron to the XML that you create with ixml! 
 
 
-
-                    .
+```          .
                       `:.
                         `:.
                 .:'     ,::
@@ -339,7 +338,7 @@ When you have finished all these installations, congratulations! You have everyt
   ,--------`"`-------------'--------.
    `"--.__                   __.--"'
           `""-------------""'
-⠀⠀⠀⠀
+```⠀⠀⠀⠀
 
 
 ASCII art credits: <https://ascii.co.uk/art/cup>
