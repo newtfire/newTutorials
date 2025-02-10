@@ -10,7 +10,7 @@ This is related to a tutorial under development at <http://dh.obdurodon.org/ixml
           _ 
         C| |/        
          |_|    {_}D
-	
+    
        coffee   mug
          pot      
 
@@ -67,10 +67,10 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
     * You need to find where you installed Calabash (I put mine in my GitHub directory). You'll be pointing your script to the `xmlcalabash.sh` line inside.
     * Here's what my calabash execution alias looks like in my `.zshrc` file, giving it the name "calabash"
 
-```
+```shell
 alias calabash='/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/xmlcalabash.sh --init:org.nineml.coffeesacks.RegisterCoffeeSacks'
 ```
-    
+
    * *For future reference*: As soon as we have an XProc pipeline file (`.xpl`) ready to run, we'll be running with a command like this, using the alias you created: `calabash filename.xpl` ). And we can see some nifty graphviz sketches of our pipeline if we append this to the command (including the dot at the end: `--graphs:.` like so: `calabash filename.xpl --graphs:.`
 
 
@@ -86,13 +86,13 @@ This is an XProc processor that you can use with more complex ixml contexts and 
   * You'll need the path to a Saxon processor that can run XSLT and XQuery and such. You have this already if you installed Calabash: Saxon-HE comes in its library or "lib" folder: 
     Find/copy the path to the Saxon_HE jar file in your xml-calabash lib. (Here's mine:  `/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar`)
   * We presume you're going to be installing [Markup Blitz](#markup-blitz) for your ixml processor (so our configuration settings for Morgana will be set to Markup Blitz.)
- 
+
   * In your "home", make the configuration file with `touch morgana-config.xml`
   * `nano morgana-config.xml`, paste in the following, and **adapt it** so you:
      * Change the `<path_to_SchXSLT2_transpiler>` element contents to your path to the transpile.xsl file in schxslt directory. 
      * Change the `<xslt-config>` element contents to your path to Saxon-HE.
      * One more thing: notice the contents of the `<ixml-connector>` element. That's not a filepath, but it is an indicator of which ixml processor you're using. Our active setting in the code below is for Markup Blitz, but you can set this to CoffeePot instead. (We think you can set it to CoffeePot by using the NineMLConnector version that is commented out above it, but we should check the documentation to be sure). 
-    
+  
 
     ```xml
     <morgana-config xmlns="http://www.xml-project.com/morganaxproc">
@@ -105,7 +105,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
 	    <xslt-connector>Saxon12-3</xslt-connector>
 	    <xquery-connector>Saxon12-3</xquery-connector>
 	    <schematron-connector>schxslt2</schematron-connector>
-
+  
 	    <xslt-config>/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar</xslt-config>
 	    <xslt-config></xslt-config>
           <silent>true</silent>
@@ -117,7 +117,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
 	
 	<!-- <ixml-connector>com.xml_project.morganaxproc3.ninemlConnector.NineMLConnector</ixml-connector> -->`
 	<ixml-connector>com.xml_project.morganaxproc3.markupblitzConnector.MarkupBlitzConnector</ixml-connector>
-
+  
 	<!--
 	<mediatype-mapping>
 		<map file-extension="123" media-type="application/xml" />
@@ -125,18 +125,18 @@ This is an XProc processor that you can use with more complex ixml contexts and 
 	-->
     </morgana-config>
     ```
-    
+  
 * **Morgana alias**: Okay, now it's time to make an alias for Morgana! Open your `.zshrc` file. You will need to adapt my sample alias below to repreesent the location of 
   * the location of your Morgana.sh file in the Morgana directory (I put mine over in my "GitHub" folder). 
   * the location of your morgana-config.xml file (in your "home").
   * My morgana alias looks like this:
-    ```
+    ```shell
     alias morgana='/Users/eeb4/Documents/GitHub/MorganaXProc-IIIse-1.4.10/Morgana.sh -config=/Users/eeb4/morgana-config.xml'
     ```
 * Time for some coffee! We'll go and download and install CoffeeFilter and CoffeeGrinder from <https://github.com/nineml>. (As usual I'm setting coffee stuff in my GitHub folder.)
     * Download [the most recent CoffeeFilter](https://github.com/nineml/coffeefilter/releases), unzip it where you want it. 
     * Download [the most recent CoffeeGrinder](https://github.com/nineml/coffeegrinder/releases), unzip it where you want it.
- 
+
 * **Modifying Morgana.sh**: Now we need to make sure Morgana's executable script (the Morgana.sh file) can find its way to the CoffeeGrinder and CoffeeFilter jar files you just unpacked.
     * First, navigate in your shell to where you saved the MorganaXproc-IIISe directory. Take a look with `ls` and make sure it has a file named `Morgana.sh` inside.
     * Try `ls -lisa` to see its rwx (read-write-execute) properties. They probably look like this: `-rw-r--r--@`. We need to change it to make it executable.
@@ -176,7 +176,7 @@ CLASSPATH=$BLITZ_JAR:$COFFEEGRINDER_JAR:$COFFEEFILTER_JAR:$SAXON_JAR:$MORGANA_LI
 
 java $JAVA_AGENT -cp $CLASSPATH com.xml_project.morganaxproc3.XProcEngine "$@"
  ```
-  
+
 
 *********************
 
@@ -190,7 +190,7 @@ You may think you installed this already, but that was "CoffeeSacks" (made by th
 * I'm storing CoffeePot in my GitHub directory on my local computer.
 * We need to **create an alias for the coffeepot .jar file in your `.zshrc` file**. Note the filepath that leads to the coffeepot jar  (use `pwd` to help), and your alias might look something like mine (make sure yours applies the version number that you downloaded:
 
-```
+```shell
 alias coffeepot='java -jar /Users/eeb4/Documents/GitHub/coffeepot-3.2.7/coffeepot-3.2.7.jar'
 ```
 
@@ -198,9 +198,9 @@ alias coffeepot='java -jar /Users/eeb4/Documents/GitHub/coffeepot-3.2.7/coffeepo
 
   * In your "home" (same place where you open `.zshrc`) create a new system file with `touch .nineml.properties`
   * Edit your file (`nano .nineml.properties`) and adapt the following (using your own filepath to graphviz that you copied from `.xmlcalabash3`). Examples:
- 
+
       * **Default location for Homebrew Graphviz**
-    ```
+    ```shell
     graphviz=/opt/homebrew/bin/dot
     ignore-trailing-whitespace=true
     pretty-print=true
@@ -213,8 +213,8 @@ alias coffeepot='java -jar /Users/eeb4/Documents/GitHub/coffeepot-3.2.7/coffeepo
     ```
 
     * (Dr. B's weird special case b/c Graphviz was installed elsewhere):
-   
-    ```
+  
+    ```shell
     graphviz=/usr/local/Cellar/graphviz/12.2.1/bin/dot
     ignore-trailing-whitespace=true
     pretty-print=true
@@ -224,16 +224,16 @@ alias coffeepot='java -jar /Users/eeb4/Documents/GitHub/coffeepot-3.2.7/coffeepo
     ignore-bom=true
     normalize-line-endings=true
     trailing-newline-on-output=true
-    ```   
+    ```
 
   * If you ever need to adjust these settings or find out more, here's [the CoffeePot documentation](https://docs.nineml.org/current/coffeepot/bk02ch07.html).
 
 ### Running CoffeePot 
 * Run CoffeePot over an ixml grammar and a .txt file like this, using your alias: (Think of "g" as standing for "grammar" and "i" as "input file")
 
-```
+```shell
 coffeepot -g:filename.ixml -i:filename.txt
-``` 
+```
 
 * You can add a couple of things to this command to check for ambiguities in the ixml, and to visualize the output:
     * Try adding `--analyze-ambiguity` like so: `coffeepot -g:filename.ixml -i:filename.txt --analyze-ambiguity`
@@ -248,12 +248,12 @@ To be used with the XProc processor [**Morgana**](#morgana). Up to this point, w
 * When Gradle finishes building you'll be returned to the command prompt. Check for the new jar, which you should now find in the repo in `build/libs/markup-blitz.jar`.
 * Finally, go to "home" to your `.zshrc` and make an alias for running your new markup-blitz.jar file. I called my alias "blitz" and my alias definition looks like this:
 
-  ```
+  ```shell
   alias blitz='java -jar /Users/eeb4/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar'
   ```
 * To run Markup Blitz to process an ixml grammar and an input .txt file, use your new alias like this:
 
-  ```
+  ```shell
   blitz filename.ixml filename.txt
   ```
   
