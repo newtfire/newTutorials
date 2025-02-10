@@ -18,7 +18,7 @@ This is cool coffee art:
 
 # Table of Contents
 
-* [**Preliminary Checks & Suggestions**](#preliminary-checks-&-suggestions)
+* [**Preliminary Checks & Suggestions**](#preliminary-checks-&amp;-suggestions)
 * [**XProc Processors**](#xproc-processors)
 
 *********************
