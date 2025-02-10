@@ -19,13 +19,16 @@ This is cool coffee art:
 # Table of Contents
 
 * [**Preliminary Checks & Suggestions**](#preliminary-checks--suggestions)
+	* [Installing JDK](#installing-JDK)
 * [**XProc Processors**](#xproc-processors)
 
 *********************
 
 # Preliminary Checks & Suggestions
 
-### First, make sure you have developer (jdk) java installed:
+### Installing JDK
+
+First, make sure you have developer (jdk) java installed:
 
 * Check your version of java in terminal with
 
@@ -107,7 +110,7 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
 * Here's what you'll need inside (copy/paste):
 
     
-    * **(For the default location for Homebrew Graphviz)**
+    * ***(For the default location for Homebrew Graphviz)***
   
    ```shell
       <cc:xml-calabash xmlns:cc="https://xmlcalabash.com/ns/configuration">
@@ -380,10 +383,11 @@ You may think you installed this already, but that was "CoffeeSacks" (made by th
 * **Adapt** the following (using your own filepath to graphviz that you copied from `.xmlcalabash3`). 
 
 	Examples:
+
  
-      * **(For the default location for Homebrew Graphviz)**
-    
-    	```shell
+    * ***(For the default location for Homebrew Graphviz)***
+  
+   	    ```shell
 	    graphviz=/opt/homebrew/bin/dot
 	    ignore-trailing-whitespace=true
 	    pretty-print=true
