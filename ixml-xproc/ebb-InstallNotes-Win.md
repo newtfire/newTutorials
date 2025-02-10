@@ -101,7 +101,7 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
   * You need to know out where you installed calabash (Mine is in my GitHub directory). You'll be pointing your script to the `xmlcalabash.sh` line inside.
   * Here's what my calabash execution alias looks like in my `.bashrc` file, giving it the name "calabash"
 
-```
+```shell
 alias calabash='~/Documents/GitHub/xmlcalabash-3.0.0-alpha18/xmlcalabash.sh --init:org.nineml.coffeesacks.RegisterCoffeeSacks'
 ```
 
