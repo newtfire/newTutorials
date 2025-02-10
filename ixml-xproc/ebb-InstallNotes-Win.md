@@ -71,13 +71,12 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
   
   * Open your shell and navigate to your new xmlcalabash folder. For this to work we need to be able to use Java to execute the .jar file inside.
      Test if your Java installation works. This 'help' shell command will show you all the different commands available:
-    
-        * `java -jar xmlcalabash-app-3.0.0-alpha18.jar help`
+       * `java -jar xmlcalabash-app-3.0.0-alpha18.jar help`
         * ADAPT THE LINE ABOVE TO APPLY YOUR VERSION NUMBER AS NEEDED!
         * (NOTE: on the XML Calabash repo, they left out the `.jar` portion of the filename, so their line won't work)
-    
+       
     * NOTE: **alpha18 is the latest release as of 2 February 2025** 
-
+  
 * **Test if you have graphviz** by entering this in your terminal: `dot -V` . Probably you need to install GraphViz, and you can do that with `choco install graphviz`. 
 
 * **CoffeeSacks**: (This is needed for Calabash.)
@@ -108,7 +107,7 @@ alias calabash='~/Documents/GitHub/xmlcalabash-3.0.0-alpha18/xmlcalabash.sh --in
 
 * *For future reference*: As soon as we have an XProc pipeline file (`.xpl`) ready to run, we'll be running with a command like this, using the alias you created: `calabash filename.xpl` ). And we can see some nifty graphviz sketches of our pipeline if we append this to the command (including the dot at the end: `--graphs:.` like so: `calabash filename.xpl --graphs:.`
 
-<!-- WINDOWS ADAPTATION TO HERE. -->
+
 
 # Morgana
 
@@ -251,12 +250,12 @@ You may think you installed this already, but that was "CoffeeSacks" (made by th
 * We need to **create an alias for the coffeepot .jar file in your `.bashrc` file**. Note the filepath that leads to the coffeepot jar  (use `pwd` to help), and your alias might look something like mine (make sure yours applies the version number that you downloaded:
   
   ```
-  alias coffeepot='java -jar /Users/eeb4/Documents/GitHub/coffeepot-3.2.7/coffeepot-3.2.7.jar'
+  alias coffeepot='java -jar /Users/ebbon/Documents/GitHub/coffeepot-3.2.7/coffeepot-3.2.7.jar'
   ```
 
 *  To do things with CoffeePot, we need to create a system dot-file named `nineml.properties` in the same "home" location as your `bashrc`. This contains some default settings for pretty-printing your output XML and your graphviz visualizations. You'll need to note (again) where your GraphViz bin/dot is located, and you've entered that already in your `.xmlcalabash3` file, so use the same filepath location here.
-  
-  
+
+
   * In your "home" (same place where you open `.bashrc`) create a new system file and open it for editing with `nano .nineml.properties`
     
     * Edit your file to adapt the following (using your own filepath to graphviz that you copied from `.xmlcalabash3`). Examples:
@@ -300,11 +299,11 @@ To be used with the XProc processor [**Morgana**](#morgana). Up to this point, w
 - For this, we'll follow the [official Markup Blitz instructions (on the README)](https://github.com/GuntherRademacher/markup-blitz).
 - (I cloned the markup-blitz repo in my GitHub directory.)
 - For Macs, this line (marked for Linux/Unix) works to build our jar: `./gradlew clean jar`
-- When Gradle finishes building you'll be returned to the command prompt. Check for the new jar, which you should now find in the repo in `build/libs/markup-blitz.jar`.
-- Finally, go to "home" to your `.zshrc` and make an alias for running your new markup-blitz.jar file. I called my alias "blitz" and my alias definition looks like this:
+- When Gradle finishes building you'll be returned to the command prompt. Check for the new jar, which you should now find in the repo in `build/libs/markup-blitz.jar`
+- Finally, go to "home" to your `.bashrc` and make an alias for running your new markup-blitz.jar file. I called my alias "blitz" and my alias definition looks like this:
 
 ```shell
- alias blitz='java -jar /Users/eeb4/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar'
+ alias blitz='java -jar /Users/ebbon/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar'
 ```
 
 
