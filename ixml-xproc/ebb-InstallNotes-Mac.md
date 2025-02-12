@@ -146,6 +146,16 @@ This alias will execute a pretty long command, so you'll definitely want to use 
 	
    * NOTE: If you're copying this line and just changing the username to match your own, make sure you also check that the name of the calabash directory is the same (version name) as yours.
     
+   * To "smoke test" (or see if your installation is working) navigate to your xmlcalabash repo and enter this command: `calabash helloWorld.xpl`. If your installation was successful you should see the following:
+
+```shell
+  === result :: 1 :: file:/C:/Users/ebbon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/helloWorld.xpl ===
+<?xml version="1.0" encoding="windows-1252"?>
+<helloWorld>This is XML Calabash version 3.0.0-alpha18.
+Share and enjoy!</helloWorld>
+=====================================================================================================
+``` 
+    
    * *For future reference*: As soon as we have an XProc pipeline file (`.xpl`) ready to run, we'll be running with a command like this, using the alias you created: `calabash filename.xpl` ). And we can see some nifty graphviz sketches of our pipeline if we append this to the command (including the dot at the end: `--graphs:.` like so: `calabash filename.xpl --graphs:.`
 
 
@@ -332,6 +342,14 @@ Now, we need to make sure Morgana's executable script (the Morgana.sh file) can 
 	
 	java $JAVA_AGENT -cp $CLASSPATH com.xml_project.morganaxproc3.XProcEngine "$@"
  ```
+
+* To "smoke test" Morgana to see if it is properly installed, navigate to your Morgana repo and enter `morgana pipeline.xpl`. If your installation was successful, you will see the following:
+
+```shell
+$ morgana pipeline.xpl
+Hello world. This is an XProc 3.0 pipeline running.
+```
+ 
   
 *********************
 
