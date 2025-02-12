@@ -202,7 +202,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
   * My morgana alias looks like this:
     
     ```shell
-    alias morgana='~/Documents/GitHub/MorganaXProc-IIIse-1.4.10/Morgana.sh -config=/Users/eeb4/morgana-config.xml'
+    alias morgana='~/Documents/GitHub/MorganaXProc-IIIse-1.4.10/Morgana.bat -config=/Users/eeb4/morgana-config.xml'
     ```
 
 * Time for some coffee! We'll go and download and install CoffeeFilter and CoffeeGrinder from <https://github.com/nineml>. (As usual I'm setting coffee stuff in my GitHub folder.)
