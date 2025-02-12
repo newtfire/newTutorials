@@ -24,6 +24,7 @@ This is cool coffee art:
 	* [Suggestions](#suggestions)
 * [**XProc Processors**](#xproc-processors)
 	* [**Calabash**](#calabash)
+		* [Installing Calabash](#installing-calabash)
 	* [**Morgana**](#morgana)
 * [**Invisible XML (ixml) Processors**](#invisible-xml-ixml-processors)
 	* [**CoffeePot**](#coffeepot)
