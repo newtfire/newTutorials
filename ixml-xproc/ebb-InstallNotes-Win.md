@@ -24,6 +24,7 @@ This is cool coffee art:
 * [**Preliminary Installations & Suggestions**](#preliminary-installations--suggestions)
 	* [Installing Chocolatey](#installing-chocolatey)
 	* [Installing JDK](#installing-jdk)
+	* [Suggestions](#suggestions)
 * [**XProc Processors**](#xproc-processors)
 	* [**Calabash**](#calabash)
 	* [**Morgana**](#morgana)
@@ -82,6 +83,12 @@ First, make sure you have developer (jdk) java installed:
   
   ![](environvar-win.png)
   
+### Suggestions
+
+* There are a lot of installations throughout this process. To keep them organized, *it is a good idea to place them all in your GitHub directory since you should be familiar with that directory at this point.*
+
+* To make things simpler for yourself, use the same alias names that I use in this tutorial, so when we're working on this in class, there's no confusion if your alias has a different name than mine.
+
 *********************
 
 # XProc Processors
@@ -90,62 +97,100 @@ First, make sure you have developer (jdk) java installed:
 
 This is an XProc processor that you can use with the ixml processor [**CoffeePot**](#coffeepot) that's good for simple grammars and input files that aren't super large.
 
-* Installing Calabash:
+### Installing Calabash
   
-  * Get it from here: [Releases · xmlcalabash/xmlcalabash3 · GitHub](https://github.com/xmlcalabash/xmlcalabash3/releases) and look for the **xmlcalabash zip file** in the latest release, after the release notes. The zip directory you 
-    need is the third one from the top (named something like this with the 
-    version number in the name): **xmlcalabash-3.0.0-alpha18.zip**
+* Get it from here: <https://github.com/xmlcalabash/xmlcalabash3/releases> and look for the **xmlcalabash zip file** in the latest release, after the release notes. The zip directory you need is the third one from the top (named something like this with the version number in the name): **xmlcalabash-3.0.0-alpha18.zip**
+* Unzip this and move it somewhere central where it's easy to work with. I set my unzipped xmlcalabash folder in my GitHub directory so it's near where I work on code.
+* Open your shell and navigate to your new xmlcalabash folder. For this to work we need to be able to use Java to execute the .jar file inside.
+       Test if your Java installation works. This 'help' shell command will show you all the different commands available **(ADAPT THIS LINE TO APPLY TO YOUR VERSION NUMBER AS NEEDED!)**:
+	
+	```shell
+	java -jar xmlcalabash-app-3.0.0-alpha18.jar help
+	```
+	
+	* NOTE: on the XML Calabash repo, they left out the `.jar` portion of the filename, so their line won't work
+	* NOTE: **alpha18 is the latest release as of 2 February 2025**
   
-  * Unzip this and move it somewhere central where it's easy to work with. I set my unzipped xmlcalabash folder in my GitHub directory so it's near where I work on code.
-  
-  * Open your shell and navigate to your new xmlcalabash folder. For this to work we need to be able to use Java to execute the .jar file inside.
-     Test if your Java installation works. This 'help' shell command will show you all the different commands available:
-       * `java -jar xmlcalabash-app-3.0.0-alpha18.jar help`
-        * ADAPT THE LINE ABOVE TO APPLY YOUR VERSION NUMBER AS NEEDED!
-        * (NOTE: on the XML Calabash repo, they left out the `.jar` portion of the filename, so their line won't work)
-       
-    * NOTE: **alpha18 is the latest release as of 2 February 2025** 
-  
-* **Test if you have graphviz** by entering this in your terminal: `dot -V` . Probably you need to install GraphViz, and you can do that with `choco install graphviz`. 
+### Graphviz
 
-* **CoffeeSacks**: (This is needed for Calabash.)
+* **Test if you have graphviz** by entering this in your terminal: 
+
+	```shell
+	dot -V
+	```
+	
+* You will probably need to install GraphViz, and you can do that with `choco install graphviz`.
+
+### CoffeeSacks
+
+*(This is needed for Calabash)*
   
   * Pick up CoffeeSacks from the versioned releases on the repo, here: https://github.com/nineml/coffeesacks/releases and find the latest one to download.
   * Copy the **CoffeeSacks jar** file into your XML Calabash `extra/` subdirectory.
 
-* **Make the .xmlcalabash3 dot-file**: 
-  
-  * Navigate to your "home" directory (which is where you set up your .bash_profile file and establish your aliases and environment variables and such like). In this location we'll be storing a dot-file which will help Calabash to run.
-  * We need to know where Chocolatey installed graphviz.
+### Configuring Calabash
+
+***Making the .xmlcalabash3 dot-file:***
+ 
+* Navigate to your "home" directory (which is where you set up your .bash_profile file and establish your aliases and environment variables and such like). In this location we'll be storing a dot-file which will help Calabash to run.
+    * NOTE: We will NOT be using Saxon EE at all.
+    * We need to know where Chocolatey installed graphviz.
     * Use the Git Bash shell and type `where dot` . Mine is given as `C:\Program Files\Graphviz\bin\dot.exe` You will need this path.
-  * Back in your "home" directory, make the new file. You can copy in this command in your terminal: `touch .xmlcalabash3` (with that leading dot exactly like that). You will need to edit the `@dot` attribute on the `<cc:graphviz>` element to point it to YOUR location for graphviz up to the dot.exe :
+* Back in your "home" directory, make the new file. You can copy in this command in your Git Bash terminal (with that leading dot exactly like this):
 
-```xml
-   <cc:xml-calabash xmlns:cc="https://xmlcalabash.com/ns/configuration">
-      <cc:graphviz dot="C:\Program Files\Graphviz\bin\dot.exe"/>
-   </cc:xml-calabash>
-```
+	```shell
+	touch .xmlcalabash3
+	```
+	
+* Open up the file in `nano` to edit: 
 
-* * Now we make an alias for running calabash. Open up your `.bashrc` and add an alias line that makes sense for you to type in when you want to run a calabash command. (We figure "calabash" is pretty good.) Your alias needs to execute a pretty long command. 
-  * You need to know out where you installed calabash (Mine is in my GitHub directory). You'll be pointing your script to the `xmlcalabash.sh` line inside.
-  * Here's what my calabash execution alias looks like in my `.bashrc` file, giving it the name "calabash"
+	```shell
+	nano .xmlcalabash3
+	```
+	
+* Here's what you'll need inside (copy/paste):
 
-```shell
-alias calabash='~/Documents/GitHub/xmlcalabash-3.0.0-alpha18/xmlcalabash.sh --init:org.nineml.coffeesacks.RegisterCoffeeSacks'
-```
+
+    * *You will need to edit the `@dot` attribute on the `<cc:graphviz>` element to point it to YOUR location for graphviz up to the dot.exe*
+  
+   ```shell
+      <cc:xml-calabash xmlns:cc="https://xmlcalabash.com/ns/configuration">
+         <cc:graphviz dot="C:\Program Files\Graphviz\bin\dot.exe"/>
+      </cc:xml-calabash>
+   ```
+
+### Creating an Alias for Calabash
+This alias will execute a pretty long command, so you'll definitely want to use it instead of typing the whole command each time.
+
+* Open up your `.bashrc` in your Git Bash terminal:
+
+	```shell
+	nano .bashrc
+	```
+
+    * You need the filepath of where you installed Calabash (I put mine in my GitHub directory). You'll be pointing your script to the `xmlcalabash.sh` file inside.
+
+    * Here's what my calabash execution alias looks like in my `.zshrc` file, giving it the name "calabash"
+
+	```shell
+	alias calabash='~/Documents/GitHub/xmlcalabash-3.0.0-alpha18/xmlcalabash.sh --init:org.nineml.coffeesacks.RegisterCoffeeSacks'
+	```
+	
+   * NOTE: If you're copying this line and just changing the username to match your own, make sure you also check that the name of the calabash directory is the same (version name) as yours.
+
+### Testing Calabash
 
 * To "smoke test" (or see if your installation is working) navigate to your xmlcalabash repo and enter this command: `calabash helloWorld.xpl`. If your installation was successful you should see the following:
 
-```shell
-  === result :: 1 :: file:/C:/Users/ebbon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/helloWorld.xpl ===
-<?xml version="1.0" encoding="windows-1252"?>
-<helloWorld>This is XML Calabash version 3.0.0-alpha18.
-Share and enjoy!</helloWorld>
-=====================================================================================================
-```
+	```shell
+	  === result :: 1 :: file:/C:/Users/ebbon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/helloWorld.xpl ===
+	<?xml version="1.0" encoding="windows-1252"?>
+	<helloWorld>This is XML Calabash version 3.0.0-alpha18.
+	Share and enjoy!</helloWorld>
+	=====================================================================================================
+	```
 
 * *For future reference*: As soon as we have our own XProc pipeline files (`.xpl`) ready to run, we'll be running with a command like this, using the alias you created: `calabash filename.xpl` ). And we can see some nifty graphviz sketches of our pipeline if we append this to the command (including the dot at the end: `--graphs:.` like so: `calabash filename.xpl --graphs:.`
-
 
 
 ## Morgana

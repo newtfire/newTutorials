@@ -26,7 +26,7 @@ This is cool coffee art:
 	* [**Calabash**](#calabash)
 		* [Installing Calabash](#installing-calabash)
 		* [Graphviz](#graphviz)
-		* [CoffeeSacks](#coffeesacks-this-is-needed-for-calabash)
+		* [CoffeeSacks](#coffeesacks)
 		* [Configuring Calabash](#configuring-calabash)
 		* [Creating an Alias for Calabash](#creating-an-alias-for-calabash)
 		* [Testing Calabash](#testing-calabash)
@@ -163,7 +163,7 @@ You will need developer (jdk) java installed:
 
 This is an XProc processor that you can use with the ixml processor [**CoffeePot**](#coffeepot) that's good for simple grammars and input files that aren't super large.
 
-### Installing Calabash:
+### Installing Calabash
 
 * Get it from here: <https://github.com/xmlcalabash/xmlcalabash3/releases> and look for the **xmlcalabash zip file** in the latest release, after the release notes. The zip directory you need is the third one from the top (named something like this with the version number in the name): **xmlcalabash-3.0.0-alpha18.zip**
 * Unzip this and move it somewhere central where it's easy to work with. I set my unzipped xmlcalabash folder in my GitHub directory so it's near where I work on code.
@@ -177,7 +177,7 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
 	* NOTE: on the XML Calabash repo, they left out the `.jar` portion of the filename, so their line won't work
 	* NOTE: **alpha18 is the latest release as of 2 February 2025** 
 
-### Graphviz:
+### Graphviz
 
 * **Test if you have graphviz** by entering this in your terminal: 
 
@@ -187,12 +187,14 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
 	
 * You will probably need to install GraphViz, and you can do that with `brew install graphviz`. 
 
-### CoffeeSacks: (this is needed for Calabash)
+### CoffeeSacks
+
+*(This is needed for Calabash)*
 
 * Pick up CoffeeSacks from the versioned releases on the repo, here: https://github.com/nineml/coffeesacks/releases and find the latest one to download.
 * Copy the **CoffeeSacks jar** file into your XML Calabash `extra/` subdirectory.
 
-### Configuring Calabash:
+### Configuring Calabash
 
 ***Making the .xmlcalabash3 dot-file:***
  
@@ -255,12 +257,11 @@ This alias will execute a pretty long command, so you'll definitely want to use 
    * To "smoke test" (or see if your installation is working) navigate to your xmlcalabash repo and enter this command: `calabash helloWorld.xpl`. If your installation was successful you should see the following:
 
 	```shell
-	=== result :: 1 :: file:/C:/Users/ebbon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/helloWorld.xpl ===
-	<?xml version="1.0" encoding="windows-1252"?>
+	=== result :: 1 :: file:/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/helloWorld.xpl ===
 	<helloWorld>This is XML Calabash version 3.0.0-alpha18.
 	Share and enjoy!</helloWorld>
-	=====================================================================================================
-	``` 
+	==========================================================================================================
+		```
     
    * *For future reference*: As soon as we have an XProc pipeline file (`.xpl`) ready to run, we'll be running with a command like this, using the alias you created: `calabash filename.xpl` ). And we can see some nifty graphviz sketches of our pipeline if we append this to the command (including the dot at the end: `--graphs:.` like so: `calabash filename.xpl --graphs:.`
 
