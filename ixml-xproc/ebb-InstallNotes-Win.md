@@ -187,51 +187,41 @@ This is an XProc processor that you can use with more complex ixml contexts and 
   * Download [the most recent CoffeeFilter](https://github.com/nineml/coffeefilter/releases), unzip it where you want it. 
   * Download [the most recent CoffeeGrinder](https://github.com/nineml/coffeegrinder/releases), unzip it where you want it.
 
-* **Modifying Morgana.sh**: Now we need to make sure Morgana's executable script (the Morgana.sh file) can find its way to the CoffeeGrinder and CoffeeFilter jar files you just unpacked.
+* **Modifying Morgana.bat**: Now we need to make sure Morgana's Windows batch executable script (the Morgana.bat file) can find its way to the CoffeeGrinder and CoffeeFilter jar files you just unpacked.
   
-  * First, navigate in your shell to where you saved the MorganaXproc-IIISe directory. Take a look with `ls` and make sure it has a file named `Morgana.sh` inside.
-  * Try `ls -lisa` to see its rwx (read-write-execute) properties. They probably look like this: `-rw-r--r--`. We need to change it to make it executable.
-  * **Now, we need to edit Morgana.sh**. Open the file in your nano or vi editor.
-    * First, we need to **make Morgana.sh executable**. In Windows we have to do this by adding this special line at the top of the file:     
-      
-      ```shell
-      #!/bin/bash
-      ```
-      
-      To check if this worked, exit and save from the editor, and run `ls -lisa` again: the properties should have changed to: `-rwxr-xr-x `
-    * Go back to edit Morgana.sh in your shell editor (nano or vi). You'll need to add and adjust the lines marked `#Local customization`** to identify the lcoation of Saxon-HE (we'll use the one in Calabash library), the CoffeeGrinder and CoffeeFilter .jar files, and finally the location of the Markup Blitz .jar file (after you install [Markup Blitz](#markup-blitz)).
+  * Open the Morgana.bat file in your nano or vi editor.
+    * You'll need to add and adjust the lines marked `REM Local customization`** to identify the location of Saxon-HE (we'll use the one in Calabash library), the CoffeeGrinder and CoffeeFilter .jar files, and finally the location of the Markup Blitz .jar file (after you install [Markup Blitz](#markup-blitz)).
     * **Edit the `CLASSPATH`** near the end of the file: Basically you need to add all the local customization variables here, and it will be kind of like pouring Markup Blitz through a coffee grinder, into a coffee filter, and then through some saxon into a morgana mug. :-) Here's how the CLASSPATH should be edited, and you just need to make sure that each of these variables has been defined in order for Morgana to run.
-      `CLASSPATH=$BLITZ_JAR:$COFFEEGRINDER_JAR:$COFFEEFILTER_JAR:$SAXON_JAR:$MORGANA_LIB:$MORGANA_HOME/MorganaXProc-IIIse.jar`
-    * Here is how my Morgana.sh looks after I've located (and installed) everything:
+      `set CLASSPATH="%BLITZ_JAR%;%COFFEEGRINDER_JAR%;%COFFEEFILTER_JAR%;%SAXON_JAR%;%LIB_PATH%;%PROG_PATH%"`
+    * Here is how my Morgana.bat looks after I've located (and installed) everything:
 
 ```shell
-CURRENT_SCRIPT=$0
-#CURRENT_SCRIPT="$(readlink -f "$0")"  #resolves symlinks on unix based systems (Does not work on BSD systems like MacOS)
+@echo off
+setlocal
 
-#echo $0
-MORGANA_HOME=$(dirname $CURRENT_SCRIPT)
-MORGANA_LIB=$MORGANA_HOME/MorganaXProc-IIIse_lib/*
+set MORGANADIR=%~dp0
 
-#Local customization
-SAXON_JAR=/Users/ebbon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar
-COFFEEGRINDER_JAR=/Users/ebbon/Documents/GitHub/coffeegrinder-3.2.7/CoffeeGrinder-3.2.7.jar
-COFFEEFILTER_JAR=/Users/ebbon/Documents/GitHub/coffeefilter-3.2.7/CoffeeFilter-3.2.7.jar
-BLITZ_JAR=/Users/ebbon/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar
+REM All related jars are expected to be in $MORGANA_LIB. For externals jars: Add them to $CLASSPATH
+set PROG_PATH="%MORGANADIR%MorganaXProc-IIIse.jar"
+set LIB_PATH="%MORGANADIR%MorganaXProc-IIIse_lib/*"
 
-#Settings for JAVA_AGENT: Only for Java 8 we have to use -javaagent.
-JAVA_AGENT=""
+REM Local customization
+set SAXON_JAR="/c/Users/ebbon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar"
+set COFFEEGRINDER_JAR="/c/Users/ebbon/Documents/GitHub/coffeegrinder-3.2.7/CoffeeGrinder-3.2.7.jar"
+set COFFEEFILTER_JAR="/c/Users/ebbon/Documents/GitHub/coffeefilter-3.2.7/CoffeeFilter-3.2.7.jar"
+set BLITZ_JAR="/c/Users/ebbon/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar"
 
-JAVA_VER=$(java -version 2>&1 | sed -n ';s/.* version "\(.*\)\.\(.*\)\..*".*/\1\2/p;')
 
-if [ $JAVA_VER = "18" ]
-then
-    JAVA_AGENT=-javaagent:$MORGANA_HOME/MorganaXProc-IIIse_lib/quasar-core-0.7.9.jar
-fi
+set CLASSPATH="%BLITZ_JAR%;%COFFEEGRINDER_JAR%;%COFFEEFILTER_JAR%;%SAXON_JAR%;%LIB_PATH%;%PROG_PATH%"
 
-# All related jars are expected to be in $MORGANA_LIB. For externals jars: Add them to $CLASSPATH
-CLASSPATH=$BLITZ_JAR:$COFFEEGRINDER_JAR:$COFFEEFILTER_JAR:$SAXON_JAR:$MORGANA_LIB:$MORGANA_HOME/MorganaXProc-IIIse.jar
+REM Settings for JAVA_AGENT: Only for Java 8 we have to use -javaagent.
+@for /f tokens^=2-5^ delims^=.-_^" %%j in ('java -fullversion 2^>^&1') do set "JAVA_VERSION=%%j%%k"
 
-java $JAVA_AGENT -cp $CLASSPATH com.xml_project.morganaxproc3.XProcEngine "$@"
+set JAVA_AGENT=
+if %JAVA_VERSION% EQU 18 (set JAVA_AGENT="-javaagent:%MORGANADIR%MorganaXProc-IIIse_lib/quasar-core-0.7.9.jar")
+
+java %JAVA_AGENT% -cp %CLASSPATH% com.xml_project.morganaxproc3.XProcEngine %*
+
 ```
 
 *********************
