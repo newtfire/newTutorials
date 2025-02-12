@@ -19,15 +19,15 @@ This is cool coffee art:
 # Table of Contents
 
 * [**Preliminary Installations & Suggestions**](#preliminary-installations--suggestions)
-	* [ ] [Installing Homebrew](#installing-homebrew)
-	* [ ] [Installing JDK](#installing-jdk)
-	* [ ] [Suggestions](#suggestions)
+	* [Installing Homebrew](#installing-homebrew)
+	* [Installing JDK](#installing-jdk)
+	* [Suggestions](#suggestions)
 * [**XProc Processors**](#xproc-processors)
-	* [ ] [**Calabash**](#calabash)
-	* [ ] [**Morgana**](#morgana)
+	* [**Calabash**](#calabash)
+	* [**Morgana**](#morgana)
 * [**Invisible XML (ixml) Processors**](#invisible-xml-ixml-processors)
-	* [ ] [**CoffeePot**](#coffeepot)
-	* [ ] [**Markup Blitz**](#markup-blitz)
+	* [**CoffeePot**](#coffeepot)
+	* [**Markup Blitz**](#markup-blitz)
 * [**Completion**](#completion)
 
 *********************
