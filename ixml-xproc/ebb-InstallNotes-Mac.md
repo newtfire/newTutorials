@@ -1,9 +1,9 @@
 # Invisible XML (ixml) / XProc Installations (for macOS)
 
-This document is a detailed set of installation/configuration instructions for:
-<http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml> 
+This document is a detailed set of installation/configuration instructions for Mac users, developed from
+<http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml>.
 
-This is related to a tutorial under development at <http://dh.obdurodon.org/ixml-and-xproc-lesson-plan.xhtml> 
+This is related to a tutorial under development at <http://dh.obdurodon.org/ixml-and-xproc-lesson-plan.xhtml>. 
 
 This is cool coffee art:
 
@@ -21,6 +21,7 @@ This is cool coffee art:
 * [**Preliminary Checks & Suggestions**](#preliminary-checks--suggestions)
 	* [Installing JDK](#installing-JDK)
 * [**XProc Processors**](#xproc-processors)
+* [**ixml Processors**](#ixml-processors)
 
 *********************
 

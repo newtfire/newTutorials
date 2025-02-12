@@ -1,13 +1,13 @@
-# Invisible XML / XProc
+# Invisible XML (ixml) / XProc Installations (for Windows)
 
-We need help with developing and fine-tuning installation/configuration instructions:
-<http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml> 
 
-This is related to a tutorial under development at <http://dh.obdurodon.org/ixml-and-xproc-lesson-plan.xhtml> 
+This document is a detailed set of installation/configuration instructions for Windows users, developed from
+<http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml>.
 
-**********
+This is related to a tutorial under development at <http://dh.obdurodon.org/ixml-and-xproc-lesson-plan.xhtml>. 
 
-# Windows OS notes
+This is cool coffee art:
+
 
                _ 
              \| |D         
@@ -16,7 +16,19 @@ This is related to a tutorial under development at <http://dh.obdurodon.org/ixml
        mug   coffee 
               pot     
 
-# Preliminaries
+
+*********************
+
+# Table of Contents
+
+* [**Preliminary Checks & Suggestions**](#preliminary-checks--suggestions)
+	* [Installing JDK](#installing-JDK)
+* [**XProc Processors**](#xproc-processors)
+* [**ixml Processors**](#ixml-processors)
+
+*********************
+
+# Preliminary Checks & Suggestions
 
 On Windows, you will need to move between different shells to handle installations. You will get to know:
 
@@ -37,7 +49,8 @@ Use your Windows PowerShell in "Run as Administrator" mode, and follow [Chocolat
 
 You can quickly test out your new installation of Chocolatey by installling Marktext, popular free markdown editor for Windows (which I'm using to write up this guide). Try the command `choco install marktext` You should see the new software come up in your taskbar and you can try it out!
 
-## Now, make sure you have developer (jdk) java installed:
+## Installing JDK 
+First, make sure you have developer (jdk) java installed:
 
 * To check if you have java, you can use your Git Bash shell to enter `which java` or `where java`(Those commands won't work in PowerShell, but all the shells will respond to `java -version` (which tells you if you have an old version or nothing at all.)
   * Dr. B here: My version was Java 19 (from 2022) on my Lenovo laptop. For the invisible XML / XProc work we're doing here, I'm going ahead and installing the latest easily available OpenJDK developer version for Windows.
