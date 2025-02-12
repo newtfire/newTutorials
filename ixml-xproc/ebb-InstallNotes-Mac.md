@@ -18,18 +18,59 @@ This is cool coffee art:
 
 # Table of Contents
 
-* [**Preliminary Checks & Suggestions**](#preliminary-checks--suggestions)
+* [**Preliminary Installations & Suggestions**](#preliminary-installations--suggestions)
+	* [Installing Homebrew](#installing-homebrew)
 	* [Installing JDK](#installing-JDK)
+	* [Suggestions](#suggestions)
 * [**XProc Processors**](#xproc-processors)
-* [**ixml Processors**](#ixml-processors)
+	* [**Calabash**](#calabash)
+	* [**Morgana**](#morgana)
+* [**Invisible XML (ixml) Processors**](#invisible-xml-ixml-processors)
+	* [**CoffeePot**](#coffeepot)
+	* [**Markup Blitz**](#markup-blitz)
+* [**Completion**](#completion)
 
 *********************
 
-# Preliminary Checks & Suggestions
+# Preliminary Installations & Suggestions
+
+### Installing Homebrew
+
+<img src="homebrew.png" alt="homebrew logo" width="500"/>
+
+Homebrew is a package manager that helps you install things on your Mac quickly in your Terminal. 
+We'll use it for installing OpenJDK Java.
+
+1. Open a new terminal on your computer.
+2. Then in a web browser look up this url : <https://brew.sh>
+
+3. Once you have Homebrew website open you should see a big header that says install homebrew and a line of terminal code below it:
+```shell 
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```  
+
+You will need to copy the code into your terminal and enter. This starts the installation process.
+(You'll be prompted maybe a few times to accept "Y" or "N" questions. Just click "Y" to continue installing.)
+
+4. You will receive an error for sudo which represents "substitute user do" so to counter this error you will take the download code line for homebrew and add the word sudo before `sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` after running this line it will prompt you with asking for a password this is the password you use to login to you local computer.
+5. Once you enter your password the terminal will the state "Checking for sudo access (which may request your password)... Don't run this as root!" aftering receiving this error you will then repaste that orginal homebrew install code.
+6. After entering the original install code line the terminal will say "Checking for sudo access (which may request your password)... This script will install:" you may get asked you type in your computers password again but you will most likely not though if you do get asked for password just repeat past notes.
+7. Once you get that installing note that the script will download your terminal will then run a bunch of code lines. **After that process completes, at the end of all those run lines the terminal should say something like this**:
+
+```shell
+ Next steps: Run these commands in your terminal to add Homebrew to your PATH: echo >> /Users/dannikalove/.zprofile echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/dannikalove/.zprofileeval "$(/opt/homebrew/bin/brew shellenv)" Run brew help to get started Further documentation: https://docs.brew.sh"
+```
+
+
+8. You will now need to be VERY careful when running each one of those commands. **HEADS UP! You must do two things: Replace the [square-bracketed] portions of each command with your specific filepath to your "home" and system dot-files. Run each line separately.** We're using Dannika's profile as an example here!
+
+    * First, **edit** and run this command : `echo >> [/Users/dannikalove]/.zprofile` 
+    * Next, **edit** run this line : `echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> [/Users/dannikalove]/.zprofile` 
+    * Lastly, run this line : `eval "$(/opt/homebrew/bin/brew shellenv)"`
 
 ### Installing JDK
 
-First, make sure you have developer (jdk) java installed:
+You will need developer (jdk) java installed:
 
 * Check your version of java in terminal with
 
@@ -39,11 +80,13 @@ First, make sure you have developer (jdk) java installed:
 	
      * Dr. B's version is java 19, so upgrading
      * NOTE: if uninstalling Oracle Java, follow these instructions: <https://www.java.com/en/download/help/mac_uninstall_java.html>
-     * Installing latest openjdk on Mac with homebrew: <https://ansidev.xyz/posts/2023-07-11-how-to-install-openjdk-on-macos>
 
-### Installing Homebrew
-* **(Need instructions for Mac students to install Homebrew and set up sudo use for the first time—Dannika!)**
+* Installing latest openjdk on Mac with homebrew (<https://ansidev.xyz/posts/2023-07-11-how-to-install-openjdk-on-macos>):
+* To install the OpenJDK Java on your computer, you must have Homebrew installed first (see above). Install the current stable OpenJDK java with: 
 
+	```shell
+	brew install openjdk
+	```
 
 ### Suggestions
 
@@ -146,15 +189,17 @@ This alias will execute a pretty long command, so you'll definitely want to use 
 	
    * NOTE: If you're copying this line and just changing the username to match your own, make sure you also check that the name of the calabash directory is the same (version name) as yours.
     
+### Testing Calabash
+
    * To "smoke test" (or see if your installation is working) navigate to your xmlcalabash repo and enter this command: `calabash helloWorld.xpl`. If your installation was successful you should see the following:
 
-```shell
-  === result :: 1 :: file:/C:/Users/ebbon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/helloWorld.xpl ===
-<?xml version="1.0" encoding="windows-1252"?>
-<helloWorld>This is XML Calabash version 3.0.0-alpha18.
-Share and enjoy!</helloWorld>
-=====================================================================================================
-``` 
+	```shell
+	=== result :: 1 :: file:/C:/Users/ebbon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/helloWorld.xpl ===
+	<?xml version="1.0" encoding="windows-1252"?>
+	<helloWorld>This is XML Calabash version 3.0.0-alpha18.
+	Share and enjoy!</helloWorld>
+	=====================================================================================================
+	``` 
     
    * *For future reference*: As soon as we have an XProc pipeline file (`.xpl`) ready to run, we'll be running with a command like this, using the alias you created: `calabash filename.xpl` ). And we can see some nifty graphviz sketches of our pipeline if we append this to the command (including the dot at the end: `--graphs:.` like so: `calabash filename.xpl --graphs:.`
 
@@ -343,12 +388,14 @@ Now, we need to make sure Morgana's executable script (the Morgana.sh file) can 
 	java $JAVA_AGENT -cp $CLASSPATH com.xml_project.morganaxproc3.XProcEngine "$@"
  ```
 
+### Testing Morgana
+
 * To "smoke test" Morgana to see if it is properly installed, navigate to your Morgana repo and enter `morgana pipeline.xpl`. If your installation was successful, you will see the following:
 
-```shell
-$ morgana pipeline.xpl
-Hello world. This is an XProc 3.0 pipeline running.
-```
+	```shell
+	$ morgana pipeline.xpl
+	Hello world. This is an XProc 3.0 pipeline running.
+	```
  
   
 *********************
@@ -495,6 +542,8 @@ To be used with the XProc processor [**Morgana**](#morgana). Up to this point, w
   ```
   
 ********************
+
+# Completion
 
 When you have finished all these installations, congratulations! You have everything you need (with Coffee Pot and Markup Blitz) to apply invisible xml to convert text files to xml according to your grammar definition. And you have everything you need (with Calabash and Morgana) to set that ixml conversion into a processing pipeline that can apply XSLT, XQuery, and Schematron to the XML that you create with ixml! 
 
