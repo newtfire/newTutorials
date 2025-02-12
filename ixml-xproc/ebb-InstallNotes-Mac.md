@@ -58,35 +58,76 @@ This is cool coffee art:
 
 <img src="homebrew.png" alt="homebrew logo" width="500"/>
 
-Homebrew is a package manager that helps you install things on your Mac quickly in your Terminal. 
-We'll use it for installing OpenJDK Java.
+Homebrew is a package manager that helps you install things on your Mac quickly in your Terminal. We'll use it for installing OpenJDK Java, but it's a great tool to have in your toolbag.
 
-1. Open a new terminal on your computer.
-2. Then in a web browser look up this url : <https://brew.sh>
+* Go to Homebrew's website:
+	
+	```
+	https://brew.sh
+	```
+	
+* Open a new terminal window and paste this line from their website:
+	
+	```shell 
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	```  
 
-3. Once you have Homebrew website open you should see a big header that says install homebrew and a line of terminal code below it:
-```shell 
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```  
+* Press enter. 
 
-You will need to copy the code into your terminal and enter. This starts the installation process.
-(You'll be prompted maybe a few times to accept "Y" or "N" questions. Just click "Y" to continue installing.)
+	* You may receive an error for sudo (**s**ubstitude **u**ser **do**)
+	* To counter this error, take the download code line for homebrew and add `sudo ` before it: 
 
-4. You will receive an error for sudo which represents "substitute user do" so to counter this error you will take the download code line for homebrew and add the word sudo before `sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` after running this line it will prompt you with asking for a password this is the password you use to login to you local computer.
-5. Once you enter your password the terminal will the state "Checking for sudo access (which may request your password)... Don't run this as root!" aftering receiving this error you will then repaste that orginal homebrew install code.
-6. After entering the original install code line the terminal will say "Checking for sudo access (which may request your password)... This script will install:" you may get asked you type in your computers password again but you will most likely not though if you do get asked for password just repeat past notes.
-7. Once you get that installing note that the script will download your terminal will then run a bunch of code lines. **After that process completes, at the end of all those run lines the terminal should say something like this**:
+		```shell
+		sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+		``` 
+	
+	* After running this line, you will be asked to enter your password. This means the local password you use to login to your computer. *The password will not appear as you type it. This is a security feature.*
+	* Once you enter your password, the terminal will the state `Checking for sudo access (which may request your password)... Don't run this as root!`
+	* After receiving this error, repaste the orginal homebrew install line:
+	
+		```shell
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+		``` 
 
-```shell
- Next steps: Run these commands in your terminal to add Homebrew to your PATH: echo >> /Users/dannikalove/.zprofile echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/dannikalove/.zprofileeval "$(/opt/homebrew/bin/brew shellenv)" Run brew help to get started Further documentation: https://docs.brew.sh"
-```
+* Then, carefully follow the instructions that appear in the terminal window.
+	* You'll be prompted a few times to accept "Y" or "N" (Yes or No) questions. Enter "Y" to continue installing.
+	* You may also be asked to enter your password again. This is still your local password and it will still not appear as you type it.
+	
+* Your terminal will run many lines to install homebrew. **After the process is complete, the terminal should say something like this**:
 
+	```shell
+	...
+	==> Next steps:
+	- Run these commands in your terminal to add Homebrew to your PATH:
+		echo >> /Users/eeb4/.zprofile
+		echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/eeb4/.zprofile
+		eval "$(/opt/homebrew/bin/brew shellenv)"
+	- Run brew help to get started
+	- Further documentation:
+		https://docs.brew.sh
+	```
 
-8. You will now need to be VERY careful when running each one of those commands. **HEADS UP! You must do two things: Replace the [square-bracketed] portions of each command with your specific filepath to your "home" and system dot-files. Run each line separately.** We're using Dannika's profile as an example here!
+* You will need to run those commands. Be cautious: run each line separately, and **replace the "eeb4" portion of each command with your username so it uses your specific filepath to your "home" and system dot-files.**
 
-    * First, **edit** and run this command : `echo >> [/Users/dannikalove]/.zprofile` 
-    * Next, **edit** run this line : `echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> [/Users/dannikalove]/.zprofile` 
-    * Lastly, run this line : `eval "$(/opt/homebrew/bin/brew shellenv)"`
+    * 1st command: 
+    
+	    ```shell
+	    echo >> /Users/eeb4/.zprofile
+	    ```
+	    
+    * 2nd command:
+    	
+    	```shell
+    	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/eeb4/.zprofile
+    	```
+    	
+    * 3rd command:
+
+    	```shell
+    	eval "$(/opt/homebrew/bin/brew shellenv)"
+    	```
+
+* You should now have successfully installed Homebrew!
 
 ### Installing JDK
 
@@ -102,12 +143,12 @@ You will need developer (jdk) java installed:
      * NOTE: if uninstalling Oracle Java, follow these instructions: <https://www.java.com/en/download/help/mac_uninstall_java.html>
 
 * Installing latest openjdk on Mac with homebrew (<https://ansidev.xyz/posts/2023-07-11-how-to-install-openjdk-on-macos>):
-* To install the OpenJDK Java on your computer, you must have Homebrew installed first (see above). Install the current stable OpenJDK java with: 
-
-	```shell
-	brew install openjdk
-	```
-
+	* To install the OpenJDK Java on your computer, you must have Homebrew installed first (see above). Install the current stable OpenJDK java with: 
+	
+		```shell
+		brew install openjdk
+		```
+	
 ### Suggestions
 
 * There are a lot of installations throughout this process. To keep them organized, *it is a good idea to place them all in your GitHub directory since you should be familiar with that directory at this point.*
