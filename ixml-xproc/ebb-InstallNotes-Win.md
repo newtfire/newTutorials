@@ -21,14 +21,20 @@ This is cool coffee art:
 
 # Table of Contents
 
-* [**Preliminary Checks & Suggestions**](#preliminary-checks--suggestions)
-	* [Installing JDK](#installing-JDK)
+* [**Preliminary Installations & Suggestions**](#preliminary-installations--suggestions)
+	* [Installing Chocolatey](#installing-chocolatey)
+	* [Installing JDK](#installing-jdk)
 * [**XProc Processors**](#xproc-processors)
-* [**ixml Processors**](#ixml-processors)
+	* [**Calabash**](#calabash)
+	* [**Morgana**](#morgana)
+* [**Invisible XML (ixml) Processors**](#invisible-xml-ixml-processors)
+	* [**CoffeePot**](#coffeepot)
+	* [**Markup Blitz**](#markup-blitz)
+* [**Completion**](#completion)
 
 *********************
 
-# Preliminary Checks & Suggestions
+# Preliminary Installations & Suggestions
 
 On Windows, you will need to move between different shells to handle installations. You will get to know:
 
@@ -42,31 +48,41 @@ You will also need to:
 
 * find and edit your system PATH variables. Some of this can be done in your Control Panel. 
 
-## First, install the chocolatey package manager for Windows
+### Installing Chocolatey
 
-This will help you to install packages at command line on Windows.
-Use your Windows PowerShell in "Run as Administrator" mode, and follow [Chocolatey's installation instructions](https://chocolatey.org/install)).
+First, install the chocolatey package manager for Windows. This will help you to install packages at the command line.
 
-You can quickly test out your new installation of Chocolatey by installling Marktext, popular free markdown editor for Windows (which I'm using to write up this guide). Try the command `choco install marktext` You should see the new software come up in your taskbar and you can try it out!
+* Use your Windows PowerShell in "Run as Administrator" mode, and follow [Chocolatey's installation instructions](https://chocolatey.org/install)).
 
-## Installing JDK 
+* You can quickly test out your new installation of Chocolatey by installing Marktext, popular free markdown editor for Windows (which I'm using to write up this guide). Try the command `choco install marktext` You should see the new software come up in your taskbar and you can try it out!
+
+### Installing JDK
+
 First, make sure you have developer (jdk) java installed:
 
 * To check if you have java, you can use your Git Bash shell to enter `which java` or `where java`(Those commands won't work in PowerShell, but all the shells will respond to `java -version` (which tells you if you have an old version or nothing at all.)
   * Dr. B here: My version was Java 19 (from 2022) on my Lenovo laptop. For the invisible XML / XProc work we're doing here, I'm going ahead and installing the latest easily available OpenJDK developer version for Windows.
-* Most likely you need JDK java. We'll use chocolatey to install it. Open your PowerShell (running as Administrator) and enter:
+* Most likely, you'll need to install OpenJDK java. We'll use chocolatey to install it. Open your PowerShell (running as Administrator) and enter:
 
-```shell
-choco install openjdk
-```
+	```shell
+	choco install openjdk
+	```
 
   (When doing all these shell installations be sure you read the responses and enter "Y" as needed to continue processes.)
 
-* Now when you check your `java -version` you should see the current JDK that you installed with chocolatey.
+* Now when you check your version of java:
+* 
+	```shell
+	java -version
+	```
 
-* Next we need to make sure the location of the JDK you installed is set in your system environment variables. In your Search bar, look for System or Control Panel (or Edit the System Environment Variables). Find the tab to edit the Environment Variables and look for JAVA_HOME. Click Edit User Variable and paste in the new filepath of your Java. (Find that in Git Bash with `where java`)
+	You should see the current JDK that you installed with chocolatey.
+
+* Next we need to make sure the location of the JDK you installed is set in your system environment variables. In your Search bar, look for "System" or "Control Panel" (or Edit the System Environment Variables). Find the tab to edit the Environment Variables and look for JAVA_HOME. Click "Edit User Variable" and paste in the new filepath of your Java. (Find that in Git Bash with `where java`)
   
   ![](environvar-win.png)
+  
+*********************
 
 # XProc Processors
 
@@ -132,7 +148,7 @@ Share and enjoy!</helloWorld>
 
 
 
-# Morgana
+## Morgana
 
 This is an XProc processor that you can use with more complex ixml contexts and for processing lots of input. It works with the ixml processor [**Markup Blitz**](#markup-blitz).
 
@@ -256,7 +272,7 @@ Hello world. This is an XProc 3.0 pipeline running.
 
 *********************
 
-# ixml processors
+# Invisible XML (ixml) Processors
 
 ## CoffeePot
 
@@ -335,6 +351,7 @@ To be used with the XProc processor [**Morgana**](#morgana). Up to this point, w
 
 ********************
 
+# Completion
 
 When you have finished all these installations, congratulations! You have everything you need (with Coffee Pot and Markup Blitz) to apply invisible xml to convert text files to xml according to your grammar definition. And you have everything you need (with Calabash and Morgana) to set that ixml conversion into a processing pipeline that can apply XSLT, XQuery, and Schematron to the XML that you create with ixml! 
 
@@ -357,8 +374,7 @@ When you have finished all these installations, congratulations! You have everyt
   ,--------`"`-------------'--------.
    `"--.__                   __.--"'
           `""-------------""'
-```⠀⠀⠀⠀
+```
 
-
-ASCII art credits: <https://ascii.co.uk/art/cup>
+*ASCII art credits: <https://ascii.co.uk/art/cup>*
 
