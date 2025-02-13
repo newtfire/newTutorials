@@ -43,7 +43,14 @@ This is cool coffee art:
 		* [Testing Morgana](#testing-morgana)
 * [**Invisible XML (ixml) Processors**](#invisible-xml-ixml-processors)
 	* [**CoffeePot**](#coffeepot)
+		* [Installing CoffeePot](#installing-coffeepot)
+		* [Creating an Alias for CoffeePot](#creating-an-alias-for-coffeepot)
+		* [Configuring CoffeePot](#configuring-coffeepot)
+		* [Running CoffeePot](#running-coffeepot)
 	* [**Markup Blitz**](#markup-blitz)
+		* [Installing Markup Blitz](#installing-markup-blitz)
+		* [Creating an Alias for Markup Blitz](#creating-an-alias-for-markup-blitz)
+		* [Running Markup Blitz](#running-markup-blitz)
 * [**Completion**](#completion)
 
 *********************
@@ -383,78 +390,126 @@ Now we need to make sure Morgana's Windows batch executable script (the Morgana.
 
 ## CoffeePot
 
-To be used with the XProc processor [**Calabash**](#calabash)
+...to be used with the XProc processor [**Calabash**](#calabash).
 You may think you installed this already, but that was "CoffeeSacks" (made by the same NineML developers) which we needed for Calabash to run, and we'll see a running theme on "coffee" related installations in our XProc and ixml setup. :-) 
 
+### Installing CoffeePot
+
 * Here's the [CoffeePot](https://github.com/nineml/coffeepot) repo, and here's where to [download the latest release](https://github.com/nineml/coffeepot/releases).
+    * Surprise: I'm storing CoffeePot in my GitHub directory along with everything else from this tutorial :)
 
-* I'm storing CoffeePot in my GitHub directory on my local computer.
+### Creating an Alias for CoffeePot
 
-* We need to **create an alias for the coffeepot .jar file in your `.bashrc` file**. Note the filepath that leads to the coffeepot jar  (use `pwd` to help), and your alias might look something like mine (make sure yours applies the version number that you downloaded:
+* We need to **create an alias for the coffeepot .jar file** in your `.bashrc` file. 
+
+* Open up your `.bashrc` :
+
+	```shell
+	nano .bashrc
+	```
+
+* Create an alias:
+
+	```shell
+	alias coffeepot='java -jar /Users/eebon/Documents/GitHub/coffeepot-3.2.7/coffeepot-3.2.7.jar'
+	```
+
+    * Note the filepath that leads to the coffeepot jar (use `pwd` to help) and your alias might look something like mine (make sure yours applies the version number that you downloaded)
+
+### Configuring CoffeePot
+
+* To do things with CoffeePot, we need to create a system dot-file named `.nineml.properties` in the same "home" location as your `bashrc`. This contains some default settings for pretty-printing your output XML and your graphviz visualizations. You'll need to note (again) where your GraphViz bin/dot is located, and you've entered that already in your `.xmlcalabash3` file, so use the same filepath location here.
+
+* In your "home" (same place where you open `.bashrc`) create a new system file with 
+
+	```shell
+	touch .nineml.properties
+	```
+	
+* Edit your file:
+
+	```shell
+	nano .nineml.properties
+	```
+
+* **Adapt** the following (using your own filepath to graphviz that you copied from `.xmlcalabash3`):
+
+    * Code:
   
-  ```
-  alias coffeepot='java -jar /Users/ebbon/Documents/GitHub/coffeepot-3.2.7/coffeepot-3.2.7.jar'
-  ```
+   	    ```shell
+	    graphviz=/Program Files/Graphviz/bin/dot.exe
+	    ignore-trailing-whitespace=true
+	    pretty-print=true
+	    progress-bar=tty
+	    assert-valid-xml-characters=true
+	    assert-valid-xml-names=true
+	    ignore-bom=true
+	    normalize-line-endings=true
+	    trailing-newline-on-output=true
+	    ```
 
-*  To do things with CoffeePot, we need to create a system dot-file named `nineml.properties` in the same "home" location as your `bashrc`. This contains some default settings for pretty-printing your output XML and your graphviz visualizations. You'll need to note (again) where your GraphViz bin/dot is located, and you've entered that already in your `.xmlcalabash3` file, so use the same filepath location here.
-
-
-  * In your "home" (same place where you open `.bashrc`) create a new system file and open it for editing with `nano .nineml.properties`
-    
-    * Edit your file to adapt the following (using your own filepath to graphviz that you copied from `.xmlcalabash3`). Examples:
+  * If you ever need to adjust these settings or find out more, here's [the CoffeePot documentation](https://docs.nineml.org/current/coffeepot/bk02ch07.html).
       
-         ```
-          graphviz=/Program Files/Graphviz/bin/dot.exe
-          ignore-trailing-whitespace=true
-          pretty-print=true
-          progress-bar=tty
-          assert-valid-xml-characters=true
-          assert-valid-xml-names=true
-          ignore-bom=true
-          normalize-line-endings=true
-          trailing-newline-on-output=true   
-      ```
-      
-      * If you ever need to adjust these settings or find out more, here's [the CoffeePot documentation](https://docs.nineml.org/current/coffeepot/bk02ch07.html).
-        
-        
-        ### Running CoffeePot
-        
-        Run CoffeePot over an ixml grammar and a .txt file like this, using your alias: (Think of "g" as standing for "grammar" and "i" as "input file")
+### Running CoffeePot 
+* Run CoffeePot over an ixml grammar and a .txt file like this, using your alias: (Think of "g" as standing for "grammar" and "i" as "input file")
 
-```shell
-coffeepot -g:filename.ixml -i:filename.txt
-```
-
-
+	```shell
+	coffeepot -g:filename.ixml -i:filename.txt
+	``` 
 
 * You can add a couple of things to this command to check for ambiguities in the ixml, and to visualize the output:
-  
-  * Try adding `--analyze-ambiguity` like so: `coffeepot -g:filename.ixml -i:filename.txt --analyze-ambiguity`
-  
-  * Try adding `--graph:filename.svg` to get some SVG output, like so: `coffeepot -g:filename.ixml -i:filename.txt --graph:filename.svg` * NOTE: The SVG option is meant for simple/small things. CoffeePot won't be able to generate the SVG if it's going to be a large and complicated file.
-    
-    
+    * Try adding `--analyze-ambiguity` like so: `coffeepot -g:filename.ixml -i:filename.txt --analyze-ambiguity`
+    * Try adding `--graph:filename.svg` to get some SVG output, like so: `coffeepot -g:filename.ixml -i:filename.txt --graph:filename.svg`
+        * NOTE: The SVG option is meant for simple/small things. CoffeePot won't be able to generate the SVG if it's going to be a large and complicated file. 
+
 ## Markup Blitz
 
-To be used with the XProc processor [**Morgana**](#morgana). Up to this point, we have been unpacking a lot of jar (java archive) files. This time, we're actually going to *build* the jar for Markup Blitz in order to install it.
+To be used with the XProc processor [**Morgana**](#morgana). Up to this point, we have been unpacking a lot of jar (java archive) files. This time, we're actually going to *build* the jar for Markup Blitz in order to install it. 
 
-- For this, we'll follow the [official Markup Blitz instructions (on the README)](https://github.com/GuntherRademacher/markup-blitz).
-- (I cloned the markup-blitz repo in my GitHub directory.)
-- For Macs, this line (marked for Linux/Unix) works to build our jar: `./gradlew clean jar`
-- When Gradle finishes building you'll be returned to the command prompt. Check for the new jar, which you should now find in the repo in `build/libs/markup-blitz.jar`
-- Finally, go to "home" to your `.bashrc` and make an alias for running your new markup-blitz.jar file. I called my alias "blitz" and my alias definition looks like this:
+### Installing Markup Blitz
 
-```shell
- alias blitz='java -jar /Users/ebbon/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar'
-```
+* For this, we'll follow the [official Markup Blitz instructions (on the README)](https://github.com/GuntherRademacher/markup-blitz).
+* Begin by cloning the markup-blitz repo in your GitHub directory:
 
+	```shell
+	git clone https://github.com/GuntherRademacher/markup-blitz.git
+	```
+	
+* Navigate to the new directory you just cloned:
+
+	```shell
+	cd markup-blitz
+	```
+	
+For Windows, this line (marked for Windows) works to build our jar:
+
+	```shell
+	gradlew clean jar
+	```
+	
+* When Gradle finishes building, you'll be returned to the command prompt. Check for the new jar, which you should now find in the repo in `build/libs/markup-blitz.jar`.
+
+### Creating an Alias for Markup Blitz
+
+* Finally, go to "home" to your `.bashrc` and open it with
+
+	```shell
+	nano .bashrc
+	```
+
+* Make an alias for running your new markup-blitz.jar file. I called my alias "blitz" and my alias definition looks like this:
+
+  ```shell
+  alias blitz='java -jar /Users/eebon/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar'
+  ```
+
+### Running Markup Blitz
 
 * To run Markup Blitz to process an ixml grammar and an input .txt file, use your new alias like this:
 
-```shell
+  ```shell
   blitz filename.ixml filename.txt
-```
+  ```
 
 ********************
 

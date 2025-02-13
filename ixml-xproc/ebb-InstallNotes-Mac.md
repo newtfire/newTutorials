@@ -584,6 +584,7 @@ To be used with the XProc processor [**Morgana**](#morgana). Up to this point, w
 * When Gradle finishes building, you'll be returned to the command prompt. Check for the new jar, which you should now find in the repo in `build/libs/markup-blitz.jar`.
 
 ### Creating an Alias for Markup Blitz
+
 * Finally, go to "home" to your `.zshrc` and open it with
 
 	```shell
