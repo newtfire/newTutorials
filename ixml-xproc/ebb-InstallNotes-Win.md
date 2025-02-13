@@ -1,6 +1,5 @@
 # Invisible XML (ixml) / XProc Installations (for Windows)
 
-
 This document is a detailed set of installation/configuration instructions for Windows users, developed from
 <http://dh.obdurodon.org/ixml-and-xproc-configuration.xhtml>.
 
@@ -8,14 +7,12 @@ This is related to a tutorial under development at <http://dh.obdurodon.org/ixml
 
 This is cool coffee art:
 
-
                _ 
              \| |D         
       C{_}    |_|     
     
        mug   coffee 
               pot     
-
 
 *********************
 
@@ -517,26 +514,23 @@ For Windows, this line (marked for Windows) works to build our jar:
 
 When you have finished all these installations, congratulations! You have everything you need (with Coffee Pot and Markup Blitz) to apply invisible xml to convert text files to xml according to your grammar definition. And you have everything you need (with Calabash and Morgana) to set that ixml conversion into a processing pipeline that can apply XSLT, XQuery, and Schematron to the XML that you create with ixml! 
 
-
-```          .
-                      `:.
+                      .
                         `:.
-                .:'     ,::
-               .:'      ;:'
-               ::      ;:'
-                :    .:'
-                 `.  :.
-        _________________________
-       : _ _ _ _ _ _ _ _ _ _ _ _ :
-   ,---:".".".".".".".".".".".".":
-  : ,'"`::.:.:.:.:.:.:.:.:.:.:.::'
-  `.`.  `:-===-===-===-===-===-:'
-    `.`-._:                   :
-      `-.__`.               ,'
-  ,--------`"`-------------'--------.
-   `"--.__                   __.--"'
-          `""-------------""'
-```
-
+                          `:.
+                  .:'     ,::
+                 .:'      ;:'
+                 ::      ;:'
+                  :    .:'
+                   `.  :.
+          _________________________
+         : _ _ _ _ _ _ _ _ _ _ _ _ :
+     ,---:".".".".".".".".".".".".":
+    : ,'"`::.:.:.:.:.:.:.:.:.:.:.::'
+    `.`.  `:-===-===-===-===-===-:'
+      `.`-._:                   :
+        `-.__`.               ,' met.
+    ,--------`"`-------------'--------.
+     `"--.__                   __.--"'
+            `""-------------""'
 *ASCII art credits: <https://ascii.co.uk/art/cup>*
 
