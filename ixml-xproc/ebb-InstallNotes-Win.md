@@ -34,6 +34,13 @@ This is cool coffee art:
 		* [Creating an Alias for Calabash](#creating-an-alias-for-calabash)
 		* [Testing Calabash](#testing-calabash)
 	* [**Morgana**](#morgana)
+		* [Installing Morgana](#installing-morgana)
+		* [Installing SchXslt](#installing-schxslt)
+		* [Configuring Morgana](#configuring-morgana)
+		* [Creating an Alias for Morgana](#creating-an-alias-for-morgana)
+		* [Installing CoffeeFilter and CoffeeGrinder](#installing-coffeefilter-and-coffeegrinder)
+		* [More Morgana Configuration](#more-morgana-configuration)
+		* [Testing Morgana](#testing-morgana)
 * [**Invisible XML (ixml) Processors**](#invisible-xml-ixml-processors)
 	* [**CoffeePot**](#coffeepot)
 	* [**Markup Blitz**](#markup-blitz)
@@ -203,123 +210,172 @@ This alias will execute a pretty long command, so you'll definitely want to use 
 
 This is an XProc processor that you can use with more complex ixml contexts and for processing lots of input. It works with the ixml processor [**Markup Blitz**](#markup-blitz).
 
-* Official documentation: <https://www.xml-project.com/manual/index.html>
+### Installing Morgana
 
+* Official documentation: <https://www.xml-project.com/manual/index.html>
 * Download MorganaXProc-IIIse from [Sourceforge](https://sourceforge.net/projects/morganaxproc-iiise/) and unzip the folder. I'm extracting this to my GitHub folder so it's near my projects.
 
-* Now we're going to install [SchXslt](https://git.sr.ht/~dmaus/schxslt2) (which is pronounced "Shicksilt"!) This is an XSLT-based Schematron processor that can handle Schematron validation.
-  
-  * On this sourcehut page, find the installation in the top center under "refs", and follow the link to "release notes" (As of 2 February 2025, the current SchXslt2 release is <https://git.sr.ht/~dmaus/schxslt2/refs/v1.3.1>) I also unzipped this to my GitHub directory. 
+### Installing SchXslt
 
-* Okay, for this next part, navigate to your "home" directory (where your `.bashrc` lives, and we'll set up a `morgana-config.xml` configuration file there. For this configuration you're going to need to have some inforamtion ready:
-  
-  * You'll need the path to the SchXSLT transpile.xsl file: You'll find that in the main directory of the schxslt directory you just saved. (Mine is here: `/Users/ebbon/Documents/GitHub/schxslt2-1.3.1/transpile.xsl`
-  
-  * You'll need the path to a Saxon processor that can run XSLT and XQuery and such. You have this already if you installed Calabash: Saxon-HE comes in its library or "lib" folder: 
-    Find/copy the path to the Saxon_HE jar file in your xml-calabash lib. (Here's mine:  `/Users/ebbon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar`)
-  
-  * We presume you're going to be installing [Markup Blitz](#markup-blitz) for your ixml processor (so our configuration settings for Morgana will be set to Markup Blitz.)
-  
-  * In your "home", make the configuration file with `touch morgana-config.xml`
-  
-  * `nano morgana-config.xml`, paste in the following, and **adapt it** so you:
-    
-    * Change the `<path_to_SchXSLT2_transpiler>` element contents to your path to the transpile.xsl file in schxslt directory. 
-    * Change the `<xslt-config>` element contents to your path to Saxon-HE.
-    * One more thing: notice the contents of the `<ixml-connector>` element. That's not a filepath, but it is an indicator of which ixml processor you're using. Our active setting in the code below is for Markup Blitz, but you can set this to CoffeePot instead. (We think you can set it to CoffeePot by using the NineMLConnector version that is commented out above it, but we should check the documentation to be sure). 
-    
-    ```xml
+* Now we're going to install [SchXslt](https://git.sr.ht/~dmaus/schxslt2) (which is pronounced "Shicksilt" ... be careful with that one!) This is an XSLT-based Schematron processor that can handle Schematron validation.
+    * On this sourcehut page, find the installation in the top center under "refs", and follow the link to "release notes" (As of 2 February 2025, the current SchXslt2 release is <https://git.sr.ht/~dmaus/schxslt2/refs/v1.3.1>). I also unzipped this to my GitHub directory.
+
+### Configuring Morgana
+
+* Let's navigate to your "home" directory (where your `.bashrc` lives), and we'll set up a `morgana-config.xml` configuration file there. For this configuration, you're going to need to have some inforamtion ready:
+    * You'll need the path to the SchXSLT transpile.xsl file: You'll find that in the main directory of the schxslt directory you just saved. (Mine is here: `C:/Users/eebon/Documents/GitHub/schxslt2-v1.3.1`
+    * You'll need the path to a Saxon processor that can run XSLT and XQuery and such. You have this already if you installed Calabash: Saxon-HE comes in its library or "lib" folder: 
+    Find/copy the path to the Saxon_HE jar file in your xml-calabash lib. (Here's mine:  `C:/Users/eebon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar`)
+  * We presume you're going to be installing [Markup Blitz](#markup-blitz) for your ixml processor (so our configuration settings for Morgana will be set to Markup Blitz).
+
+* In your "home" directory, make the configuration file:
+
+	```shell
+	touch morgana-config.xml
+	```
+	
+* Open up the file in `nano` to edit:
+
+	```shell
+	nano morgana-config.xml
+	```
+	
+* Paste in the following:    
+
+    ```shell
     <morgana-config xmlns="http://www.xml-project.com/morganaxproc">
-    <!-- Relative paths are resolved by uri of this file -->
-    
-        <path_to_SchXSLT2_transpiler>/Users/ebbon/Documents/GitHub/schxslt2-1.3.1/transpile.xsl</path_to_SchXSLT2_transpiler>
-    
-        <XSLTValidationMode>LAX</XSLTValidationMode>
-    
-        <xslt-connector>Saxon12-3</xslt-connector>
-        <xquery-connector>Saxon12-3</xquery-connector>
-        <schematron-connector>schxslt2</schematron-connector>
-    
-        <xslt-config>/Users/ebbon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar</xslt-config>
-        <xslt-config></xslt-config>
+	<!-- Relative paths are resolved by uri of this file -->
+	
+	    <path_to_SchXSLT2_transpiler>/Users/eeb4/Documents/GitHub/schxslt2-1.3.1/transpile.xsl</path_to_SchXSLT2_transpiler>
+		
+	    <XSLTValidationMode>LAX</XSLTValidationMode>
+	
+	    <xslt-connector>Saxon12-3</xslt-connector>
+	    <xquery-connector>Saxon12-3</xquery-connector>
+	    <schematron-connector>schxslt2</schematron-connector>
+
+	    <xslt-config>/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar</xslt-config>
+	    <xslt-config></xslt-config>
           <silent>true</silent>
     
-    <!--
-    <fo-connector>com.xml_project.morganaxproc3.fop2x.ApacheFOP2xConnector</fo-connector>
-    <fo-connector>com.xml_project.fosupport.AHFormatterV65.AHF65Connector</fo-connector>
-    -->
-    
-    <!-- <ixml-connector>com.xml_project.morganaxproc3.ninemlConnector.NineMLConnector</ixml-connector> -->`
-    <ixml-connector>com.xml_project.morganaxproc3.markupblitzConnector.MarkupBlitzConnector</ixml-connector>
-    
-    <!--
-    <mediatype-mapping>
-        <map file-extension="123" media-type="application/xml" />
-    </mediatype-mapping>
-    -->
+	<!--
+	<fo-connector>com.xml_project.morganaxproc3.fop2x.ApacheFOP2xConnector</fo-connector>
+	<fo-connector>com.xml_project.fosupport.AHFormatterV65.AHF65Connector</fo-connector>
+	-->
+	
+	<!-- <ixml-connector>com.xml_project.morganaxproc3.ninemlConnector.NineMLConnector</ixml-connector> -->`
+	<ixml-connector>com.xml_project.morganaxproc3.markupblitzConnector.MarkupBlitzConnector</ixml-connector>
+
+	<!--
+	<mediatype-mapping>
+		<map file-extension="123" media-type="application/xml" />
+	</mediatype-mapping>
+	-->
     </morgana-config>
     ```
 
-* **Morgana alias**: Okay, now it's time to make an alias for Morgana! Open your `.bashrc` file. You will need to adapt my sample alias below to repreesent the location of 
-  
-  * the location of your Morgana.sh file in the Morgana directory (I put mine over in my "GitHub" folder). 
-  
-  * the location of your morgana-config.xml file (in your "home").
-  
-  * My morgana alias looks like this:
-    
+* **Adapt** these parts of the file:  
+     * Change the `<path_to_SchXSLT2_transpiler>` element contents to your path to the transpile.xsl file in schxslt directory. 
+     * Change the `<xslt-config>` element contents to your path to Saxon-HE.
+     * One more thing: notice the contents of the `<ixml-connector>` element. That's not a filepath, but it is an indicator of which ixml processor you're using. Our active setting in the code below is for Markup Blitz, but you can set this to CoffeePot instead. (We think you can set it to CoffeePot by using the NineMLConnector version that is commented out above it, but we should check the documentation to be sure).
+
+### Creating an Alias for Morgana
+
+Okay, now it's time to make an alias for Morgana!
+
+* Open up your `.bashrc` :
+
+	```shell
+	nano .zshrc
+	```
+
+* My morgana alias looks like this:
+
     ```shell
-    alias morgana='~/Documents/GitHub/MorganaXProc-IIIse-1.4.10/Morgana.bat -config=/Users/eeb4/morgana-config.xml'
+    alias morgana='~/Documents/GitHub/MorganaXProc-IIIse-1.4.10/Morgana.bat -config=C:/Users/eebon/morgana-config.xml'
     ```
 
-* Time for some coffee! We'll go and download and install CoffeeFilter and CoffeeGrinder from <https://github.com/nineml>. (As usual I'm setting coffee stuff in my GitHub folder.)
+  * You will need to **adapt** my sample alias to represent the locations of: 
+     * Your Morgana.sh file in the Morgana directory (mine is in my "GitHub" folder). 
+     * Your morgana-config.xml file (in your "home").
+
+### Installing CoffeeFilter and CoffeeGrinder
+
+***Time for some coffee!***
+
+* Download and install CoffeeFilter and CoffeeGrinder from <https://github.com/nineml>. (As usual I'm setting coffee stuff in my GitHub folder.)
+    * Download [the most recent CoffeeFilter](https://github.com/nineml/coffeefilter/releases), unzip it into your GitHub folder.
+    * Download [the most recent CoffeeGrinder](https://github.com/nineml/coffeegrinder/releases), unzip it into your GitHub folder.
+
+### More Morgana Configuration
+
+**Modifying Morgana.bat**
+
+Now we need to make sure Morgana's Windows batch executable script (the Morgana.bat file) can find its way to the CoffeeGrinder and CoffeeFilter jar files you just unpacked.
+
+* Navigate to your Morgana directory (where you unzipped the "MorganaXProc-IIIse-1.4.10" folder) and open the `Morgana.bat` file:
+
+	```shell
+	nano Morgana.bat
+	```
   
-  * Download [the most recent CoffeeFilter](https://github.com/nineml/coffeefilter/releases), unzip it where you want it. 
-  * Download [the most recent CoffeeGrinder](https://github.com/nineml/coffeegrinder/releases), unzip it where you want it.
+* **You'll need to add and adjust the lines marked `REM Local customization`** to identify the location of Saxon-HE (we'll use the one in Calabash library), the CoffeeGrinder and CoffeeFilter .jar files, and finally the location of the Markup Blitz .jar file (after you install [Markup Blitz](#markup-blitz)).
 
-* **Modifying Morgana.bat**: Now we need to make sure Morgana's Windows batch executable script (the Morgana.bat file) can find its way to the CoffeeGrinder and CoffeeFilter jar files you just unpacked.
-  
-  * Open the Morgana.bat file in your nano or vi editor.
-    * You'll need to add and adjust the lines marked `REM Local customization`** to identify the location of Saxon-HE (we'll use the one in Calabash library), the CoffeeGrinder and CoffeeFilter .jar files, and finally the location of the Markup Blitz .jar file (after you install [Markup Blitz](#markup-blitz)).
-    * **Edit the `CLASSPATH`** near the end of the file: Basically you need to add all the local customization variables here, and it will be kind of like pouring Markup Blitz through a coffee grinder, into a coffee filter, and then through some saxon into a morgana mug. :-) Here's how the CLASSPATH should be edited, and you just need to make sure that each of these variables has been defined in order for Morgana to run.
-      `set CLASSPATH="%BLITZ_JAR%;%COFFEEGRINDER_JAR%;%COFFEEFILTER_JAR%;%SAXON_JAR%;%LIB_PATH%;%PROG_PATH%"`
-    * Here is how my Morgana.bat looks after I've located (and installed) everything:
+	```shell
+	REM Local customization
+	set SAXON_JAR="/c/Users/ebbon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar"
+	set COFFEEGRINDER_JAR="/c/Users/ebbon/Documents/GitHub/coffeegrinder-3.2.7/CoffeeGrinder-3.2.7.jar"
+	set COFFEEFILTER_JAR="/c/Users/ebbon/Documents/GitHub/coffeefilter-3.2.7/CoffeeFilter-3.2.7.jar"
+	set BLITZ_JAR="/c/Users/ebbon/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar"
+	```
+	
+	* NOTE: the line noting the `markup-blitz.jar` file is assuming you install it in your GitHub folder. If you do this step first, make sure you know where you are going to install Markup Blitz. If you're unsure, **make sure you come back to this step and confirm the filepath is correct.**
 
-```shell
-@echo off
-setlocal
+* **Edit the `CLASSPATH`** near the end of the file: Basically you need to add all the local customization variables here, and it will be kind of like pouring Markup Blitz through a coffee grinder, into a coffee filter, and then through some saxon into a morgana mug. :-) Here's how the CLASSPATH should be edited, and you just need to make sure that each of these variables has been defined in order for Morgana to run.
 
-set MORGANADIR=%~dp0
+	```
+	set CLASSPATH="%BLITZ_JAR%;%COFFEEGRINDER_JAR%;%COFFEEFILTER_JAR%;%SAXON_JAR%;%LIB_PATH%;%PROG_PATH%"
+	```
 
-REM All related jars are expected to be in $MORGANA_LIB. For externals jars: Add them to $CLASSPATH
-set PROG_PATH="%MORGANADIR%MorganaXProc-IIIse.jar"
-set LIB_PATH="%MORGANADIR%MorganaXProc-IIIse_lib/*"
+* Here is what my `Morgana.bat` looks like after I've located (and installed) everything:
 
-REM Local customization
-set SAXON_JAR="/c/Users/ebbon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar"
-set COFFEEGRINDER_JAR="/c/Users/ebbon/Documents/GitHub/coffeegrinder-3.2.7/CoffeeGrinder-3.2.7.jar"
-set COFFEEFILTER_JAR="/c/Users/ebbon/Documents/GitHub/coffeefilter-3.2.7/CoffeeFilter-3.2.7.jar"
-set BLITZ_JAR="/c/Users/ebbon/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar"
+	```shell
+	@echo off
+	setlocal
+	
+	set MORGANADIR=%~dp0
+	
+	REM All related jars are expected to be in $MORGANA_LIB. For externals jars: Add them to $CLASSPATH
+	set PROG_PATH="%MORGANADIR%MorganaXProc-IIIse.jar"
+	set LIB_PATH="%MORGANADIR%MorganaXProc-IIIse_lib/*"
+	
+	REM Local customization
+	set SAXON_JAR="/c/Users/ebbon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar"
+	set COFFEEGRINDER_JAR="/c/Users/ebbon/Documents/GitHub/coffeegrinder-3.2.7/CoffeeGrinder-3.2.7.jar"
+	set COFFEEFILTER_JAR="/c/Users/ebbon/Documents/GitHub/coffeefilter-3.2.7/CoffeeFilter-3.2.7.jar"
+	set BLITZ_JAR="/c/Users/ebbon/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar"
+	
+	
+	set CLASSPATH="%BLITZ_JAR%;%COFFEEGRINDER_JAR%;%COFFEEFILTER_JAR%;%SAXON_JAR%;%LIB_PATH%;%PROG_PATH%"
+	
+	REM Settings for JAVA_AGENT: Only for Java 8 we have to use -javaagent.
+	@for /f tokens^=2-5^ delims^=.-_^" %%j in ('java -fullversion 2^>^&1') do set "JAVA_VERSION=%%j%%k"
+	
+	set JAVA_AGENT=
+	if %JAVA_VERSION% EQU 18 (set JAVA_AGENT="-javaagent:%MORGANADIR%MorganaXProc-IIIse_lib/quasar-core-0.7.9.jar")
+	
+	java %JAVA_AGENT% -cp %CLASSPATH% com.xml_project.morganaxproc3.XProcEngine %*
+	
+	```
 
-
-set CLASSPATH="%BLITZ_JAR%;%COFFEEGRINDER_JAR%;%COFFEEFILTER_JAR%;%SAXON_JAR%;%LIB_PATH%;%PROG_PATH%"
-
-REM Settings for JAVA_AGENT: Only for Java 8 we have to use -javaagent.
-@for /f tokens^=2-5^ delims^=.-_^" %%j in ('java -fullversion 2^>^&1') do set "JAVA_VERSION=%%j%%k"
-
-set JAVA_AGENT=
-if %JAVA_VERSION% EQU 18 (set JAVA_AGENT="-javaagent:%MORGANADIR%MorganaXProc-IIIse_lib/quasar-core-0.7.9.jar")
-
-java %JAVA_AGENT% -cp %CLASSPATH% com.xml_project.morganaxproc3.XProcEngine %*
-
-```
+### Testing Morgana
 
 * To "smoke test" Morgana to see if it is properly installed, navigate to your Morgana repo and enter `morgana pipeline.xpl`. If your installation was successful, you will see the following:
 
-```shell
-$ morgana pipeline.xpl
-Hello world. This is an XProc 3.0 pipeline running.
-```
+	```shell
+	$ morgana pipeline.xpl
+	Hello world. This is an XProc 3.0 pipeline running.
+	```
 
 *********************
 
