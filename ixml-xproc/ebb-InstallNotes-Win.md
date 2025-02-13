@@ -190,7 +190,7 @@ This alias will execute a pretty long command, so you'll definitely want to use 
 
     * You need the filepath of where you installed Calabash (I put mine in my GitHub directory). You'll be pointing your script to the `xmlcalabash.sh` file inside.
 
-    * Here's what my calabash execution alias looks like in my `.zshrc` file, giving it the name "calabash"
+    * Here's what my calabash execution alias looks like in my `.bashrc` file, giving it the name "calabash"
 
 	```shell
 	alias calabash='~/Documents/GitHub/xmlcalabash-3.0.0-alpha18/xmlcalabash.sh --init:org.nineml.coffeesacks.RegisterCoffeeSacks'
@@ -253,7 +253,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
     <morgana-config xmlns="http://www.xml-project.com/morganaxproc">
 	<!-- Relative paths are resolved by uri of this file -->
 	
-	    <path_to_SchXSLT2_transpiler>/Users/eeb4/Documents/GitHub/schxslt2-1.3.1/transpile.xsl</path_to_SchXSLT2_transpiler>
+	    <path_to_SchXSLT2_transpiler>C:/Users/eebon/Documents/GitHub/schxslt2-v1.3.1/transpile.xsl</path_to_SchXSLT2_transpiler>
 		
 	    <XSLTValidationMode>LAX</XSLTValidationMode>
 	
@@ -261,7 +261,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
 	    <xquery-connector>Saxon12-3</xquery-connector>
 	    <schematron-connector>schxslt2</schematron-connector>
 
-	    <xslt-config>/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar</xslt-config>
+	    <xslt-config>C:/Users/eebon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar</xslt-config>
 	    <xslt-config></xslt-config>
           <silent>true</silent>
     
@@ -293,7 +293,7 @@ Okay, now it's time to make an alias for Morgana!
 * Open up your `.bashrc` :
 
 	```shell
-	nano .zshrc
+	nano .bashrc
 	```
 
 * My morgana alias looks like this:
