@@ -1,7 +1,10 @@
 # ArcGIS Tutorials 
 ## Introduction to ArcGIS
 ### What is GIS? 
-A geographic information system is used to display various types of data within a map-like format. GIS can connect various types of local data that display the physical geographical locations, as well as additional descriptions. 
+A geographic information system is used to display various types of data within a map. GIS can connect various types of local data that display the physical geographical locations, as well as additional descriptions. 
+
+Learn More about [GIS](https://www.esri.com/en-us/what-is-gis/overview) here.
+
 ### ArcGIS Online 
 Is a cloud-based software that allows you to build interactive visual maps. This is Esri’s web-based mapping platform. You will need a License through ArcGIS in order to use it and thankful we have access to ArchGIS through Penn State!
 
@@ -30,15 +33,15 @@ Follow all the steps and press the ***Run Tech Check*** button to make sure your
 8. Then press the Close button.
 ## How to Create a New Map Project: ##
 
-This section of the tutorial is to familiarize yourself with the different sections and panes within ArcGIS Pro. First load up your ArcGIS Pro desktop application. Create a new Map project and save it within your desired file directory. Please take note that ArcGIS Pro has a user interface that looks very similar to Microsoft Word. 
+This section of the tutorial is to familiarize yourself with the different sections and panels within ArcGIS Pro. First load up your ArcGIS Pro desktop application. Create a new Map project and save it within your desired file directory. Please take note that ArcGIS Pro has a user interface that looks very similar to Microsoft Word. 
 
 Once the project is opened you will notice that a base map of the United States is displayed.
 
 Tools and Commands are located within the Top panel of the window. There are various tools and commands used for different tasks. Most of the tools we will be using are located on the Map tab due to the fact we create a new map project. 
 
-There is a Contents pane located on the left side of the window. The Contents pane shows you the active content currently being seen in the active View Pane. This displays the drawing order of the different map layers within a hierarchical format. 
+There is a Contents panel located on the left side of the window. The Contents panel shows you the active content currently being seen in the active View Pane. This displays the drawing order of the different map layers within a hierarchical format. 
 
-There is a Catalog pane located on the right side of the window. This pane allows the user to access items of your project disk or through your portal. Using the Portal tab can be very useful to find various datasets from ArcGIS Online and Living Atlas geodatabases. 
+There is a Catalog panel located on the right side of the window. This panel allows the user to access items of your project disk or through your portal. Using the Portal tab can be very useful to find various datasets from ArcGIS Online and Living Atlas geodatabases. 
 
 Listed Here is a Youtube playlist with quick tutorials for [ArcGIS Pro](https://www.youtube.com/watch?v=1YhdQToyPg4&list=PLGZUzt4E4O2IJFxX_Bhp98MJEw5ItRtvb)
 ## How to Look up Data within Living Atlas: ##
@@ -71,6 +74,19 @@ Most of the data for this tutorial originated from federal government websites. 
 IMPORTANT TIP: Make sure there are no empty spaces within the columns and rows of your spreadsheets. ArcGIS will only read csv or tsv files that are computer readable, NOT human readable. If you have any blank cells within your spreadsheet 
 
 ![Example of  the Excel spreadsheet](ArcGIS-Imgs/spreadsheet.PNG)
-## Adding Data to your Map: 
-## Display Data and Tables on your Map: 
+## Adding and Displaying Data on your Map:
+1. Go to the Map Tab on the Top left and Add Data section. When the drop down menu displays, look for the XY Point Data option.
+1. You will see a panel pop up on the right side of the screen in the Geoprocessing section. Select your Input Table within your local file directory or through Living Atlas.
+1. The blank sections should autofill but still make sure the X Field contains the Longitude coordinates and the Y Field contains the Latitude coordinates.
+1. You can use the auto generated Coordinate System, but if needed for your project select the best Coordinate System for you. 
+1. Click the run button in the button right corner of the Geoprocessing section.
+You will see the data display on the map with basic points.
+
+##How to Export or Upload your Project:
+This tutorial provides detailed steps to [create a project package](https://pro.arcgis.com/en/pro-app/2.7/help/sharing/overview/project-package.htm) as well as upload the project package to your online account.
+
+
+##Future Tutorials and Helpful Links:
+[ArcGIS Pro Quick Tutorials ](https://www.youtube.com/watch?v=1YhdQToyPg4&list=PLGZUzt4E4O2IJFxX_Bhp98MJEw5ItRtvb)
+ 
 
