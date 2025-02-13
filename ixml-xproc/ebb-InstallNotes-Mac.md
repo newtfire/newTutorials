@@ -74,8 +74,8 @@ Homebrew is a package manager that helps you install things on your Mac quickly 
 
 * Press enter. 
 
-	* You may receive an error for sudo (**s**ubstitude **u**ser **do**)
-	* To counter this error, take the download code line for homebrew and add `sudo ` before it: 
+	* You **might** receive an error for sudo (**s**ubstitude **u**ser **do**)
+	* To fix this error, take the download code line for homebrew and add `sudo ` before it: 
 
 		```shell
 		sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -111,27 +111,27 @@ Homebrew is a package manager that helps you install things on your Mac quickly 
 
     * 1st command: 
     
-	    ```shell
-	    echo >> /Users/eeb4/.zprofile
-	    ```
+		```shell
+		echo >> /Users/eeb4/.zprofile
+		```
 	    
     * 2nd command:
     	
-    	```shell
-    	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/eeb4/.zprofile
-    	```
+		```shell
+		echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/eeb4/.zprofile
+		```
     	
     * 3rd command:
 
-    	```shell
-    	eval "$(/opt/homebrew/bin/brew shellenv)"
-    	```
+		```shell
+		eval "$(/opt/homebrew/bin/brew shellenv)"
+		```
 
 * You should now have successfully installed Homebrew!
 
 ### Installing JDK
 
-You will need developer (jdk) java installed:
+You will need the Java Development Kit (OpenJDK) java environment installed:
 
 * Check your version of java in terminal with
 
@@ -148,7 +148,19 @@ You will need developer (jdk) java installed:
 		```shell
 		brew install openjdk
 		```
+		
+	* To finish the installation, you'll need to run the line they give you in the success dialog (this adds a necessary line to your `.zshrc` file):
+
+	```shell
+	echo 'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> ~/.zshrc
+	```
 	
+	* Now, you'll need to restart your terminal to be able to successfully run the java version check again:
+
+	```shell
+	java -version
+	```
+
 ### Suggestions
 
 * There are a lot of installations throughout this process. To keep them organized, *it is a good idea to place them all in your GitHub directory since you should be familiar with that directory at this point.*
