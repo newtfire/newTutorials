@@ -214,17 +214,13 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
     * NOTE: We will NOT be using Saxon EE at all.
     * We need to know where Homebrew installed graphviz. Double-check by navigating to see if Homebrew installed it in the default location: `/opt/homebrew/bin/dot` .
         * In my (probably extra special and weird) case, it did not. **I found out where graphviz was installed by typing in `where dot` and following the paths**. Mine is "symlinked" from `/usr/local/bin` which eventually showed me my way to the exact location on my machine (which was `/usr/local/Cellar/graphviz/12.2.1/bin`). This may be because I've installed a few different versions of graphviz for Python and other applications over the years. Anyway, just check and make sure you know where Homebrew installed graphviz and its executable `dot`. You will need this path.
-* Back in your "home" directory, make the new file. You can copy in this command in your terminal (with that leading dot exactly like this): 
-
-	```shell
-	touch .xmlcalabash3
-	```
-	
-* Open up the file in `nano` to edit: 
+* Back in your "home" directory, we will now make a new file. You can copy & paste this command into your terminal (with that leading dot exactly like this):
 
 	```shell
 	nano .xmlcalabash3
 	```
+
+This will create and open the new system file for editing.
 	
 * Here's what you'll need inside (copy/paste):
 
