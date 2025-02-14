@@ -153,17 +153,13 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
     * NOTE: We will NOT be using Saxon EE at all.
     * We need to know where Chocolatey installed graphviz.
     * Use the Git Bash shell and type `where dot` . Mine is given as `C:\Program Files\Graphviz\bin\dot.exe` You will need this path.
-* Back in your "home" directory, make the new file. You can copy in this command in your Git Bash terminal (with that leading dot exactly like this):
-
-	```shell
-	touch .xmlcalabash3
-	```
-	
-* Open up the file in `nano` to edit: 
+* Back in your "home" directory, we will now make a new file. You can copy in this command in your Git Bash terminal (with that leading dot exactly like this). 
 
 	```shell
 	nano .xmlcalabash3
 	```
+
+This will create and open the new system file for editing.
 	
 * Here's what you'll need inside (copy/paste):
 
