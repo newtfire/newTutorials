@@ -269,12 +269,12 @@ This alias will execute a pretty long command, so you'll definitely want to use 
    * To "smoke test" (or see if your installation is working) navigate to your xmlcalabash repo and enter this command: `calabash helloWorld.xpl`. If your installation was successful you should see the following:
      
 
-```shell
+	```shell
 	=== result :: 1 :: file:/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/helloWorld.xpl ===
 	<helloWorld>This is XML Calabash version 3.0.0-alpha18.
 	Share and enjoy!</helloWorld>
 	==========================================================================================================
-```	
+	```	
     
    * *For future reference*: As soon as we have an XProc pipeline file (`.xpl`) ready to run, we'll be running with a command like this, using the alias you created: `calabash filename.xpl` ). And we can see some nifty graphviz sketches of our pipeline if we append this to the command (including the dot at the end: `--graphs:.` like so: `calabash filename.xpl --graphs:.`
 
