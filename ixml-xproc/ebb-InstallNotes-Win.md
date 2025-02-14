@@ -228,13 +228,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
     Find/copy the path to the Saxon_HE jar file in your xml-calabash lib. (Here's mine:  `C:/Users/eebon/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar`)
   * We presume you're going to be installing [Markup Blitz](#markup-blitz) for your ixml processor (so our configuration settings for Morgana will be set to Markup Blitz).
 
-* In your "home" directory, make the configuration file:
-
-	```shell
-	touch morgana-config.xml
-	```
-	
-* Open up the file in `nano` to edit:
+* In your "home" directory, make and open the configuration file:
 
 	```shell
 	nano morgana-config.xml
@@ -413,13 +407,7 @@ You may think you installed this already, but that was "CoffeeSacks" (made by th
 
 * To do things with CoffeePot, we need to create a system dot-file named `.nineml.properties` in the same "home" location as your `bashrc`. This contains some default settings for pretty-printing your output XML and your graphviz visualizations. You'll need to note (again) where your GraphViz bin/dot is located, and you've entered that already in your `.xmlcalabash3` file, so use the same filepath location here.
 
-* In your "home" (same place where you open `.bashrc`) create a new system file with 
-
-	```shell
-	touch .nineml.properties
-	```
-	
-* Edit your file:
+* In your "home" directory, make and open the dot-file:
 
 	```shell
 	nano .nineml.properties
