@@ -268,7 +268,6 @@ This alias will execute a pretty long command, so you'll definitely want to use 
 
    * To "smoke test" (or see if your installation is working) navigate to your xmlcalabash repo and enter this command: `calabash helloWorld.xpl`. If your installation was successful you should see the following:
      
-
 	```shell
 	=== result :: 1 :: file:/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/helloWorld.xpl ===
 	<helloWorld>This is XML Calabash version 3.0.0-alpha18.
