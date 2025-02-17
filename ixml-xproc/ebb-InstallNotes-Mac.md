@@ -372,7 +372,7 @@ Okay, now it's time to make an alias for Morgana!
 * My morgana alias looks like this:
 
     ```shell
-    alias morgana='/Users/eeb4/Documents/GitHub/MorganaXProc-IIIse-1.4.10/Morgana.sh -config=/Users/eeb4/morgana-config.xml'
+    alias morgana='/Users/eeb4/Documents/GitHub/MorganaXProc-IIIse-1.5/Morgana.sh -config=/Users/eeb4/morgana-config.xml'
     ```
 
   * You will need to **adapt** my sample alias to represent the locations of: 
