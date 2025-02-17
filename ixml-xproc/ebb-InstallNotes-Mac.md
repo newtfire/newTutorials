@@ -193,17 +193,17 @@ This is an XProc processor that you can use with the ixml processor [**CoffeePot
 
 ### Installing Calabash
 
-* Get it from here: <https://github.com/xmlcalabash/xmlcalabash3/releases> and look for the **xmlcalabash zip file** in the latest release, after the release notes. The zip directory you need is the third one from the top (named something like this with the version number in the name): **xmlcalabash-3.0.0-alpha18.zip**
+* Get it from here: <https://github.com/xmlcalabash/xmlcalabash3/releases> and look for the **xmlcalabash zip file** in the latest release, after the release notes. The zip directory you need is the third one from the top (named something like this with the version number in the name): **xmlcalabash-3.0.0-alpha20.zip**
 * Unzip this and move it somewhere central where it's easy to work with. I set my unzipped xmlcalabash folder in my GitHub directory so it's near where I work on code.
 * Open your shell and navigate to your new xmlcalabash folder. For this to work we need to be able to use Java to execute the .jar file inside.
        Test if your Java installation works. This 'help' shell command will show you all the different commands available **(ADAPT THIS LINE TO APPLY TO YOUR VERSION NUMBER AS NEEDED!)**:
 	
 	```shell
-	java -jar xmlcalabash-app-3.0.0-alpha18.jar help
+	java -jar xmlcalabash-app-3.0.0-alpha20.jar help
 	```
 	
 	* NOTE: on the XML Calabash repo, they left out the `.jar` portion of the filename, so their line won't work
-	* NOTE: **alpha18 is the latest release as of 2 February 2025** 
+	* NOTE: **alpha20 is the latest release as of 17 February 2025** 
 
 ### Graphviz
 
@@ -271,7 +271,7 @@ This alias will execute a pretty long command, so you'll definitely want to use 
     * Here's what my calabash execution alias looks like in my `.zshrc` file, giving it the name "calabash"
 
 	```shell
-	alias calabash='/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/xmlcalabash.sh --init:org.nineml.coffeesacks.RegisterCoffeeSacks'
+	alias calabash='/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha20/xmlcalabash.sh --init:org.nineml.coffeesacks.RegisterCoffeeSacks'
 	```
 	
    * NOTE: If you're copying this line and just changing the username to match your own, make sure you also check that the name of the calabash directory is the same (version name) as yours.
@@ -281,8 +281,8 @@ This alias will execute a pretty long command, so you'll definitely want to use 
    * To "smoke test" (or see if your installation is working) navigate to your xmlcalabash repo and enter this command: `calabash helloWorld.xpl`. If your installation was successful you should see the following:
      
 		```shell
-		=== result :: 1 :: file:/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/helloWorld.xpl ===
-		<helloWorld>This is XML Calabash version 3.0.0-alpha18.
+		=== result :: 1 :: file:/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha20/helloWorld.xpl ===
+		<helloWorld>This is XML Calabash version 3.0.0-alpha20.
 		Share and enjoy!</helloWorld>
 		==========================================================================================================
 		```	
@@ -311,7 +311,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
 * Let's navigate to your "home" directory (where your `.zshrc` lives), and we'll set up a `morgana-config.xml` configuration file there. For this configuration, you're going to need to have some inforamtion ready:
     * You'll need the path to the SchXSLT transpile.xsl file: You'll find that in the main directory of the schxslt directory you just saved. (Mine is here: `/Users/eeb4/Documents/GitHub/schxslt2-v1.3.4`
     * You'll need the path to a Saxon processor that can run XSLT and XQuery and such. You have this already if you installed Calabash: Saxon-HE comes in its library or "lib" folder: 
-    Find/copy the path to the Saxon_HE jar file in your xml-calabash lib. (Here's mine:  `/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar`)
+    Find/copy the path to the Saxon_HE jar file in your xml-calabash lib. (Here's mine:  `/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha20/lib/Saxon-HE-12.5.jar`)
   * We presume you're going to be installing [Markup Blitz](#markup-blitz) for your ixml processor (so our configuration settings for Morgana will be set to Markup Blitz).
  
 * In your "home" directory, make and open the configuration file:
@@ -334,7 +334,7 @@ This is an XProc processor that you can use with more complex ixml contexts and 
 	    <xquery-connector>Saxon12-3</xquery-connector>
 	    <schematron-connector>schxslt2</schematron-connector>
 
-	    <xslt-config>/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar</xslt-config>
+	    <xslt-config>/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha20/lib/Saxon-HE-12.5.jar</xslt-config>
 	    <xslt-config></xslt-config>
           <silent>true</silent>
     
@@ -425,7 +425,7 @@ Now, we need to make sure Morgana's executable script (the Morgana.sh file) can 
 
 	```shell
 	#Local customization
-	SAXON_JAR=/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar
+	SAXON_JAR=/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha20/lib/Saxon-HE-12.5.jar
 	COFFEEGRINDER_JAR=/Users/eeb4/Documents/GitHub/coffeegrinder-3.2.7/CoffeeGrinder-3.2.7.jar
 	COFFEEFILTER_JAR=/Users/eeb4/Documents/GitHub/coffeefilter-3.2.7/CoffeeFilter-3.2.7.jar
 	BLITZ_JAR=/Users/eeb4/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar
@@ -450,7 +450,7 @@ Now, we need to make sure Morgana's executable script (the Morgana.sh file) can 
 	MORGANA_LIB=$MORGANA_HOME/MorganaXProc-IIIse_lib/*
 	
 	#Local customization
-	SAXON_JAR=/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha18/lib/Saxon-HE-12.5.jar
+	SAXON_JAR=/Users/eeb4/Documents/GitHub/xmlcalabash-3.0.0-alpha20/lib/Saxon-HE-12.5.jar
 	COFFEEGRINDER_JAR=/Users/eeb4/Documents/GitHub/coffeegrinder-3.2.7/CoffeeGrinder-3.2.7.jar
 	COFFEEFILTER_JAR=/Users/eeb4/Documents/GitHub/coffeefilter-3.2.7/CoffeeFilter-3.2.7.jar
 	BLITZ_JAR=/Users/eeb4/Documents/GitHub/markup-blitz/build/libs/markup-blitz.jar
