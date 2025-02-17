@@ -167,6 +167,22 @@ You will need the Java Development Kit (OpenJDK) java environment installed:
 
 * To make things simpler for yourself, use the same alias names that I use in this tutorial, so when we're working on this in class, there's no confusion if your alias has a different name than mine.
 
+* We also suggest you install 3 more helpful command line tools via homebrew:
+
+	```shell
+ 	brew install bat
+ 	```
+
+	```shell
+ 	brew install xmlstarlet
+ 	``` 
+
+	*(macOS only)*
+  
+	```shell
+ 	brew install xq
+ 	```
+ 
 *********************
 
 # XProc Processors
