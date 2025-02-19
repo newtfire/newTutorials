@@ -475,10 +475,10 @@ To be used with the XProc processor [**Morgana**](#morgana). Up to this point, w
 	cd markup-blitz
 	```
 	
-For Windows, this line (marked for Windows) works to build our jar:
+Working in our Git Bash shell on Windows, this line works to build our jar:
 
 	```shell
-	gradlew clean jar
+	./gradlew clean jar
 	```
 	
 * When Gradle finishes building, you'll be returned to the command prompt. Check for the new jar, which you should now find in the repo in `build/libs/markup-blitz.jar`.
