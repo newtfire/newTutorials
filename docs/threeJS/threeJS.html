@@ -91,7 +91,7 @@
         <p>Note from Dr. B (2023-10-18): This tutorial was originally written with VS Code instead of Webstorm as the code editor.
         You'll probably see some references to VS Code that we haven't converted over to Webstorm yet--just read around those parts, and
             we'll try to update them as we go. ALSO, this tutorial is a fresh work in progress, and we'll be debugging it together as we
-            work on it! Thanks for helping catch bugs here! Report them in the DIGIT-Codere Slack #javascript channel!
+            work on it! Thanks for helping catch bugs here! Please report them in the DIGIT-Coder’s Slack #javascript channel!
         </p>
 
 
@@ -104,9 +104,8 @@
         <p>Before downloading Node.JS, you should check to see if you already have it installed in your machine.
             To do this, we will open our Command Line.</p>
         <ul>
-            <li><strong>Hot tip part 2:</strong> VS code actually has a command line terminal built into the editor that
-                you
-                can use as well:</li>
+            <li><strong>Hot tip part 2:</strong> Webstorm and VS Code have a command line terminal built into the editor that
+                you can use as well.</li>
         </ul>
         <div class="imgWrap"><img class="img" src="images/screenshots/VScodeTerminal.jpg" alt="VS code terminal"></div>
         <ul>
@@ -159,14 +158,16 @@
             command:
         </p>
         <pre>
-            npm init vite
+            npm create vite@latest
         </pre>
         <p>Follow the prompts given at command line:</p>
         <ul>
             <li>name your project</li>
             <li>name your package (press enter for default)</li>
-            <li>select <code>vanilla</code> framework (yellow)</li>
+            <li>select <code>Vanilla</code> framework (yellow)</li>
+      
             <li>select <code>Javascript</code> for the language (yellow)</li>
+            <li>If prompted for the experimental <q>rolldown</q> vite, you can select "N" (though this probably doesn't matter).</li>
         </ul>
         <p>This will create a new directory with the name you give you project, and it will contain some new files. <strong>On Windows and the arrow keys don't work?</strong>
             Switch to Windows Powershell or Windows terminal, navigate to your new project folder and enter the same commands.
@@ -204,7 +205,9 @@
         <p>These files and directory contain dependencies that NPM automagically generates for you. Humans do not need
             to
             touch them directly, and should never touch them for any reason at all - <em>or you'll destroy the
-                planet</em>. (Not really, actually we will be editing package.json later.)
+                planet</em>. (Not really, actually we will be editing package.json later.) 
+         <strong> Important:</strong>  When opening the project in Webstorm, just Open a folder, and do not create a new project,
+            as creating a new project overwrites the good work we did here in installation.
         </p>
     </section>
     <section>
@@ -247,6 +250,8 @@
 
     <section>
         <h2 id="write-your-html">Write your HTML</h2>
+        <p>At this point, you can open your project in the Webstorm editor, but be careful!  When opening the project in Webstorm, <strong>just Open a folder, and do NOT create a new project</strong>,
+            as creating a new project overwrites the good work we did here in installation. You already have the foundation for your project ready to go, and Webstorm is going to work with what you set up.</p>
         <p>You'll need three basic elements in your HTML to render your 3D world:</p>
         <ul>
             <li><code>&lt;canvas&gt;</code> with a unique <code>@id</code> that will literally act as the canvas for
