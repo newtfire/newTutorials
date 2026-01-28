@@ -1,59 +1,11 @@
 # Writing Your First iXML
 
-## The Data
+## Understanding iXML Rules
 
-There's a plain-text tab-delimited document at https://raw.githubusercontent.com/djbpitt/ixml/refs/heads/main/movies/movieData-short.txt that contains information about several films. Each line of the file contains four pieces of information about one film, separated by tab characters:
-
-- title
-- year
-- country
-- runtime
-
-The first line of the file contains column headers; the remaining lines are actual data. You may want to open the file in <oXygen/> and look around in order to familiarize yourself with it before you start the assignment.
-
-The format of the data is mostly straightforward, but here are a few details:
-
-- Some titles are surrounded by quotation marks and others are not. The use of quotation marks around titles is arbitrary and not informational.
-- The country value includes between one and seven countries, inclusive. If there are two or more, the individual countries are separated by a comma and space character and the whole value is surrounded by quotation marks, e.g., `"UK, USA"`. The quotation marks in the country field are used only when there are two or more countries.
-- The runtime is either a number of minutes followed by a space character and the abbreviation `min` (e.g., `93 min`) or just the string `N/A` (which stands for not available). If a time is given, it is always given as a number of minutes (i.e., there is no reference to hours or any other unit of time except minutes).
-
-## The Task
-
-Your task is to create an ixml grammar that will convert the plain-text file to well-formed XML.
+An iXML **grammar** consists of rules. Each rule has a "left hand side" and a "right hand side". The left hand side is a single symbol, which is the title of something that's being defined. The right hand side is a list of one or more symbols that define it.
 
 **What is a grammar?** A grammar is a collection of rules that defines how to match parts of the input text. Your entire iXML document is a grammar, and every rule contributes to describing the structure you expect in the input.
 
-For example, for the plain text line:
-
-```
-Goodbye to All That	1930	UK	9 min
-```
-
-your ixml grammar should create:
-
-```xml
-<film>
-    <title>Goodbye to All That</title>
-    <year>1930</year>
-    <country>UK</country>
-    <runtime>9 min</runtime>
-</film>
-```
-
-### XML Output
-
-For the moment you don't have to worry about treating multiple countries specially. That is, where the input country value is something like `"US, UK"`, it's okay if your XML says `<country>"US, UK"</country>`. We'll process that value further, later in this unit, using XSLT within XProc.
-
-Invisible XML doesn't create pretty-printed (wrapped and indented) output by default, and we'll take care of that later, once we begin using XProc. If, in the meanwhile, you'd like to make the result more legible, you can save the output file, open it in <oXygen/>, and pretty-print it there.
-
-## Understanding iXML Rules
-
-An iXML grammar consists of rules. Each rule has a "left hand side" and a "right hand side". The left hand side is a single symbol, the one being defined, and the right hand side is a list of one or more symbols that define it.
-
-A symbol is either:
-
-- The name of something (in which case there must be a further rule that defines it, one that has it as the rule's left hand side), or
-- Something that literally matches characters in your input
 
 ### Basic Syntax: How to Write a Grammar
 
@@ -81,7 +33,7 @@ Whitespace around punctuation is insignificant: `"this;that"` is the same as `"t
 
 ## Understanding iXML Symbols and Structure
 
-**Nonterminals** are the symbols you define with rules - they're the names on the left-hand side of your rules. They represent patterns or structures in your text that get converted to XML elements. For example, if you write:
+**Nonterminals** are the symbols you define with rules - they're the names on the left-hand side, before the colon. They represent patterns or structures in your text that get converted to XML elements. For example, if you write:
 
 ```
 month: "January"; "February"; "March" .
@@ -89,17 +41,35 @@ month: "January"; "February"; "March" .
 
 Then `month` is a nonterminal. When the processor matches one of those month names in your input, it creates a `<month>` element in the XML output.
 
-### Terminals
+**Terminals** are the symbols that match characters explicitly in your input. In the example above, `"January"`, `"February"`, and `"March"` are terminals - they match those exact words in your input. 
 
-**Terminals** are the symbols that match characters explicitly in your input. In the example above, `"January"`, `"February"`, and `"March"` are terminals - they match those exact words in your input.
+### Mixing and Matching
 
-### Organizing the Right Hand Side
+A nonterminal may be defined using another nonterminal. Let's add to the previous example:
 
+```
+date: month .
+month: "January"; "February", "March" .
+```
+When a rule refers to other nonterminals, it might help to think of the output to better understand what's happening:
+
+```
+<date>
+	<month>January</month>
+</date>
+```
+
+Elements can contain other elements ("nesting"), so nonterminals can - and most likely will - contain other nonterminals.
+
+## Organizing the Right Hand Side
+
+### Building blocks
 The right-hand side of a rule is organized into levels:
 
-- **Alternatives** — separated by semicolons (`;`), offering different ways to match the same nonterminal
-- **Terms** — separated by commas (`,`), forming a sequence
 - **Factors** — the basic building blocks: terminals (quoted text like `"January"`), nonterminals (names of other rules), or grouped alternatives in parentheses
+- **Terms** — separated by commas (`,`), forming a sequence
+- **Alternatives** — separated by semicolons (`;`), offering different ways to match the same nonterminal
+
 
 You can use parentheses to group alternatives together. For example:
 
@@ -109,11 +79,48 @@ memo: recipient, (date, sender ; sender, date), content .
 
 Here, the middle part can match either date followed by sender, OR sender followed by date.
 
+## Inclusions
+For both letters and numbers, you can use a square brackets to indicate ranges. For instance:
+```
+num: ["0"-"5"] .
+```
+
+The above code will match any digit from 0 to 5, inclusive.
+
+
+## Exclusions
+Adding a tilde ('\~') before a symbol changes a rule from matching that symbol to matching anything *except* for that symbol. This is called an **exclusion**. For example:
+
+```
+notNum: ~[N]
+```
+The above code will recognize a letter, whitespace, etc. as a `notNum`, but will not recognize any numerical digit.
+
+### Excluding a nonterminal
+There will be instances where the original file you're working with will have structural elements you don't want in your XML output. Take this situation:
+
+``
+1/2/3
+``
+
+Each number is separated by a slash, but maybe for our purposes, it isn't important to preserve this formatting. Our grammar might look like this:
+
+
+```
+line: num, slash, num, slash, num
+num: [N]
+-slash: -#2F
+```
+
+The `-` before the `slash` terminal means that the `<slash>` **element** will not appear in the final output. The `-` before `#2F` supresses the slash itself.
+
 ## Unicode Characters and Hex Codes
 
 **What is Unicode?** Unicode is a universal character encoding system that assigns every character—from all languages and symbol sets—a unique code point. This lets grammars reliably match a wide range of characters.
 
 In iXML, you cannot put actual line breaks, tabs, or other special characters directly into quoted strings. To represent these invisible characters or symbols, iXML uses encoded characters written as a number sign ("#") followed by hexadecimal digits. Each encoded character can represent any Unicode character.
+
+Most special character codes in iXML match the Unicode equivalent. A tab is represented in unicode as U+0009. Replacing "U+000" with "#" yields the iXML code, #9.
 
 ### Useful Character Codes
 
@@ -124,6 +131,45 @@ You may find the following values useful as you construct your ixml grammar:
 | tab | `#9` |
 | quotation mark (") | `#22` |
 | newline (CR?, LF) | `#d?, #a` |
+
+## The Data
+
+There's a plain-text tab-delimited document at https://raw.githubusercontent.com/djbpitt/ixml/refs/heads/main/movies/movieData-short.txt that contains information about several films. Each line of the file contains four pieces of information about one film, separated by tab characters:
+
+- title
+- year
+- country
+- runtime
+
+The first line of the file contains column headers; the remaining lines are actual data. You may want to open the file in <oXygen/> and look around in order to familiarize yourself with it before you start the assignment.
+
+The format of the data is mostly straightforward, but here are a few details:
+
+- Some titles are surrounded by quotation marks and others are not. The use of quotation marks around titles is arbitrary and not informational.
+- The country value includes between one and seven countries, inclusive. If there are two or more, the individual countries are separated by a comma and space character and the whole value is surrounded by quotation marks, e.g., `"UK, USA"`. The quotation marks in the country field are used only when there are two or more countries.
+- The runtime is either a number of minutes followed by a space character and the abbreviation `min` (e.g., `93 min`) or just the string `N/A` (which stands for not available). If a time is given, it is always given as a number of minutes (i.e., there is no reference to hours or any other unit of time except minutes).
+
+## The Task
+
+Your task is to create an ixml grammar that will convert the plain-text file to well-formed XML.
+
+
+For example, for the plain text line:
+
+```
+Goodbye to All That	1930	UK	9 min
+```
+
+your ixml grammar should create:
+
+```xml
+<film>
+    <title>Goodbye to All That</title>
+    <year>1930</year>
+    <country>UK</country>
+    <runtime>9 min</runtime>
+</film>
+```
 
 ## How to Proceed
 
@@ -181,6 +227,14 @@ doc: line++newline, newline? .
 | `?` | optional (zero or one) |
 | `++` | one or more with separator (e.g., `item++comma`) |
 
+### XML Output
+
+For the moment you don't have to worry about treating multiple countries specially. That is, where the input country value is something like `"US, UK"`, it's okay if your XML says `<country>"US, UK"</country>`. We'll process that value further, later in this unit, using XSLT within XProc.
+
+Invisible XML doesn't create pretty-printed output by default, but we can take care of that later. For now, you can open the output in oXygen to pretty-print and check your work.
+
+
 ## What to Submit
 
 Submit only your ixml grammar. Do not submit the tagged XML that it creates; we'll run it ourselves to examine the output.
+
