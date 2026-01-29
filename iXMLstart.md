@@ -1,55 +1,55 @@
-# Writing Your First iXML
+# Writing Your First ixml
 
-## Understanding iXML Rules
+## Understanding ixml Rules
 
-An iXML **grammar** consists of rules. Each rule has a "left hand side" and a "right hand side". The left hand side is a single symbol, which is the title of something that's being defined. The right hand side is a list of one or more symbols that define it.
+An ixml **grammar** consists of rules. Each rule has a "left hand side" and a "right hand side". The left hand side is a single symbol, which is the title of something that's being defined. The right hand side is a list of one or more symbols that define it.
 
-**What is a grammar?** A grammar is a collection of rules that defines how to match parts of the input text. Your entire iXML document is a grammar, and every rule contributes to describing the structure you expect in the input.
+**What is a grammar?** A grammar is a collection of rules that defines how to match parts of the input text. Your entire ixml document is a grammar, and every rule contributes to describing the structure you expect in the input.
 
 
 ### Basic Syntax: How to Write a Grammar
 
 A rule has the form of a name (the left hand side) followed by a colon, followed by one or more symbols (the right hand side) followed by a period. If more than one symbol appears on the right hand side, they must be separated by commas:
 
-```
-symbol-name: defining, symbols, here .
+```shell
+symbol-name: defining, symbols, here.
 ```
 
 Invisible XML allows only a single rule for any given name. If you want to express that a symbol can have two or more definitions, separate the alternatives with semicolons.
 
 This rule says a "thing" is a "this" followed by a "that":
 
-```
-thing: this, that .
+```shell
+thing: this, that.
 ```
 
 This rule says a "thing" is a "this" OR a "that":
 
-```
-thing: this; that .
+```shell
+thing: this; that.
 ```
 
 Whitespace around punctuation is insignificant: `"this;that"` is the same as `"this; that"`.
 
-## Understanding iXML Symbols and Structure
+## Understanding ixml Symbols and Structure
 
-**Nonterminals** are the symbols you define with rules - they're the names on the left-hand side, before the colon. They represent patterns or structures in your text that get converted to XML elements. For example, if you write:
+**Nonterminals** are the symbols you define with rules — they're the names on the left-hand side, before the colon. They represent patterns or structures in your text that get converted to XML elements. For example, if you write:
 
+```shell
+month: "January"; "February"; "March".
 ```
-month: "January"; "February"; "March" .
-```
 
-Then `month` is a nonterminal. When the processor matches one of those month names in your input, it creates a `<month>` element in the XML output.
+Then `month` is a **nonterminal**. When the processor matches one of those month names in your input, it creates a `<month>` element in the XML output.
 
-**Terminals** are the symbols that match characters explicitly in your input. In the example above, `"January"`, `"February"`, and `"March"` are terminals - they match those exact words in your input. 
+**Terminals** are the symbols that match characters explicitly in your input. In the example above, `"January"`, `"February"`, and `"March"` are **terminals** - they match those exact words in your input. 
 
 ### Mixing and Matching
 
 A nonterminal may be defined using another nonterminal. Let's add to the previous example:
 
-```
-date: month .
-month: "January"; "February", "March" .
+```shell
+date: month.
+month: "January"; "February", "March".
 ```
 When a rule refers to other nonterminals, it might help to think of the output to better understand what's happening:
 
@@ -73,54 +73,53 @@ The right-hand side of a rule is organized into levels:
 
 You can use parentheses to group alternatives together. For example:
 
-```
-memo: recipient, (date, sender ; sender, date), content .
+```shell
+memo: recipient, (date, sender ; sender, date), content.
 ```
 
 Here, the middle part can match either date followed by sender, OR sender followed by date.
 
-## Inclusions
+## Character Classes/Categories
 For both letters and numbers, you can use a square brackets to indicate ranges. For instance:
-```
-num: ["0"-"5"] .
+```shell
+num: ["0"-"5"].
 ```
 
-The above code will match any digit from 0 to 5, inclusive.
-
+The above code will match any digit from 0 to 5, inclusive. Keep in mind that the quotation marks are necessary.
 
 ## Exclusions
 Adding a tilde ('\~') before a symbol changes a rule from matching that symbol to matching anything *except* for that symbol. This is called an **exclusion**. For example:
 
-```
-notNum: ~[N]
+```shell
+notNum: ~[N].
 ```
 The above code will recognize a letter, whitespace, etc. as a `notNum`, but will not recognize any numerical digit.
 
 ### Excluding a nonterminal
-There will be instances where the original file you're working with will have structural elements you don't want in your XML output. Take this situation:
+There will be instances where the original file you're working with will have structural markers you don't want in your XML output. Take this situation:
 
-``
+```shell
 1/2/3
-``
+```
 
 Each number is separated by a slash, but maybe for our purposes, it isn't important to preserve this formatting. Our grammar might look like this:
 
 
-```
-line: num, slash, num, slash, num
-num: [N]
--slash: -#2F
+```shell
+line: num, slash, num, slash, num.
+num: [N].
+-slash: -#2F.
 ```
 
-The `-` before the `slash` terminal means that the `<slash>` **element** will not appear in the final output. The `-` before `#2F` supresses the slash itself.
+The hyphen `-` before the `slash` terminal means that the `<slash>` **element** will not appear in the final output. The hyphen `-` before `#2F` suppresses the slash itself.
 
 ## Unicode Characters and Hex Codes
 
 **What is Unicode?** Unicode is a universal character encoding system that assigns every character—from all languages and symbol sets—a unique code point. This lets grammars reliably match a wide range of characters.
 
-In iXML, you cannot put actual line breaks, tabs, or other special characters directly into quoted strings. To represent these invisible characters or symbols, iXML uses encoded characters written as a number sign ("#") followed by hexadecimal digits. Each encoded character can represent any Unicode character.
+In ixml, you cannot put actual line breaks, tabs, or other special characters directly into quoted strings. To represent these invisible characters or symbols, ixml uses encoded characters written as a number sign ("#") followed by hexadecimal digits. Each encoded character can represent any Unicode character.
 
-Most special character codes in iXML match the Unicode equivalent. A tab is represented in unicode as U+0009. Replacing "U+000" with "#" yields the iXML code, #9.
+Most special character codes in ixml match the Unicode equivalent. A tab is represented in unicode as U+0009. Replacing "U+000" with "#" yields the ixml code, #9.
 
 ### Useful Character Codes
 
@@ -175,7 +174,7 @@ your ixml grammar should create:
 
 ### Reading the Plain-Text Input
 
-You can use CoffeePot, the jωiXML workbench, or Markup Blitz to test your grammar. You can read your plain-text input file directly from the URL above or save it and then read your local copy.
+You can use CoffeePot, the jωixml workbench, or Markup Blitz to test your grammar. You can read your plain-text input file directly from the URL above or save it and then read your local copy.
 
 **Using Markup Blitz (command line):**
 
@@ -212,7 +211,7 @@ Files from different systems use different line-ending conventions: Linux and ma
 Files may also end with or without a final newline. To handle both cases, you can use the separator pattern with an optional trailing newline:
 
 ```
-doc: line++newline, newline? .
+doc: line++newline, newline?.
 ```
 
 - `line++newline` matches one or more lines with newlines as separators between them
