@@ -1,16 +1,17 @@
-root: header, name, type, cat, power, acc, pp, effect.
+root: header, move++NL.
+move: name, type, cat, power, acc, pp, effect.
 header: (NotNL+, "."?, NL, (#9, NL)?)+.
-name: NotNL+, -tab.
-type: NotNL+, -tab.
-cat: NotNL+, space?, -tab.
-power: (number;emDash)+, -tab.
-acc: (number;emDash)+, -tab.
-pp: (number;emDash)+, -tab.
-effect: NotNL+, ".".
+name: NotNL+, tab.
+type: NotNL+, tab.
+cat: NotNL+, space?, tab.
+power: (number;emDash)+, space?, tab.
+acc: (number;emDash)+, space?, tab.
+pp: (number;emDash)+, space?, tab.
+effect: NotNL+.
 -NL: #d?, #a.
 -NotNL: ~[#9;#d;#a].
--tab: #9.
+-tab: -#9.
 -hyphen: "-".
 -emDash: [#2014].
 -number: [N].
--space: [#20].
+-space: -[#20].
