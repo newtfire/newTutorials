@@ -1,0 +1,36 @@
+generation: key, move+.
+{Literally: Our moveset database consists of one key, then a list of multiple moves.}
+
+-tab: -#9.
+-nl: (-#d?, #a).
+{nl = newline}
+-space: -#20.
+-em: #2014.
+{It helps to define the relevant special characters somewhere early in your grammar for reader-visibility.}
+
+-notnl: ~[#9;#d;#a]+.
+{This sequence to define something that isn't a newline is reused a few times, so I elected to make it its own rule here.}
+
+key: notnl++sepkey, nl.
+-sepkey: -nl, -tab, -nl.
+{sepkey exists purely to avoid repetition in typing that sequence.}
+
+move: name, tab, type, tab, cat, tab, power, tab, acc, tab, pp, tab, desc, nl?.
+{Moves always hold this format across the document.}
+
+
+name: -notnl.
+desc: -notnl.
+
+type: ("Bug" ; "Dark" ; "Dragon" ; "Electric" ; "Fairy" ; "Fighting" ; "Fire" ; "Flying" ; "Ghost" ; "Grass" ; "Ground" ; "Ice" ; "Normal" ; "Poison" ; "Psychic" ; "Rock" ; "Steel" ; "Water").
+{These are the only types a Pokemon can be in-game. Alternatively, using the code from 'name' would yield functionally the same result.}
+
+cat: ("Special" ; "Physical" ; "Status"), -space?.
+{Once again, these account for the only types in-game. Like with 'type', the code from 'name' is also valid if you're not familiar with the set values in-game.}
+
+power: ([N]+ ; em), -space?.
+acc: ([N]+ ; em), -space?.
+{Literally: power or accuracy are either one or more numbers OR an emdash.}
+
+pp: [N]+, -space?.
+{PP is always a numerical value and will never be represented by an emdash in the data.}
