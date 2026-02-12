@@ -1,0 +1,1591 @@
+<xml>
+   <section num="1">
+
+      <timestamp>
+         <start hour="00" minute="00" second="03190"/>
+         <end hour="00" minute="00" second="07330"/>
+      </timestamp>
+
+      <transcript>Greetings digit 210. So at the end of class </transcript>
+   </section>
+
+   <section num="2">
+
+      <timestamp>
+         <start hour="00" minute="00" second="07330"/>
+         <end hour="00" minute="00" second="10510"/>
+      </timestamp>
+
+      <transcript>today on Friday January 30th I left us on a </transcript>
+   </section>
+
+   <section num="3">
+
+      <timestamp>
+         <start hour="00" minute="00" second="10510"/>
+         <end hour="00" minute="00" second="13250"/>
+      </timestamp>
+
+      <transcript>bit of a cliffhanger with a bit of broken </transcript>
+   </section>
+
+   <section num="4">
+
+      <timestamp>
+         <start hour="00" minute="00" second="13250"/>
+         <end hour="00" minute="00" second="15990"/>
+      </timestamp>
+
+      <transcript>code. Let me remind you what we were trying </transcript>
+   </section>
+
+   <section num="5">
+
+      <timestamp>
+         <start hour="00" minute="00" second="15990"/>
+         <end hour="00" minute="00" second="19090"/>
+      </timestamp>
+
+      <transcript>to do. I have now fixed it so I'm going to </transcript>
+   </section>
+
+   <section num="6">
+
+      <timestamp>
+         <start hour="00" minute="00" second="19090"/>
+         <end hour="00" minute="00" second="22830"/>
+      </timestamp>
+
+      <transcript>show you the graph the way I wanted to plot </transcript>
+   </section>
+
+   <section num="7">
+
+      <timestamp>
+         <start hour="00" minute="00" second="22830"/>
+         <end hour="00" minute="00" second="27330"/>
+      </timestamp>
+
+      <transcript>it. Here it is and this is the number of </transcript>
+   </section>
+
+   <section num="8">
+
+      <timestamp>
+         <start hour="00" minute="00" second="27330"/>
+         <end hour="00" minute="00" second="31880"/>
+      </timestamp>
+
+      <transcript>speeches in each location of the Dan to Dan </transcript>
+   </section>
+
+   <section num="9">
+
+      <timestamp>
+         <start hour="00" minute="00" second="31880"/>
+         <end hour="00" minute="00" second="34950"/>
+      </timestamp>
+
+      <transcript>episode that we were looking at. And as you see, </transcript>
+   </section>
+
+   <section num="10">
+
+      <timestamp>
+         <start hour="00" minute="00" second="34950"/>
+         <end hour="00" minute="00" second="36830"/>
+      </timestamp>
+
+      <transcript>this is what I wanted to do. I wanted to </transcript>
+   </section>
+
+   <section num="11">
+
+      <timestamp>
+         <start hour="00" minute="00" second="36830"/>
+         <end hour="00" minute="00" second="39510"/>
+      </timestamp>
+
+      <transcript>put the location with the most speeches at </transcript>
+   </section>
+
+   <section num="12">
+
+      <timestamp>
+         <start hour="00" minute="00" second="39510"/>
+         <end hour="00" minute="00" second="42410"/>
+      </timestamp>
+
+      <transcript>the bottom of the graph, and then I could plot </transcript>
+   </section>
+
+   <section num="13">
+
+      <timestamp>
+         <start hour="00" minute="00" second="42410"/>
+         <end hour="00" minute="00" second="45390"/>
+      </timestamp>
+
+      <transcript>them in descending order. So each one of </transcript>
+   </section>
+
+   <section num="14">
+
+      <timestamp>
+         <start hour="00" minute="00" second="45390"/>
+         <end hour="00" minute="00" second="47890"/>
+      </timestamp>
+
+      <transcript>these little wedges gets smaller and smaller </transcript>
+   </section>
+
+   <section num="15">
+
+      <timestamp>
+         <start hour="00" minute="00" second="47890"/>
+         <end hour="00" minute="00" second="50530"/>
+      </timestamp>
+
+      <transcript>based on the number of speeches. We go 49 </transcript>
+   </section>
+
+   <section num="16">
+
+      <timestamp>
+         <start hour="00" minute="00" second="50530"/>
+         <end hour="00" minute="00" second="55590"/>
+      </timestamp>
+
+      <transcript>to 33 to 24. so you see how that works so how </transcript>
+   </section>
+
+   <section num="17">
+
+      <timestamp>
+         <start hour="00" minute="00" second="55590"/>
+         <end hour="00" minute="01" second="01570"/>
+      </timestamp>
+
+      <transcript>did I do that and let me stop the share </transcript>
+   </section>
+
+   <section num="18">
+
+      <timestamp>
+         <start hour="00" minute="01" second="01570"/>
+         <end hour="00" minute="01" second="07850"/>
+      </timestamp>
+
+      <transcript>restart it switch to my other desktop and here </transcript>
+   </section>
+
+   <section num="19">
+
+      <timestamp>
+         <start hour="00" minute="01" second="07850"/>
+         <end hour="00" minute="01" second="13110"/>
+      </timestamp>
+
+      <transcript>I think you can see my code so previously </transcript>
+   </section>
+
+   <section num="20">
+
+      <timestamp>
+         <start hour="00" minute="01" second="13110"/>
+         <end hour="00" minute="01" second="17070"/>
+      </timestamp>
+
+      <transcript>we had been sort we had been outputting a </transcript>
+   </section>
+
+   <section num="21">
+
+      <timestamp>
+         <start hour="00" minute="01" second="17070"/>
+         <end hour="00" minute="01" second="21950"/>
+      </timestamp>
+
+      <transcript>chunk of like a little bar to stack based on </transcript>
+   </section>
+
+   <section num="22">
+
+      <timestamp>
+         <start hour="00" minute="01" second="21950"/>
+         <end hour="00" minute="01" second="25610"/>
+      </timestamp>
+
+      <transcript>these distinct values of the where attributes </transcript>
+   </section>
+
+   <section num="23">
+
+      <timestamp>
+         <start hour="00" minute="01" second="25610"/>
+         <end hour="00" minute="01" second="29650"/>
+      </timestamp>
+
+      <transcript>on stage and previously I had this little </transcript>
+   </section>
+
+   <section num="24">
+
+      <timestamp>
+         <start hour="00" minute="01" second="29650"/>
+         <end hour="00" minute="01" second="33170"/>
+      </timestamp>
+
+      <transcript>expath sort what that did is sort these </transcript>
+   </section>
+
+   <section num="25">
+
+      <timestamp>
+         <start hour="00" minute="01" second="33170"/>
+         <end hour="00" minute="01" second="36590"/>
+      </timestamp>
+
+      <transcript>distinct values the default way and expath which </transcript>
+   </section>
+
+   <section num="26">
+
+      <timestamp>
+         <start hour="00" minute="01" second="36590"/>
+         <end hour="00" minute="01" second="39270"/>
+      </timestamp>
+
+      <transcript>is alphabetical order and we decided that </transcript>
+   </section>
+
+   <section num="27">
+
+      <timestamp>
+         <start hour="00" minute="01" second="39270"/>
+         <end hour="00" minute="01" second="41090"/>
+      </timestamp>
+
+      <transcript>didn't really look so good or make that much </transcript>
+   </section>
+
+   <section num="28">
+
+      <timestamp>
+         <start hour="00" minute="01" second="41090"/>
+         <end hour="00" minute="01" second="43310"/>
+      </timestamp>
+
+      <transcript>sense so we're gonna do it a different way </transcript>
+   </section>
+
+   <section num="29">
+
+      <timestamp>
+         <start hour="00" minute="01" second="43310"/>
+         <end hour="00" minute="01" second="48910"/>
+      </timestamp>
+
+      <transcript>to fix things I removed this sort and I </transcript>
+   </section>
+
+   <section num="30">
+
+      <timestamp>
+         <start hour="00" minute="01" second="48910"/>
+         <end hour="00" minute="01" second="54730"/>
+      </timestamp>
+
+      <transcript>created a new variable down here that I'm going </transcript>
+   </section>
+
+   <section num="31">
+
+      <timestamp>
+         <start hour="00" minute="01" second="54730"/>
+         <end hour="00" minute="01" second="57470"/>
+      </timestamp>
+
+      <transcript>to take out a little extra white space here </transcript>
+   </section>
+
+   <section num="32">
+
+      <timestamp>
+         <start hour="00" minute="01" second="57920"/>
+         <end hour="00" minute="02" second="03210"/>
+      </timestamp>
+
+      <transcript>I'm calling this one sorted stage locations </transcript>
+   </section>
+
+   <section num="33">
+
+      <timestamp>
+         <start hour="00" minute="02" second="03350"/>
+         <end hour="00" minute="02" second="06250"/>
+      </timestamp>
+
+      <transcript>you saw me do this earlier in class where </transcript>
+   </section>
+
+   <section num="34">
+
+      <timestamp>
+         <start hour="00" minute="02" second="06250"/>
+         <end hour="00" minute="02" second="10030"/>
+      </timestamp>
+
+      <transcript>I unpack a variable and I go through things, </transcript>
+   </section>
+
+   <section num="35">
+
+      <timestamp>
+         <start hour="00" minute="02" second="10030"/>
+         <end hour="00" minute="02" second="12470"/>
+      </timestamp>
+
+      <transcript>this is going to make a series of strings. </transcript>
+   </section>
+
+   <section num="36">
+
+      <timestamp>
+         <start hour="00" minute="02" second="12590"/>
+         <end hour="00" minute="02" second="15750"/>
+      </timestamp>
+
+      <transcript>This time, I start with the distinct stage </transcript>
+   </section>
+
+   <section num="37">
+
+      <timestamp>
+         <start hour="00" minute="02" second="15750"/>
+         <end hour="00" minute="02" second="18750"/>
+      </timestamp>
+
+      <transcript>locations that we calculated up here, </transcript>
+   </section>
+
+   <section num="38">
+
+      <timestamp>
+         <start hour="00" minute="02" second="18980"/>
+         <end hour="00" minute="02" second="22670"/>
+      </timestamp>
+
+      <transcript>and I'm going to go in, and I'm actually </transcript>
+   </section>
+
+   <section num="39">
+
+      <timestamp>
+         <start hour="00" minute="02" second="22670"/>
+         <end hour="00" minute="02" second="27370"/>
+      </timestamp>
+
+      <transcript>using the XSL sort in here. This made a nice </transcript>
+   </section>
+
+   <section num="40">
+
+      <timestamp>
+         <start hour="00" minute="02" second="27370"/>
+         <end hour="00" minute="02" second="29650"/>
+      </timestamp>
+
+      <transcript>safe space for me to work this out and </transcript>
+   </section>
+
+   <section num="41">
+
+      <timestamp>
+         <start hour="00" minute="02" second="29650"/>
+         <end hour="00" minute="02" second="32310"/>
+      </timestamp>
+
+      <transcript>check my work to make sure it was it was </transcript>
+   </section>
+
+   <section num="42">
+
+      <timestamp>
+         <start hour="00" minute="02" second="32310"/>
+         <end hour="00" minute="02" second="37670"/>
+      </timestamp>
+
+      <transcript>working so I said XSL sort but we're gonna </transcript>
+   </section>
+
+   <section num="43">
+
+      <timestamp>
+         <start hour="00" minute="02" second="37670"/>
+         <end hour="00" minute="02" second="42490"/>
+      </timestamp>
+
+      <transcript>do this based on the XML tree we're gonna </transcript>
+   </section>
+
+   <section num="44">
+
+      <timestamp>
+         <start hour="00" minute="02" second="42490"/>
+         <end hour="00" minute="02" second="46890"/>
+      </timestamp>
+
+      <transcript>go down find the stages where the current </transcript>
+   </section>
+
+   <section num="45">
+
+      <timestamp>
+         <start hour="00" minute="02" second="46890"/>
+         <end hour="00" minute="02" second="51770"/>
+      </timestamp>
+
+      <transcript>one where the where the where attribute </transcript>
+   </section>
+
+   <section num="46">
+
+      <timestamp>
+         <start hour="00" minute="02" second="51770"/>
+         <end hour="00" minute="02" second="54470"/>
+      </timestamp>
+
+      <transcript>equals the current value we're gonna go </transcript>
+   </section>
+
+   <section num="47">
+
+      <timestamp>
+         <start hour="00" minute="02" second="54470"/>
+         <end hour="00" minute="02" second="56630"/>
+      </timestamp>
+
+      <transcript>reach into the speeches and count them. </transcript>
+   </section>
+
+   <section num="48">
+
+      <timestamp>
+         <start hour="00" minute="02" second="56910"/>
+         <end hour="00" minute="03" second="02250"/>
+      </timestamp>
+
+      <transcript>And what xsl sort does is it changes the </transcript>
+   </section>
+
+   <section num="49">
+
+      <timestamp>
+         <start hour="00" minute="03" second="02250"/>
+         <end hour="00" minute="03" second="06730"/>
+      </timestamp>
+
+      <transcript>order of the output based on the number </transcript>
+   </section>
+
+   <section num="50">
+
+      <timestamp>
+         <start hour="00" minute="03" second="06730"/>
+         <end hour="00" minute="03" second="10650"/>
+      </timestamp>
+
+      <transcript>of counts. So this value here is going to </transcript>
+   </section>
+
+   <section num="51">
+
+      <timestamp>
+         <start hour="00" minute="03" second="10650"/>
+         <end hour="00" minute="03" second="14250"/>
+      </timestamp>
+
+      <transcript>determine the order of the output of xsl </transcript>
+   </section>
+
+   <section num="52">
+
+      <timestamp>
+         <start hour="00" minute="03" second="14250"/>
+         <end hour="00" minute="03" second="17090"/>
+      </timestamp>
+
+      <transcript>for each. I have to output something or </transcript>
+   </section>
+
+   <section num="53">
+
+      <timestamp>
+         <start hour="00" minute="03" second="17090"/>
+         <end hour="00" minute="03" second="20150"/>
+      </timestamp>
+
+      <transcript>this doesn't work. So I say output the value </transcript>
+   </section>
+
+   <section num="54">
+
+      <timestamp>
+         <start hour="00" minute="03" second="20150"/>
+         <end hour="00" minute="03" second="24130"/>
+      </timestamp>
+
+      <transcript>of the current location at this point. </transcript>
+   </section>
+
+   <section num="55">
+
+      <timestamp>
+         <start hour="00" minute="03" second="24190"/>
+         <end hour="00" minute="03" second="26950"/>
+      </timestamp>
+
+      <transcript>XSL sort is a little bit of magic, just </transcript>
+   </section>
+
+   <section num="56">
+
+      <timestamp>
+         <start hour="00" minute="03" second="26950"/>
+         <end hour="00" minute="03" second="29990"/>
+      </timestamp>
+
+      <transcript>like XPath sort, but the way it's going </transcript>
+   </section>
+
+   <section num="57">
+
+      <timestamp>
+         <start hour="00" minute="03" second="29990"/>
+         <end hour="00" minute="03" second="34210"/>
+      </timestamp>
+
+      <transcript>to work is like every time the XSL foreach </transcript>
+   </section>
+
+   <section num="58">
+
+      <timestamp>
+         <start hour="00" minute="03" second="34210"/>
+         <end hour="00" minute="03" second="36230"/>
+      </timestamp>
+
+      <transcript>runs, it's going to grab a count </transcript>
+   </section>
+
+   <section num="59">
+
+      <timestamp>
+         <start hour="00" minute="03" second="36230"/>
+         <end hour="00" minute="03" second="39770"/>
+      </timestamp>
+
+      <transcript>value, and the output of this foreach is </transcript>
+   </section>
+
+   <section num="60">
+
+      <timestamp>
+         <start hour="00" minute="03" second="39770"/>
+         <end hour="00" minute="03" second="44170"/>
+      </timestamp>
+
+      <transcript>going to be determined by the sort order, </transcript>
+   </section>
+
+   <section num="61">
+
+      <timestamp>
+         <start hour="00" minute="03" second="44170"/>
+         <end hour="00" minute="03" second="46850"/>
+      </timestamp>
+
+      <transcript>which we've now made based on a number. </transcript>
+   </section>
+
+   <section num="62">
+
+      <timestamp>
+         <start hour="00" minute="03" second="47310"/>
+         <end hour="00" minute="03" second="51190"/>
+      </timestamp>
+
+      <transcript>okay I checked this in an XSL comment because </transcript>
+   </section>
+
+   <section num="63">
+
+      <timestamp>
+         <start hour="00" minute="03" second="51190"/>
+         <end hour="00" minute="03" second="53610"/>
+      </timestamp>
+
+      <transcript>I really wanted to make sure that I had </transcript>
+   </section>
+
+   <section num="64">
+
+      <timestamp>
+         <start hour="00" minute="03" second="53610"/>
+         <end hour="00" minute="03" second="56550"/>
+      </timestamp>
+
+      <transcript>a series of strings that were based on my </transcript>
+   </section>
+
+   <section num="65">
+
+      <timestamp>
+         <start hour="00" minute="03" second="56550"/>
+         <end hour="00" minute="03" second="59630"/>
+      </timestamp>
+
+      <transcript>sort order and I knew that spaceship was </transcript>
+   </section>
+
+   <section num="66">
+
+      <timestamp>
+         <start hour="00" minute="03" second="59630"/>
+         <end hour="00" minute="04" second="02810"/>
+      </timestamp>
+
+      <transcript>going to be the largest one so when I run this </transcript>
+   </section>
+
+   <section num="67">
+
+      <timestamp>
+         <start hour="00" minute="04" second="02810"/>
+         <end hour="00" minute="04" second="04770"/>
+      </timestamp>
+
+      <transcript>I'm going to like make sure I save this </transcript>
+   </section>
+
+   <section num="68">
+
+      <timestamp>
+         <start hour="00" minute="04" second="04770"/>
+         <end hour="00" minute="04" second="08150"/>
+      </timestamp>
+
+      <transcript>and run it I'm going to go take a look at </transcript>
+   </section>
+
+   <section num="69">
+
+      <timestamp>
+         <start hour="00" minute="04" second="08150"/>
+         <end hour="00" minute="04" second="12150"/>
+      </timestamp>
+
+      <transcript>my output and try to move my zoom screen over </transcript>
+   </section>
+
+   <section num="70">
+
+      <timestamp>
+         <start hour="00" minute="04" second="12330"/>
+         <end hour="00" minute="04" second="15670"/>
+      </timestamp>
+
+      <transcript>and you can see my sorted stage locations </transcript>
+   </section>
+
+   <section num="71">
+
+      <timestamp>
+         <start hour="00" minute="04" second="15670"/>
+         <end hour="00" minute="04" second="19010"/>
+      </timestamp>
+
+      <transcript>are spaceship hallway hospital and as soon </transcript>
+   </section>
+
+   <section num="72">
+
+      <timestamp>
+         <start hour="00" minute="04" second="19010"/>
+         <end hour="00" minute="04" second="21490"/>
+      </timestamp>
+
+      <transcript>as i saw that i knew this was what i wanted </transcript>
+   </section>
+
+   <section num="73">
+
+      <timestamp>
+         <start hour="00" minute="04" second="21490"/>
+         <end hour="00" minute="04" second="24210"/>
+      </timestamp>
+
+      <transcript>um i wanted i did that i want to look at </transcript>
+   </section>
+
+   <section num="74">
+
+      <timestamp>
+         <start hour="00" minute="04" second="24210"/>
+         <end hour="00" minute="04" second="26250"/>
+      </timestamp>
+
+      <transcript>my output usually when i'm about to plot </transcript>
+   </section>
+
+   <section num="75">
+
+      <timestamp>
+         <start hour="00" minute="04" second="26250"/>
+         <end hour="00" minute="04" second="30050"/>
+      </timestamp>
+
+      <transcript>to make sure i i got it right so i may have </transcript>
+   </section>
+
+   <section num="76">
+
+      <timestamp>
+         <start hour="00" minute="04" second="30050"/>
+         <end hour="00" minute="04" second="32830"/>
+      </timestamp>
+
+      <transcript>been able to i i didn't get this working in </transcript>
+   </section>
+
+   <section num="77">
+
+      <timestamp>
+         <start hour="00" minute="04" second="32830"/>
+         <end hour="00" minute="04" second="34930"/>
+      </timestamp>
+
+      <transcript>the real for each over this where i'm </transcript>
+   </section>
+
+   <section num="78">
+
+      <timestamp>
+         <start hour="00" minute="04" second="34930"/>
+         <end hour="00" minute="04" second="37510"/>
+      </timestamp>
+
+      <transcript>plotting the g elements but i did it up here </transcript>
+   </section>
+
+   <section num="79">
+
+      <timestamp>
+         <start hour="00" minute="04" second="37510"/>
+         <end hour="00" minute="04" second="40690"/>
+      </timestamp>
+
+      <transcript>i'm going to use sorted stage locations now </transcript>
+   </section>
+
+   <section num="80">
+
+      <timestamp>
+         <start hour="00" minute="04" second="41190"/>
+         <end hour="00" minute="04" second="44790"/>
+      </timestamp>
+
+      <transcript>and when I began plotting I changed this </transcript>
+   </section>
+
+   <section num="81">
+
+      <timestamp>
+         <start hour="00" minute="04" second="44790"/>
+         <end hour="00" minute="04" second="48050"/>
+      </timestamp>
+
+      <transcript>from distinct stage locations to sorted stage </transcript>
+   </section>
+
+   <section num="82">
+
+      <timestamp>
+         <start hour="00" minute="04" second="48050"/>
+         <end hour="00" minute="04" second="50490"/>
+      </timestamp>
+
+      <transcript>locations and you'll see that change when </transcript>
+   </section>
+
+   <section num="83">
+
+      <timestamp>
+         <start hour="00" minute="04" second="50490"/>
+         <end hour="00" minute="04" second="54400"/>
+      </timestamp>
+
+      <transcript>I go to push my code in a few minutes I'll </transcript>
+   </section>
+
+   <section num="84">
+
+      <timestamp>
+         <start hour="00" minute="04" second="54870"/>
+         <end hour="00" minute="04" second="57950"/>
+      </timestamp>
+
+      <transcript>that this has changed and now it's it's going </transcript>
+   </section>
+
+   <section num="85">
+
+      <timestamp>
+         <start hour="00" minute="04" second="57950"/>
+         <end hour="00" minute="05" second="00750"/>
+      </timestamp>
+
+      <transcript>to be plotting these in the sort order and </transcript>
+   </section>
+
+   <section num="86">
+
+      <timestamp>
+         <start hour="00" minute="05" second="00750"/>
+         <end hour="00" minute="05" second="02650"/>
+      </timestamp>
+
+      <transcript>then I keep pretty much everything else the </transcript>
+   </section>
+
+   <section num="87">
+
+      <timestamp>
+         <start hour="00" minute="05" second="02650"/>
+         <end hour="00" minute="05" second="06530"/>
+      </timestamp>
+
+      <transcript>same except I needed to remember to change </transcript>
+   </section>
+
+   <section num="88">
+
+      <timestamp>
+         <start hour="00" minute="05" second="06530"/>
+         <end hour="00" minute="05" second="09570"/>
+      </timestamp>
+
+      <transcript>my stack that this like change that variable </transcript>
+   </section>
+
+   <section num="89">
+
+      <timestamp>
+         <start hour="00" minute="05" second="09570"/>
+         <end hour="00" minute="05" second="11750"/>
+      </timestamp>
+
+      <transcript>down here where I'm doing the stacking </transcript>
+   </section>
+
+   <section num="90">
+
+      <timestamp>
+         <start hour="00" minute="05" second="11750"/>
+         <end hour="00" minute="05" second="14110"/>
+      </timestamp>
+
+      <transcript>so instead of making that based on distinct </transcript>
+   </section>
+
+   <section num="91">
+
+      <timestamp>
+         <start hour="00" minute="05" second="14110"/>
+         <end hour="00" minute="05" second="16730"/>
+      </timestamp>
+
+      <transcript>stage locations I now needed to use my new </transcript>
+   </section>
+
+   <section num="92">
+
+      <timestamp>
+         <start hour="00" minute="05" second="16730"/>
+         <end hour="00" minute="05" second="19350"/>
+      </timestamp>
+
+      <transcript>variable as soon as I did that I get the </transcript>
+   </section>
+
+   <section num="93">
+
+      <timestamp>
+         <start hour="00" minute="05" second="19350"/>
+         <end hour="00" minute="05" second="24270"/>
+      </timestamp>
+
+      <transcript>output that I want and I will switch my share </transcript>
+   </section>
+
+   <section num="94">
+
+      <timestamp>
+         <start hour="00" minute="05" second="24270"/>
+         <end hour="00" minute="05" second="28420"/>
+      </timestamp>
+
+      <transcript>again to just show this to you it all works </transcript>
+   </section>
+
+   <section num="95">
+
+      <timestamp>
+         <start hour="00" minute="05" second="28420"/>
+         <end hour="00" minute="05" second="33360"/>
+      </timestamp>
+
+      <transcript>this is all working the way I intended and </transcript>
+   </section>
+
+   <section num="96">
+
+      <timestamp>
+         <start hour="00" minute="05" second="33530"/>
+         <end hour="00" minute="05" second="36510"/>
+      </timestamp>
+
+      <transcript>we've got the output coming out sorting is </transcript>
+   </section>
+
+   <section num="97">
+
+      <timestamp>
+         <start hour="00" minute="05" second="36510"/>
+         <end hour="00" minute="05" second="39050"/>
+      </timestamp>
+
+      <transcript>a little tricky but now that you have one </transcript>
+   </section>
+
+   <section num="98">
+
+      <timestamp>
+         <start hour="00" minute="05" second="39050"/>
+         <end hour="00" minute="05" second="42510"/>
+      </timestamp>
+
+      <transcript>that's working to use as a model I hope that </transcript>
+   </section>
+
+   <section num="99">
+
+      <timestamp>
+         <start hour="00" minute="05" second="42510"/>
+         <end hour="00" minute="05" second="44350"/>
+      </timestamp>
+
+      <transcript>you'll find this helpful in your own code </transcript>
+   </section>
+
+   <section num="100">
+
+      <timestamp>
+         <start hour="00" minute="05" second="44350"/>
+         <end hour="00" minute="05" second="48350"/>
+      </timestamp>
+
+      <transcript>okay so two videos today and I hope this is </transcript>
+   </section>
+
+   <section num="101">
+
+      <timestamp>
+         <start hour="00" minute="05" second="48350"/>
+         <end hour="00" minute="05" second="51310"/>
+      </timestamp>
+
+      <transcript>useful to you good luck with the assignment </transcript>
+   </section>
+
+   <section num="102">
+
+      <timestamp>
+         <start hour="00" minute="05" second="51310"/>
+         <end hour="00" minute="05" second="54090"/>
+      </timestamp>
+
+      <transcript>for next week I'm gonna quickly look at that </transcript>
+   </section>
+
+   <section num="103">
+
+      <timestamp>
+         <start hour="00" minute="05" second="54090"/>
+         <end hour="00" minute="05" second="56570"/>
+      </timestamp>
+
+      <transcript>while I'm on the zoom with you let's go </transcript>
+   </section>
+
+   <section num="104">
+
+      <timestamp>
+         <start hour="00" minute="05" second="56570"/>
+         <end hour="00" minute="06" second="02470"/>
+      </timestamp>
+
+      <transcript>back here take a look at assignments so this </transcript>
+   </section>
+
+   <section num="105">
+
+      <timestamp>
+         <start hour="00" minute="06" second="02470"/>
+         <end hour="00" minute="06" second="04990"/>
+      </timestamp>
+
+      <transcript>is a little little exercise for Monday to </transcript>
+   </section>
+
+   <section num="106">
+
+      <timestamp>
+         <start hour="00" minute="06" second="04990"/>
+         <end hour="00" minute="06" second="07030"/>
+      </timestamp>
+
+      <transcript>introduce the new regular expressions unit </transcript>
+   </section>
+
+   <section num="107">
+
+      <timestamp>
+         <start hour="00" minute="06" second="07030"/>
+         <end hour="00" minute="06" second="09610"/>
+      </timestamp>
+
+      <transcript>but this very last thing it's like kind of </transcript>
+   </section>
+
+   <section num="108">
+
+      <timestamp>
+         <start hour="00" minute="06" second="09610"/>
+         <end hour="00" minute="06" second="12470"/>
+      </timestamp>
+
+      <transcript>our last hurrah for this unit plotting svg </transcript>
+   </section>
+
+   <section num="109">
+
+      <timestamp>
+         <start hour="00" minute="06" second="12470"/>
+         <end hour="00" minute="06" second="16310"/>
+      </timestamp>
+
+      <transcript>with xslt it's the small test project i'm going </transcript>
+   </section>
+
+   <section num="110">
+
+      <timestamp>
+         <start hour="00" minute="06" second="16310"/>
+         <end hour="00" minute="06" second="20850"/>
+      </timestamp>
+
+      <transcript>to invite you to go over um choose some </transcript>
+   </section>
+
+   <section num="111">
+
+      <timestamp>
+         <start hour="00" minute="06" second="20850"/>
+         <end hour="00" minute="06" second="24750"/>
+      </timestamp>
+
+      <transcript>xml to start with um i was suggesting this </transcript>
+   </section>
+
+   <section num="112">
+
+      <timestamp>
+         <start hour="00" minute="06" second="24750"/>
+         <end hour="00" minute="06" second="28150"/>
+      </timestamp>
+
+      <transcript>um like working the vogue project team could </transcript>
+   </section>
+
+   <section num="113">
+
+      <timestamp>
+         <start hour="00" minute="06" second="28150"/>
+         <end hour="00" minute="06" second="30370"/>
+      </timestamp>
+
+      <transcript>work with a collection of their files but </transcript>
+   </section>
+
+   <section num="114">
+
+      <timestamp>
+         <start hour="00" minute="06" second="30370"/>
+         <end hour="00" minute="06" second="33410"/>
+      </timestamp>
+
+      <transcript>you can kind of see um some interesting things </transcript>
+   </section>
+
+   <section num="115">
+
+      <timestamp>
+         <start hour="00" minute="06" second="33410"/>
+         <end hour="00" minute="06" second="38270"/>
+      </timestamp>
+
+      <transcript>here coded with rs you could count materials </transcript>
+   </section>
+
+   <section num="116">
+
+      <timestamp>
+         <start hour="00" minute="06" second="38270"/>
+         <end hour="00" minute="06" second="42690"/>
+      </timestamp>
+
+      <transcript>um fabrics garments like find something </transcript>
+   </section>
+
+   <section num="117">
+
+      <timestamp>
+         <start hour="00" minute="06" second="42690"/>
+         <end hour="00" minute="06" second="45750"/>
+      </timestamp>
+
+      <transcript>get counts of things and count how many </transcript>
+   </section>
+
+   <section num="118">
+
+      <timestamp>
+         <start hour="00" minute="06" second="45750"/>
+         <end hour="00" minute="06" second="47930"/>
+      </timestamp>
+
+      <transcript>there are of that type so i'd suggest maybe </transcript>
+   </section>
+
+   <section num="119">
+
+      <timestamp>
+         <start hour="00" minute="06" second="47930"/>
+         <end hour="00" minute="06" second="51690"/>
+      </timestamp>
+
+      <transcript>looking at colors or something because this </transcript>
+   </section>
+
+   <section num="120">
+
+      <timestamp>
+         <start hour="00" minute="06" second="51690"/>
+         <end hour="00" minute="06" second="54470"/>
+      </timestamp>
+
+      <transcript>team was really interested in the colors like </transcript>
+   </section>
+
+   <section num="121">
+
+      <timestamp>
+         <start hour="00" minute="06" second="54470"/>
+         <end hour="00" minute="06" second="56750"/>
+      </timestamp>
+
+      <transcript>what colors were popular in a given era. </transcript>
+   </section>
+
+   <section num="122">
+
+      <timestamp>
+         <start hour="00" minute="06" second="57350"/>
+         <end hour="00" minute="07" second="01990"/>
+      </timestamp>
+
+      <transcript>And you can count the number of </transcript>
+   </section>
+
+   <section num="123">
+
+      <timestamp>
+         <start hour="00" minute="07" second="01990"/>
+         <end hour="00" minute="07" second="04670"/>
+      </timestamp>
+
+      <transcript>things of a kind that have variety, </transcript>
+   </section>
+
+   <section num="124">
+
+      <timestamp>
+         <start hour="00" minute="07" second="04670"/>
+         <end hour="00" minute="07" second="06290"/>
+      </timestamp>
+
+      <transcript>like what are the different values </transcript>
+   </section>
+
+   <section num="125">
+
+      <timestamp>
+         <start hour="00" minute="07" second="06290"/>
+         <end hour="00" minute="07" second="09070"/>
+      </timestamp>
+
+      <transcript>of color in this chunk of code. </transcript>
+   </section>
+
+   <section num="126">
+
+      <timestamp>
+         <start hour="00" minute="07" second="09310"/>
+         <end hour="00" minute="07" second="11490"/>
+      </timestamp>
+
+      <transcript>You can, if you're ready </transcript>
+   </section>
+
+   <section num="127">
+
+      <timestamp>
+         <start hour="00" minute="07" second="11490"/>
+         <end hour="00" minute="07" second="13070"/>
+      </timestamp>
+
+      <transcript>to process a collection, </transcript>
+   </section>
+
+   <section num="128">
+
+      <timestamp>
+         <start hour="00" minute="07" second="13750"/>
+         <end hour="00" minute="07" second="17070"/>
+      </timestamp>
+
+      <transcript>you could process the collection of these </transcript>
+   </section>
+
+   <section num="129">
+
+      <timestamp>
+         <start hour="00" minute="07" second="17070"/>
+         <end hour="00" minute="07" second="19810"/>
+      </timestamp>
+
+      <transcript>TEI files. I'm going to prepare a mock-up of </transcript>
+   </section>
+
+   <section num="130">
+
+      <timestamp>
+         <start hour="00" minute="07" second="19810"/>
+         <end hour="00" minute="07" second="21850"/>
+      </timestamp>
+
+      <transcript>that this weekend so that you know how to </transcript>
+   </section>
+
+   <section num="131">
+
+      <timestamp>
+         <start hour="00" minute="07" second="21850"/>
+         <end hour="00" minute="07" second="24330"/>
+      </timestamp>
+
+      <transcript>work with a collection of XML instead of just </transcript>
+   </section>
+
+   <section num="132">
+
+      <timestamp>
+         <start hour="00" minute="07" second="24330"/>
+         <end hour="00" minute="07" second="28190"/>
+      </timestamp>
+
+      <transcript>one file to make an SVG plot but it's gonna </transcript>
+   </section>
+
+   <section num="133">
+
+      <timestamp>
+         <start hour="00" minute="07" second="28190"/>
+         <end hour="00" minute="07" second="30070"/>
+      </timestamp>
+
+      <transcript>work essentially the same way you sort of </transcript>
+   </section>
+
+   <section num="134">
+
+      <timestamp>
+         <start hour="00" minute="07" second="30070"/>
+         <end hour="00" minute="07" second="33830"/>
+      </timestamp>
+
+      <transcript>drill into these files count the number of </transcript>
+   </section>
+
+   <section num="135">
+
+      <timestamp>
+         <start hour="00" minute="07" second="33830"/>
+         <end hour="00" minute="07" second="37750"/>
+      </timestamp>
+
+      <transcript>things that like that represent a color and </transcript>
+   </section>
+
+   <section num="136">
+
+      <timestamp>
+         <start hour="00" minute="07" second="37750"/>
+         <end hour="00" minute="07" second="42510"/>
+      </timestamp>
+
+      <transcript>output them so we'll try that another option </transcript>
+   </section>
+
+   <section num="137">
+
+      <timestamp>
+         <start hour="00" minute="07" second="42510"/>
+         <end hour="00" minute="07" second="44910"/>
+      </timestamp>
+
+      <transcript>you could look at is the pokey this Pokemon </transcript>
+   </section>
+
+   <section num="138">
+
+      <timestamp>
+         <start hour="00" minute="07" second="44910"/>
+         <end hour="00" minute="07" second="49730"/>
+      </timestamp>
+
+      <transcript>moves file which let me see where did I put </transcript>
+   </section>
+
+   <section num="139">
+
+      <timestamp>
+         <start hour="00" minute="07" second="49730"/>
+         <end hour="00" minute="07" second="55390"/>
+      </timestamp>
+
+      <transcript>that that's going to be in what it's probably </transcript>
+   </section>
+
+   <section num="140">
+
+      <timestamp>
+         <start hour="00" minute="07" second="55390"/>
+         <end hour="00" minute="08" second="02950"/>
+      </timestamp>
+
+      <transcript>faster for me to get to this fire text </transcript>
+   </section>
+
+   <section num="141">
+
+      <timestamp>
+         <start hour="00" minute="08" second="02950"/>
+         <end hour="00" minute="08" second="06190"/>
+      </timestamp>
+
+      <transcript>analysis hub if I do that from here I can just </transcript>
+   </section>
+
+   <section num="142">
+
+      <timestamp>
+         <start hour="00" minute="08" second="06190"/>
+         <end hour="00" minute="08" second="08050"/>
+      </timestamp>
+
+      <transcript>show you where this is my stuff's always </transcript>
+   </section>
+
+   <section num="143">
+
+      <timestamp>
+         <start hour="00" minute="08" second="08050"/>
+         <end hour="00" minute="08" second="12530"/>
+      </timestamp>
+
+      <transcript>in class examples and you will find an XSLT </transcript>
+   </section>
+
+   <section num="144">
+
+      <timestamp>
+         <start hour="00" minute="08" second="12530"/>
+         <end hour="00" minute="08" second="16030"/>
+      </timestamp>
+
+      <transcript>to SVG here's a little Pokemon on moves folder </transcript>
+   </section>
+
+   <section num="145">
+
+      <timestamp>
+         <start hour="00" minute="08" second="16030"/>
+         <end hour="00" minute="08" second="19850"/>
+      </timestamp>
+
+      <transcript>and there's some pretty simple xml in here </transcript>
+   </section>
+
+   <section num="146">
+
+      <timestamp>
+         <start hour="00" minute="08" second="19850"/>
+         <end hour="00" minute="08" second="25030"/>
+      </timestamp>
+
+      <transcript>where every move element has categories and </transcript>
+   </section>
+
+   <section num="147">
+
+      <timestamp>
+         <start hour="00" minute="08" second="25030"/>
+         <end hour="00" minute="08" second="29330"/>
+      </timestamp>
+
+      <transcript>you could count up the number of different </transcript>
+   </section>
+
+   <section num="148">
+
+      <timestamp>
+         <start hour="00" minute="08" second="29330"/>
+         <end hour="00" minute="08" second="31510"/>
+      </timestamp>
+
+      <transcript>things that are like that share the same </transcript>
+   </section>
+
+   <section num="149">
+
+      <timestamp>
+         <start hour="00" minute="08" second="31510"/>
+         <end hour="00" minute="08" second="35170"/>
+      </timestamp>
+
+      <transcript>category um get a count of those things and </transcript>
+   </section>
+
+   <section num="150">
+
+      <timestamp>
+         <start hour="00" minute="08" second="35170"/>
+         <end hour="00" minute="08" second="38310"/>
+      </timestamp>
+
+      <transcript>then try to plot them you know you know as the </transcript>
+   </section>
+
+   <section num="151">
+
+      <timestamp>
+         <start hour="00" minute="08" second="38310"/>
+         <end hour="00" minute="08" second="40910"/>
+      </timestamp>
+
+      <transcript>parts that make a whole these are um this </transcript>
+   </section>
+
+   <section num="152">
+
+      <timestamp>
+         <start hour="00" minute="08" second="40910"/>
+         <end hour="00" minute="08" second="43090"/>
+      </timestamp>
+
+      <transcript>is this is some good data to help show that </transcript>
+   </section>
+
+   <section num="153">
+
+      <timestamp>
+         <start hour="00" minute="08" second="43090"/>
+         <end hour="00" minute="08" second="45630"/>
+      </timestamp>
+
+      <transcript>so mess around you don't have to use these </transcript>
+   </section>
+
+   <section num="154">
+
+      <timestamp>
+         <start hour="00" minute="08" second="45630"/>
+         <end hour="00" minute="08" second="47710"/>
+      </timestamp>
+
+      <transcript>two files but I'm suggesting that they might </transcript>
+   </section>
+
+   <section num="155">
+
+      <timestamp>
+         <start hour="00" minute="08" second="47710"/>
+         <end hour="00" minute="08" second="52070"/>
+      </timestamp>
+
+      <transcript>be good for doing a quick visual analysis </transcript>
+   </section>
+
+   <section num="156">
+
+      <timestamp>
+         <start hour="00" minute="08" second="52070"/>
+         <end hour="00" minute="08" second="57550"/>
+      </timestamp>
+
+      <transcript>and see if you can make some kind of SVG plot </transcript>
+   </section>
+
+   <section num="157">
+
+      <timestamp>
+         <start hour="00" minute="08" second="57550"/>
+         <end hour="00" minute="08" second="59750"/>
+      </timestamp>
+
+      <transcript>that plots the parts of a complete whole. </transcript>
+   </section>
+
+   <section num="158">
+
+      <timestamp>
+         <start hour="00" minute="09" second="00210"/>
+         <end hour="00" minute="09" second="03650"/>
+      </timestamp>
+
+      <transcript>Alright, that's it. I'm happy that finally </transcript>
+   </section>
+
+   <section num="159">
+
+      <timestamp>
+         <start hour="00" minute="09" second="03650"/>
+         <end hour="00" minute="09" second="05850"/>
+      </timestamp>
+
+      <transcript>worked and I will see you next week.</transcript>
+   </section>
+</xml>
