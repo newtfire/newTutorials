@@ -2,7 +2,7 @@
 
 This guide was written in reference to Norm Tovey-Walsh's [Writing Invisible XML Grammars](https://www.xml.com/articles/2025/12/16/invisible-xml-grammars-update/). 
 
-Please take a look at the original article for more in depth explanations and additional examples. 
+Take a look at the original article for more in depth explanations and additional examples if needed. 
 ## Understanding ixml Rules
 
 An ixml **grammar** consists of rules. Each rule has a "left hand side" and a "right hand side". The left hand side is a single symbol, which is the title of something that's being defined. The right hand side is a list of one or more symbols that define it.
@@ -12,7 +12,7 @@ An ixml **grammar** consists of rules. Each rule has a "left hand side" and a "r
 
 ### Basic Syntax: How to Write a Grammar
 
-A **rule** has the form of a name (the left hand side) followed by a colon, followed by one or more symbols (the right hand side) followed by a period. If more than one symbol appears on the right hand side, they must be separated by commas:
+A **rule** has the form of a name (the left hand side) followed by a colon, followed by one or more symbols (the right hand side), followed by a period. If more than one symbol appears on the right hand side, they must be separated by commas:
 
 ```shell
 symbol-name: defining, symbols, here.
@@ -33,7 +33,7 @@ This rule says a "thing" is a "this" OR a "that":
 thing: this; that.
 ```
 
-Whitespace around punctuation is insignificant: `"this;that"` is the same as `"this; that"`.
+Whitespace around punctuation is insignificant. `"this;that"` is the same as `"this; that"`.
 
 
 
@@ -80,9 +80,9 @@ There will be instances where the original file you're working with will have st
 
 Each number is separated by a slash, but maybe for our purposes, it isn't important to preserve this formatting. 
 
-On a **nonterminal**, the `-`,supresses the element name but keeps its content.
+On a **nonterminal**, adding a `-`supresses the element name, but keeps its content.
 
-On a **terminal**, the  `-` suppresses the text itself.
+On a **terminal**, adding a  `-` suppresses the content.
 
 Our grammar might look like this:
 
@@ -117,9 +117,9 @@ If the input is `2022`, the XML output would look like this:
 </date>
 ```
 
-**Attributes do not need to appear first in the input.** It doesn't matter if the input that matches the `@` nonterminal appears before or after other elements. The processor will still attach it as an attribute in the XML output. 
+**Attributes do not need to appear first in the input.** It doesn't matter if the input that matches the `@` nonterminal appears before or after other elements. The processor will still attach it as an attribute in the XML output. Generally, the order your rules appear doesn't matter too much.
 ## Testing Your Grammar
-In order to test your grammar with a processor like CoffeePot or MarkupBlitz, there needs to be a nonterminal that defines the whole document: in other words, a root element. For example:   
+In order to test your grammar with a processor like CoffeePot or MarkupBlitz, there needs to be a nonterminal that defines the whole document. In other words, a root element. For example:   
 ```
 date: year, -'-', month, -'-', day .
 year: digit+.
@@ -141,9 +141,9 @@ The nonterminal `date` serves as the root element to define the complete structu
 ### Building blocks
 The right-hand side of a rule is organized into levels:
 
-- **Factors** — the basic building blocks: terminals (quoted text like `"January"`), nonterminals (names of other rules), or grouped alternatives in parentheses
-- **Terms** — separated by commas (`,`), forming a sequence
-- **Alternatives** — separated by semicolons (`;`), offering different ways to match the same nonterminal
+- **Factors** — the basic building blocks: terminals (quoted text like `"January"`), nonterminals (names of other rules), or grouped alternatives in parentheses.
+- **Terms** — separated by commas (`,`), forming a sequence.
+- **Alternatives** — separated by semicolons (`;`), offering different ways to match the same nonterminal.
 
 
 You can use parentheses to group alternatives together. For example:
@@ -181,7 +181,7 @@ For example:
 ```
 num: [N].
 ```
-Instead of listing every digit manually, you can use the Unicode character class `N` which will match all numeric digits.. 
+Instead of listing every digit manually, you can use the Unicode character class `N` which will match all numeric digits.
 ### Excluding a Character Set or Class
 Adding a tilde ('\~') before a symbol changes a rule from matching that character/symbol to matching anything *except* for itself. 
 
@@ -205,7 +205,7 @@ You may find the following values useful as you construct your ixml grammar:
 | Space | `#20` |
 
 ## Further Readings
-Here are some more helpful resources as you continue learning about Invisible XML and writing grammar:
+Here are some more helpful resources to check out as you continue learning about Invisible XML and writing grammar:
 
 Steven Pemberton, ["Invisible XML (ixml) Tutorial](https://www.xml.com/articles/2022/03/28/writing-invisible-xml-grammars/)
 
