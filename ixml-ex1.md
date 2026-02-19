@@ -66,10 +66,11 @@ You can be creative with storing some information in attributes or letting it be
      
  Because this text is very regularly formatted,  you want to skim through it and take some notes first on the formatting of the different pieces. 
 
-* The *name* will have to account for one *or* two-word names (there will sometimes, but not always be a space in between upper- and lower-case letters).
-* You want to be specifying the tab characters as distinct from simple spaces and newlines in your grammar. (Unlike regex, there isn't a single character class for all the different kinds of spaces, and for this document you really want to differentiate the kinds of spaces in your grammar.)
+* The *name* will have to account for one- *or* two-word names (there will sometimes, but not always be a space in between upper- and lower-case letters).
+* You want to be specifying the tab characters as distinct from simple spaces and newlines in your grammar. (Unlike regex, there isn't a single character class for all the different kinds of spaces, and for *this* document you really want to differentiate the kinds of spaces in your grammar.)
 	* You can use the `#9` character code for tabs
 	* You can use the `#20` character code for the spacebar spaces. 
+	* Note: **you don't want quotation marks** around these character codes, or around character classes either. 
 * Notice that sometimes numbers are replaced with this character, `—`, known as an "em dash" (because it's as wide as the letter "m").  To capture this special character, use the character class `#2014`.  This affects each of the different numerical nodes in the document.
 * For the *effect* punctuation marks are present along with alphabet characters and spaces. For this kind of complexity, you might seriously want something like our "dot matches all, but don't be greedy" method from our Regex unit. We don't have a "dot" in Invisible XML, but we *do* have something that appraoches it. What we can do is define this stretch as characters that are NOT those in a special set, like this:
 
