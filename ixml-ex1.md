@@ -1,6 +1,6 @@
 # Invisible XML (ixml) Exercise 1
 
-Let's start with [this plain text document representing data about Pokemon moves from generation 5](https://raw.githubusercontent.com/newtfire/textAnalysis-Hub/refs/heads/main/Class-Examples/invisible_xml/pokemon-moves-gen5.txt). You can follow the link to download and save this directly, or use `git pull` on the main branch of  the textAnalysis-Hub/Class-Examples/invisible_xml/pokemon-moves-gen5.txt. Save it in a folder with your personal repo / homework to work on together
+Let's start with [this plain text document representing data about Pokemon moves from generation 5](https://raw.githubusercontent.com/newtfire/textAnalysis-Hub/refs/heads/main/Class-Examples/invisible_xml/pokemon-moves-gen5.txt). You can follow the link to download and save this directly, or use `git pull` on the main branch of  the textAnalysis-Hub/Class-Examples/invisible_xml/pokemon-moves-gen5.txt. Save it in a folder with your personal repo / homework to work on together.
 
 The file has newlines and tab characters giving it a clear structure. The first 13 lines are meant to be column headers, but were formatted differently. The rest of the file uses tab characters to provide information about:
 *  the **name** of a move 
@@ -19,7 +19,7 @@ Your task is to create an invisible XML grammar that represents a good XML model
 
 * We suggest opening the text file in oXygen
 * Open a second text file to save with the **`.ixml`** extension to write your Invisible XML grammar. 
-* Make surer you can see all the different space characters (just like for Regex tasks): If this is turned off, go to your oXygen XML Editor Settings (or Options >> Preferences), choose Editor >> tick the two checkboxes for "Show TAB/NBSB/EOL/EOF marks" and "Show SPACE marks". 
+* Make sure that you can see all the different space characters (just like for Regex tasks): If this is turned off, go to your oXygen XML Editor Settings (or Options >> Preferences), choose Editor >> tick the two checkboxes for "Show TAB/NBSB/EOL/EOF marks" and "Show SPACE marks". 
 * Split your windows in oXygen (as we suggest for working on CSS or Relax NG files) using **Window >> Tile Editors Vertically**.
 
 ## Guidance 
@@ -44,7 +44,7 @@ Effect
 ```
 **Make sure there's NOT an extra newline after the last row for Effect,** to mimic the formatting in the larger document! (That **single newline** at the end will be significant for our separation of the heading from the rest of the document later!) 
 
-Try to wrap this whole text in one XML root element (without worrying about distinguising inner element just yet..) Can you describe the formatting to wrap this in one element? 
+Try to wrap this whole text in one XML root element (without worrying about distinguishing inner element just yet..) Can you describe the formatting to wrap this in one element? 
 
 The reason we're doing this is so you can test your first grammar quickly! Save your .ixml grammar file in the same folder with the text files, and open your shell, navigate to the directory where you saved your work, and run coffeepot to see if it works, using this format:
 
@@ -55,18 +55,18 @@ We suggest that when you can write a grammar to represent this, and the grammar 
 
 ### The Whole Document
 
-When you're ready, try writing a grammar to represent the whole document. 
+When you're ready, try writing a grammar to represent the whole pokemon-moves-gen5.txt document. 
 
 This time, wrap the meaningful portions in an XML hierarchy with:
 
-*  "container" elements to store the full information about each distinct move, for example: `<move>`,
+*  "container" elements to store the full information about each distinct move, for example: `<move>`
 * elements and/or attributes inside that element that store specific information, for example: `<name>`, `<type>`, etc. 
 
 You can be creative with storing some information in attributes or letting it be a text node of an element. 
      
  Because this text is very regularly formatted,  you want to skim through it and take some notes first on the formatting of the different pieces. 
 
-* The *name* will have to account for one *or** two-word names (there will sometimes, but not always be a space in between upper- and lower-case letters).
+* The *name* will have to account for one *or* two-word names (there will sometimes, but not always be a space in between upper- and lower-case letters).
 * You want to be specifying the tab characters as distinct from simple spaces and newlines in your grammar. (Unlike regex, there isn't a single character class for all the different kinds of spaces, and for this document you really want to differentiate the kinds of spaces in your grammar.)
 	* You can use the `#9` character code for tabs
 	* You can use the `#20` character code for the spacebar spaces. 
