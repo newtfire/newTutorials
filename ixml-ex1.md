@@ -51,7 +51,54 @@ The reason we're doing this is so you can test your first grammar quickly! Save 
 ```shell
 coffeepot -g:yourGrammar.ixml -i:heading.txt
 ```
-We suggest that when you can write a grammar to represent this, and the grammar processes without ambiguity, you
+We suggest that when you can write a grammar to represent this, and the grammar processes without ambiguity and shows you some XML output, you're ready to continue. To process Invisible XML and test your grammar, you DO have to represent a complete XML document with a single root element. (You don't have to have all the "guts" of the document converted into special elements, but you do need to be able to define that root element and account for its contents accurately.)
 
+### The Whole Document
 
+When you're ready, try writing a grammar to represent the whole document. 
 
+This time, wrap the meaningful portions in an XML hierarchy with:
+
+*  "container" elements to store the full information about each distinct move, for example: `<move>`,
+* elements and/or attributes inside that element that store specific information, for example: `<name>`, `<type>`, etc. 
+
+You can be creative with storing some information in attributes or letting it be a text node of an element. 
+     
+ Because this text is very regularly formatted,  you want to skim through it and take some notes first on the formatting of the different pieces. 
+
+* The *name* will have to account for one *or** two-word names (there will sometimes, but not always be a space in between upper- and lower-case letters).
+* You want to be specifying the tab characters as distinct from simple spaces and newlines in your grammar. (Unlike regex, there isn't a single character class for all the different kinds of spaces, and for this document you really want to differentiate the kinds of spaces in your grammar.)
+	* You can use the `#9` character code for tabs
+	* You can use the `#20` character code for the spacebar spaces. 
+* Notice that sometimes numbers are replaced with this character, `—`, known as an "em dash" (because it's as wide as the letter "m").  To capture this special character, use the character class `#2014`.  This affects each of the different numerical nodes in the document.
+* For the *effect* punctuation marks are present along with alphabet characters and spaces. For this kind of complexity, you might seriously want something like our "dot matches all, but don't be greedy" method from our Regex unit. We don't have a "dot" in Invisible XML, but we *do* have something that appraoches it. What we can do is define this stretch as characters that are NOT those in a special set, like this:
+
+```
+~[#9;#d;#a]+
+```
+This reads, this is not a tab character or a Windows or Posix (Mac/Linux) newline return character. The plus sign at the end indicates "one or more". 
+
+#### Coping with Ambiguity
+**Ambiguity** or **ambiguous parsing** in Invisible XML means there's more than one way to interpret the grammar when applying it to the source document. For more on coping with ambiguity, see [David Birnbaum's helpful explanation](https://dh.obdurodon.org/ixml-ambiguity.xhtml). 
+
+We found that some of our handling of spaces could introduce problems with ambiguous ixml parses when we practiced this assignment. This observation may help you to avoid the problems we saw! Notice in between some of the nodes, you'll sometimes see a spacebar-type space. In oXygen with the space characters made visible, you'll see it like this: 
+```
+· ┘
+```
+Try to account for the possible presence of a space before the tab. You might think of these as separator characters that you don't need to appear in the XML nodes that you are constructing. 
+
+## When you're finished 
+When you're producing good XML in your shell, you want to save that!
+```shell
+coffeepot -g:yourGrammar.ixml -i:pokemon-moves-gen5.txt  -o:pokeMovesGen5.xml
+```
+Try this out in blitz too!  In Markup Blitz, add a `>` and a filename.xml for your output like this):
+
+```shell
+blitz yourGrammar.ixml  pokemon-moves-gen5.txt  > pokeMovesGen5.xml
+```
+### What to submit on Canvas
+
+* your Invisible XML grammar (.ixml)
+* the output XML (.xml) if you were successful)
+* a message in the text box if you weren't successful indicating what's wrong and what you attempted to fix it.
