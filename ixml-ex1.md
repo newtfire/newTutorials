@@ -71,13 +71,13 @@ You can be creative with storing some information in attributes or letting it be
 	* You can use the `#9` character code for tabs
 	* You can use the `#20` character code for the spacebar spaces. 
 	* Note: **you don't want quotation marks** around these character codes, or around character classes either. 
-* Notice that sometimes numbers are replaced with this character, `—`, known as an "em dash" (because it's as wide as the letter "m").  To capture this special character, use the character class `#2014`.  This affects each of the different numerical nodes in the document.
-* For the *effect* punctuation marks are present along with alphabet characters and spaces. For this kind of complexity, you might seriously want something like our "dot matches all, but don't be greedy" method from our Regex unit. We don't have a "dot" in Invisible XML, but we *do* have something that appraoches it. What we can do is define this stretch as characters that are NOT those in a special set, like this:
+* Notice that sometimes numbers are replaced with this character, `—`, known as an "em dash" (because it's as wide as the letter "m").  To capture this special character, use the character code`#2014`.  This affects each of the different numerical nodes in the document.
+* For the *effect*, punctuation marks are present along with alphabet characters and spaces. For this kind of complexity, you might seriously want something like the regular expressions "dot matches all, but don't be greedy" method. Alas, we don't have a "dot" in Invisible XML, but we *do* have something that approaches it. What we can do is define this stretch as characters that are **NOT** those in a special set, like this:
 
 ```
 ~[#9;#d;#a]+
 ```
-This reads, this is not a tab character or a Windows or Posix (Mac/Linux) newline return character. The plus sign at the end indicates "one or more". 
+With the tilde `~` character, this says, "look for any character that is **not** a tab character or a Windows or Posix (Mac/Linux) newline return character." The plus sign at the end indicates "one or more". This will look for anything that is NOT some kind of separator character.
 
 #### Coping with Ambiguity
 **Ambiguity** or **ambiguous parsing** in Invisible XML means there's more than one way to interpret the grammar when applying it to the source document. For more on coping with ambiguity, see [David Birnbaum's helpful explanation](https://dh.obdurodon.org/ixml-ambiguity.xhtml). 
