@@ -11,4 +11,4 @@ The file has newlines and tab characters giving it a clear structure. The first 
 *  the **power points** (pp) of a move (in digits)
 *  the **effect** of a move.
 
-Consult our guide to ["Writing your First Invisible XML"](https://github.com/newtfire/textAnalysis-Hub/blob/main/Class-Examples/invisible_xml/iXMLstart.md) as you work on this exercie
+Consult our guide to ["Writing your First Invisible XML"](https://github.com/newtfire/textAnalysis-Hub/blob/main/Class-Examples/invisible_xml/iXMLstart.md) as you work on this exercise.
