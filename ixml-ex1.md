@@ -82,18 +82,19 @@ With the tilde `~` character, this says, "look for any character that is **not**
 #### Coping with Ambiguity
 **Ambiguity** or **ambiguous parsing** in Invisible XML means there's more than one way to interpret the grammar when applying it to the source document. For more on coping with ambiguity, see [David Birnbaum's helpful explanation](https://dh.obdurodon.org/ixml-ambiguity.xhtml). 
 
-We found that some of our handling of spaces could introduce problems with ambiguous ixml parses when we practiced this assignment. This observation may help you to avoid the problems we saw! Notice in between some of the nodes, you'll sometimes see a spacebar-type space. In oXygen with the space characters made visible, you'll see it like this: 
+We found that some of our handling of spaces could introduce problems with ambiguous ixml parses when we practiced this assignment. This observation may help you to avoid the problems we saw! Notice in between some of the nodes, you'll sometimes see a spacebar-type space. In oXygen with the space characters made visible, you'll see it something like this: 
 ```
 · ┘
 ```
 Try to account for the possible presence of a space before the tab. You might think of these as separator characters that you don't need to appear in the XML nodes that you are constructing. 
 
 ## When you're finished 
-When you're producing good XML in your shell, you want to save that!
+When you're producing good XML in your shell, you want to save that! With coffeepot, you add the `-o:` command at the end to define where you want to save output. When you run this, you won't see the XML output in your shell anymore. Browse to where you said to save the file and open it in oXygen to see it!.
+
 ```shell
 coffeepot -g:yourGrammar.ixml -i:pokemon-moves-gen5.txt  -o:pokeMovesGen5.xml
 ```
-Try this out in blitz too!  In Markup Blitz, add a `>` and a filename.xml for your output like this):
+Try this out in blitz too!  In Markup Blitz. Add a `>` and a filename.xml to store your output like this:
 
 ```shell
 blitz yourGrammar.ixml  pokemon-moves-gen5.txt  > pokeMovesGen5.xml
