@@ -1,0 +1,25 @@
+<!-- This declares a document inline. -->
+            <xml xmlns:c="http://www.w3.org/ns/xproc-step">
+                <section num="1">
+            <label>metadata for section 1</label>
+        
+            <label>metadata for section 2</label>
+        
+                <timestamp seq="1">
+                    <start hour="00" minute="00" second="03190"/>
+                    <end hour="00" minute="00" second="07330"/>
+                </timestamp>
+                <transcript>Greetings digit 210. So at the end of class </transcript>
+            </section>
+            <section num="2">
+            <label>metadata for section 1</label>
+        
+            <label>metadata for section 2</label>
+        
+                <timestamp seq="2">
+                    <start hour="00" minute="00" second="07330"/>
+                    <end hour="00" minute="00" second="10510"/>
+                </timestamp>
+                <transcript>today on Friday January 30th I left us on a </transcript>
+            </section></xml>
+        

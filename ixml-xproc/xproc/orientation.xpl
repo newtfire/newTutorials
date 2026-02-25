@@ -42,6 +42,8 @@
     <p:viewport match="timestamp">
         <p:add-attribute match="timestamp" attribute-name="seq"
             attribute-value="{p:iteration-position()}"/>
+        <!-- ebb: Noting that XPath expressions don't seem to work to define @attribute-value when
+        adding an attribute. -->
     </p:viewport>
     
   
