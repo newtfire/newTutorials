@@ -957,7 +957,7 @@ git push -u origin main
                 Make sure you are at the root of your project directory, and that you have run
                 <code>npm run build</code> since your last changes. Then run this command in your terminal:
             </p>
-<pre>
+            <pre>
 npm run deploy
 </pre>
             <p>
@@ -965,9 +965,7 @@ npm run deploy
                 GitHub for you if it doesn't exist yet, and publishes the contents of <code>dist</code> to it.
             </p>
             <div class="imgWrap">
-
                 <img class="img" src="images/screenshots/npm-run-deploy-publish.jpg" alt="npm run deploy gh-pages" />
-
             </div>
             <p>
                 Once your terminal says "Published", you need to wait a few minutes for your GitHub Pages site to be
@@ -981,6 +979,32 @@ npm run deploy
             <p>
                 <strong>Updating your site later:</strong> make your changes, run <code>npm run build</code>, commit
                 and push as usual, and run <code>npm run deploy</code> again.
+            </p>
+            
+            <h4>Troubleshooting: If <code>npm run deploy</code> fails</h4>
+            <p>
+                If you see an error like <em>Failed to get remote.origin.url</em>, first check that your project knows about
+                your GitHub repository:
+            </p>
+            <pre>
+git remote -v
+</pre>
+            <p>
+                You should see your repository's address listed twice, once for fetch and once for push. If the list is
+                empty, go back to Step 6 and run the <code>git remote add origin</code> command.
+            </p>
+            <p>
+                If your repository <em>is</em> listed and you still get the error, the problem may be that Git itself can't
+                run when npm starts it (this can happen on a Mac when an older Intel version of Git is installed).
+                Test it with:
+            </p>
+            <pre>
+npm exec -- git --version
+</pre>
+            <p>
+                If that prints a version number, Git is fine and you should ask for help with the full error message. If it
+                prints an error such as <code>Bad CPU type in executable</code>, ask your instructor for help fixing your
+                Git installation! 
             </p>
         </div>
     </section>
