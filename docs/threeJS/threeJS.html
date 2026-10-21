@@ -25,7 +25,7 @@
         </ul>
     </nav>
 <section>
-    
+
         <h1 id="threejs-tutorial---create-3d-environments-with-html-and-javascript">Three.JS Tutorial - Create 3D
             Environments with HTML and Javascript</h1>
         <div class="imgWrap"><img id="blog" src="images/screenshots/threeJSblog.jpg" alt="three.js blog"></div>
@@ -35,10 +35,10 @@
         <p>See other awesome things you can do with three.js:
             <a href="https://threejs.org/examples/#webgl_animation_keyframes">Three.JS examples page</a>
         </p>
-    
-        <div class="TOC">
+
+     <div class="TOC">
             <div>
-    
+
                 <strong>Table of Contents</strong>
                 <ul>
                     <li><a href="#installations">Installations</a>
@@ -50,12 +50,14 @@
                             <li><a href="#install-threejs-at-command-line">Install Three.JS package module</a></li>
                         </ul>
                     </li>
-                    <li><a href="#how-to-view-your-site-locally">How to Launch your 3D Site Locally</a>
-                    </li>
+                    <li><a href="#edit-package-json">Edit your package.json</a></li>
+                    <li><a href="#create-your-project-files">Create your project files</a></li>
                     <li><a href="#write-your-html">Write your HTML</a></li>
                     <li><a href="#create-your-background-canvas-by-editing-your-css">Prep your 3D Canvas in your CSS</a>
                     </li>
-    
+                    <li><a href="#how-to-view-your-site-locally">How to Launch your 3D Site Locally</a>
+                    </li>
+
                     <li><a href="#javascript-time">Three.JS Javascript Walkthrough</a>
                         <ul>
                             <li><a href="#scene-setup">Scene Setup</a></li>
@@ -73,6 +75,17 @@
                             </li>
                         </ul>
                     </li>
+                    <li><a href="#deploy-to-github-pages">Deploy your Three.JS App to GitHub Pages</a>
+                        <ul>
+                            <li><a href="#deploy-step-1">Step 1: Configure Vite for building</a></li>
+                            <li><a href="#deploy-step-2">Step 2: Build and preview</a></li>
+                            <li><a href="#deploy-step-3">Step 3: Install gh-pages and add a deploy script</a></li>
+                            <li><a href="#deploy-step-4">Step 4: Add your .gitignore</a></li>
+                            <li><a href="#deploy-step-5">Step 5: Create a GitHub repository</a></li>
+                            <li><a href="#deploy-step-6">Step 6: Push your code</a></li>
+                            <li><a href="#deploy-step-7">Step 7: Deploy</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -84,17 +97,9 @@
             <code>npm</code>
             at the command line.
         </li>
-            <li>We strongly recommend writing your code in <a href="https://www.jetbrains.com/webstorm/download/">JetBrains' WebStorm</a>,
-                which we will explore as an alternative
-                to the oXygen XML Editor for working intensively on JavaScript projects.</li>
+            <li>We strongly recommend writing your code in <a href="https://vscodium.com/">VSCodium</a>,
+                instead of the oXygen XML Editor for working intensively on JavaScript projects.</li>
         </ul>
-        <p>Note from Dr. B (2023-10-18): This tutorial was originally written with VS Code instead of Webstorm as the code editor.
-        You'll probably see some references to VS Code that we haven't converted over to Webstorm yet--just read around those parts, and
-            we'll try to update them as we go. ALSO, this tutorial is a fresh work in progress, and we'll be debugging it together as we
-            work on it! Thanks for helping catch bugs here! Please report them in the DIGIT-Coder’s Slack #javascript channel!
-        </p>
-
-
     </section>
     <section>
         <h3 id="install-nodejs"><strong>Install Node.js</strong></h3>
@@ -104,7 +109,7 @@
         <p>Before downloading Node.JS, you should check to see if you already have it installed in your machine.
             To do this, we will open our Command Line.</p>
         <ul>
-            <li><strong>Hot tip part 2:</strong> Webstorm and VS Code have a command line terminal built into the editor that
+            <li><strong>Hot tip part 2:</strong> Webstorm, VSCode, and VSCodium have a command line terminal built into the editor that
                 you can use as well.</li>
         </ul>
         <div class="imgWrap"><img class="img" src="images/screenshots/VScodeTerminal.jpg" alt="VS code terminal"></div>
@@ -146,76 +151,200 @@
         <pre>
 
             npm install -g npm
-   
+
     </pre>
         <p>Now you're all set to create your new project repository!</p>
     </section>
     <section>
-        <h3 id="create-an-empty-project-directory-and-install-vite"><strong>Create or locate an empty project-container directory to sit outside your project, and
+        <h3 id="create-an-empty-project-directory-and-install-vite"><strong>Create your project folder and
                 install
-                VITE</strong>. Note that this will NOT be your actual project, just a directory to house it. (Dr. B edit: Mine is named Node-JS-Projects.)</h3>
-        <p>Once you have made your project-container directory, open the command line at your empty directory and enter this
-            command:
-        </p>
+                VITE</strong></h3>
+                <p><em>This section revised: 2026-10.</em> Unlike the original version of this tutorial, we are not going to use a generator that builds a project and sets up
+            the required files for us. We will build the project by hand, so you can see every piece and know what it does. </p>
+
+        <p>First, choose a name for your project folder. Use lowercase letters and hyphens, with no spaces
+            (for example, <code>three-scene</code>). Open the command line in the location where you want
+            the project to live, and enter these commands <i>separately</i>:</p>
         <pre>
-            npm create vite@latest
+mkdir three-scene
         </pre>
-        <p>Follow the prompts given at command line:</p>
+        <pre>
+cd three-scene
+        </pre>
+        <pre>
+npm init -y
+        </pre>
+        <pre>
+npm install -D vite
+        </pre>
+        <p>What each command does:</p>
         <ul>
-            <li>name your project</li>
-            <li>name your package (press enter for default)</li>
-            <li>select <code>Vanilla</code> framework (yellow)</li>
-      
-            <li>select <code>Javascript</code> for the language (yellow)</li>
-            <li>If prompted for the experimental <q>rolldown</q> vite, you can select "N" (though this probably doesn't matter).</li>
+            <li>(As you know) <code>mkdir</code> makes the folder, and <code>cd</code> moves you into it. This folder <em>is</em>
+                your project and will become your git repo.</li>
+            <li><code>npm init -y</code> creates a <code>package.json</code> file, which is your project's
+                list of settings and dependencies.</li>
+            <li><code>npm install -D vite</code> installs Vite as a development tool (the <code>-D</code>
+                means it helps you build the site, but is not code your site runs).</li>
         </ul>
-        <p>This will create a new directory with the name you give you project, and it will contain some new files. <strong>On Windows and the arrow keys don't work?</strong>
-            Switch to Windows Powershell or Windows terminal, navigate to your new project folder and enter the same commands.
-        </p>
-        <p>Now, enter these commands <i>separately</i>. The command line terminal prompts these for you when you create
-            your Vite app:</p>
-        <pre>
-          cd your-project-name
-        </pre>
-        <pre>
-           npm install
-        </pre>
-        <div class="imgWrap">
-            <img class="img" src="images/screenshots/setting-up-vite-CMD.jpg" alt="command line vite setup screenshot" />
-        </div>
+        <p>You should now see <code>package.json</code>, <code>package-lock.json</code>, and a
+            <code>node_modules</code> folder in your project.</p>
 
     </section>
-
     <section>
         <h2 id="install-threejs-at-command-line"><b>Install Three.JS at command line</b></h2>
-        <p>First, make sure you are at the root level of your Vite project directory. Once you <code>cd</code> into it,
-            enter this command:</p>
+        <p><em>This section revised: 2026-10.</em></p>
+        <p>Make sure you are still at the root level of your project folder, then enter this command:</p>
         <pre>
-
-                npm install --save three
-             
+npm install three
         </pre>
-        <p>This will install Three.JS as a dependency in your project. You should see a new <code>node_modules</code>
-            directory, a <code>package.json</code> file, and a
-            <code>package-lock.json</code> file.
-        </p>
+        <p>This installs Three.JS as a dependency, meaning code your site actually uses. Open
+            <code>package.json</code> and look at what changed: <code>vite</code> is listed under
+            <code>devDependencies</code>, and <code>three</code> is listed under <code>dependencies</code>.</p>
         <ul>
-            <li><strong>DO NOT TOUCH THESE THINGS</strong></li>
+            <li><strong>DO NOT TOUCH <code>node_modules</code> or <code>package-lock.json</code>.</strong></li>
         </ul>
-        <p>These files and directory contain dependencies that NPM automagically generates for you. Humans do not need
-            to
-            touch them directly, and should never touch them for any reason at all - <em>or you'll destroy the
-                planet</em>. (Not really, actually we will be editing package.json later.) 
-         <strong> Important:</strong>  When opening the project in Webstorm, just Open a folder, and do not create a new project,
-            as creating a new project overwrites the good work we did here in installation.
-        </p>
+        <p>NPM generates and manages those for you. Humans should never edit them by hand, or
+            <em>you’ll destroy the planet</em>. (Not really, but you will probably break your install. If that
+            happens, delete <code>node_modules</code> and run <code>npm install</code> again.)
+            <code>package.json</code> is different: we will edit it ourselves in the next step.</p>
+        <p><strong>Important:</strong> When opening the project in VSCodium, just <em>Open</em> the folder. Do not
+            create a new project, since that can overwrite the good work we did here in installation.</p>
+    </section>
+
+    <section>
+        <h2 id="edit-package-json"><b>Edit <code>package.json</code></b></h2>
+        <p>Open <code>package.json</code> in your editor. Change <code>"type": "commonjs"</code> to
+            <code>"type": "module"</code> (this lets our config file and our code use the same
+            <code>import</code> syntax), and replace the <code>"scripts"</code> section so it looks like this:</p>
+        <pre>
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}
+        </pre>
+
+    <p>Make one more edit: Look further in the file for the "type" value (probably after "keywords", "author", and "license") and change it like so: </p>
+    <pre>"type": "module", </pre>
+
+    <p>(At this point, Dr. B's package.json looks like this): </p>
+   <pre>
+{
+  "name": "three-js-2026",
+  "version": "1.0.0",
+  "description": "Sample three.js site for demonstration in DIGIT 400",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "Elisa Beshero-Bondar",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "vite": "^8.3.4"
+  },
+  "dependencies": {
+    "three": "^0.186.1"
+  }
+}
+</pre>
+
+
+        <p>Leave the other entries (<code>name</code>, <code>dependencies</code>, and so on) as they are, but you can edit some of
+            fields like "keywords" and "author" if you like. Get to know the three
+            npm scripts you added! These are the commands you'll keep using for building and viewing your Node projects this semester.
+        We typically add these script lines by hand to package.json in most Node projects.</p>
+        <ul>
+            <li><code>npm run dev</code> shows your files as you work on them, with live reload.</li>
+            <li><code>npm run build</code> packs your site into a <code>dist/</code> folder.</li>
+            <li><code>npm run preview</code> shows what is in <code>dist/</code>, which is what gets published.
+                Run <code>npm run build</code> again whenever you want the preview to show your latest changes.</li>
+        </ul>
+        <p>Note: The npm commands only work if you're at the root of your project folder with package.json inside.</p>
+    </section>
+     <section>
+        <h2 id="create-your-project-files"><b>Create your project files</b></h2>
+        <p><em>This section added in 2026-10.</em></p>
+        <p>Now open your project in the VSCodium editor. Just <em>Open Folder</em> and select your project directory.</p>
+        <p>Create these three files <em>directly in your project folder</em>, next to <code>package.json</code>:</p>
+<pre>
+three-scene/
+├── index.html
+├── main.js
+├── style.css
+├── package.json         (already there)
+├── package-lock.json    (already there)
+└── node_modules/        (already there)
+</pre>
+        <p>Leave the three new files empty for now, and we will fill them in next. We will also add an
+            <code>images/</code> folder later, when we get to scene backgrounds.</p>
+        <p><em>Changes from the older version of this tutorial</em>: If you followed the earlier version of this tutorial, you had some folders premade here, and those are gone in our new configuration.
+            Notice what is <em>not</em> here: no <code>src/</code> folder and no <code>public/</code> folder. (In class, we moved
+            your main.js and style.css out of the src/ directory.)
+            Vite projects often use those directories, but we are keeping everything at the top (or "root") level so that the files you see in
+            your project are the same files the browser asks for, whether you are working locally or
+            looking at your published site.</p>
+    </section>
+
+    <section>
+          <h2 id="write-your-html">Write your HTML</h2>
+        <p>You'll need three basic elements in your HTML to render your 3D world:</p>
+        <ul>
+            <li><code>&lt;canvas&gt;</code> with a unique <code>@id</code> that will literally act as the canvas for
+                your 3D objects to live in.</li>
+            <li><code>&lt;script type=&quot;module&quot; src=&quot;main.js&quot;&gt;</code> to connect your HTML to
+                your Javascript file with all of the 3D instructions inside it.</li>
+            <li><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;</code> to connect your HTML
+                to your CSS file.</li>
+        </ul>
+        <p>Open the empty <code>index.html</code> file you just created and write this into it:</p>
+        <pre>&lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;Three JS Demo&lt;/title&gt;
+            &lt;meta charset=&quot;UTF-8&quot; /&gt;
+            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+             &lt;link rel="stylesheet" type="text/css" href="style.css" /&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;canvas id=&quot;bg&quot;&gt;&lt;/canvas&gt;
+            &lt;script type=&quot;module&quot; src=&quot;main.js&quot;&gt;&lt;/script&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+      </pre>
+            <p>The CSS is attached here with the <code>&lt;link&gt;</code> tag (in the usual way). (Other JavaScript framework
+                projects might have you import it into the JavaScript that runs the show, but not this one.) Also note that the
+            file names have <strong>no leading slash</strong>: <code>style.css</code>, not <code>/style.css</code>. Keeping paths
+            relative like this is what lets the same project work locally and on your published site.</p>
+        <p> The <code>canvas</code> element has to remain empty! But HTML elements for headings and paragraphs can sit outside the canvas that hosts your built three.js scene.
+            If you want to try making text float over your 3D scene, you can add a <code>&lt;main&gt;</code> element
+            to hold it, <strong>after</strong> the canvas. </p>
     </section>
     <section>
-
+        <h2 id="create-your-background-canvas-by-editing-your-css">Create your background canvas by editing your CSS
+        </h2>
+        <p>In the same folder as your <code>index.html</code> file, open the empty <code>style.css</code> file you
+            created. Write the following code into that CSS to make the <code>&lt;canvas&gt;</code> element in your
+            HTML be the background for your site:</p>
+        <pre>canvas{
+          position:fixed;
+          top: 0;
+          left: 0;
+        }
+        </pre>
+        <p>This is where your 3D objects will appear when we start creating them in your javascript.</p>
+    </section>
+     <section>
         <h1 id="how-to-view-your-site-locally">HOW TO VIEW YOUR SITE LOCALLY</h1>
-        <p>Since Three.JS requires dependencies in order to render, you need to tell your app to run in the command line
-            in order to view it locally.</p>
-        <p>In the command line terminal, run this command:</p>
+         <p>Since Three.JS requires dependencies in order to render, you need to tell your app to run in the command line
+            in order to view it locally. You don't have any 3D objects yet, so for now you will just see a blank page,
+            but this is the moment to confirm that your setup works.</p>
+        <p>In the command line terminal at your project folder, run this npm command:</p>
         <pre>
            npm run dev
         </pre>
@@ -232,72 +361,21 @@
         <p>
             When you run the command <code>npm run dev</code>, whenever you make new edits to your code, your localhost
             browser will automatically refresh and
-            reflect your changes.</p>
+            reflect your changes. The dev server shows the files exactly as they
+            sit in your project folder.</p>
             <blockquote>
                 You will not be able to enter any new commands into your terminal until you kill the localhost serve
                 process.
             </blockquote>
 
         <p>
-            To "kill" or end your dev server process in your command line terminal, simply enter <b>CTRL + C</b> (or CMD
-            + C on Mac) in the terminal.
+            To “kill” or end your dev server process in your command line terminal, press <b>CTRL + C</b> in the
+            terminal. (That's the Control key on Macs too, not Command.)
         </p>
         <p>It will ask you if you want to "Terminate Batch Job". To confirm, type <code>y</code> and hit enter.</p>
         <div class="imgWrap">
             <img class="img" src="images/screenshots/kill-local-server.jpg" alt="killing local server in command line" />
         </div>
-    </section>
-
-    <section>
-        <h2 id="write-your-html">Write your HTML</h2>
-        <p>At this point, you can open your project in the Webstorm editor, but be careful!  When opening the project in Webstorm, <strong>just Open a folder, and do NOT create a new project</strong>,
-            as creating a new project overwrites the good work we did here in installation. You already have the foundation for your project ready to go, and Webstorm is going to work with what you set up.</p>
-        <p>You'll need three basic elements in your HTML to render your 3D world:</p>
-        <ul>
-            <li><code>&lt;canvas&gt;</code> with a unique <code>@id</code> that will literally act as the canvas for
-                your 3D
-                objects to live in.</li>
-            <li><code>&lt;script type=&quot;module&quot; src=&quot;./main.js&quot;&gt;</code> to connect your HTML to
-                your
-                Javascript file with all fo the 3D instructions inside it.</li>
-            <li><code>&lt;main&gt;</code> to hold the text contents that will float on top of your 3D environment.</li>
-        </ul>
-        <p>You should already have the <code>index.html</code>, <code>main.js</code>, and <code>style.css</code> files
-            you will use to edit in your project, which were generated when you initialized your new Vite app.</p>
-        <p>
-            Go into your index.html file and change it to look like this:
-        </p>
-
-        <pre>&lt;!DOCTYPE html&gt;
-        &lt;html&gt;
-        &lt;head&gt;
-            &lt;title&gt;Three JS Demo&lt;/title&gt;
-            &lt;meta charset=&quot;UTF-8&quot; /&gt;
-            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
-             &lt;link rel="stylesheet" type="text/css" href="style.css" /&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-            &lt;canvas id=&quot;bg&quot;&gt;&lt;/canvas&gt;
-            &lt;script type=&quot;module&quot; src=&quot;main.js&quot;&gt;&lt;/script&gt;
-        &lt;/body&gt;
-        &lt;/html&gt;
-      </pre>
-    </section>
-    <section>
-        <h2 id="create-your-background-canvas-by-editing-your-css">Create your background canvas by editing your CSS
-        </h2>
-        <p>In the same directory as your index.html file, you should find a CSS file called <code>style.css</code>.
-            Write
-            the following code into that CSS to make the <code>&lt;canvas&gt;</code> element in your HTML be the
-            background
-            for your site:</p>
-        <pre>canvas{
-          position:fixed;
-          top: 0;
-          left: 0;
-        }
-        </pre>
-        <p>This is where your 3D objects will appear when we start creating them in your javascript.</p>
     </section>
 
     <section>
@@ -320,12 +398,12 @@
             it
             with new THREE methods.</p>
         <pre>// Setup
-        
+
         const scene = new THREE.Scene();
-        
+
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        
-        
+
+
         // create a new renderer by instating the canvas element in our HTML // file
         const renderer = new THREE.WebGLRenderer({
           canvas: document.querySelector('#bg'),
@@ -344,7 +422,7 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         camera.position.setZ(50);
         camera.position.setX(-3);
-        
+
        </pre>
     </section>
     <section>
@@ -365,11 +443,11 @@
                 parentheses <code>()</code> as arguments separated by commas:</li>
         </ul>
         <pre>const geometry = new THREE.BoxGeometry(10, 10, 10);
-        
+
         //set the color of the basic material in the object parameters `{}`
-        
+
         const material = new THREE.MeshBasicMaterial( { color: 0xFF6347 } );
-        
+
         const cube = new THREE.Mesh( geometry, material );
         </pre>
         <p>To add our cube into the scene, use the <code>.add()</code> method.</p>
@@ -401,9 +479,9 @@
         <pre>const ico = new THREE.IcosahedronGeometry(10);
         const icoMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
         const icoMesh = new THREE.Mesh(ico, icoMaterial);
-        
+
         scene.add(icoMesh);
-        
+
         icoMesh.position.z= -15;
         icoMesh.position.x= 15;
         </pre>
@@ -411,13 +489,13 @@
             require
             light, you will need to at least one light object in your scene:</p>
         <pre>// Lights
-        
+
         const pointLight = new THREE.PointLight(0xffffff);
         pointLight.position.set(0, -10, 10);
-        
+
         const ambientLight = new THREE.AmbientLight(0xffffff);
         ambientLight.position.set(25, -15, -400);
-        
+
         scene.add(pointLight);
         scene.add(ambientLight);
         </pre>
@@ -454,7 +532,7 @@
         // rotate the icosahedron a little faster in the opposite direction:
         icoMesh.rotation.z += -0.03
         icoMesh.rotation.y += -0.03
-        
+
             renderer.render( scene, camera );
         }
         </pre>
@@ -472,15 +550,15 @@
         </p>
         <p>Let's add a light helper to our <code>pointLight</code> object:</p>
         <pre>// Helpers
-        
+
         const lightHelper = new THREE.PointLightHelper(pointLight);
-        
+
         scene.add(lightHelper)
         </pre>
         <div class="imgWrap"><img class="img" src="images/screenshots/lightHelper.jpg" alt="light helper"></div>
         <p>We can also add a <strong>Grid Helper</strong> to show the 3D axes of our scene.</p>
         <pre>const gridHelper = new THREE.GridHelper(200,50);
-        
+
         scene.add(gridHelper)
         </pre>
     </section>
@@ -500,7 +578,7 @@
         </pre>
         <p>Then, under your <code>Helpers</code>, activate your orbit controls by declaring it as a constant:</p>
         <pre>// Orbit Control
-        
+
         const controls = new OrbitControls(camera, renderer.domElement)
         </pre>
         <p>Your orbit controls will not be functional until you add an <code>.update()</code> method to your new
@@ -516,7 +594,7 @@
         icoMesh.rotation.y += -0.03
         // ALLOWS YOUR ORBIT CONTROLS TO UPDATE LIVE IN REAL-TIME:
         controls.update()
-        
+
             renderer.render( scene, camera );
         }
         </pre>
@@ -540,15 +618,19 @@
         <ul>
             <li>
                 <p>save the image file of your choosing inside your new <code>/images</code> directory.</p>
+                   <p><strong>File names matter once you publish.</strong> Use lowercase letters, no spaces, and refer to your
+            images with relative paths such as <code>'images/night_sky.jpg'</code> (no leading slash). Your own
+            computer may forgive a capital letter that doesn't match, but the web server for your published site
+            will not, and the image will quietly fail to load.</p>
             </li>
             <li>
                 <p>create a new <code>Texture</code> object by referencing your image, and add it to the scene:</p>
             </li>
         </ul>
         <pre>// Background
-        
+
         const spaceTexture = new THREE.TextureLoader().load('images/night_sky.jpg')
-        
+
         scene.background = spaceTexture;
         </pre>
         <div class="imgWrap"><img class="img" src="images/screenshots/backgroundTexture.jpg" alt="background texture scene"></div>
@@ -564,7 +646,7 @@
         <p>Save your texture image file in your <code>/images</code> directory.</p>
         <p>Now, in our <code>main.js</code>, let's create a new texture that we will map onto a new object:</p>
         <pre>// Object texture mapping
-        
+
         const smileTexture = new THREE.TextureLoader().load('images/smile.jpg')
         </pre>
         <p>Now, let's create a new <code>Sphere</code> object to map our new texture onto.</p>
@@ -583,15 +665,15 @@
                 visible object.</li>
         </ul>
         <pre>// Object texture mapping
-        
+
         const smileTexture = new THREE.TextureLoader().load('images/smile.jpg')
-        
+
         const sphereGeometry = new THREE.SphereGeometry( 10, 22, 10 );
-        
+
         const smileMaterial = new THREE.MeshBasicMaterial({map: smileTexture})
-        
+
         const smileMesh = new THREE.Mesh(sphereGeometry, smileMaterial);
-        
+
         scene.add(smileMesh);
         </pre>
         <div class="imgWrap"><img class="img" src="images/screenshots/textureMapping.jpg"
@@ -614,7 +696,7 @@
         // rotate the smiley sphere on the Y axis:
         smileMesh.rotation.y += 0.05
         controls.update()
-        
+
             renderer.render( scene, camera );
         }
         </pre>
@@ -650,19 +732,19 @@
             property within our new <code>MeshStandardMaterial</code>.
         </p>
         <pre>// Normal Texture Map
-        
+
         const torusGeo = new THREE.TorusKnotGeometry( 5, 1, 250, 5, 9, 15 );
-        const torusMaterial = new THREE.MeshStandardMaterial( { 
+        const torusMaterial = new THREE.MeshStandardMaterial( {
           normalMap: normalTexture,
           roughness: 0,
           metalness: .8
         } );
-        
+
         const torusKnot = new THREE.Mesh( torusGeo, torusMaterial );
-        
+
         scene.add( torusKnot );
         torusKnot.position.y = 20
-        
+
         </pre>
         <p>We also added a <code>roughness</code> and <code>metalness</code> property value to make our new object look
             more
@@ -670,103 +752,167 @@
         <div class="imgWrap"><img class="img" src="images/screenshots/normalMapping.jpg" alt="normal mapping"></div>
     </section>
 
-    <section>
-        <h1>
-            How to Deploy your Three.JS App to Github Pages
+     <section>
+        <h1 id="deploy-to-github-pages">
+            How to Deploy your Three.JS App to GitHub Pages
         </h1>
         <div>
             <p>Now comes the fun part.</p>
             <p>
-                To deploy your three.JS app on GitHub Pages and display it to the world, we need to create a production
-                folder in your main repository branch, and create a deployment branch that will point directly to your
-                static production folder files.
+                To deploy your Three.JS app on GitHub Pages and display it to the world, we will use Vite to build a
+                <code>dist</code> folder containing the finished site, and then publish that folder to a special
+                <code>gh-pages</code> branch of your repository. GitHub serves your website from that branch.
+            </p>
+            <p>
+                You do not have to move files into <code>dist</code> by hand, and you do not have to change your
+                <code>import</code> lines. Vite builds your JavaScript and the Three.JS library together into the
+                <code>dist</code> folder for you.
             </p>
             <p>
                 Here are the steps you must follow:
             </p>
-            <h3><b>Step 1</b></h3>
+
+            <h3 id="deploy-step-1"><b>Step 1: Configure Vite for building</b></h3>
             <p>
-                Create a new folder in your project root. Name it <code>dist</code>.
+                Vite packs up your JavaScript and CSS on its own, but it has no way of knowing about files that your code
+                only mentions as text, like <code>'images/night_sky.jpg'</code>. We need to tell it to copy our asset
+                folders into <code>dist</code>. In your project folder, next to <code>package.json</code>, create a
+                file named <code>vite.config.js</code> and write this into it:
             </p>
-            <h3>
-                <b>Step 2</b>
-            </h3>
+<pre>
+import { defineConfig } from 'vite'
+import { cpSync, existsSync } from 'node:fs'
+
+// Folders to copy into dist/ as-is. Add a name in this array whenever you add a new folder
+// for other kinds of assets, like this:
+// const copyDirs = ['images', 'models', 'data']
+// For now, we just have images/ so this is sufficient:
+
+const copyDirs = ['images']
+
+export default defineConfig({
+  base: './',          // relative URLs, so the site works at any GitHub Pages address
+  publicDir: false,    // we are not using a public/ folder
+  build: {
+    outDir: 'dist',
+  },
+  plugins: [
+    {
+      name: 'copy-static-folders',
+      apply: 'build',  // only runs during `npm run build`
+      closeBundle() {
+        for (const dir of copyDirs) {
+          if (existsSync(dir)) cpSync(dir, `dist/${dir}`, { recursive: true })
+        }
+      },
+    },
+  ],
+})
+</pre>
             <p>
-                Move the following files inside the new <code>dist</code> folder:
-                     </p>
-            <ul>
-                <li>index.html</li>
-                <li>style.css</li>
-                <li>main.js</li>
-                <li>the <code>/images</code> folder containing your image files that you are using for your meshes and
-                    scene backgrounds.</li>
-            </ul>
-            <h3>
-                <b>Step 3</b>
-            </h3>
-            <p>We need to make a change to the files in the dist folder so that GitHub Pages can access the Three JS library.
-                (Explanation: We can't install three.js on GitHub's servers and it is only running in our local computer environment. But
-                there are cloud service providers who can make the Three.JS library available in the GitHub environment, too. 
-                We are going to add them here.)</p>
-            <p><strong>Look the dist folder</strong> and locate your main.js file. Open that dist/main.js file and edit the top lines
-                that handle the three.js library import so they look like this:</p>
-       
-            <pre>
-import * as THREE from 'https://cdn.skypack.dev/three@0.128.0/build/three.module.js';
-import { OrbitControls } from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/controls/OrbitControls.js';
-import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/loaders/GLTFLoader.js';
-            </pre>
-            
-            (You may find yourself needing more or different links to the CDN (content-delivery-network) service. Check out 
-            <a href="https://threejs.org/docs/#manual/en/introduction/Installation">the Three.JS installation documentation</a> for more details and some other 
-            alternatives.
-
-            <h3>
-                <b>Step 4</b>
-            </h3>
-            <p>
-                Within your <code>package.json</code> file, add the fillowing line of code inside your
-                <code>"scripts"</code>:  </p>
-
-            <pre>
-                            "deploy": "gh-pages -d dist"
-                        </pre>
-
-
-            <p>Your <code>"scripts"</code> JSON should now look like this:</p>
-            <pre>
-            "scripts": {
-                "test": "echo \"Error: no test specified\" && exit 1",
-                "deploy": "gh-pages -d dist"
-           }
-            </pre>
-
-            <h3>
-                Step 5
-            </h3>
-            <p>
-                Make sure you are at the root of your project directory. Run the following command in your project to
-                install gh-pages:
+                What this does: <code>closeBundle</code> is a moment Vite gives us to run our own code when the build
+                is done, and ours copies each folder named in <code>copyDirs</code> into <code>dist</code>. If you add
+                a new folder of assets (for example, 3D models), add its name to that list. If a folder is missing
+                from <code>dist</code> after a build, check the spelling in <code>copyDirs</code> first.
             </p>
-            <pre>
-                npm install gh-pages
-            </pre>
 
+            <h3 id="deploy-step-2"><b>Step 2: Build and preview</b></h3>
             <p>
-                gh-pages is an npm package that allows you to publish files to a branch named "gh-pages" on GitHub.
-                You may read more about it here - https://www.npmjs.com/package/gh-pages
-
+                Make sure you are at the root of your project folder, then run:
             </p>
-            <h3>
-                <b>Step 6</b>
-            </h3>
+<pre>
+npm run build
+</pre>
             <p>
-                Now we just need to push the project to a new repository on GitHub.
+                You should see a new <code>dist</code> folder containing a built <code>index.html</code>, an
+                <code>assets</code> folder with your packed-up JavaScript and CSS, and a copy of your
+                <code>images</code> folder. Now look at it in your browser:
+            </p>
+<pre>
+npm run preview
+</pre>
+            <p>
+                Preview runs on a different port than <code>npm run dev</code> (often 4173), and it shows what is in
+                <code>dist</code>, which is what will be published. Check that your background and textures appear.
+                If they show up in the dev server but not in the preview, the problem is in this build step. Stop the
+                preview with CTRL + C when you are done.
+            </p>
+
+            <h3 id="deploy-step-3"><b>Step 3: Install gh-pages and add a deploy script</b></h3>
+            <p>
+                Make sure you are at the root of your project directory. Run the following command to install
+                gh-pages:
+            </p>
+<pre>
+npm install -D gh-pages
+</pre>
+            <p>
+                gh-pages is an npm package that publishes a folder to a branch named "gh-pages" on GitHub. You may
+                read more about it here:
+                <a href="https://www.npmjs.com/package/gh-pages">https://www.npmjs.com/package/gh-pages</a>
+            </p>
+            <p>
+                Then, within your <code>package.json</code> file, add a <code>"deploy"</code> line inside your
+                <code>"scripts"</code>. Remember to add a comma after the line before it:
+            </p>
+<pre>
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "deploy": "gh-pages -d dist"
+},
+</pre>
+
+            <h3 id="deploy-step-4"><b>Step 4: Add your .gitignore</b></h3>
+            <p>
+                Before you use Git for the first time in this project, create a file in your project folder named
+                exactly <code>.gitignore</code> (no <code>.txt</code> at the end, and create it from your code editor
+                rather than the file manager). Copy the contents from
+                <a href="#">Dr. B's .gitignore</a> (link to be added), or paste this:
+            </p>
+<pre>
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+# dist is intentionally NOT ignored, to make it easier to inspect build output in your repo
+# If it's annoying you to see it in your main branch, go ahead and uncomment the dist line:
+# dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+</pre>
+            <p>
+                The most important line is <code>node_modules</code>, which keeps thousands of installed files out of
+                your repository. Do this <em>before</em> your first <code>git add .</code>. Because we are keeping
+                <code>dist</code> in the repository in this class, remember to run <code>npm run build</code> before
+                you commit, so that the committed <code>dist</code> folder matches your code.
+            </p>
+
+            <h3 id="deploy-step-5"><b>Step 5: Create a GitHub repository</b></h3>
+            <p>
                 Go to <a href="https://github.com/">GitHub.com</a> and create a new repository.
             </p>
             <p>
                 Fill in your repository name and a short description. <i>Tip: try naming your remote repo the same as
-                    what you named your Three.JS project lcoally.</i>
+                    what you named your Three.JS project locally.</i>
             </p>
             <p>
                 You do not need to add a readme, a gitignore, or a license.
@@ -781,36 +927,42 @@ import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/l
                 command line terminal to push your project code into this new remote repository.</p>
             <div class="imgWrap"><img class="img" src="images/screenshots/github-setup-screen.jpg"
                     alt="github remote repo setup screen" /></div>
-            <h3><b>Enter the following commands in your Command Line Terminal, one after the other:</b></h3>
-            <pre>
-                 git init
-            </pre>
-            <pre>
-                 git remote add origin "YOUR_REPOSITORY_URL"
-             </pre>
-            <pre>
-                 git add .
-            </pre>
-            <pre>
-                 git commit -m "YOUR_COMMIT_MESSAGE"
-            </pre>
-            <pre>
-                  git push origin main
-            </pre>
 
-            <h3><b>Step 7</b></h3>
+            <h3 id="deploy-step-6"><b>Step 6: Push your code</b></h3>
+            <p>Run <code>npm run build</code> one more time so that <code>dist</code> is up to date, then enter the
+                following commands in your Command Line Terminal, one after the other:</p>
+<pre>
+git init
+</pre>
+<pre>
+git branch -M main
+</pre>
+<pre>
+git remote add origin "YOUR_REPOSITORY_URL"
+</pre>
+<pre>
+git add .
+</pre>
+<pre>
+git commit -m "YOUR_COMMIT_MESSAGE"
+</pre>
+<pre>
+git push -u origin main
+</pre>
+            <p>(The <code>git branch -M main</code> line makes sure your branch is named <code>main</code>, which is
+                what GitHub expects.)</p>
+
+            <h3 id="deploy-step-7"><b>Step 7: Deploy</b></h3>
             <p>
-                Once all your code is pushed to the master branch, go to your repo on GitHub.com
-                and create a new branch. <b>Name it “<code>gh-pages</code>”.</b>
+                Make sure you are at the root of your project directory, and that you have run
+                <code>npm run build</code> since your last changes. Then run this command in your terminal:
             </p>
+<pre>
+npm run deploy
+</pre>
             <p>
-                Make sure you are at the root of your project directory, then run this command in your terminal:
-            </p>
-            <pre>
-                 npm run deploy
-            </pre>
-            <p>
-                This step runs the “deploy” script that you added in Step 3.
+                This runs the "deploy" script that you added in Step 3. It creates the <code>gh-pages</code> branch on
+                GitHub for you if it doesn't exist yet, and publishes the contents of <code>dist</code> to it.
             </p>
             <div class="imgWrap">
 
@@ -822,8 +974,13 @@ import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/l
                 ready for viewing.
             </p>
             <p>
-                After a few minutes, go to the "Pages" tab in your repository settings, and your website link will be
+                After a few minutes, go to the "Pages" tab in your repository settings. If it asks for a source, choose
+                the <code>gh-pages</code> branch and the <code>/ (root)</code> folder. Your website link will be
                 there.
+            </p>
+            <p>
+                <strong>Updating your site later:</strong> make your changes, run <code>npm run build</code>, commit
+                and push as usual, and run <code>npm run deploy</code> again.
             </p>
         </div>
     </section>
